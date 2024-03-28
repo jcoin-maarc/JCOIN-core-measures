@@ -55,9 +55,9 @@ The public repository where data dictionaries are stored is located [here](https
     Added new variable names with more semantic meaning describing variable. The original names are kept in `custom.jcoin:original_name`
     for ease of interoperatability. 
 - 2.0.1 (5/31/2023)
-    Added `visit_month` field.
+    - Added `visit_month` field.
 - 2.1.0
-    Minor additional annotations; added `hub_id`; incorporated combined race variable
+    - Minor additional annotations; added `hub_id`; incorporated combined race variable
 - 2.2.0 
     - Added `days_on_study`
     - Removed `required` constraint from `shifted_visit_date` while making note either `days_on_study` or `shifted_visit_date` is acceptable.
