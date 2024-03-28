@@ -80,6 +80,7 @@ for propname,prop in orderedschema.items():
             st_fields = lambda fields: st.dataframe(fields)
         elif fields_view_type=="json records":
             flattened_fields= fields_tbl[selected_columns]
+            flattened_fields.fillna("",inplace=True)
             fields = orderedschema[field_propname] = healdata_utils.transforms.csvdatadict.conversion.convert_datadictcsv(flattened_fields,data_dictionary_props={})
             download_fields = lambda fields: json.dumps(orderedschema,indent=2)
             st_fields = lambda fields:st.json(fields)

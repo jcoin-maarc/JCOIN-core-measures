@@ -3,11 +3,12 @@ from setuptools import setup,find_namespace_packages
 setup(
     name='core_measures',
     install_requires=[
-        "healdata-utils @ git+https://github.com/norc-heal/healdata-utils.git@848939fcf8de41d0462efa922fa30c4273a84a94",
+        "healdata-utils",
         "streamlit",
-        "frictionless==4.40.8",
+        "frictionless",
         "xlsxwriter",
         "openpyxl",
+        "mkdocs-material"
         
     ],
     package_dir={'': '.'},

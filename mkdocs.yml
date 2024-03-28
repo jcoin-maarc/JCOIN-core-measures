@@ -5,7 +5,7 @@ repo_url: https://github.com/jcoin-maarc/JCOIN-Core-Measures
 nav:
   - index.md
   - Return to JCOIN Data Commons Documentation: https://jcoin-maarc.github.io/jdc-docs-public/
-  - Variable level metdata: vlmd.md
+  - Core Measure Browser: browser.md
   - Source PDF: source.md
 
 theme:
