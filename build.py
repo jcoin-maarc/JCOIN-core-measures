@@ -11,7 +11,7 @@ import copy
 from collections.abc import MutableMapping, MutableSequence, MutableSet,Sequence
 from functools import reduce
 
-from core_measures import schemas as schema_utils
+from core_measures.utils import combine_schemas_to_excel,json_to_df
 
 os.chdir(Path(__file__).parent)
 
@@ -89,7 +89,14 @@ if __name__ == "__main__":
     del tblschemas["_definitions"]
 
     for name,schema in tblschemas.items():
-        Path(f"schemas/table-schema-{name}.json").write_text(json.dumps(schema, indent=4))
+        path = Path(f"schemas/table-schema-{name}.json").resolve()
+        path.write_text(json.dumps(schema, indent=4))
+        df = json_to_df(path)
+        csvpath = path.parent.with_stem("csvs")
+        df.to_csv(csvpath / path.with_suffix(".csv").name,index=False)
 
-    schema_utils.to_csv()
-    schema_utils.to_excel()
+        xlsxpath = path.parent.with_name("xlsx")
+        xlsxpath.mkdir(exist_ok=True)
+
+    combine_schemas_to_excel(csvpath.glob("*.csv"),str(xlsxpath/"core_measures.xlsx"))
+    combine_schemas_to_excel(csvpath.glob("*.csv"),str(xlsxpath/"core_measures_long.xlsx"),separate_sheets=False)
