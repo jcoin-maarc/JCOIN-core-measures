@@ -11,7 +11,34 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  build: 
+    name: Build the schemas and related products from source yamls
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v3
+      - name: Install Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip' 
+      - name: Install dependencies
+        run: pip install .
+      - name: Build from the schemas
+        run: |
+          python build.py
+      - name: Check for changes (fail if none)
+        run: |
+          ! git diff --quiet
+      - name: Commit and push changes
+        run: |
+          git config user.name ${{ github.triggering_actor }}
+          git config user.email ${{ github.triggering_actor }}@users.noreply.github.com
+
+          git add -r *.json *.xlsx *.csv
+          git commit "Build table schemas and related products"
+          git push
+  docs:
     name: Build and Deploy Documentation
     runs-on: ubuntu-latest
     steps:
