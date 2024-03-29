@@ -61,4 +61,48 @@ def makepage(schema_name):
 
 
 
-    
+def unflatten_from_jsonpath(field,missing_values=[None,""]):
+    """
+    Converts a flattened dictionary with key names conforming to 
+    JSONpath notation to the nested dictionary format.
+    """
+    field_json = {}
+
+    for prop_path, prop in field.items():
+        
+        if prop in missing_values:
+            continue
+
+        prop_json = field_json
+
+        nested_names = prop_path.split(".")
+        for prop_name in nested_names[:-1]:
+            if '[' in prop_name:
+                array_name, array_index = prop_name.split('[')
+                array_index = int(array_index[:-1])
+                if array_name not in prop_json:
+                    prop_json[array_name] = [{} for _ in range(array_index + 1)]
+                elif len(prop_json[array_name]) <= array_index:
+                    prop_json[array_name].extend([{} for _ in range(array_index - len(prop_json[array_name]) + 1)])
+                prop_json = prop_json[array_name][array_index]
+            else:
+                if prop_name not in prop_json:
+                    prop_json[prop_name] = {}
+                prop_json = prop_json[prop_name]
+
+        last_prop_name = nested_names[-1]
+        if '[' in last_prop_name:
+            array_name, array_index = last_prop_name.split('[')
+            array_index = int(array_index[:-1])
+            if array_name not in prop_json:
+                prop_json[array_name] = [{} for _ in range(array_index + 1)]
+            elif len(prop_json[array_name]) <= array_index:
+                prop_json[array_name].extend([{} for _ in range(array_index - len(prop_json[array_name]) + 1)])
+            if isinstance(prop_json[array_name][array_index], dict):
+                prop_json[array_name][array_index].update({array_name: prop})
+            else:
+                prop_json[array_name][array_index] = {array_name: prop}
+        else:
+            prop_json[last_prop_name] = prop
+
+    return field_json

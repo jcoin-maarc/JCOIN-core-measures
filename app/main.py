@@ -8,7 +8,7 @@ import sys
 import json
 import re
 from collections.abc import MutableSequence
-import healdata_utils
+from core_measures.app.utils import unflatten_from_jsonpath
 def slugify(s):
   s = s.lower().strip()
   s = re.sub(r'[^\w\s-]', '', s)
@@ -43,7 +43,7 @@ schemas = [json.loads(path.read_text()) for path in Path(SCHEMA_DIR).glob("*.jso
 excel = list(Path(SCHEMA_DIR).parent.joinpath("xlsx").glob("*"))[0]
 with open(excel,"rb") as f:
     st.download_button(
-        f"Click here to download all {study_name} data dictionaries",
+        f"Click here to download an excel file with all {study_name} data dictionaries",
         data=f,
         file_name="core_measures"+"_"+current_date+".xlsx")
 
@@ -81,7 +81,7 @@ for propname,prop in orderedschema.items():
         elif fields_view_type=="json records":
             flattened_fields= fields_tbl[selected_columns]
             flattened_fields.fillna("",inplace=True)
-            fields = orderedschema[field_propname] = healdata_utils.transforms.csvdatadict.conversion.convert_datadictcsv(flattened_fields,data_dictionary_props={})
+            fields = orderedschema[field_propname] = [unflatten_from_jsonpath(field) for field in flattened_fields.to_dict(orient="records")]
             download_fields = lambda fields: json.dumps(orderedschema,indent=2)
             st_fields = lambda fields:st.json(fields)
         else:
