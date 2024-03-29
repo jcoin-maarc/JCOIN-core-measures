@@ -14,7 +14,7 @@ def json_to_df(path):
     table_fields_formatted = (
         table_fields
         [cols] # order
-        .applymap(lambda v: "|".join(v) if isinstance(v,list) else v) #stringify lists
+        .applymap(lambda v: "|".join(map(str,v)) if isinstance(v,list) else v) #stringify lists
     )  
     return table_fields_formatted
 
