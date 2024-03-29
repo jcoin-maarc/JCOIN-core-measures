@@ -25,6 +25,8 @@ shifted_visit_date:
     interval between visits (and allows calculations of days between time points
     or other date fields which are shifted by the same number of days). To avoid
     issues with type conversion errors, the date is of type integer
+  examples: [20220101,20240531]
+  format: "%Y%m%d"
   constraints:
     required: true
   custom:

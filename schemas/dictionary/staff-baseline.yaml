@@ -5,7 +5,7 @@ description: 'Measures collected before the start of the study for staff partici
   However, this is a slight misnomer as, for example, current_study_status is dynamically
   updated.'
 fields:
-  - $ref: "#ref/_definitions/jdc_person_id"
+  - $ref: "#/_definitions/jdc_person_id"
   - section: Record and linkage
     name: hub_id
     title: Hub identifier

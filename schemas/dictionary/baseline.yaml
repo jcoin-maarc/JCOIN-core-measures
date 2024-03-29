@@ -11,7 +11,7 @@ fields:
     description: Randomly generated integer for each unique hub.
     constraints:
       required: true
-  - $ref: "#ref/_definitions/jdc_person_id"
+  - $ref: "#/_definitions/jdc_person_id"
   - section: Enrollment
     name: quarter_enrolled
     title: Quarter Enrolled

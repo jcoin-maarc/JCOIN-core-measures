@@ -2,7 +2,7 @@ title: 'Staff participants: staff-specific timepoint measures'
 description: Staff specific measures that may be collected at baseline or follow up
   time points.
 fields:
-  - $ref: "#ref/_definitions/jdc_person_id"
+  - $ref: "#/_definitions/jdc_person_id"
   - section: Record and linkage
     name: visit_number
     title: Visit Number
@@ -15,7 +15,7 @@ fields:
       minimum: 1
     custom:
       jcoin:original_name: visit_number
-  - $ref: "#ref/_definitions/shifted_visit_date"
+  - $ref: "#/_definitions/shifted_visit_date"
   - section: Record and linkage
     name: visit_type
     title: Visit Type

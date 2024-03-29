@@ -1,7 +1,7 @@
 title: 'Client participants: Timepoint measures'
 description: Measures collected at all time points (baseline and follow ups).
 fields:
-  - $ref: "#ref/_definitions/jdc_person_id"
+  - $ref: "#/_definitions/jdc_person_id"
   - section: Record and linkage
     name: visit_number
     title: Visit Number
