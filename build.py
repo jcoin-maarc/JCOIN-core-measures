@@ -26,49 +26,38 @@ def load_yaml(filepath):
 def load_all_yamls(directory="schemas/dictionary"):
     filepaths = Path(directory).glob("*.yaml")
     return {filepath.stem: load_yaml(filepath) for filepath in filepaths}
-
-def resolve_refs(items, schema, parentkey=False):
+def resolve_refs(data, definitions):
     """
-    resolve pseudo-json references
+    Resolve references recursively in a Python dictionary.
 
-    item is the item to be iterated through
-    and schema is the overall schema to reference
+    Args:
+        data (dict): The dictionary containing references.
+        definitions (dict): The dictionary containing definitions.
 
-    NOTE: these are pseudo as $ref is used simply for replacement of
-    any value (ie $ref doesnt have to be )
-    JSON references: https://datatracker.ietf.org/doc/html/draft-pbryan-zyp-json-ref-03
+    Returns:
+        dict: The resolved dictionary.
     """
+    def resolve_ref(ref):
+        parts = ref.split('/')
+        if len(parts) < 2 or parts[0] != '#':
+            raise ValueError("Invalid reference format")
+        current = definitions
+        for part in parts[1:]:
+            current = current[part]
+        return current
 
-    schema_resolved = {}
-    for key, item in items.items():
-        # resolve refs
-        if key == "$ref":
-            path = item.split("/")
-            anchor = path.pop(0)
-            if anchor == "#":
-                get_item = lambda _item, key: _item.get(key, {})
-                _resolved = reduce(get_item, path, schema)
-                resolved = resolve_refs(_resolved, schema)
-                schema_resolved.update(resolved)
-
-        # resursively call and map to output schema
-        elif isinstance(item, MutableMapping):
-            schema_resolved[key] = resolve_refs(item, schema)
-        elif isinstance(item, (MutableSequence, MutableSet)):
-            resolveditem = []
-            for val in item:
-                if isinstance(val, MutableMapping):
-                    _resolved = resolve_refs(val, schema)
-                else:
-                    _resolved = val
-                resolveditem.append(_resolved)
-
-            schema_resolved[key] = resolveditem
+    def resolve(obj):
+        if isinstance(obj, dict):
+            if "$ref" in obj:
+                return resolve(resolve_ref(obj["$ref"]),)
+            else:
+                return {key: resolve(value) for key, value in obj.items()}
+        elif isinstance(obj, list):
+            return [resolve(item) for item in obj]
         else:
-            schema_resolved[key] = item
+            return obj
 
-    return schema_resolved
-
+    return resolve(data)
 def run_pipeline_step(input, step):
     """function for input into the reduce functool
     function where the input is the instance and fxn is
