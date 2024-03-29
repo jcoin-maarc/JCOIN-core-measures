@@ -40,7 +40,7 @@ def combine_schemas_to_excel(csvpaths,excelpath,separate_sheets=True):
         
         ###generate README with non-fields properties ### 
         for path in csvpaths:
-            schema = dict(Schema(str(path).replace("csvs","schemas").replace(".csv",".json")))
+            schema = Schema(str(path).replace("csvs","schemas").replace(".csv",".json")).to_dict()
             del schema["fields"]
             schema = {name:(",\n".join(item) if isinstance(item,list) else item) for name,item in schema.items()}
             schema['name'] = path.stem
