@@ -10,7 +10,8 @@
             "description": "The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).",
             "constraints": {
                 "required": true,
-                "pattern": "[A-Z][0-9]{3}-[0-9]{4}"
+                "maxLength": 9,
+                "pattern": "[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"
             },
             "custom": {
                 "jcoin:original_name": "jdc_person_id"
@@ -3477,6 +3478,7 @@
         "Refused",
         "Left blank",
         "Legitimately skipped",
+        "Not collected",
         "Missing"
     ]
 }

@@ -10,7 +10,8 @@
             "description": "The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).",
             "constraints": {
                 "required": true,
-                "pattern": "[A-Z][0-9]{3}-[0-9]{4}"
+                "maxLength": 9,
+                "pattern": "[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"
             },
             "custom": {
                 "jcoin:original_name": "jdc_person_id"
@@ -35,13 +36,17 @@
             "name": "shifted_visit_dt",
             "title": "Visit Date (shifted)",
             "type": "date",
-            "description": "This is the date of the visit (ie time point of survey administration) after shifting by a random number 182 days before or 182 days after the actual visit date. The shifting is done on the individual level which retains the time interval between visits (and allows calculations of days between time points or other date fields which are shifted by the same number of days). To avoid issues with type conversion errors, the date is of type integer",
+            "description": "This is the date of the visit (ie time point of survey administration)\nafter shifting by a random number 182 days before or 182 days after the actual\nvisit date. The shifting is done on the individual level which retains the time\ninterval between visits (and allows calculations of days between time points\nor other date fields which are shifted by the same number of days). To avoid\nissues with type conversion errors, the date is of type integer\n",
+            "examples": [
+                20220101,
+                20240531
+            ],
+            "format": "%Y%m%d",
             "constraints": {
                 "required": true
             },
-            "format": "%Y%m%d",
             "custom": {
-                "jcoin:original_name": "shifted_visit_dt"
+                "jcoin:original_name": "shifted_visit_date"
             }
         },
         {
@@ -934,6 +939,7 @@
         "Refused",
         "Left blank",
         "Legitimately skipped",
+        "Not collected",
         "Missing"
     ]
 }

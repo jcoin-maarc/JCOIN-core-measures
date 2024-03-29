@@ -62,19 +62,22 @@
             "name": "current_study_status",
             "title": "Current Study Status",
             "type": "string",
-            "description": "A summary of the current status where client (participant) is in study",
+            "description": "A summary of the current status where client (participant) is in\nstudy. \n",
             "constraints": {
                 "enum": [
                     "On study",
-                    "Dropped out",
+                    "Dropped out/lost to follow up",
                     "Withdrawn by investigator",
+                    "Re-incarcerated",
+                    "Deceased",
                     "Completed study",
                     "Unknown"
                 ],
                 "required": true
             },
             "custom": {
-                "jcoin:original_name": "current_study_status"
+                "jcoin:original_name": "current_study_status",
+                "jcoin:note": "Re-incarcerated\" = re-incarceration leading to dropout or withdrawal and \"Withdrawn by investigator\" = withdrawal by investigator for other reasons not listed"
             }
         },
         {
@@ -588,6 +591,7 @@
         "Refused",
         "Left blank",
         "Legitimately skipped",
+        "Not collected",
         "Missing"
     ]
 }
