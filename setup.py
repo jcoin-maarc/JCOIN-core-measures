@@ -11,6 +11,6 @@ setup(
         "mkdocs-material"
         
     ],
-    package_dir={'': '.'},
-    packages=find_namespace_packages(where='.')
+    package_dir={'': 'src'},
+    packages=find_namespace_packages(where='src'),
 )
