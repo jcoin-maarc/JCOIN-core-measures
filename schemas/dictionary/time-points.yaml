@@ -34,21 +34,7 @@ fields:
       pattern: ^Baseline$|^\d+ month$
     custom:
       jcoin:original_name: visit_month
-  - section: Record and linkage
-    name: shifted_visit_date
-    title: Visit Date (shifted)
-    type: date
-    description: This is the date of the visit (ie time point) after shifting by a
-      random number 182 days before or 182 days after the actual visit date. The shifting
-      is done on the individual level which retains the time interval between visits
-      (and allows calculations of days between time points or other date fields which
-      are shifted by the same number of days). To avoid issues with type conversion
-      errors, the date is of type integer
-    constraints:
-      required: true
-    format: '%Y%m%d'
-    custom:
-      jcoin:original_name: shifted_visit_dt
+  - $ref: "#/_definitions/shifted_visit_date"
   - section: Record and linkage
     name: visit_type
     title: Visit Type
