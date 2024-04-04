@@ -64,3 +64,4 @@ The public repository where data dictionaries are stored is located [here](https
     - Added `Not collected` to `missingValues` to differentiate Missing from `Not collected`
     - Changed `current_study_status` to add withdrawn due to re-incarceration and deceased. Also, took out unknown.
     - Added annotation around the meaning of missing values.
+    - Added version number
