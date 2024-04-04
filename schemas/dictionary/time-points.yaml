@@ -1,5 +1,8 @@
 title: 'Client participants: Timepoint measures'
 description: Measures collected at all time points (baseline and follow ups).
+custom:
+  jcoin:missingValuesDescription:
+    $ref: "#/_definitions/jcoin:missingValuesDescription"
 fields:
   - $ref: "#/_definitions/jdc_person_id"
   - section: Record and linkage
@@ -13,8 +16,9 @@ fields:
       The main purpose of this field is to provide the sequential number of visits. For example, if a study has 
       a Baseline and 6 and 12 month follow up, `visit_number` would be mapped to `visit_month` as 
       1=Baseline,2=6 month follow up, 3=12 month follow up.
-    required: true
-    minimum: 1
+    constraints:
+      required: true
+      minimum: 1
     custom:
       jcoin:original_name: visit_number
   - section: Record and linkage

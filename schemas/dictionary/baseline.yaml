@@ -3,6 +3,9 @@ description: Measures collected before the start of the study for client partici
   As many of these measures are collected at 'baseline' it is currently called 'baseline.'
   However, this is a slight misnomer as, for example, current_study_status is dynamically
   updated.
+custom:
+  jcoin:missingValuesDescription:
+    $ref: "#/_definitions/jcoin:missingValuesDescription"
 fields:
   - section: Record and linkage
     name: hub_id
