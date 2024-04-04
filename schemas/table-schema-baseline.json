@@ -84,6 +84,13 @@
             }
         },
         {
+            "section": "Enrollment",
+            "name": "days_on_study",
+            "title": "Days on study",
+            "type": "integer",
+            "description": "The number of days on study as calculated by the visit date minus the baseline visit date (ie the anchor date).\nThe field is only necessary for participants who are no longer have a `current_study_status` of \"On study\".\nIn other words, it is for participants who have either completed the study or attrited.\n\nNOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.\n"
+        },
+        {
             "section": "Demographics",
             "name": "age",
             "title": "Age",

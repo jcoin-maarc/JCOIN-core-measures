@@ -14,7 +14,9 @@ visit date. The shifting is done on the individual level which retains the time
 interval between visits (and allows calculations of days between time points
 or other date fields which are shifted by the same number of days). To avoid
 issues with type conversion errors, the date is of type integer
-",,,,,,,shifted_visit_date,,20220101|20240531,%Y%m%d,,
+
+NOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.
+",,,,,,,shifted_visit_date,1.0,20220101|20240531,%Y%m%d,,
 Record and linkage,visit_type,Visit Type,string,The visit type/category (either baseline or follow up),,,Baseline|Follow-up,True,,,visit_type,,,,,
 Substance Use,last_drug_use,Last time drug use,string,[... you used alcohol or other drugs weekly or more often?  ] When was the last time you...,,,Never|More than a year ago|4 to 12 months ago|2 to 3 months ago|Past month|Do not know|Not reported,,,,s1a,,,,"Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise",
 Substance Use,last_getting_using_drugs,"Last time drug use: getting, using, or recovering",string,"[... You spent a lot of time either getting alcohol or other drugs, using alcohol or other drugs, or recovering from the effects of alcohol or other drugs (feeling sick)? ] When was the last time you...",,,Never|More than a year ago|4 to 12 months ago|2 to 3 months ago|Past month|Do not know|Not reported,,,,s1b,,,,"Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise",

@@ -6,6 +6,12 @@ Enrollment,state_of_site_enrollment,State of Site For Enrollment,string,The U.S.
 Enrollment,current_study_status,Current Study Status,string,"A summary of the current status where client (participant) is in
 study. 
 ",,,On study|Dropped out/lost to follow up|Withdrawn by investigator|Re-incarcerated|Deceased|Completed study|Unknown,True,,,current_study_status,"Re-incarcerated"" = re-incarceration leading to dropout or withdrawal and ""Withdrawn by investigator"" = withdrawal by investigator for other reasons not listed",
+Enrollment,days_on_study,Days on study,integer,"The number of days on study as calculated by the visit date minus the baseline visit date (ie the anchor date).
+The field is only necessary for participants who are no longer have a `current_study_status` of ""On study"".
+In other words, it is for participants who have either completed the study or attrited.
+
+NOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.
+",,,,,,,,,
 Demographics,age,Age,integer,About how old are you? (top coded at 90),,,,,,,d1a,,
 Demographics,sex_at_birth,Sex at birth,string,What sex was originally listed on your birth certificate?,,,Male|Female|Decline to answer|Something else,,,,o1,,
 Demographics,gender_id,Gender Identity,string,What is your gender identity?,,,Male|Female|Transgender man/trans man/female-to-male (FTM)|Transgender woman/trans woman/male-to-female (MTF)|Genderqueer/gender nonconforming/neither exclusively male nor female|Additional gender category (or other)|Not reported,,,,o2,,"For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]

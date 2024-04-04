@@ -39,7 +39,7 @@
             "name": "shifted_visit_dt",
             "title": "Visit Date (shifted)",
             "type": "date",
-            "description": "This is the date of the visit (ie time point of survey administration)\nafter shifting by a random number 182 days before or 182 days after the actual\nvisit date. The shifting is done on the individual level which retains the time\ninterval between visits (and allows calculations of days between time points\nor other date fields which are shifted by the same number of days). To avoid\nissues with type conversion errors, the date is of type integer\n",
+            "description": "This is the date of the visit (ie time point of survey administration)\nafter shifting by a random number 182 days before or 182 days after the actual\nvisit date. The shifting is done on the individual level which retains the time\ninterval between visits (and allows calculations of days between time points\nor other date fields which are shifted by the same number of days). To avoid\nissues with type conversion errors, the date is of type integer\n\nNOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.\n",
             "examples": [
                 20220101,
                 20240531
@@ -47,6 +47,9 @@
             "format": "%Y%m%d",
             "custom": {
                 "jcoin:original_name": "shifted_visit_date"
+            },
+            "constraints": {
+                "minimum": 1
             }
         },
         {

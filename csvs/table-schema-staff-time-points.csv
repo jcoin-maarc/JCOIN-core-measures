@@ -7,7 +7,9 @@ visit date. The shifting is done on the individual level which retains the time
 interval between visits (and allows calculations of days between time points
 or other date fields which are shifted by the same number of days). To avoid
 issues with type conversion errors, the date is of type integer
-",,,,,shifted_visit_date,,20220101|20240531,%Y%m%d,
+
+NOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.
+",,,,,shifted_visit_date,1.0,20220101|20240531,%Y%m%d,
 Record and linkage,visit_type,Visit Type,string,The visit type/category of the survey administration (either baseline or follow up),Baseline|Follow-up,True,,,visit_type,,,,
 Organizational readiness for implementing change (ORIC),org_readiness_confidence,Confidence to implement,string,Rate each of the following statements on a 5-point scale where 1=Disagree and 5=Agree [People who work here feel confident that the organization can get people invested in implementing [intervention].]],1 Disagree|2|3|4|5 Agree,,,,or1,,,,"Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a 
 new measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-7"
