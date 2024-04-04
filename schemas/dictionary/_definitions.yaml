@@ -1,3 +1,4 @@
+version: 2.2.0
 jdc_person_id:
   section: Record and linkage
   name: jdc_person_id

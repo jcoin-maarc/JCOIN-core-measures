@@ -1,6 +1,9 @@
+version: 
+  $ref: "#/_definitions/version"
 title: 'Client participants: Timepoint measures'
 description: Measures collected at all time points (baseline and follow ups).
 custom:
+  jcoin:participantType: Client
   jcoin:missingValuesDescription:
     $ref: "#/_definitions/jcoin:missingValuesDescription"
 fields:
