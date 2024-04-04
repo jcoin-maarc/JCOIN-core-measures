@@ -1,5 +1,3 @@
-
-
 jdc_person_id:
   section: Record and linkage
   name: jdc_person_id
@@ -25,10 +23,28 @@ shifted_visit_date:
     interval between visits (and allows calculations of days between time points
     or other date fields which are shifted by the same number of days). To avoid
     issues with type conversion errors, the date is of type integer
+
+    NOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.
+
   examples: [20220101,20240531]
   format: "%Y%m%d"
   custom:
     jcoin:original_name: shifted_visit_date
+  constraints:
+    minimum: 1
+  
+days_on_study:
+  section: Enrollment 
+  name: days_on_study
+  title: Days on study
+  type: integer
+  description: |
+    The number of days on study as calculated by the visit date minus the baseline visit date (ie the anchor date).
+    The field is only necessary for participants who are no longer have a `current_study_status` of "On study".
+    In other words, it is for participants who have either completed the study or attrited.
+
+    NOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.
+  
 
 missingValues:
 - Don't know
