@@ -63,3 +63,4 @@ The public repository where data dictionaries are stored is located [here](https
     - Removed `required` constraint from `shifted_visit_date` while making note either `days_on_study` or `shifted_visit_date` is acceptable.
     - Added `Not collected` to `missingValues` to differentiate Missing from `Not collected`
     - Changed `current_study_status` to add withdrawn due to re-incarceration and deceased. Also, took out unknown.
+    - Added annotation around the meaning of missing values.
