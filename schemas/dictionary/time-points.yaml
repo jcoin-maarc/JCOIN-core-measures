@@ -6,13 +6,15 @@ fields:
     name: visit_number
     title: Visit Number
     type: integer
-    description: A number that identifies the visit or timepoint of data collection
-      (baseline=1 and each subsequent follow up is 2 or greater). The main purpose
-      of this field is to provide a unique identifier within each participant. See
-      `visit_month` for a label of the visit.
-    constraints:
-      required: true
-      minimum: 1
+    description: |
+      A number that identifies the visit or timepoint of data collection
+      (baseline=1 and each subsequent follow up is 2 or greater). 
+      
+      The main purpose of this field is to provide the sequential number of visits. For example, if a study has 
+      a Baseline and 6 and 12 month follow up, `visit_number` would be mapped to `visit_month` as 
+      1=Baseline,2=6 month follow up, 3=12 month follow up.
+    required: true
+    minimum: 1
     custom:
       jcoin:original_name: visit_number
   - section: Record and linkage
