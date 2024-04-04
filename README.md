@@ -65,3 +65,4 @@ The public repository where data dictionaries are stored is located [here](https
     - Changed `current_study_status` to add withdrawn due to re-incarceration and deceased. Also, took out unknown.
     - Added annotation around the meaning of missing values.
     - Added version number
+    - Clarified `visit_number` meaning
