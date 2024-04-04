@@ -27,8 +27,6 @@ shifted_visit_date:
     issues with type conversion errors, the date is of type integer
   examples: [20220101,20240531]
   format: "%Y%m%d"
-  constraints:
-    required: true
   custom:
     jcoin:original_name: shifted_visit_date
 
