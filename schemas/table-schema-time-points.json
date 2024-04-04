@@ -1,6 +1,9 @@
 {
     "title": "Client participants: Timepoint measures",
     "description": "Measures collected at all time points (baseline and follow ups).",
+    "custom": {
+        "jcoin:missingValuesDescription": "\n**Below are extended descriptions of each `missingValue` (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.\n  - Refused: This code signifies that the respondent actively chose not to answer the question, despite being capable of providing a response.\n  - Left blank: This code indicates that the question was intentionally left unanswered by the respondent.\n  - Legitimately skipped: This code is used when the question was intentionally skipped due to its inapplicability or irrelevance to the respondent's situation.\n  - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.\n  - Missing: This code signifies that the data for the question is missing without any clear reason or explanation.\n"
+    },
     "fields": [
         {
             "section": "Record and linkage",
@@ -22,7 +25,7 @@
             "name": "visit_number",
             "title": "Visit Number",
             "type": "integer",
-            "description": "A number that identifies the visit or timepoint of data collection (baseline=1 and each subsequent follow up is 2 or greater). The main purpose of this field is to provide a unique identifier within each participant. See `visit_month` for a label of the visit.",
+            "description": "A number that identifies the visit or timepoint of data collection\n(baseline=1 and each subsequent follow up is 2 or greater). \n\nThe main purpose of this field is to provide the sequential number of visits. For example, if a study has \na Baseline and 6 and 12 month follow up, `visit_number` would be mapped to `visit_month` as \n1=Baseline,2=6 month follow up, 3=12 month follow up.\n",
             "constraints": {
                 "required": true,
                 "minimum": 1
@@ -47,16 +50,17 @@
         },
         {
             "section": "Record and linkage",
-            "name": "shifted_visit_date",
+            "name": "shifted_visit_dt",
             "title": "Visit Date (shifted)",
             "type": "date",
-            "description": "This is the date of the visit (ie time point) after shifting by a random number 182 days before or 182 days after the actual visit date. The shifting is done on the individual level which retains the time interval between visits (and allows calculations of days between time points or other date fields which are shifted by the same number of days). To avoid issues with type conversion errors, the date is of type integer",
-            "constraints": {
-                "required": true
-            },
+            "description": "This is the date of the visit (ie time point of survey administration)\nafter shifting by a random number 182 days before or 182 days after the actual\nvisit date. The shifting is done on the individual level which retains the time\ninterval between visits (and allows calculations of days between time points\nor other date fields which are shifted by the same number of days). To avoid\nissues with type conversion errors, the date is of type integer\n",
+            "examples": [
+                20220101,
+                20240531
+            ],
             "format": "%Y%m%d",
             "custom": {
-                "jcoin:original_name": "shifted_visit_dt"
+                "jcoin:original_name": "shifted_visit_date"
             }
         },
         {

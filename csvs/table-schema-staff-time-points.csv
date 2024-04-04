@@ -1,13 +1,13 @@
 section,name,title,type,description,constraints.enum,constraints.required,constraints.maxLength,constraints.pattern,custom.jcoin:original_name,constraints.minimum,examples,format,custom.jcoin:source
-Record and linkage,jdc_person_id,JCOIN data commons person identifier,string,The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).,,True,9,[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9],jdc_person_id,,,,
-Record and linkage,visit_number,Visit Number,integer,A number that identifies the visit (survey administration event) or timepoint of data collection (baseline=1 and each subsequent follow up is 2 or greater).,,True,,,visit_number,1,,,
+Record and linkage,jdc_person_id,JCOIN data commons person identifier,string,The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).,,True,9.0,[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9],jdc_person_id,,,,
+Record and linkage,visit_number,Visit Number,integer,A number that identifies the visit (survey administration event) or timepoint of data collection (baseline=1 and each subsequent follow up is 2 or greater).,,True,,,visit_number,1.0,,,
 Record and linkage,shifted_visit_dt,Visit Date (shifted),date,"This is the date of the visit (ie time point of survey administration)
 after shifting by a random number 182 days before or 182 days after the actual
 visit date. The shifting is done on the individual level which retains the time
 interval between visits (and allows calculations of days between time points
 or other date fields which are shifted by the same number of days). To avoid
 issues with type conversion errors, the date is of type integer
-",,True,,,shifted_visit_date,,20220101|20240531,%Y%m%d,
+",,,,,shifted_visit_date,,20220101|20240531,%Y%m%d,
 Record and linkage,visit_type,Visit Type,string,The visit type/category of the survey administration (either baseline or follow up),Baseline|Follow-up,True,,,visit_type,,,,
 Organizational readiness for implementing change (ORIC),org_readiness_confidence,Confidence to implement,string,Rate each of the following statements on a 5-point scale where 1=Disagree and 5=Agree [People who work here feel confident that the organization can get people invested in implementing [intervention].]],1 Disagree|2|3|4|5 Agree,,,,or1,,,,"Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a 
 new measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-7"

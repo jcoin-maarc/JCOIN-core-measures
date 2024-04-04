@@ -1,8 +1,8 @@
 section,name,title,type,description,trueValues,falseValues,constraints.enum,constraints.required,constraints.maxLength,constraints.pattern,custom.jcoin:original_name,custom.jcoin:note,custom.jcoin:notes
 Record and linkage,hub_id,Hub identifier,integer,Randomly generated integer for each unique hub.,,,,True,,,,,
-Record and linkage,jdc_person_id,JCOIN data commons person identifier,string,The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).,,,,True,9,[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9],jdc_person_id,,
-Enrollment,quarter_enrolled,Quarter Enrolled,string,The financial quarter and year of enrollment,,,,True,6,[0-9][0-9][0-9][0-9]Q[0-9],quarter_enrolled,,
-Enrollment,state_of_site_enrollment,State of Site For Enrollment,string,The U.S. State abbreviation of the site where client (participant) was initially enrolled,,,,True,2,[A-Z][A-Z],state_of_site_enrollment,,
+Record and linkage,jdc_person_id,JCOIN data commons person identifier,string,The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).,,,,True,9.0,[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9],jdc_person_id,,
+Enrollment,quarter_enrolled,Quarter Enrolled,string,The financial quarter and year of enrollment,,,,True,6.0,[0-9][0-9][0-9][0-9]Q[0-9],quarter_enrolled,,
+Enrollment,state_of_site_enrollment,State of Site For Enrollment,string,The U.S. State abbreviation of the site where client (participant) was initially enrolled,,,,True,2.0,[A-Z][A-Z],state_of_site_enrollment,,
 Enrollment,current_study_status,Current Study Status,string,"A summary of the current status where client (participant) is in
 study. 
 ",,,On study|Dropped out/lost to follow up|Withdrawn by investigator|Re-incarcerated|Deceased|Completed study|Unknown,True,,,current_study_status,"Re-incarcerated"" = re-incarceration leading to dropout or withdrawal and ""Withdrawn by investigator"" = withdrawal by investigator for other reasons not listed",
@@ -17,8 +17,8 @@ Demographics,race_AIAN,Race: American Indian or Alaska Native,boolean,[American 
 Demographics,race_hawaiian_OPI,Race: Native Hawaiian or Other Pacific Islander,boolean,[Native Hawaiian or Other Pacific Islander] What is your race? SELECT ALL THAT APPLY,Yes,No,,True,,,d3_hawaiian,,
 Demographics,race_asian,Race: Asian,boolean,[Asian] What is your race? SELECT ALL THAT APPLY,Yes,No,,True,,,d3_asian,,
 Demographics,race_other,Race: Other,boolean,[Other] What is your race? SELECT ALL THAT APPLY,Yes,No,,True,,,d3_other,,
-Demographics,race_AI_tribe,Race: American indian principal tribe or community specified,string,[American indian principal tribe or community specified] What is your race? SELECT ALL THAT APPLY,,,,,80,,d3_specify_tribe,,
-Demographics,race_other_specified,Race: Other specified,string,[Other specified] What is your race? SELECT ALL THAT APPLY,,,,,80,,d3_specify_other,,
+Demographics,race_AI_tribe,Race: American indian principal tribe or community specified,string,[American indian principal tribe or community specified] What is your race? SELECT ALL THAT APPLY,,,,,80.0,,d3_specify_tribe,,
+Demographics,race_other_specified,Race: Other specified,string,[Other specified] What is your race? SELECT ALL THAT APPLY,,,,,80.0,,d3_specify_other,,
 Demographics,hispanic_latino,"Hispanic, Latino, or Spanish Origin",boolean,"Are you of Hispanic, Latino, or Spanish origin?",Yes,No,,True,,,d2,,
 Demographics,race,Race,string,"Racial category derived from the individual racial category fields.
   - Exactly one racial category field selected = title of racial category
