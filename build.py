@@ -119,6 +119,7 @@ if __name__ == "__main__":
         missing_values=definitions["missingValues"]
     
     )
+    clientschema.custom["version"] = definitions["version"]
     for name in ["baseline","time-points"]:
         path = Path(f"schemas/table-schema-{name}.json").resolve()
         schema = frictionless.Schema(path)
@@ -142,6 +143,7 @@ if __name__ == "__main__":
         missing_values=definitions["missingValues"]
     
     )
+    staffschema.custom["version"] = definitions["version"]
     for name in ["staff-baseline","staff-time-points"]:
         path = Path(f"schemas/table-schema-{name}.json").resolve()
         schema = frictionless.Schema(path)
