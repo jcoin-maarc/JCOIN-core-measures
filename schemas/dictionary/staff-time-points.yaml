@@ -4,7 +4,7 @@ title: 'Staff participants: staff-specific timepoint measures'
 description: Staff specific measures that may be collected at baseline or follow up
   time points.
 custom:
-  jcoin:participantType: Staff
+  jcoin:schemaType: Staff
   jcoin:missingValuesDescription:
     $ref: "#/_definitions/jcoin:missingValuesDescription"
 fields:

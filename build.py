@@ -12,6 +12,7 @@ from collections.abc import MutableMapping, MutableSequence, MutableSet,Sequence
 from functools import reduce
 
 from core_measures.utils import combine_schemas_to_excel,json_to_df
+import frictionless
 
 os.chdir(Path(__file__).parent)
 
@@ -88,15 +89,74 @@ if __name__ == "__main__":
     tblschemas = resolve_refs(dictionary,dictionary)
     del tblschemas["_definitions"]
 
+    # write individual schemas for data package
     for name,schema in tblschemas.items():
+
+        
         path = Path(f"schemas/table-schema-{name}.json").resolve()
         path.write_text(json.dumps(schema, indent=4))
         df = json_to_df(path)
+        # write csv versions
         csvpath = path.parent.with_stem("csvs")
         df.to_csv(csvpath / path.with_suffix(".csv").name,index=False)
 
-        xlsxpath = path.parent.with_name("xlsx")
-        xlsxpath.mkdir(exist_ok=True)
+    # write combined schemas for data discovery and 'joined' product based on schemaType
+    Path("schemas/combined").mkdir(parents=True,exist_ok=True)
+    definitions = load_yaml("schemas/dictionary/_definitions.yaml")
+    combineddescription = (
+    "This schema/data dictionary contains all fields collected baseline and follow ups."
+        "If marked, `jcoin:baseline_only` = True, the field is only collected at baseline (and not follow up interviews)"
+        "\n"
+        "\n"
+        f"{definitions['jcoin:missingValuesDescription']}"
+    )
 
-    combine_schemas_to_excel(csvpath.glob("*.csv"),str(xlsxpath/"core_measures.xlsx"))
-    combine_schemas_to_excel(csvpath.glob("*.csv"),str(xlsxpath/"core_measures_long.xlsx"),separate_sheets=False)
+    
+    clientschema = frictionless.Schema(
+        title="Client data dictionary",
+        description=combineddescription,
+        fields=[],
+        missing_values=definitions["missingValues"]
+    
+    )
+    for name in ["baseline","time-points"]:
+        path = Path(f"schemas/table-schema-{name}.json").resolve()
+        schema = frictionless.Schema(path)
+        for field in schema.fields:
+
+            if "baseline" in name:
+                custom = field.custom.get("custom",{})
+                custom["jcoin:baseline_only"] = True
+                field.custom.update(custom)
+            else:
+                if field.custom.get("custom",{}).get("jcoin:baseline_only"):
+                    del field.custom["custom"]["jcoin:baseline_only"]
+            
+            clientschema.set_field(frictionless.Field.from_descriptor(field.to_dict()))
+
+    clientschema.to_json("schemas/combined/table-schema-clients.json")            
+    staffschema = frictionless.Schema(
+        title="Staff data dictionary",
+        description=combineddescription,
+        fields=[],
+        missing_values=definitions["missingValues"]
+    
+    )
+    for name in ["staff-baseline","staff-time-points"]:
+        path = Path(f"schemas/table-schema-{name}.json").resolve()
+        schema = frictionless.Schema(path)
+
+        for field in schema.fields:
+
+            if "baseline" in name:
+                custom = field.custom.get("custom",{})
+                custom["jcoin:baseline_only"] = True
+                field.custom["custom"] = custom
+            else:
+                if field.custom.get("custom",{}).get("jcoin:baseline_only"):
+                    del field.custom["custom"]["jcoin:baseline_only"]
+            staffschema.set_field(frictionless.Field.from_descriptor(field.to_dict()))
+    staffschema.to_json("schemas/combined/table-schema-staff.json")
+    
+    Path("xlsx").mkdir(parents=True,exist_ok=True)
+    combine_schemas_to_excel(Path("schemas/combined/").resolve(),"xlsx/core_measures.xlsx")

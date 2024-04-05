@@ -1,5 +1,8 @@
 import pandas as pd 
 from frictionless import Schema
+from pathlib import Path
+
+from .json import json_to_df
 #TODO: change csvpaths to schema paths, make json tabular, and then make a frictionless plugin
 def _increase_colwidth(df,worksheet,index=False):
     """ 
@@ -33,14 +36,16 @@ def _format_headers(worksheet,freeze=True,wrap=True):
             for cell in row:
                 cell.alignment = cell.alignment.copy(wrap_text=True)
 
-def combine_schemas_to_excel(csvpaths,excelpath,separate_sheets=True):
-    csvpaths = list(csvpaths)
+def combine_schemas_to_excel(schemadir,excelpath):
+    """ takes a directory of frictionless schemas (in json format) and combines into an
+    excel package, writing to an excel file (table level properties in a README and subsequent sheets
+        containings fields for each schema)"""
     schemasheet = []
     with pd.ExcelWriter(excelpath,engine="openpyxl") as writer:
         
         ###generate README with non-fields properties ### 
-        for path in csvpaths:
-            schema = Schema(str(path).replace("csvs","schemas").replace(".csv",".json")).to_dict()
+        for path in Path(schemadir).glob("*.json"):
+            schema = Schema(path).to_dict()
             del schema["fields"]
             schema = {name:(",\n".join(item) if isinstance(item,list) else item) for name,item in schema.items()}
             schema['name'] = path.stem
@@ -49,7 +54,7 @@ def combine_schemas_to_excel(csvpaths,excelpath,separate_sheets=True):
         schemasheetdf = pd.DataFrame(schemasheet)
         cols = ['name','description']
         cols.extend([c for c in schemasheetdf.columns if not c in cols])
-        schemasheetdf[cols].to_excel(writer,sheet_name="README")
+        schemasheetdf.filter(items=cols).to_excel(writer,sheet_name="README")
         # wrap text of all cells
         worksheet = writer.sheets["README"]
         for row in worksheet.iter_rows(min_row=1, max_col=worksheet.max_column, max_row=len(schemasheetdf)):
@@ -58,23 +63,13 @@ def combine_schemas_to_excel(csvpaths,excelpath,separate_sheets=True):
         _increase_colwidth(schemasheetdf, worksheet)
 
         #### add the table schema csvs as sheets or as one combined sheet ###
-        if separate_sheets:
-            for path in csvpaths:
-                df = pd.read_csv(path)
-                df.to_excel(writer,sheet_name=path.stem,index=False)
-                # style sheet
-                worksheet = writer.sheets[path.stem]
-                _format_headers(worksheet)
-                _increase_colwidth(df, worksheet)
-        else:
-
-                df = pd.concat([pd.read_csv(path).assign(schema=path.stem) for path in csvpaths])
-                df.to_excel(writer,sheet_name="schemas",index=False)
-                # style sheet
-                worksheet = writer.sheets["schemas"]
-                _format_headers(worksheet)
-                _increase_colwidth(df, worksheet)
-
+        for path in Path(schemadir).glob("*.json"):
+            df = json_to_df(path)
+            df.to_excel(writer,sheet_name=path.stem,index=False)
+            # style sheet
+            worksheet = writer.sheets[path.stem]
+            _format_headers(worksheet)
+            _increase_colwidth(df, worksheet)
 
 
     

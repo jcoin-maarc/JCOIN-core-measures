@@ -6,7 +6,7 @@ description: Measures collected before the start of the study for client partici
   However, this is a slight misnomer as, for example, current_study_status is dynamically
   updated.
 custom:
-  jcoin:participantType: Client
+  jcoin:schemaType: Client
   jcoin:missingValuesDescription:
     $ref: "#/_definitions/jcoin:missingValuesDescription"
 fields:

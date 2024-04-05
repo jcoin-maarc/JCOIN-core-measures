@@ -7,7 +7,7 @@ description: 'Measures collected before the start of the study for staff partici
   However, this is a slight misnomer as, for example, current_study_status is dynamically
   updated.'
 custom:
-  jcoin:participantType: Staff
+  jcoin:schemaType: Staff
   jcoin:missingValuesDescription:
     $ref: "#/_definitions/jcoin:missingValuesDescription"
 fields:
