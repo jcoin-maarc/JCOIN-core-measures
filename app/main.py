@@ -17,8 +17,9 @@ def slugify(s):
   return s
 
 st.set_page_config(layout="wide")
-SCHEMA_DIR = "https://api.github.com/repos/jcoin-maarc/JCOIN-Core-Measures/contents/schemas"
-SCHEMA_DIR = str(Path(__file__).parents[1]/"schemas")
+SCHEMA_DIR = "https://api.github.com/repos/jcoin-maarc/JCOIN-Core-Measures/contents/schemas/combined"
+SCHEMA_DIR = str(Path(__file__).parents[1]/"schemas"/"combined")
+EXCELPATH = str(Path(__file__).parents[1]/"xlsx"/"core_measures.xlsx")
 study_name = "JCOIN Core Measures"
 fields_propnames = ["fields","data_dictionary"]
 field_propname = "fields"
@@ -40,12 +41,11 @@ schemas = [json.loads(path.read_text()) for path in Path(SCHEMA_DIR).glob("*.jso
 ## TODO: compile from schemas json array
 ## TODO: make option of csvs with descriptor
 ## NOTE: for now just leaving as core meaures
-excel = list(Path(SCHEMA_DIR).parent.joinpath("xlsx").glob("*"))[0]
-with open(excel,"rb") as f:
+with open(EXCELPATH,"rb") as f:
     st.download_button(
         f"Click here to download an excel file with all {study_name} data dictionaries",
         data=f,
-        file_name="core_measures"+"_"+current_date+".xlsx")
+        file_name="core_measures"+"_"+"v"+schemas[0]["version"]+".xlsx")
 
 ## Select schema by title
 selected = st.selectbox("Select a data dictionary:",options=[schema["title"] for schema in schemas])
@@ -104,5 +104,9 @@ for propname,prop in orderedschema.items():
     elif isinstance(prop,str):
         st.markdown(f"## `{propname}`")
         st.markdown(prop)
+    elif propname == "custom":
+        for _prop in prop:
+            st.write(prop)
+
     else:
         st.write(prop)

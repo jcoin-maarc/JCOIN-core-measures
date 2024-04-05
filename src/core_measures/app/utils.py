@@ -17,7 +17,7 @@ def load_schema(schema_name):
 def render_schema_page(fieldsdf,schema,schema_name):
 
     orderedschema = {}
-    for prop in ["title","name","description"]: #items to go first
+    for prop in ["version","title","name","description"]: #items to go first
         if prop in list(schema):
             orderedschema[prop] = schema.pop(prop)
     orderedschema.update(schema)
