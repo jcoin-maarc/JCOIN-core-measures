@@ -57,7 +57,7 @@ missingValues:
 
 jcoin:missingValuesDescription: |
   
-  **Below are extended descriptions of each `missingValue` (ie reserve code):**
+  **Below are extended descriptions of each `missingValues` (ie reserve code):**
 
     - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.
     - Refused: This code signifies that the respondent actively chose not to answer the question, despite being capable of providing a response.
