@@ -53,7 +53,7 @@ missingValues:
 - Left blank
 - Legitimately skipped
 - Not collected
-- Missing
+- Missing in error
 
 jcoin:missingValuesDescription: |
   
@@ -64,7 +64,7 @@ jcoin:missingValuesDescription: |
     - Left blank: This code indicates that the question was intentionally left unanswered by the respondent.
     - Legitimately skipped: This code is used when the question was intentionally skipped due to its inapplicability or irrelevance to the respondent's situation.
     - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.
-    - Missing: This code signifies that the data for the question is missing without any clear reason or explanation.
+    - Missing in error: This code signifies that the data for the question is missing without any clear reason or explanation.
 
 
 
