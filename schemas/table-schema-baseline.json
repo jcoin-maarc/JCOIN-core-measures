@@ -4,7 +4,7 @@
     "description": "Measures collected before the start of the study for client participants. As many of these measures are collected at 'baseline' it is currently called 'baseline.' However, this is a slight misnomer as, for example, current_study_status is dynamically updated.",
     "custom": {
         "jcoin:schemaType": "Client",
-        "jcoin:missingValuesDescription": "\n**Below are extended descriptions of each `missingValue` (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.\n  - Refused: This code signifies that the respondent actively chose not to answer the question, despite being capable of providing a response.\n  - Left blank: This code indicates that the question was intentionally left unanswered by the respondent.\n  - Legitimately skipped: This code is used when the question was intentionally skipped due to its inapplicability or irrelevance to the respondent's situation.\n  - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.\n  - Missing: This code signifies that the data for the question is missing without any clear reason or explanation.\n"
+        "jcoin:missingValuesDescription": "\n**Below are extended descriptions of each `missingValue` (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.\n  - Refused: This code signifies that the respondent actively chose not to answer the question, despite being capable of providing a response.\n  - Left blank: This code indicates that the question was intentionally left unanswered by the respondent.\n  - Legitimately skipped: This code is used when the question was intentionally skipped due to its inapplicability or irrelevance to the respondent's situation.\n  - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.\n  - Missing in error: This code signifies that the data for the question is missing without any clear reason or explanation.\n"
     },
     "fields": [
         {
@@ -604,6 +604,6 @@
         "Left blank",
         "Legitimately skipped",
         "Not collected",
-        "Missing"
+        "Missing in error"
     ]
 }
