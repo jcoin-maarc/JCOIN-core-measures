@@ -66,3 +66,5 @@ The public repository where data dictionaries are stored is located [here](https
     - Added annotation around the meaning of missing values.
     - Added version number
     - Clarified `visit_number` meaning
+- 2.3
+    - `missingValues` code `Missing` changed to `Missing in error`
