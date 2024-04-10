@@ -3,9 +3,12 @@ from pathlib import Path
 from collections.abc import MutableMapping
 import pandas as pd
 
-def json_to_df(path):
+def json_to_df(path_or_schema):
     # convert json to csv
-    table_fields = pd.json_normalize(json.loads(Path(path).read_text())['fields']).convert_dtypes()
+    if isinstance(path_or_schema,(Path,str)):
+        table_fields = pd.json_normalize(json.loads(Path(path_or_schema).read_text())['fields']).convert_dtypes()
+    else:
+        table_fields = pd.json_normalize(frictionless.Schema.from_descriptor(path_or_schema).fields).convert_dtypes()
     headers = table_fields.columns.to_list()
     cols = [c for c in ['section','name','title','type','description','trueValues','falseValues',
         'constraints.enum'] if c in headers]
