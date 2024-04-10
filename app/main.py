@@ -17,48 +17,49 @@ def slugify(s):
   return s
 
 st.set_page_config(layout="wide")
-SCHEMA_DIR = "https://api.github.com/repos/jcoin-maarc/JCOIN-Core-Measures/contents/schemas/combined"
-SCHEMA_DIR = str(Path(__file__).parents[1]/"schemas"/"combined")
-EXCELPATH = str(Path(__file__).parents[1]/"xlsx"/"core_measures.xlsx")
+GITREPO_DIR = "https://api.github.com/repos/jcoin-maarc/JCOIN-Core-Measures/contents"
+SCHEMA_DIR = f"{GITREPO_DIR}/schemas/combined?ref=mbkranz/dev"
+EXCELPATH = f"{GITREPO_DIR}/xlsx/core_measures.xlsx?ref=mbkranz/dev"
 study_name = "JCOIN Core Measures"
-fields_propnames = ["fields","data_dictionary"]
 field_propname = "fields"
 current_date = time.strftime("%Y_%m_%d")
 
+# Via github api
+## Read in schemas
+schemas = []
+for schema in requests.get(SCHEMA_DIR).json():
+    schema_download = requests.get(schema["download_url"]).json()
+    schemas.append(schema_download)
+
 # Study title 
 st.markdown(f"# {study_name}")
-
-## Read in schemas
-
-# Via github api
-# read_schema_dir = lambda schema_dir_url: requests.get(SCHEMA_DIR).json()
-# schemas = [json.loads(requests.get(schema["download_url"]).content) for schema in read_schema_dir(SCHEMA_DIR)]
-
-# Via local directory
-schemas = [json.loads(path.read_text()) for path in Path(SCHEMA_DIR).glob("*.json")]
 
 ## Download button of all schemas in excel format
 ## TODO: compile from schemas json array
 ## TODO: make option of csvs with descriptor
 ## NOTE: for now just leaving as core meaures
-with open(EXCELPATH,"rb") as f:
-    st.download_button(
-        f"Click here to download an excel file with all {study_name} data dictionaries",
-        data=f,
-        file_name="core_measures"+"_"+"v"+schemas[0]["version"]+".xlsx")
+st.download_button(
+    f"Click here to download an excel file with all {study_name} data dictionaries",
+    data=requests.get(EXCELPATH).json()["content"],
+    file_name=study_name.replace(" ","-").lower()+"_"+"v"+schemas[0]["version"]+".xlsx")
 
 ## Select schema by title
 selected = st.selectbox("Select a data dictionary:",options=[schema["title"] for schema in schemas])
 for schema in schemas:
     if selected==schema["title"]:
-        orderedschema = dict(schema)
+        selectedschema = dict(schema)
 
+orderedschema = {}
+orderedschema["version"] = selectedschema["version"]
+for name,item in selectedschema.items():
+    orderedschema[name] = item
 # Render schema properties
-
 for propname,prop in orderedschema.items():
-
+    if propname == "custom":
+        for _prop in prop:
+            st.write(_prop)
     ## fields property
-    if propname==field_propname:
+    elif propname==field_propname:
         st.markdown(f"## `{propname}`")
         
         # Format fields
@@ -100,13 +101,7 @@ for propname,prop in orderedschema.items():
         st.markdown(f"## `{propname}`")
         st.markdown("\n".join([f"- {val}" for val in prop]))
 
-    ## other property types
-    elif isinstance(prop,str):
+    ## other property types (strings, integers etc)
+    else:
         st.markdown(f"## `{propname}`")
         st.markdown(prop)
-    elif propname == "custom":
-        for _prop in prop:
-            st.write(prop)
-
-    else:
-        st.write(prop)
