@@ -1,6 +1,6 @@
 {
   "title": "Client data dictionary",
-  "description": "This schema/data dictionary contains all fields collected baseline and follow ups.If marked, `jcoin:baseline_only` = True, the field is only collected at baseline (and not follow up interviews)\n\n\n**Below are extended descriptions of each `missingValue` (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.\n  - Refused: This code signifies that the respondent actively chose not to answer the question, despite being capable of providing a response.\n  - Left blank: This code indicates that the question was intentionally left unanswered by the respondent.\n  - Legitimately skipped: This code is used when the question was intentionally skipped due to its inapplicability or irrelevance to the respondent's situation.\n  - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.\n  - Missing in error: This code signifies that the data for the question is missing without any clear reason or explanation.\n",
+  "description": "This schema/data dictionary contains all fields collected baseline and follow ups.If marked, `jcoin:baseline_only` = `True`, the field is only collected at baseline (and not follow up interviews)",
   "fields": [
     {
       "name": "hub_id",
@@ -95,7 +95,10 @@
       "name": "days_on_study",
       "type": "integer",
       "title": "Days on study",
-      "description": "The number of days on study as calculated by the visit date minus the baseline visit date (ie the anchor date).\nThe field is only necessary for participants who are no longer have a `current_study_status` of \"On study\".\nIn other words, it is for participants who have either completed the study or attrited.\n\nNOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.\n",
+      "description": "The number of days (anchor date is baseline visit date) on study as calculated by:\n\n** In baseline file: **\n1. the current date minus the baseline visit date, if on study\n2. the date of attrition minus the baseline visit date, if attrited\n3. the date of study completion minus the baseline visit date, if complete study\n\n**In timepoints file: **\n1. visit_date minus the baseline visit date\n\nNOTE: again, the baseline date is the anchor date for BOTH variables.\n",
+      "constraints": {
+        "required": true
+      },
       "section": "Enrollment",
       "jcoin:baseline_only": true
     },
@@ -4167,5 +4170,6 @@
     "Not collected",
     "Missing in error"
   ],
-  "version": "2.2.0"
+  "version": "2.3.0",
+  "jcoin:missingValuesDescription": "\n**Below are extended descriptions of each `missingValues` (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.\n  - Refused: This code signifies that the respondent actively chose not to answer the question, despite being capable of providing a response.\n  - Left blank: This code indicates that the question was intentionally left unanswered by the respondent.\n  - Legitimately skipped: This code is used when the question was intentionally skipped due to its inapplicability or irrelevance to the respondent's situation.\n  - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.\n  - Missing in error: This code signifies that the data for the question is missing without any clear reason or explanation.\n"
 }
