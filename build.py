@@ -105,10 +105,7 @@ if __name__ == "__main__":
     definitions = load_yaml("schemas/dictionary/_definitions.yaml")
     combineddescription = (
     "This schema/data dictionary contains all fields collected baseline and follow ups."
-        "If marked, `jcoin:baseline_only` = True, the field is only collected at baseline (and not follow up interviews)"
-        "\n"
-        "\n"
-        f"{definitions['jcoin:missingValuesDescription']}"
+        "If marked, `jcoin:baseline_only` = `True`, the field is only collected at baseline (and not follow up interviews)"
     )
 
     
@@ -117,9 +114,9 @@ if __name__ == "__main__":
         description=combineddescription,
         fields=[],
         missing_values=definitions["missingValues"]
-    
     )
     clientschema.custom["version"] = definitions["version"]
+    clientschema.custom["jcoin:missingValuesDescription"] = definitions["jcoin:missingValuesDescription"]
     for name in ["baseline","time-points"]:
         path = Path(f"schemas/table-schema-{name}.json").resolve()
         schema = frictionless.Schema(path)
@@ -135,7 +132,8 @@ if __name__ == "__main__":
             
             clientschema.set_field(frictionless.Field.from_descriptor(field.to_dict()))
 
-    clientschema.to_json("schemas/combined/table-schema-clients.json")            
+    clientschema.to_json("schemas/combined/table-schema-clients.json")
+              
     staffschema = frictionless.Schema(
         title="Staff data dictionary",
         description=combineddescription,
@@ -144,6 +142,7 @@ if __name__ == "__main__":
     
     )
     staffschema.custom["version"] = definitions["version"]
+    staffschema.custom["jcoin:missingValuesDescription"] = definitions["jcoin:missingValuesDescription"]
     for name in ["staff-baseline","staff-time-points"]:
         path = Path(f"schemas/table-schema-{name}.json").resolve()
         schema = frictionless.Schema(path)
