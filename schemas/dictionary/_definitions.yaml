@@ -40,12 +40,20 @@ days_on_study:
   title: Days on study
   type: integer
   description: |
-    The number of days on study as calculated by the visit date minus the baseline visit date (ie the anchor date).
-    The field is only necessary for participants who are no longer have a `current_study_status` of "On study".
-    In other words, it is for participants who have either completed the study or attrited.
+    The number of days (anchor date is baseline visit date) on study as calculated by:
 
-    NOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.
-  
+    ** In baseline file: **
+    1. the date data was last updated minus the baseline visit date, if on study
+    2. the date of attrition minus the baseline visit date, if attrited
+    3. the date of study completion minus the baseline visit date, if complete study
+
+    **In timepoints file: **
+    1. visit_date minus the baseline visit date
+
+    NOTE: again, the baseline date is the anchor date for BOTH variables.
+  constraints:
+    required: true
+
 
 missingValues:
 - Don't know
