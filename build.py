@@ -125,7 +125,7 @@ if __name__ == "__main__":
             if "baseline" in name:
                 custom = field.custom.get("custom",{})
                 custom["jcoin:baseline_only"] = True
-                field.custom.update(custom)
+                field.custom["custom"] = custom
             else:
                 if field.custom.get("custom",{}).get("jcoin:baseline_only"):
                     del field.custom["custom"]["jcoin:baseline_only"]
