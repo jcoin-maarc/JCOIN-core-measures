@@ -68,8 +68,6 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
     custom:
       jcoin:original_name: s1a
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -89,8 +87,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: s1b
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -110,8 +107,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: s1c
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -131,8 +127,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: s1d
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -153,8 +148,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: s1e
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -175,8 +169,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: s2a
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -196,8 +189,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: s2b
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -216,8 +208,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: s2c
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -2674,8 +2665,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1a
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2696,8 +2686,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1b
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2717,8 +2706,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1c
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2738,8 +2726,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1d
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2759,8 +2746,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1g
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2780,8 +2766,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1h
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2802,8 +2787,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1j
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2824,8 +2808,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1k
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2845,8 +2828,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1m
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2866,8 +2848,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r1n
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2887,8 +2868,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r2a
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -2908,8 +2888,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r2b
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3025,8 +3004,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r3a_first_dx
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3045,8 +3023,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r3b_first_dx
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3065,8 +3042,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r3c_first_dx
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3086,8 +3062,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r3d_first_dx
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3106,8 +3081,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r3e_first_dx
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3126,8 +3100,7 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-        - Do not know
-        - Not reported
+
     custom:
       jcoin:original_name: r3f_first_dx
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
