@@ -1328,7 +1328,7 @@ fields:
     title: Not candidate for OUD treatment
     type: boolean
     description: 'If respondent is not a candidate for OUD treatment, mark here and
-      skip this set of items:'
+      skip rest. NOTE: If `No` the rest of the Treatment Preferences fields should be `Legitimately skipped`'
     trueValues:
       - 'Yes'
     falseValues:
