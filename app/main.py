@@ -75,7 +75,6 @@ for propname,prop in orderedschema.items():
         fields_tbl = pd.json_normalize(orderedschema[field_propname])
         fields_columns = fields_tbl.columns.tolist()
         ## Toggle how fields are viewed and downloaded
-        selected_columns = st.multiselect(label="Select Properties",options=fields_columns,default=["name","description","custom.jcoin:original_name","constraints.enum","custom.jcoin:baseline_only"])
         
         ## Field view type
         field_view_exts = {"table":".csv","json records":".json"}
@@ -85,10 +84,12 @@ for propname,prop in orderedschema.items():
             horizontal=True)
 
         if fields_view_type=="table":
+            selected_columns = st.multiselect(label="Select Properties",options=fields_columns,default=["name","type","format","constraints.pattern","description","custom.jcoin:original_name","constraints.enum","custom.jcoin:baseline_only"])
             fields = orderedschema[field_propname] = fields_tbl[selected_columns]
             download_fields = lambda fields: fields.to_csv(index=False).encode('utf-8')
             st_fields = lambda fields: st.dataframe(fields)
         elif fields_view_type=="json records":
+            selected_columns = st.multiselect(label="Select Properties",options=fields_columns,default=fields_columns)
             flattened_fields= fields_tbl[selected_columns]
             flattened_fields.fillna("",inplace=True)
             fields = orderedschema[field_propname] = [unflatten_from_jsonpath(field) for field in flattened_fields.to_dict(orient="records")]
