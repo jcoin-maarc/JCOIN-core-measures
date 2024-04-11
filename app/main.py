@@ -18,8 +18,8 @@ def slugify(s):
 
 st.set_page_config(layout="wide")
 GITREPO_DIR = "https://api.github.com/repos/jcoin-maarc/JCOIN-Core-Measures/contents"
-SCHEMA_DIR = f"{GITREPO_DIR}/schemas/combined?ref=mbkranz/dev"
-EXCELPATH = f"{GITREPO_DIR}/xlsx/core_measures.xlsx?ref=mbkranz/dev"
+SCHEMA_DIR = f"{GITREPO_DIR}/schemas/combined"
+EXCELPATH = f"{GITREPO_DIR}/xlsx/core_measures.xlsx"
 study_name = "JCOIN Core Measures"
 field_propname = "fields"
 current_date = time.strftime("%Y_%m_%d")
@@ -35,7 +35,8 @@ def getschemas():
 @st.cache_data
 def getexcel():
     # TODO: compile from schemas
-    return requests.get(EXCELPATH).json()["content"]
+    excel = requests.get(EXCELPATH).json()["download_url"]
+    return requests.get(excel).content
 
 excel = getexcel()
 schemas = getschemas()
@@ -44,7 +45,7 @@ st.markdown(f"# {study_name}")
 
 st.download_button(
     f"Click here to download an excel file with all {study_name} data dictionaries",
-    data=excel,
+    data=getexcel(),
     file_name=study_name.replace(" ","-").lower()+"_"+"v"+schemas[0]["version"]+".xlsx")
 
 ## Select schema by title
