@@ -11,7 +11,9 @@
         "required": true
       },
       "section": "Record and linkage",
-      "jcoin:baseline_only": true
+      "custom": {
+        "jcoin:baseline_only": true
+      }
     },
     {
       "name": "jdc_person_id",
@@ -42,9 +44,7 @@
       "custom": {
         "jcoin:original_name": "quarter_enrolled",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "quarter_enrolled",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "state_of_site_enrollment",
@@ -60,9 +60,7 @@
       "custom": {
         "jcoin:original_name": "state_of_site_enrollment",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "state_of_site_enrollment",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "current_study_status",
@@ -86,10 +84,7 @@
         "jcoin:original_name": "current_study_status",
         "jcoin:note": "Re-incarcerated\" = re-incarceration leading to dropout or withdrawal and \"Withdrawn by investigator\" = withdrawal by investigator for other reasons not listed",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "current_study_status",
-      "jcoin:note": "Re-incarcerated\" = re-incarceration leading to dropout or withdrawal and \"Withdrawn by investigator\" = withdrawal by investigator for other reasons not listed",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "days_on_study",
@@ -110,9 +105,7 @@
       "custom": {
         "jcoin:original_name": "d1a",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d1a",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "sex_at_birth",
@@ -131,9 +124,7 @@
       "custom": {
         "jcoin:original_name": "o1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "o1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "gender_id",
@@ -156,10 +147,7 @@
         "jcoin:original_name": "o2",
         "jcoin:notes": "For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]\n False if not 'Male' and not 'Transfgender' else True",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "o2",
-      "jcoin:notes": "For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]\n False if not 'Male' and not 'Transfgender' else True",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "gender_id_condensed",
@@ -181,10 +169,7 @@
         "jcoin:original_name": "d4b",
         "jcoin:notes": "For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d4b",
-      "jcoin:notes": "For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race_white",
@@ -204,9 +189,7 @@
       "custom": {
         "jcoin:original_name": "d3_white",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3_white",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race_black",
@@ -226,9 +209,7 @@
       "custom": {
         "jcoin:original_name": "d3_black",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3_black",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race_AIAN",
@@ -248,9 +229,7 @@
       "custom": {
         "jcoin:original_name": "d3_american_indian",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3_american_indian",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race_hawaiian_OPI",
@@ -270,9 +249,7 @@
       "custom": {
         "jcoin:original_name": "d3_hawaiian",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3_hawaiian",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race_asian",
@@ -292,9 +269,7 @@
       "custom": {
         "jcoin:original_name": "d3_asian",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3_asian",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race_other",
@@ -314,9 +289,7 @@
       "custom": {
         "jcoin:original_name": "d3_other",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3_other",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race_AI_tribe",
@@ -330,9 +303,7 @@
       "custom": {
         "jcoin:original_name": "d3_specify_tribe",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3_specify_tribe",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race_other_specified",
@@ -346,9 +317,7 @@
       "custom": {
         "jcoin:original_name": "d3_specify_other",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3_specify_other",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "hispanic_latino",
@@ -368,9 +337,7 @@
       "custom": {
         "jcoin:original_name": "d2",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d2",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "race",
@@ -393,9 +360,7 @@
       "custom": {
         "jcoin:original_name": "d3",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d3",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "sex_orient_category",
@@ -415,9 +380,7 @@
       "custom": {
         "jcoin:original_name": "d4c",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d4c",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "sex_orient_other",
@@ -428,9 +391,7 @@
       "custom": {
         "jcoin:original_name": "d4c_specify_other",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d4c_specify_other",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "ever_pregnant",
@@ -452,10 +413,7 @@
         "jcoin:original_name": "d4d",
         "jcoin:notes": "Does this just apply to that past 90 days?  If not, then the participant should be able to check more than one response.",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d4d",
-      "jcoin:notes": "Does this just apply to that past 90 days?  If not, then the participant should be able to check more than one response.",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "marital_status",
@@ -475,9 +433,7 @@
       "custom": {
         "jcoin:original_name": "d5",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d5",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "living_as_married",
@@ -494,9 +450,7 @@
       "custom": {
         "jcoin:original_name": "d5a",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d5a",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "educ_category",
@@ -520,9 +474,7 @@
       "custom": {
         "jcoin:original_name": "d6",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d6",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "educ_highest_grade",
@@ -533,9 +485,7 @@
       "custom": {
         "jcoin:original_name": "d6_grade",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d6_grade",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "educ_other_specified",
@@ -546,9 +496,7 @@
       "custom": {
         "jcoin:original_name": "d6_specify_other",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "d6_specify_other",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "intv_while_incarc",
@@ -565,9 +513,7 @@
       "custom": {
         "jcoin:original_name": "u14f",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u14f",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "days_incarcerated_interval",
@@ -578,9 +524,7 @@
       "custom": {
         "jcoin:original_name": "u14g",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u14g",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "ever_rx_moud",
@@ -597,9 +541,7 @@
       "custom": {
         "jcoin:original_name": "u15",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "months_daily_bup",
@@ -610,9 +552,7 @@
       "custom": {
         "jcoin:original_name": "u15a1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15a1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "months_sublocade",
@@ -623,9 +563,7 @@
       "custom": {
         "jcoin:original_name": "u15b1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15b1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "months_weekly_brixadi",
@@ -636,9 +574,7 @@
       "custom": {
         "jcoin:original_name": "u15c1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15c1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "months_monthly_brixadi",
@@ -649,9 +585,7 @@
       "custom": {
         "jcoin:original_name": "u15d1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15d1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "months_probuphine_implant",
@@ -662,9 +596,7 @@
       "custom": {
         "jcoin:original_name": "u15e1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15e1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "months_daily_ntx",
@@ -675,9 +607,7 @@
       "custom": {
         "jcoin:original_name": "u15f1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15f1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "months_monthly_vivitrol",
@@ -688,9 +618,7 @@
       "custom": {
         "jcoin:original_name": "u15g1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15g1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "months_methadone",
@@ -701,9 +629,7 @@
       "custom": {
         "jcoin:original_name": "u15h1",
         "jcoin:baseline_only": true
-      },
-      "jcoin:original_name": "u15h1",
-      "jcoin:baseline_only": true
+      }
     },
     {
       "name": "visit_number",
