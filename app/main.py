@@ -25,12 +25,21 @@ field_propname = "fields"
 current_date = time.strftime("%Y_%m_%d")
 
 # Via github api
-## Read in schemas
-schemas = []
-for schema in requests.get(SCHEMA_DIR).json():
-    schema_download = requests.get(schema["download_url"]).json()
-    schemas.append(schema_download)
+## Read in schemas and excel
+@st.cache_data
+def getschemas():
+    schemas = []
+    for schema in requests.get(SCHEMA_DIR).json():
+        schema_download = requests.get(schema["download_url"]).json()
+        schemas.append(schema_download)
+    return schemas
 
+@st.cache_data
+def getexcel():
+    return requests.get(EXCELPATH).json()["content"]
+
+excel = getexcel()
+schemas = getschemas()
 # Study title 
 st.markdown(f"# {study_name}")
 
@@ -40,7 +49,7 @@ st.markdown(f"# {study_name}")
 ## NOTE: for now just leaving as core meaures
 st.download_button(
     f"Click here to download an excel file with all {study_name} data dictionaries",
-    data=requests.get(EXCELPATH).json()["content"],
+    data=excel,
     file_name=study_name.replace(" ","-").lower()+"_"+"v"+schemas[0]["version"]+".xlsx")
 
 ## Select schema by title
