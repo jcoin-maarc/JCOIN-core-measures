@@ -61,7 +61,7 @@ fields:
       jcoin:original_name: current_study_status
       jcoin:note: Re-incarcerated" = re-incarceration leading to dropout or withdrawal and "Withdrawn by investigator" = withdrawal by investigator for other reasons not listed
 
-  - $ref: "#/_definitions/days_on_study"
+  - $ref: "#/_definitions/total_days_on_study"
   - section: Demographics
     name: age
     title: Age

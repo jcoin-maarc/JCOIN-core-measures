@@ -34,7 +34,7 @@ shifted_visit_date:
   constraints:
     minimum: 1
   
-days_on_study:
+visit_days_on_study:
   section: Enrollment 
   name: days_on_study
   title: Days on study
@@ -42,18 +42,27 @@ days_on_study:
   description: |
     The number of days (anchor date is baseline visit date) on study as calculated by:
 
-    ** In baseline file: **
+    1. visit_date (date of interview) minus the baseline visit date (date of baseline interview)
+
+    NOTE: again, the baseline date is the anchor date.
+  constraints:
+    required: true
+
+total_days_on_study:
+  section: Enrollment 
+  name: days_on_study
+  title: Days on study
+  type: integer
+  description: |
+    The number of total days (anchor date is baseline visit date) on study as calculated by:
+
     1. the date data was last updated minus the baseline visit date, if on study
     2. the date of attrition minus the baseline visit date, if attrited
     3. the date of study completion minus the baseline visit date, if complete study
 
-    **In timepoints file: **
-    1. visit_date minus the baseline visit date
-
-    NOTE: again, the baseline date is the anchor date for BOTH variables.
+    NOTE: again, the baseline date is the anchor date.
   constraints:
     required: true
-
 
 missingValues:
 - Don't know
