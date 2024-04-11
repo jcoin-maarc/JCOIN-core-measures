@@ -56,7 +56,6 @@ fields:
         - Re-incarcerated
         - Deceased
         - Completed study
-        - Unknown
       required: true
     custom:
       jcoin:original_name: current_study_status
@@ -96,7 +95,6 @@ fields:
         - Transgender woman/trans woman/male-to-female (MTF)
         - Genderqueer/gender nonconforming/neither exclusively male nor female
         - Additional gender category (or other)
-        - Not reported
     custom:
       jcoin:original_name: o2
       jcoin:notes: "For gender/orientation/identity, use items O1-O2 if possible,\
@@ -114,7 +112,6 @@ fields:
         - Transgender
         - Gender nonconforming
         - Something else
-        - Not reported
     custom:
       jcoin:original_name: d4b
       jcoin:notes: For gender/orientation/identity, use items O1-O2 if possible, otherwise
@@ -351,7 +348,9 @@ fields:
     name: intv_while_incarc
     title: Interviewed during incarceration
     type: boolean
-    description: Interview conducted with participant during incarceration?
+    description: |
+      Interview conducted with participant during incarceration? 
+      If `No`, all fields in MOUD section involving prior to incarceration (PTI) should be `Legitimately skipped`
     trueValues:
       - 'Yes'
     falseValues:
@@ -362,15 +361,17 @@ fields:
     name: days_incarcerated_interval
     title: Days incarcerated (in past 30/xx days)
     type: integer
-    description: During the past xx/30 days, how many days have you been incarcerated?
+    description: During the past xx/30 days, how many days have you been incarcerated? 
     custom:
       jcoin:original_name: u14g
   - section: MOUD
     name: ever_rx_moud
     title: Medication ever prescribed for opioid use disorder?
     type: boolean
-    description: Have you ever been prescribed and taken medication to treat opioid
-      use disorder?  (Illicit use should be excluded.)
+    description: |
+      Have you ever been prescribed and taken medication to treat opioid
+      use disorder?  (Illicit use should be excluded.) 
+      If `No`, then all drug-related MOUD section questions should be `Legitimately skipped`
     trueValues:
       - 'Yes'
     falseValues:
@@ -378,6 +379,8 @@ fields:
     custom:
       jcoin:original_name: u15
   - section: MOUD
+  # MOUD sections
+  # 1. Lifetime months
     name: months_daily_bup
     title: 'Buprenorphine-naloxone or buprenorphine daily sublingual: Lifetime months'
     type: integer
@@ -434,6 +437,185 @@ fields:
     description: Lifetime months (methadone daily)
     custom:
       jcoin:original_name: u15h1
+  # 2.  Past 30/xx days prior to incarceration (PTI) days
+  - section: MOUD
+    name: days_pti_weekly_brixadi
+    title: 'Buprenorphine  weekly injection (Brixadi):  PTI days'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) days (buprenorphine weekly injection [Brixadi])
+    custom:
+      jcoin:original_name: u15c2
+  - section: MOUD
+    name: days_pti_monthly_brixadi
+    title: 'Buprenorphine  monthly injection (Brixadi):  PTI days'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) days (buprenorphine monthly injection [Brixadi])
+    custom:
+      jcoin:original_name: u15d2
+  - section: MOUD
+    name: days_pti_probuphine_implant
+    title: 'Buprenorphine 6-month implant (Probuphine):  PTI days'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) days (buprenorphine 6-month implant [Probuphine])
+    custom:
+      jcoin:original_name: u15e2
+  - section: MOUD
+    name: days_pti_daily_ntx
+    title: 'Naltrexone daily (oral):  PTI days'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) days (Naltrexone daily (oral))
+    custom:
+      jcoin:original_name: u15f2
+  - section: MOUD
+    name: days_pti_monthly_vivitrol
+    title: 'Naltrexone monthly injection (Vivitrol):  PTI days'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) days (Naltrexone monthly injection [Vivitrol])
+    custom:
+      jcoin:original_name: u15g2
+  - section: MOUD
+    name: days_pti_methadone
+    title: 'Methadone daily:  PTI days'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) days (methadone daily)
+    custom:
+      jcoin:original_name: u15h2
+  
+  # 3. Past 30 days PTI dose/day
+  - section: MOUD
+    name: dose_pti_weekly_brixadi
+    title: 'Buprenorphine  weekly injection (Brixadi): PTI Dose per day'
+    type: integer
+    description:  Past 30 days prior to incarceration (PTI) dose per day (buprenorphine weekly injection [Brixadi])
+    custom:
+      jcoin:original_name: u15c3
+  - section: MOUD
+    name: dose_pti_monthly_brixadi
+    title: 'Buprenorphine  monthly injection (Brixadi):  PTI Dose per day'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) dose per day (buprenorphine monthly injection [Brixadi])
+    custom:
+      jcoin:original_name: u15d3
+  - section: MOUD
+    name: dose_pti_probuphine_implant
+    title: 'Buprenorphine 6-month implant (Probuphine): PTI Dose per day'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) dose per day (buprenorphine 6-month implant [Probuphine])
+    custom:
+      jcoin:original_name: u15e3
+  - section: MOUD
+    name: dose_pti_daily_ntx
+    title: 'Naltrexone daily (oral): PTI Dose per day'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) dose per day (Naltrexone daily (oral))
+    custom:
+      jcoin:original_name: u15f3
+  - section: MOUD
+    name: dose_pti_monthly_vivitrol
+    title: 'Naltrexone monthly injection (Vivitrol): PTI Dose per day'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) dose per day (Naltrexone monthly injection [Vivitrol])
+    custom:
+      jcoin:original_name: u15g3
+  - section: MOUD
+    name: dose_pti_methadone
+    title: 'Methadone daily: PTI Dose per day'
+    type: integer
+    description: Past 30 days prior to incarceration (PTI) dose per day (methadone daily)
+    custom:
+      jcoin:original_name: u15h3
+  # 4.  Past 30/xx days 
+
+  - section: MOUD
+    name: days_weekly_brixadi
+    title: 'Buprenorphine  weekly injection (Brixadi): Past 30/xx days'
+    type: integer
+    description:  Past 30 days (or other number of days specified such as days since incarceration) (buprenorphine weekly injection [Brixadi])
+    custom:
+      jcoin:original_name: u15c4
+      jcoin:note: |
+        INTERVIEWER INSTRUCTIONS: if [number of days] in `days_incarcerated_interval` is less than 30/xx days, replace 30/xx
+        days with actual number of days participant has been incarcerated.
+  - section: MOUD
+    name: days_monthly_brixadi
+    title: 'Buprenorphine  monthly injection (Brixadi):  Past 30/xx days'
+    type: integer
+    description: Past 30 days (or other number of days specified such as days since incarceration)  (buprenorphine monthly injection [Brixadi])
+    custom:
+      jcoin:original_name: u15d4
+  - section: MOUD
+    name: days_probuphine_implant
+    title: 'Buprenorphine 6-month implant (Probuphine):  Past 30/xx days'
+    type: integer
+    description: Past 30 days (or other number of days specified such as days since incarceration) (buprenorphine 6-month implant [Probuphine])
+    custom:
+      jcoin:original_name: u15e4
+  - section: MOUD
+    name: days_daily_ntx
+    title: 'Naltrexone daily (oral):  Past 30/xx days'
+    type: integer
+    description: Past 30 days (or other number of days specified such as days since incarceration) (Naltrexone daily (oral))
+    custom:
+      jcoin:original_name: u15f4
+  - section: MOUD
+    name: days_monthly_vivitrol
+    title: 'Naltrexone monthly injection (Vivitrol):  Past 30/xx days'
+    type: integer
+    description: Past 30 days (or other number of days specified such as days since incarceration) (Naltrexone monthly injection [Vivitrol])
+    custom:
+      jcoin:original_name: u15g4
+  - section: MOUD
+    name: days_methadone
+    title: 'Methadone daily:  Past 30/xx days'
+    type: integer
+    description: Past 30 days (or other number of days specified such as days since incarceration) (methadone daily)
+    custom:
+      jcoin:original_name: u15h4
+
+  # 5.   Past 30/xx days dose/day
+
+  - section: MOUD
+    name: dose_weekly_brixadi
+    title: 'Buprenorphine  weekly injection (Brixadi): Dose per day'
+    type: integer
+    description:  Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine weekly injection [Brixadi])
+    custom:
+      jcoin:original_name: u15c5
+  - section: MOUD
+    name: dose_monthly_brixadi
+    title: 'Buprenorphine  monthly injection (Brixadi):  Dose per day'
+    type: integer
+    description: Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine monthly injection [Brixadi])
+    custom:
+      jcoin:original_name: u15d5
+  - section: MOUD
+    name: dose_probuphine_implant
+    title: 'Buprenorphine 6-month implant (Probuphine):  Dose per day'
+    type: integer
+    description: Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine 6-month implant [Probuphine])
+    custom:
+      jcoin:original_name: u15e5
+  - section: MOUD
+    name: dose_daily_ntx
+    title: 'Naltrexone daily (oral):  Dose per day'
+    type: integer
+    description: Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (Naltrexone daily (oral))
+    custom:
+      jcoin:original_name: u15f5
+  - section: MOUD
+    name: dose_monthly_vivitrol
+    title: 'Naltrexone monthly injection (Vivitrol):  Dose per day'
+    type: integer
+    description: Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (Naltrexone monthly injection [Vivitrol])
+    custom:
+      jcoin:original_name: u15g5
+  - section: MOUD
+    name: dose_methadone
+    title: 'Methadone daily:  Dose per day'
+    type: integer
+    description: Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (methadone daily)
+    custom:
+      jcoin:original_name: u15h5
 primaryKey:
   - jdc_person_id
 missingValues:
