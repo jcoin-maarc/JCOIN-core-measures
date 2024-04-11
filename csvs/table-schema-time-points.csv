@@ -17,6 +17,18 @@ issues with type conversion errors, the date is of type integer
 
 NOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.
 ",,,,,,,shifted_visit_date,1.0,20220101|20240531,%Y%m%d,,
+Enrollment,days_on_study,Days on study,integer,"The number of days (anchor date is baseline visit date) on study as calculated by:
+
+** In baseline file: **
+1. the date data was last updated minus the baseline visit date, if on study
+2. the date of attrition minus the baseline visit date, if attrited
+3. the date of study completion minus the baseline visit date, if complete study
+
+**In timepoints file: **
+1. visit_date minus the baseline visit date
+
+NOTE: again, the baseline date is the anchor date for BOTH variables.
+",,,,True,,,,,,,,
 Record and linkage,visit_type,Visit Type,string,The visit type/category (either baseline or follow up),,,Baseline|Follow-up,True,,,visit_type,,,,,
 Substance Use,last_drug_use,Last time drug use,string,[... you used alcohol or other drugs weekly or more often?  ] When was the last time you...,,,Never|More than a year ago|4 to 12 months ago|2 to 3 months ago|Past month|Do not know|Not reported,,,,s1a,,,,"Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise",
 Substance Use,last_getting_using_drugs,"Last time drug use: getting, using, or recovering",string,"[... You spent a lot of time either getting alcohol or other drugs, using alcohol or other drugs, or recovering from the effects of alcohol or other drugs (feeling sick)? ] When was the last time you...",,,Never|More than a year ago|4 to 12 months ago|2 to 3 months ago|Past month|Do not know|Not reported,,,,s1b,,,,"Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise",

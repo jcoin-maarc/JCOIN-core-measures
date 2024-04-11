@@ -9,7 +9,7 @@ study.
 Enrollment,days_on_study,Days on study,integer,"The number of days (anchor date is baseline visit date) on study as calculated by:
 
 ** In baseline file: **
-1. the current date minus the baseline visit date, if on study
+1. the date data was last updated minus the baseline visit date, if on study
 2. the date of attrition minus the baseline visit date, if attrited
 3. the date of study completion minus the baseline visit date, if complete study
 

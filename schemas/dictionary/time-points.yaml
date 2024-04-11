@@ -42,6 +42,7 @@ fields:
     custom:
       jcoin:original_name: visit_month
   - $ref: "#/_definitions/shifted_visit_date"
+  - $ref: "#/_definitions/days_on_study"
   - section: Record and linkage
     name: visit_type
     title: Visit Type

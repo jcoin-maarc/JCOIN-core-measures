@@ -95,12 +95,11 @@
       "name": "days_on_study",
       "type": "integer",
       "title": "Days on study",
-      "description": "The number of days (anchor date is baseline visit date) on study as calculated by:\n\n** In baseline file: **\n1. the current date minus the baseline visit date, if on study\n2. the date of attrition minus the baseline visit date, if attrited\n3. the date of study completion minus the baseline visit date, if complete study\n\n**In timepoints file: **\n1. visit_date minus the baseline visit date\n\nNOTE: again, the baseline date is the anchor date for BOTH variables.\n",
+      "description": "The number of days (anchor date is baseline visit date) on study as calculated by:\n\n** In baseline file: **\n1. the date data was last updated minus the baseline visit date, if on study\n2. the date of attrition minus the baseline visit date, if attrited\n3. the date of study completion minus the baseline visit date, if complete study\n\n**In timepoints file: **\n1. visit_date minus the baseline visit date\n\nNOTE: again, the baseline date is the anchor date for BOTH variables.\n",
       "constraints": {
         "required": true
       },
-      "section": "Enrollment",
-      "jcoin:baseline_only": true
+      "section": "Enrollment"
     },
     {
       "name": "age",
