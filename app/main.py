@@ -24,8 +24,6 @@ study_name = "JCOIN Core Measures"
 field_propname = "fields"
 current_date = time.strftime("%Y_%m_%d")
 
-# Via github api
-## Read in schemas and excel
 @st.cache_data
 def getschemas():
     schemas = []
@@ -36,6 +34,7 @@ def getschemas():
 
 @st.cache_data
 def getexcel():
+    # TODO: compile from schemas
     return requests.get(EXCELPATH).json()["content"]
 
 excel = getexcel()
@@ -43,10 +42,6 @@ schemas = getschemas()
 # Study title 
 st.markdown(f"# {study_name}")
 
-## Download button of all schemas in excel format
-## TODO: compile from schemas json array
-## TODO: make option of csvs with descriptor
-## NOTE: for now just leaving as core meaures
 st.download_button(
     f"Click here to download an excel file with all {study_name} data dictionaries",
     data=excel,
