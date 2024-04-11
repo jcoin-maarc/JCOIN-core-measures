@@ -4,23 +4,22 @@ from pathlib import Path
 
 from .json import json_to_df
 #TODO: change csvpaths to schema paths, make json tabular, and then make a frictionless plugin
-def _increase_colwidth(df,worksheet,index=False):
+def _increase_colwidth(df,colwidths,worksheet,index=False):
     """ 
     widen columns in worksheet object based on length of longest text
     default is no index in worksheet
+
+    colwidths is mapping of column name to width
     """ 
     headers = ['index'] + df.columns.tolist() if index else df.columns.tolist()
     for i, col in enumerate(headers):
-        column_len = df[col].astype(str).str.len().max()
-
-        if col in ['description','title','constraints.enum','encodings']:
-            column_len = max(column_len, len(col))/2
-        elif col=='type':
-            column_len = max(column_len,len(col)) + 3
+        if col in colwidths:
+            worksheet.column_dimensions[chr(65 + i)].width = colwidths[col]
         else:
-            column_len = max(column_len,len(col))
-
-        worksheet.column_dimensions[chr(65 + i)].width = column_len
+            if "description" in col.lower():
+                worksheet.column_dimensions[chr(65 + i)].width = 36
+            else:
+                worksheet.column_dimensions[chr(65 + i)].width = 11
 
 
 def _format_headers(worksheet,freeze=True,wrap=True):
@@ -57,10 +56,11 @@ def combine_schemas_to_excel(schemadir,excelpath):
         schemasheetdf.filter(items=cols).to_excel(writer,sheet_name="README")
         # wrap text of all cells
         worksheet = writer.sheets["README"]
-        for row in worksheet.iter_rows(min_row=1, max_col=worksheet.max_column, max_row=len(schemasheetdf)):
-            for cell in row:
-                cell.alignment = cell.alignment.copy(wrap_text=True)
-        _increase_colwidth(schemasheetdf, worksheet)
+        readme_colwidths = {}
+        _increase_colwidth(schemasheetdf,readme_colwidths, worksheet)
+        # for row in worksheet.iter_rows(min_row=1, max_col=worksheet.max_column, max_row=len(schemasheetdf)):
+        #     for cell in row:
+        #         cell.alignment = cell.alignment.copy(wrap_text=True)
 
         #### add the table schema csvs as sheets or as one combined sheet ###
         for path in Path(schemadir).glob("*.json"):
@@ -69,7 +69,8 @@ def combine_schemas_to_excel(schemadir,excelpath):
             # style sheet
             worksheet = writer.sheets[path.stem]
             _format_headers(worksheet)
-            _increase_colwidth(df, worksheet)
+            schema_colwidths = {}
+            _increase_colwidth(df,schema_colwidths, worksheet)
 
 
     
