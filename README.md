@@ -66,5 +66,8 @@ The public repository where data dictionaries are stored is located [here](https
     - Added annotation around the meaning of missing values.
     - Added version number
     - Clarified `visit_number` meaning
-- 2.3
+- 2.3.0
     - `missingValues` code `Missing` changed to `Missing in error`
+- 2.4.0
+    - Incorporated rest of MOUD
+    - Removed field level reserve codes redundant or inconsistent with schema-level reserve codes
