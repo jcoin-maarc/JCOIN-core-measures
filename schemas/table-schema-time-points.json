@@ -73,7 +73,7 @@
             "name": "days_on_study",
             "title": "Days on study",
             "type": "integer",
-            "description": "The number of days (anchor date is baseline visit date) on study as calculated by:\n\n** In baseline file: **\n1. the date data was last updated minus the baseline visit date, if on study\n2. the date of attrition minus the baseline visit date, if attrited\n3. the date of study completion minus the baseline visit date, if complete study\n\n**In timepoints file: **\n1. visit_date minus the baseline visit date\n\nNOTE: again, the baseline date is the anchor date for BOTH variables.\n",
+            "description": "The number of days (anchor date is baseline visit date) on study as calculated by:\n\n1. visit_date (date of interview) minus the baseline visit date (date of baseline interview)\n\nNOTE: again, the baseline date is the anchor date.\n",
             "constraints": {
                 "required": true
             }
@@ -107,9 +107,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -129,9 +127,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -151,9 +147,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -173,9 +167,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -195,9 +187,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -217,9 +207,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -239,9 +227,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -261,9 +247,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -1535,7 +1519,7 @@
             "name": "oud_tx_not_appropriate",
             "title": "Not candidate for OUD treatment",
             "type": "boolean",
-            "description": "If respondent is not a candidate for OUD treatment, mark here and skip this set of items:",
+            "description": "If respondent is not a candidate for OUD treatment, mark here and skip rest. NOTE: If `No` the rest of the Treatment Preferences fields should be `Legitimately skipped`",
             "trueValues": [
                 "Yes"
             ],
@@ -3001,9 +2985,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3023,9 +3005,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3045,9 +3025,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3067,9 +3045,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3089,9 +3065,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3111,9 +3085,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3133,9 +3105,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3155,9 +3125,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3177,9 +3145,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3199,9 +3165,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3221,9 +3185,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3243,9 +3205,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3367,9 +3327,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3389,9 +3347,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3411,9 +3367,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3433,9 +3387,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3455,9 +3407,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {
@@ -3477,9 +3427,7 @@
                     "More than a year ago",
                     "4 to 12 months ago",
                     "2 to 3 months ago",
-                    "Past month",
-                    "Do not know",
-                    "Not reported"
+                    "Past month"
                 ]
             },
             "custom": {

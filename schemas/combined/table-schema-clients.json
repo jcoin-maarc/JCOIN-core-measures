@@ -74,8 +74,7 @@
           "Withdrawn by investigator",
           "Re-incarcerated",
           "Deceased",
-          "Completed study",
-          "Unknown"
+          "Completed study"
         ],
         "required": true
       },
@@ -90,7 +89,7 @@
       "name": "days_on_study",
       "type": "integer",
       "title": "Days on study",
-      "description": "The number of days (anchor date is baseline visit date) on study as calculated by:\n\n** In baseline file: **\n1. the date data was last updated minus the baseline visit date, if on study\n2. the date of attrition minus the baseline visit date, if attrited\n3. the date of study completion minus the baseline visit date, if complete study\n\n**In timepoints file: **\n1. visit_date minus the baseline visit date\n\nNOTE: again, the baseline date is the anchor date for BOTH variables.\n",
+      "description": "The number of days (anchor date is baseline visit date) on study as calculated by:\n\n1. visit_date (date of interview) minus the baseline visit date (date of baseline interview)\n\nNOTE: again, the baseline date is the anchor date.\n",
       "constraints": {
         "required": true
       },
@@ -138,8 +137,7 @@
           "Transgender man/trans man/female-to-male (FTM)",
           "Transgender woman/trans woman/male-to-female (MTF)",
           "Genderqueer/gender nonconforming/neither exclusively male nor female",
-          "Additional gender category (or other)",
-          "Not reported"
+          "Additional gender category (or other)"
         ]
       },
       "section": "Demographics",
@@ -160,8 +158,7 @@
           "Female",
           "Transgender",
           "Gender nonconforming",
-          "Something else",
-          "Not reported"
+          "Something else"
         ]
       },
       "section": "Demographics",
@@ -502,7 +499,7 @@
       "name": "intv_while_incarc",
       "type": "boolean",
       "title": "Interviewed during incarceration",
-      "description": "Interview conducted with participant during incarceration?",
+      "description": "Interview conducted with participant during incarceration? \nIf `No`, all fields in MOUD section involving prior to incarceration (PTI) should be `Legitimately skipped`\n",
       "trueValues": [
         "Yes"
       ],
@@ -530,7 +527,7 @@
       "name": "ever_rx_moud",
       "type": "boolean",
       "title": "Medication ever prescribed for opioid use disorder?",
-      "description": "Have you ever been prescribed and taken medication to treat opioid use disorder?  (Illicit use should be excluded.)",
+      "description": "Have you ever been prescribed and taken medication to treat opioid\nuse disorder?  (Illicit use should be excluded.) \nIf `No`, then all drug-related MOUD section questions should be `Legitimately skipped`\n",
       "trueValues": [
         "Yes"
       ],
@@ -632,6 +629,271 @@
       }
     },
     {
+      "name": "days_pti_weekly_brixadi",
+      "type": "integer",
+      "title": "Buprenorphine  weekly injection (Brixadi):  PTI days",
+      "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine weekly injection [Brixadi])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15c2",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_pti_monthly_brixadi",
+      "type": "integer",
+      "title": "Buprenorphine  monthly injection (Brixadi):  PTI days",
+      "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine monthly injection [Brixadi])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15d2",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_pti_probuphine_implant",
+      "type": "integer",
+      "title": "Buprenorphine 6-month implant (Probuphine):  PTI days",
+      "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine 6-month implant [Probuphine])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15e2",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_pti_daily_ntx",
+      "type": "integer",
+      "title": "Naltrexone daily (oral):  PTI days",
+      "description": "Past 30 days prior to incarceration (PTI) days (Naltrexone daily (oral))",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15f2",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_pti_monthly_vivitrol",
+      "type": "integer",
+      "title": "Naltrexone monthly injection (Vivitrol):  PTI days",
+      "description": "Past 30 days prior to incarceration (PTI) days (Naltrexone monthly injection [Vivitrol])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15g2",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_pti_methadone",
+      "type": "integer",
+      "title": "Methadone daily:  PTI days",
+      "description": "Past 30 days prior to incarceration (PTI) days (methadone daily)",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15h2",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_pti_weekly_brixadi",
+      "type": "integer",
+      "title": "Buprenorphine  weekly injection (Brixadi): PTI Dose per day",
+      "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine weekly injection [Brixadi])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15c3",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_pti_monthly_brixadi",
+      "type": "integer",
+      "title": "Buprenorphine  monthly injection (Brixadi):  PTI Dose per day",
+      "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine monthly injection [Brixadi])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15d3",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_pti_probuphine_implant",
+      "type": "integer",
+      "title": "Buprenorphine 6-month implant (Probuphine): PTI Dose per day",
+      "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine 6-month implant [Probuphine])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15e3",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_pti_daily_ntx",
+      "type": "integer",
+      "title": "Naltrexone daily (oral): PTI Dose per day",
+      "description": "Past 30 days prior to incarceration (PTI) dose per day (Naltrexone daily (oral))",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15f3",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_pti_monthly_vivitrol",
+      "type": "integer",
+      "title": "Naltrexone monthly injection (Vivitrol): PTI Dose per day",
+      "description": "Past 30 days prior to incarceration (PTI) dose per day (Naltrexone monthly injection [Vivitrol])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15g3",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_pti_methadone",
+      "type": "integer",
+      "title": "Methadone daily: PTI Dose per day",
+      "description": "Past 30 days prior to incarceration (PTI) dose per day (methadone daily)",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15h3",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_weekly_brixadi",
+      "type": "integer",
+      "title": "Buprenorphine  weekly injection (Brixadi): Past 30/xx days",
+      "description": "Past 30 days (or other number of days specified such as days since incarceration) (buprenorphine weekly injection [Brixadi])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15c4",
+        "jcoin:note": "INTERVIEWER INSTRUCTIONS: if [number of days] in `days_incarcerated_interval` is less than 30/xx days, replace 30/xx\ndays with actual number of days participant has been incarcerated.\n",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_monthly_brixadi",
+      "type": "integer",
+      "title": "Buprenorphine  monthly injection (Brixadi):  Past 30/xx days",
+      "description": "Past 30 days (or other number of days specified such as days since incarceration)  (buprenorphine monthly injection [Brixadi])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15d4",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_probuphine_implant",
+      "type": "integer",
+      "title": "Buprenorphine 6-month implant (Probuphine):  Past 30/xx days",
+      "description": "Past 30 days (or other number of days specified such as days since incarceration) (buprenorphine 6-month implant [Probuphine])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15e4",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_daily_ntx",
+      "type": "integer",
+      "title": "Naltrexone daily (oral):  Past 30/xx days",
+      "description": "Past 30 days (or other number of days specified such as days since incarceration) (Naltrexone daily (oral))",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15f4",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_monthly_vivitrol",
+      "type": "integer",
+      "title": "Naltrexone monthly injection (Vivitrol):  Past 30/xx days",
+      "description": "Past 30 days (or other number of days specified such as days since incarceration) (Naltrexone monthly injection [Vivitrol])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15g4",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "days_methadone",
+      "type": "integer",
+      "title": "Methadone daily:  Past 30/xx days",
+      "description": "Past 30 days (or other number of days specified such as days since incarceration) (methadone daily)",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15h4",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_weekly_brixadi",
+      "type": "integer",
+      "title": "Buprenorphine  weekly injection (Brixadi): Dose per day",
+      "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine weekly injection [Brixadi])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15c5",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_monthly_brixadi",
+      "type": "integer",
+      "title": "Buprenorphine  monthly injection (Brixadi):  Dose per day",
+      "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine monthly injection [Brixadi])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15d5",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_probuphine_implant",
+      "type": "integer",
+      "title": "Buprenorphine 6-month implant (Probuphine):  Dose per day",
+      "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine 6-month implant [Probuphine])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15e5",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_daily_ntx",
+      "type": "integer",
+      "title": "Naltrexone daily (oral):  Dose per day",
+      "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (Naltrexone daily (oral))",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15f5",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_monthly_vivitrol",
+      "type": "integer",
+      "title": "Naltrexone monthly injection (Vivitrol):  Dose per day",
+      "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (Naltrexone monthly injection [Vivitrol])",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15g5",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
+      "name": "dose_methadone",
+      "type": "integer",
+      "title": "Methadone daily:  Dose per day",
+      "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (methadone daily)",
+      "section": "MOUD",
+      "custom": {
+        "jcoin:original_name": "u15h5",
+        "jcoin:baseline_only": true
+      }
+    },
+    {
       "name": "visit_number",
       "type": "integer",
       "title": "Visit Number",
@@ -705,9 +967,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Substance Use",
@@ -727,9 +987,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Substance Use",
@@ -749,9 +1007,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Substance Use",
@@ -771,9 +1027,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Substance Use",
@@ -793,9 +1047,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Substance Use",
@@ -815,9 +1067,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Substance Use",
@@ -837,9 +1087,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Substance Use",
@@ -859,9 +1107,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Substance Use",
@@ -2133,7 +2379,7 @@
       "name": "oud_tx_not_appropriate",
       "type": "boolean",
       "title": "Not candidate for OUD treatment",
-      "description": "If respondent is not a candidate for OUD treatment, mark here and skip this set of items:",
+      "description": "If respondent is not a candidate for OUD treatment, mark here and skip rest. NOTE: If `No` the rest of the Treatment Preferences fields should be `Legitimately skipped`",
       "trueValues": [
         "Yes"
       ],
@@ -3599,9 +3845,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3621,9 +3865,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3643,9 +3885,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3665,9 +3905,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3687,9 +3925,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3709,9 +3945,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3731,9 +3965,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3753,9 +3985,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3775,9 +4005,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3797,9 +4025,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3819,9 +4045,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3841,9 +4065,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3965,9 +4187,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -3987,9 +4207,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -4009,9 +4227,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -4031,9 +4247,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -4053,9 +4267,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
@@ -4075,9 +4287,7 @@
           "More than a year ago",
           "4 to 12 months ago",
           "2 to 3 months ago",
-          "Past month",
-          "Do not know",
-          "Not reported"
+          "Past month"
         ]
       },
       "section": "Risk of Harms and Consequences",
