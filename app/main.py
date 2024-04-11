@@ -75,7 +75,7 @@ for propname,prop in orderedschema.items():
         fields_tbl = pd.json_normalize(orderedschema[field_propname])
         fields_columns = fields_tbl.columns.tolist()
         ## Toggle how fields are viewed and downloaded
-        selected_columns = st.multiselect(label="Select Properties",options=fields_columns,default=fields_columns)
+        selected_columns = st.multiselect(label="Select Properties",options=fields_columns,default=["name","description","custom.jcoin:original_name","constraints.enum","custom.jcoin:baseline_only"])
         
         ## Field view type
         field_view_exts = {"table":".csv","json records":".json"}
