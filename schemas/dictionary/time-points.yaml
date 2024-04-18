@@ -28,14 +28,15 @@ fields:
     name: visit_month
     title: Visit Month
     type: string
-    description: 'Marks the intended visit time point. For example, if the baseline
+    description: |
+      Marks the intended visit time point. For example, if the baseline
       visit, this should be populated as Baseline.\n If a follow up, this should be
       populated as the Month and month number (eg., for a study with a Baseline and
       3,6, and 12 month follow ups the values should be Baseline, Month 3, Month 6,
       Month 12, respectively.\nIMPORTANT: this field represents the intended month
       in the study design.\nSo, for example, if a participant comes back 2 months
       after Baseline for the Month 1 follow up, this field should still be populated
-      with Month 1.'
+      with Month 1.
     constraints:
       required: true
       pattern: ^Baseline$|^\d+ month$
