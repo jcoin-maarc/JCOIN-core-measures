@@ -77,52 +77,18 @@ fields:
     custom:
       jcoin:original_name: d1a
   - section: Demographics
-    name: sex_at_birth
-    title: Sex at birth
-    type: string
-    description: What sex was originally listed on your birth certificate?
+    name: hispanic_latino
+    title: Hispanic, Latino, or Spanish Origin
+    type: boolean
+    description: Are you of Hispanic, Latino, or Spanish origin?
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
     constraints:
-      enum:
-        - Male
-        - Female
-        - Decline to answer
-        - Something else
+      required: true
     custom:
-      jcoin:original_name: o1
-  - section: Demographics
-    name: gender_id
-    title: Gender Identity
-    type: string
-    description: What is your gender identity?
-    constraints:
-      enum:
-        - Male
-        - Female
-        - Transgender man/trans man/female-to-male (FTM)
-        - Transgender woman/trans woman/male-to-female (MTF)
-        - Genderqueer/gender nonconforming/neither exclusively male nor female
-        - Additional gender category (or other)
-    custom:
-      jcoin:original_name: o2
-      jcoin:notes: "For gender/orientation/identity, use items O1-O2 if possible,\
-        \ otherwise use D4a-D4c.   [Must use one or the other.]\n False if not 'Male'\
-        \ and not 'Transfgender' else True"
-  - section: Demographics
-    name: gender_id_condensed
-    title: Gender Identity (condensed)
-    type: string
-    description: What is your gender identity?
-    constraints:
-      enum:
-        - Male
-        - Female
-        - Transgender
-        - Gender nonconforming
-        - Something else
-    custom:
-      jcoin:original_name: d4b
-      jcoin:notes: For gender/orientation/identity, use items O1-O2 if possible, otherwise
-        use D4a-D4c.   [Must use one or the other.]
+      jcoin:original_name: d2
   - section: Demographics
     name: race_white
     title: 'Race: White'
@@ -223,19 +189,6 @@ fields:
     custom:
       jcoin:original_name: d3_specify_other
   - section: Demographics
-    name: hispanic_latino
-    title: Hispanic, Latino, or Spanish Origin
-    type: boolean
-    description: Are you of Hispanic, Latino, or Spanish origin?
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    constraints:
-      required: true
-    custom:
-      jcoin:original_name: d2
-  - section: Demographics
     name: race
     title: Race
     type: string
@@ -255,6 +208,98 @@ fields:
     custom:
       jcoin:original_name: d3
   - section: Demographics
+    name: sex_at_birth
+    title: Sex at birth
+    type: string
+    description: What sex was originally listed on your birth certificate?
+    constraints:
+      enum:
+        - Male
+        - Female
+        - Decline to answer
+        - Something else (specify)
+    custom:
+      jcoin:original_name: o1
+  -section: Demographics
+    name: sex_at_birth_oth
+    title: Sex at birth (other)
+    type: string
+    description: Specify other sex at birth
+    custom:
+      jcoin:original_name: o1_oth
+  - section: Demographics
+    name: gender_id
+    title: Gender Identity
+    type: string
+    description: Do you think of yourself as...?
+    constraints:
+      enum:
+        - Male
+        - Female
+        - Transgender man/trans man/female-to-male (FTM)
+        - Transgender woman/trans woman/male-to-female (MTF)
+        - Genderqueer/gender nonconforming/neither exclusively male nor female
+        - Non-binary
+        - Additional gender category (or other)
+    custom:
+      jcoin:original_name: o2
+      jcoin:notes: "For gender/orientation/identity, use items O1-O2 if possible,\
+        \ otherwise use D4a-D4c.   [Must use one or the other.]\n False if not 'Male'\
+        \ and not 'Transgender' else True"
+  -section: Demographics
+    name: gender_id_oth
+    title: Gender identity (other)
+    type: string
+    description: Specify other gender identity
+    custom:
+      jcoin:original_name: o2_oth
+  - section: Demographics
+    name: sex_at_birth_condensed
+    title: Sex at birth (condensed)
+    type: string
+    description: What was your sex at birth?
+    constraints:
+      enum:
+        - Male
+        - Female
+        - Something else (specify)
+    custom:
+      jcoin:original_name: d4a
+      jcoin:optional: true
+  -section: Demographics
+    name: 
+    title: Sex at birth (condensed, other)
+    type: string
+    description: Specify other sex at birth
+    custom:
+      jcoin:original_name: d4a_oth
+      jcoin:optional: true
+  - section: Demographics
+    name: gender_id_condensed
+    title: Gender Identity (condensed)
+    type: string
+    description: What is your gender identity?
+    constraints:
+      enum:
+        - Male
+        - Female
+        - Transgender
+        - Gender nonconforming
+        - Something else (specify)
+    custom:
+      jcoin:original_name: d4b
+      jcoin:optional: true
+      jcoin:notes: For gender/orientation/identity, use items O1-O2 if possible, otherwise
+        use D4a-D4c.   [Must use one or the other.]
+    - section: Demographics
+      name: gender_id_condensed_oth
+      title: Other gender identity (condensed)
+      type: string
+      description: Specify other gender identity
+      custom:
+        jcoin:original_name: d4b_oth
+        jcoin:optional: True
+  - section: Demographics
     name: sex_orient_category
     title: Sexual orientation
     type: string
@@ -268,13 +313,15 @@ fields:
         - Something else
     custom:
       jcoin:original_name: d4c
+      jcoin:optional: true
   - section: Demographics
     name: sex_orient_other
     title: 'Sexual orientation:  Other specified'
     type: string
-    description: 'Sexual orientation:  Do you think of yourself as...'
+    description: Other sexual orientation
     custom:
-      jcoin:original_name: d4c_specify_other
+      jcoin:original_name: d4c_oth
+      jcoin:optional: true
   - section: Demographics
     name: ever_pregnant
     title: Ever pregnant
