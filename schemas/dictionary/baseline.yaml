@@ -63,6 +63,13 @@ fields:
 
   - $ref: "#/_definitions/total_days_on_study"
   - section: Demographics
+    name: dob
+    title: Date of birth
+    type: string
+    description: What is your birth date?
+    custom: 
+      jcoin:original-name: d1
+  - section: Demographics
     name: age
     title: Age
     type: integer
