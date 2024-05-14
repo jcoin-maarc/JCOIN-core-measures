@@ -4,6 +4,7 @@ setup(
     name='core_measures',
     version="0.2.0",
     install_requires=[
+        "pandas",
         "streamlit",
         "frictionless",
         "xlsxwriter",

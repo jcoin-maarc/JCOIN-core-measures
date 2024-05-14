@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from collections.abc import MutableMapping
 import pandas as pd
-
+import frictionless 
 def json_to_df(path_or_schema):
     # convert json to csv
     if isinstance(path_or_schema,(Path,str)):
