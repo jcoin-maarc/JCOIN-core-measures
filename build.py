@@ -168,3 +168,4 @@ if __name__ == "__main__":
     
     #### Write to excel ###
     Path("xlsx").mkdir(parents=True,exist_ok=True)
+    combine_schemas_to_excel(Path("schemas/combined/").resolve(),"xlsx/core_measures.xlsx")
