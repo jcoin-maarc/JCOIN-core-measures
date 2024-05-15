@@ -9,7 +9,7 @@ description: '**Research question:** Among people with OUD who have recently bee
   TODO: Write out entire calculation for `patient preference alignmnet - made up of
   prefer_moud_type + y_moud` based on these variables
 
-  TODO: Write out calculation to get y_moud
+  TODO: Write out calculation to get y_moud (derived from months_xxx_)
 
   '
 fields:

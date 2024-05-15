@@ -214,7 +214,7 @@ if __name__ == "__main__":
     schema.description += "\n"
     schema.description += "**Outcome variable**: `patient preference alignmnet - made up of prefer_moud_type + y_moud`\n"
     schema.description += "TODO: Write out entire calculation for `patient preference alignmnet - made up of prefer_moud_type + y_moud` based on these variables\n"
-    schema.description += "TODO: Write out calculation to get y_moud\n"
+    schema.description += "TODO: Write out calculation to get y_moud (derived from months_xxx_)\n"
 
     schema.to_yaml("schemas/collab-projects/treatment-preferences.yaml")
 
