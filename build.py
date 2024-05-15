@@ -77,7 +77,7 @@ def run_pipeline_step(input, step):
         raise Exception("Step must be at least of length 1")
 
 if __name__ == "__main__":
-    # compile frictionless schema fields
+    ##### COMPILE frictionless schema fields ########
     dictionary = load_all_yamls()
 
     # compile json schema fields
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     tblschemas = resolve_refs(dictionary,dictionary)
     del tblschemas["_definitions"]
 
-    # write individual schemas for data package
+    ##### WRITEindividual schemas for data package ##########
     for name,schema in tblschemas.items():
 
         
@@ -100,8 +100,10 @@ if __name__ == "__main__":
         csvpath = path.parent.with_stem("csvs")
         df.to_csv(csvpath / path.with_suffix(".csv").name,index=False)
 
+    ###### COMBINED DDs #######
     # write combined schemas for data discovery and 'joined' product based on schemaType
     Path("schemas/combined").mkdir(parents=True,exist_ok=True)
+    Path("csvs/combined").mkdir(parents=True,exist_ok=True)
     definitions = load_yaml("schemas/dictionary/_definitions.yaml")
     combineddescription = (
     "This schema/data dictionary contains all fields collected baseline and follow ups."
@@ -109,6 +111,7 @@ if __name__ == "__main__":
     )
 
     
+    ## Client combined data dictionaries
     clientschema = frictionless.Schema(
         title="Client data dictionary",
         description=combineddescription,
@@ -133,7 +136,10 @@ if __name__ == "__main__":
             clientschema.set_field(frictionless.Field.from_descriptor(field.to_dict()))
 
     clientschema.to_json("schemas/combined/table-schema-clients.json")
-              
+    json_to_df("schemas/combined/table-schema-clients.json").to_csv("csvs/combined/table-schema-clients.csv",index=False)    
+    
+    
+    ## staff combined data dictionaries
     staffschema = frictionless.Schema(
         title="Staff data dictionary",
         description=combineddescription,
@@ -158,6 +164,7 @@ if __name__ == "__main__":
                     del field.custom["custom"]["jcoin:baseline_only"]
             staffschema.set_field(frictionless.Field.from_descriptor(field.to_dict()))
     staffschema.to_json("schemas/combined/table-schema-staff.json")
+    json_to_df("schemas/combined/table-schema-staff.json").to_csv("csvs/combined/table-schema-staff.csv",index=False)
     
+    #### Write to excel ###
     Path("xlsx").mkdir(parents=True,exist_ok=True)
-    combine_schemas_to_excel(Path("schemas/combined/").resolve(),"xlsx/core_measures.xlsx")
