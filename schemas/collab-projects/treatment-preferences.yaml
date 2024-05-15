@@ -1,0 +1,293 @@
+title: MOUD treatment preferences
+description: '**Research question:** Among people with OUD who have recently been
+  jailed, what are their MOUD treatment preferences,how likely are they to be receiving
+  their preferred treatment and what factors are associated with preference
+
+  **Outcome variable**: `patient preference alignmnet - made up of prefer_moud_type
+  + y_moud`
+
+  TODO: Write out entire calculation for `patient preference alignmnet - made up of
+  prefer_moud_type + y_moud` based on these variables
+
+  TODO: Write out calculation to get y_moud
+
+  '
+fields:
+  - name: jdc_person_id
+    type: string
+    title: JCOIN data commons person identifier
+    description: The generated unique identifier specific to the JCOIN Data Commons
+      for a given individual (client or staff).
+    constraints:
+      required: true
+      maxLength: 9
+      pattern: '[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
+    section: Record and linkage
+    custom:
+      jcoin:original_name: jdc_person_id
+  - name: race
+    type: string
+    title: Race
+    description: "Racial category derived from the individual racial category fields.\n\
+      \  - Exactly one racial category field selected = title of racial category\n\
+      \  - Two or more selected = Multiracial \n"
+    constraints:
+      required: true
+      enum:
+        - White
+        - Black or African American
+        - American Indian or Alaska Native
+        - Asian
+        - Native Hawaiian or Other Pacific Islander
+        - Some other race
+        - Multiracial
+    section: Demographics
+    custom:
+      jcoin:original_name: d3
+      jcoin:baseline_only: true
+  - name: marital_status
+    type: string
+    title: Marital status
+    description: What is your marital status?
+    constraints:
+      enum:
+        - Married
+        - Widowed
+        - Divorced
+        - Separated
+        - Never married
+    section: Demographics
+    custom:
+      jcoin:original_name: d5
+      jcoin:baseline_only: true
+  - name: months_daily_bup
+    type: integer
+    title: 'Buprenorphine-naloxone or buprenorphine daily sublingual: Lifetime months'
+    description: Lifetime months (buprenorphine-naloxone or buprenorphine daily sublingual
+      [e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets])
+    section: MOUD
+    custom:
+      jcoin:original_name: u15a1
+      jcoin:baseline_only: true
+  - name: months_sublocade
+    type: integer
+    title: 'Buprenorphine injection (Sublocade):  Lifetime months'
+    description: Lifetime months (buprenorphine injection [Sublocade])
+    section: MOUD
+    custom:
+      jcoin:original_name: u15b1
+      jcoin:baseline_only: true
+  - name: months_weekly_brixadi
+    type: integer
+    title: 'Buprenorphine  weekly injection (Brixadi):  Lifetime months'
+    description: Lifetime months (buprenorphine weekly injection [Brixadi])
+    section: MOUD
+    custom:
+      jcoin:original_name: u15c1
+      jcoin:baseline_only: true
+  - name: months_monthly_brixadi
+    type: integer
+    title: 'Buprenorphine  monthly injection (Brixadi):  Lifetime months'
+    description: Lifetime months (buprenorphine monthly injection [Brixadi])
+    section: MOUD
+    custom:
+      jcoin:original_name: u15d1
+      jcoin:baseline_only: true
+  - name: months_probuphine_implant
+    type: integer
+    title: 'Buprenorphine 6-month implant (Probuphine):  Lifetime months'
+    description: Lifetime months (buprenorphine 6-month implant [Probuphine])
+    section: MOUD
+    custom:
+      jcoin:original_name: u15e1
+      jcoin:baseline_only: true
+  - name: months_daily_ntx
+    type: integer
+    title: 'Naltrexone daily (oral):  Lifetime months'
+    description: Lifetime months (Naltrexone daily (oral))
+    section: MOUD
+    custom:
+      jcoin:original_name: u15f1
+      jcoin:baseline_only: true
+  - name: months_monthly_vivitrol
+    type: integer
+    title: 'Naltrexone monthly injection (Vivitrol):  Lifetime months'
+    description: Lifetime months (Naltrexone monthly injection [Vivitrol])
+    section: MOUD
+    custom:
+      jcoin:original_name: u15g1
+      jcoin:baseline_only: true
+  - name: months_methadone
+    type: integer
+    title: 'Methadone daily:  Lifetime months'
+    description: Lifetime months (methadone daily)
+    section: MOUD
+    custom:
+      jcoin:original_name: u15h1
+      jcoin:baseline_only: true
+  - name: last_drug_use
+    type: string
+    title: Last time drug use
+    description: '[... you used alcohol or other drugs weekly or more often?  ] When
+      was the last time you...'
+    constraints:
+      enum:
+        - Never
+        - More than a year ago
+        - 4 to 12 months ago
+        - 2 to 3 months ago
+        - Past month
+    section: Substance Use
+    custom:
+      jcoin:original_name: s1a
+      jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
+        values that cant be accounted for by skip logic. In future, may want to make
+        more precise
+  - name: last_withdrawal
+    type: string
+    title: 'Last time drug use: withdrawal'
+    description: '[... You had withdrawal problems from alcohol or other drugs like
+      shaky hands, throwing up, having trouble sitting still or sleeping, or you used
+      any  alcohol or other drugs to stop being sick or avoid withdrawal problems?
+      ] When was the last time you...'
+    constraints:
+      enum:
+        - Never
+        - More than a year ago
+        - 4 to 12 months ago
+        - 2 to 3 months ago
+        - Past month
+    section: Substance Use
+    custom:
+      jcoin:original_name: s1e
+      jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
+        values that cant be accounted for by skip logic. In future, may want to make
+        more precise
+  - name: last_used_opioids
+    type: string
+    title: 'Last time drug use: any opioids'
+    description: '[... used any kind of heroin, fentanyl or other opioid?(such as
+      codeine, Darvocet, Darvon, Demerol, Dilaudid, Karachi, OxyContin, Oxys, Percocet,
+      Propoxyphene, morphine, opium, Talwin or Tylenol with codeine, Vicodin, Zohydro)?]
+      When was the last time...'
+    constraints:
+      enum:
+        - Never
+        - More than a year ago
+        - 4 to 12 months ago
+        - 2 to 3 months ago
+        - Past month
+    section: Substance Use
+    custom:
+      jcoin:original_name: s2a
+      jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
+        values that cant be accounted for by skip logic. In future, may want to make
+        more precise
+  - name: last_opioid_overdose
+    type: string
+    title: 'Last time drug use: opioid overdose'
+    description: '[... had an opioid overdose? [used enough of the drug that it produced
+      a life-threatening reaction that required medical attention]] When was the last
+      time...'
+    constraints:
+      enum:
+        - Never
+        - More than a year ago
+        - 4 to 12 months ago
+        - 2 to 3 months ago
+        - Past month
+    section: Substance Use
+    custom:
+      jcoin:original_name: s2b
+      jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
+        values that cant be accounted for by skip logic. In future, may want to make
+        more precise
+  - name: currently_incarcerated
+    type: boolean
+    title: Current jail or prison
+    description: Are you currently in jail or prison? (CAN MARK IF OBVIOUS)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    section: Justice Involvement
+    custom:
+      jcoin:original_name: j3e
+      jcoin:notes: 'MBK: added Unknown to satisfy a small amount of respondents for
+        one hub.'
+  - name: age_first_arrest
+    type: integer
+    title: First time arrest
+    description: '[...how old were you the first time you were arrested? ] During
+      your lifetime...'
+    section: Justice Involvement
+    custom:
+      jcoin:original_name: j5b
+  - name: age_first_convicted
+    type: integer
+    title: First time adjudication conviction
+    description: '[...how old were you the first time you were adjudicated or convicted?]
+      During your lifetime...'
+    section: Justice Involvement
+    custom:
+      jcoin:original_name: j5e
+  - name: prefer_moud_type
+    type: string
+    title: Preferred OUD medication
+    description: 'Which OUD medication treatment type would you most prefer to receive
+      if it were available to you now? (SELECT ONLY ONE) [SKIP LOGIC:  If M3=2, ask
+      M4. If M3=3, ask M5. Otherwise go to next set of questions.]'
+    constraints:
+      enum:
+        - Methadone
+        - Buprenorphine/Suboxone
+        - Naltrexone/Vivitrol
+        - Don't know/No preference
+    section: Treatment Preferences
+    custom:
+      jcoin:original_name: m3
+  - name: household_people
+    type: integer
+    title: People in household
+    description: '[How many people, including yourself, are there in your household?]
+      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
+    section: Demographics
+    custom:
+      jcoin:original_name: d7a
+      jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o3
+  - name: work_days
+    type: integer
+    title: Number of days worked
+    description: During the past xx days (since last assessment), on how many days
+      have you worked?
+    section: Demographics
+    custom:
+      jcoin:original_name: d8a
+      jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o14
+missingValues:
+  - Don't know
+  - Refused
+  - Left blank
+  - Legitimately skipped
+  - Not collected
+  - Missing in error
+version: 2.4.0
+jcoin:missingValuesDescription: "\n**Below are extended descriptions of each `missingValues`\
+  \ (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent\
+  \ did not have the knowledge or information required to answer the question.\n \
+  \ - Refused: This code signifies that the respondent actively chose not to answer\
+  \ the question, despite being capable of providing a response.\n  - Left blank:\
+  \ This code indicates that the question was intentionally left unanswered by the\
+  \ respondent.\n  - Legitimately skipped: This code is used when the question was\
+  \ intentionally skipped due to its inapplicability or irrelevance to the respondent's\
+  \ situation.\n  - Not collected: This code indicates that the data for the question\
+  \ was not collected or recorded by the survey administrator or interviewer.\n  -\
+  \ Missing in error: This code signifies that the data for the question is missing\
+  \ without any clear reason or explanation.\n"

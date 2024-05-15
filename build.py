@@ -169,3 +169,55 @@ if __name__ == "__main__":
     #### Write to excel ###
     Path("xlsx").mkdir(parents=True,exist_ok=True)
     combine_schemas_to_excel(Path("schemas/combined/").resolve(),"xlsx/core_measures.xlsx")
+
+
+    ### CREATE COLLABORATIVE PROJECT SCHEMAS ##
+
+    Path("schemas/collab-projects/").mkdir(exist_ok=True,parents=True)
+    schema = frictionless.Schema("schemas/combined/table-schema-clients.json")
+    
+    treatment_preferences = [
+        "jdc_person_id",
+        "currently_incarcerated",
+        "prefer_moud_type",
+        "race",
+        "marital_status",
+        "household_people",
+        "work_days",
+        "last_opioid_overdose",
+        "last_used_opioids",
+        "last_withdrawal",
+        "last_drug_use",
+        "age_first_arrest",
+        "age_first_convicted",
+        "months_daily_bup",
+        "months_sublocade",
+        "months_weekly_brixadi",
+        "months_monthly_brixadi",
+        "months_probuphine_implant",
+        "months_daily_ntx",	
+        "months_monthly_vivitrol",
+        "months_methadone"
+    ]
+
+    newfields = []
+    for field in schema.fields:
+        if field.name in treatment_preferences:
+            newfields.append(field)
+
+    if not len(treatment_preferences) == len(newfields):
+        raise Exception
+    schema.fields = newfields
+    schema.title = "MOUD treatment preferences"
+    schema.description = ("**Research question:** Among people with OUD who have recently been jailed, what are their MOUD treatment preferences,"
+        "how likely are they to be receiving their preferred treatment and what factors are associated with preference")
+    schema.description += "\n"
+    schema.description += "**Outcome variable**: `patient preference alignmnet - made up of prefer_moud_type + y_moud`\n"
+    schema.description += "TODO: Write out entire calculation for `patient preference alignmnet - made up of prefer_moud_type + y_moud` based on these variables\n"
+    schema.description += "TODO: Write out calculation to get y_moud\n"
+
+    schema.to_yaml("schemas/collab-projects/treatment-preferences.yaml")
+
+    
+    
+
