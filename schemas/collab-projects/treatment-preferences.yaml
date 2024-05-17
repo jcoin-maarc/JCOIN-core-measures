@@ -1,17 +1,4 @@
 title: MOUD treatment preferences
-description: '**Research question:** Among people with OUD who have recently been
-  jailed, what are their MOUD treatment preferences,how likely are they to be receiving
-  their preferred treatment and what factors are associated with preference
-
-  **Outcome variable**: `patient preference alignmnet - made up of prefer_moud_type
-  + y_moud`
-
-  TODO: Write out entire calculation for `patient preference alignmnet - made up of
-  prefer_moud_type + y_moud` based on these variables
-
-  TODO: Write out calculation to get y_moud (derived from months_xxx_)
-
-  '
 fields:
   - name: jdc_person_id
     type: string
@@ -25,6 +12,49 @@ fields:
     section: Record and linkage
     custom:
       jcoin:original_name: jdc_person_id
+  - name: age
+    type: integer
+    title: Age
+    description: About how old are you? (top coded at 90)
+    section: Demographics
+    custom:
+      jcoin:original_name: d1a
+      jcoin:baseline_only: true
+  - name: gender_id
+    type: string
+    title: Gender Identity
+    description: What is your gender identity?
+    constraints:
+      enum:
+        - Male
+        - Female
+        - Transgender man/trans man/female-to-male (FTM)
+        - Transgender woman/trans woman/male-to-female (MTF)
+        - Genderqueer/gender nonconforming/neither exclusively male nor female
+        - Additional gender category (or other)
+  - name: sex_orient_category
+    type: string
+    title: Sexual orientation
+    description: "Sexual orientation:  Do you think of yourself as..."
+    constraints:
+      enum:
+        - Straight or heterosexual
+        - Lesbian or gay
+        - Bisexual
+        - Queer,pansexual, and/or questioning
+        - Something else
+    section: Demographics
+    custom:
+      jcoin:original_name: d4c
+      jcoin:baseline_only: true
+  - name: sex_orient_other
+    type: string
+    title: "Sexual orientation:  Other specified"
+    description: "Sexual orientation:  Do you think of yourself as..."
+    section: Demographics
+    custom:
+      jcoin:original_name: d4c_specify_other
+      jcoin:baseline_only: true
   - name: race
     type: string
     title: Race
@@ -279,15 +309,19 @@ missingValues:
   - Not collected
   - Missing in error
 version: 2.4.0
-jcoin:missingValuesDescription: "\n**Below are extended descriptions of each `missingValues`\
-  \ (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent\
-  \ did not have the knowledge or information required to answer the question.\n \
-  \ - Refused: This code signifies that the respondent actively chose not to answer\
-  \ the question, despite being capable of providing a response.\n  - Left blank:\
-  \ This code indicates that the question was intentionally left unanswered by the\
-  \ respondent.\n  - Legitimately skipped: This code is used when the question was\
-  \ intentionally skipped due to its inapplicability or irrelevance to the respondent's\
-  \ situation.\n  - Not collected: This code indicates that the data for the question\
-  \ was not collected or recorded by the survey administrator or interviewer.\n  -\
-  \ Missing in error: This code signifies that the data for the question is missing\
-  \ without any clear reason or explanation.\n"
+jcoin:missingValuesDescription: |
+  Below are extended descriptions of each `missingValues` (i.e., reserve code):
+
+    - Don't know: This code indicates that the respondent did not have the
+      knowledge or information required to answer the question.
+    - Refused: This code signifies that the respondent actively chose not to
+      answer the question, despite being capable of providing a response.
+    - Left blank: This code indicates that the question was intentionally left
+      unanswered by the respondent.
+    - Legitimately skipped: This code is used when the question was
+      intentionally skipped due to its inapplicability or irrelevance to the
+      respondent's situation.
+    - Not collected: This code indicates that the data for the question was
+      not collected or recorded by the survey administrator or interviewer.
+    - Missing in error: This code signifies that the data for the question is
+      missing without any clear reason or explanation.
