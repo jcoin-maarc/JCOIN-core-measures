@@ -244,8 +244,7 @@ fields:
     custom:
       jcoin:original_name: o2
       jcoin:notes: "For gender/orientation/identity, use items O1-O2 if possible,\
-        \ otherwise use D4a-D4c.   [Must use one or the other.]\n False if not 'Male'\
-        \ and not 'Transgender' else True"
+        \ otherwise use D4a-D4c.   [Must use one or the other.]
   -section: Demographics
     name: gender_id_oth
     title: Gender identity (other)
