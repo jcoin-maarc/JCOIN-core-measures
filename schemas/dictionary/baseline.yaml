@@ -129,6 +129,19 @@ fields:
       required: true
     custom:
       jcoin:original_name: d3_american_indian
+   - section: Demographics
+    name: race_asian
+    title: 'Race: Asian'
+    type: boolean
+    description: '[Asian] What is your race? SELECT ALL THAT APPLY'
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    constraints:
+      required: true
+    custom:
+      jcoin:original_name: d3_asian
   - section: Demographics
     name: race_hawaiian_OPI
     title: 'Race: Native Hawaiian or Other Pacific Islander'
@@ -143,20 +156,7 @@ fields:
       required: true
     custom:
       jcoin:original_name: d3_hawaiian
-  - section: Demographics
-    name: race_asian
-    title: 'Race: Asian'
-    type: boolean
-    description: '[Asian] What is your race? SELECT ALL THAT APPLY'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    constraints:
-      required: true
-    custom:
-      jcoin:original_name: d3_asian
-  - section: Demographics
+    - section: Demographics
     name: race_other
     title: 'Race: Other'
     type: boolean
@@ -244,7 +244,7 @@ fields:
     custom:
       jcoin:original_name: o2
       jcoin:notes: "For gender/orientation/identity, use items O1-O2 if possible,\
-        \ otherwise use D4a-D4c.   [Must use one or the other.]
+        \ otherwise use D4a-D4c.   [Must use one or the other.]"
   -section: Demographics
     name: gender_id_oth
     title: Gender identity (other)
@@ -308,7 +308,7 @@ fields:
         - Straight or heterosexual
         - Lesbian or gay
         - Bisexual
-        - Queer,pansexual, and/or questioning
+        - Queer, pansexual, and/or questioning
         - Something else
     custom:
       jcoin:original_name: d4c
@@ -332,12 +332,9 @@ fields:
         - Currently pregnant
         - Previously pregnant, had a child
         - Previously pregnant, did not have a child
-        - Not applicable
-        - Don't know
     custom:
       jcoin:original_name: d4d
-      jcoin:notes: Does this just apply to that past 90 days?  If not, then the participant
-        should be able to check more than one response.
+      jcoin:notes: TODO May need to accommodate mulitple responses.
   - section: Demographics
     name: marital_status
     title: Marital status
@@ -397,6 +394,97 @@ fields:
       the highest degree you have received?
     custom:
       jcoin:original_name: d6_specify_other
+  - section: Demographics
+    name: household_num
+    title: Number of people in household
+    type: integer
+    description: How many people, including yourself, are there in your household?
+    custom:
+      jcoin:original_name: d7a
+      jcoin:notes: |
+        "The next few questions are about your household in the [past 90 days]/[90 days /
+        prior to entering jail]. Your household includes people you live with, and with whom you share /
+        your income and expenses -- husband, wife, children, relatives, and others."
+  - section: Demographics
+    name: household_under18
+    title: Number of people under age 18 in household
+    type: integer
+    description: How many of the people in your household are under the age of 18?
+    custom:
+      jcoin:original_name: d7b
+      jcoin:notes: |
+        "The next few questions are about your household in the [past 90 days]/[90 days /
+        prior to entering jail]. Your household includes people you live with, and with whom you share /
+        your income and expenses -- husband, wife, children, relatives, and others."
+  - section: Demographics
+    name: income_total
+    title: Total income of everyone in household that provided support
+    type: integer
+    description: During the past 90 days (prior to entering jail or prison/since your lsat assessment),
+      what was the total income of everyone in your household together that provided you with support?
+    custom:
+      jcoin:original_name: d7c
+      jcoin:notes: |
+        "The next question is about the income of everyone in your household together.  We do not need an /
+        exact number.  You can give your answer to the nearest hundreds or thousands of dollars if that is easier."
+      jcoin:optional: true
+  - section: Demographics
+    name: income_total_legal
+    title: Total household income from legal sources
+    type: string
+    description: During the past 12 months, which of the following is the category that your total household income from 
+      legal sources would be in?
+    custom:
+      jcoin:original_name: d7d
+  - section: Demographics
+    name: public_assistance_yn
+    title: Received public assistance in past 12 months (since last assessment)
+    type: string
+    description: During the past 12 months (since last assessment), did your household receive any public assistance 
+      like unemployment, food stamps/TANF, subsidized housing, or supplemental security income?
+    constraints:
+      enum:
+        - No
+        - Yes
+    custom:
+      jcoin:original_name: d7d1
+      jcoin:optional: true
+  - section: Demographics
+    name: public_assistance_amount
+    title: Public assistance amount
+    type: integer
+    description: During the past 12 months (since last assessment), approximately how much money has your household all 
+      together received from public assistance sources like unemployment, food stamps (TANF), subsidized housing, supplemental security income?
+    custom:
+      jcoin:original_name: d7d2
+      jcoin:optional: true
+  - section: Demographics
+    name: nonemployment_income_yn
+    title: Received non-employment income from other sources?
+    type: string
+    description: During the past 12 months (since last assessment), did your household receive any other non-employment income sources 
+      like retirement, pension, alimony, child support, or interest?
+    custom: 
+      jcoin:original_name: d7e1
+      jcoin:optional: true
+  -section: Demographics
+    name: nonemployment_income_amount
+    title: Amount of non-employment income received
+    type: integer
+    description: During the past 12 months (since last assessment), approximately how much money has your household all 
+      together received from other non-employment sources like retirement, pension, alimony, child support, interest?
+    custom:
+      jcoin:original_name: d7e2
+      jcoin:optional: true
+  - section: Demographics
+    name: income_illegal_yn
+    title: Received money from illegal sources?
+    type: string
+    description: During the past 12 months (since last assessment), outside of employment described above, did you receive 
+      any other income from activities that might get you into trouble or be against the law, like dealing, gambling, or theft?
+    custom:
+      jcoin:original_name: d7f1
+      jcoin:optional: true
   - section: MOUD
     name: intv_while_incarc
     title: Interviewed during incarceration
