@@ -56,61 +56,785 @@ fields:
       required: true
     custom:
       jcoin:original_name: visit_type
-  - section: Substance Use
-    name: last_drug_use
-    title: Last time drug use
-    type: string
-    description: '[... you used alcohol or other drugs weekly or more often?  ] When
+ - section: Demographics
+   name: household_people
+   title: People in household
+   type: integer
+   description: '[How many people, including yourself, are there in your household?]
+      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
+   custom:
+     jcoin:original_name: d7a
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o3
+ - section: Demographics
+   name: household_under_18
+   title: People under 18 years old in household
+   type: integer
+   description: '[How many of the people in your household are under the age of 18?]
+      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
+   custom:
+     jcoin:original_name: d7b
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o4
+ - section: Demographics
+   name: household_income
+   title: Total household income
+   type: number
+   description: '[During the past <if baseline: 90 days/90 days prior to entering
+      jail; if follow up: xx days (since last assessment/interview/contact/visit)>,
+      what was the total income of everyone in your household together that provided
+      you with support?] The next few questions are about your HOUSEHOLD in the past
+      <if baseline: 90 days/90 days prior to entering jail; if follow up: xx days
+      (since last assessment/interview/contact/visit)>.  Your household includes people
+      you live with, and with whom you share your income and expenses - husband, wife,
+      children, relatives, and others.'
+   custom:
+     jcoin:original_name: d7c
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o5
+ - section: Demographics
+   name: household_income_legal
+   title: Total household income from legal sources
+   type: string
+   description: '[During the past 12 months, which of the following is the category
+      that your total household income from legal sources would be in?] The next few
+      questions are about your HOUSEHOLD in the past <if baseline: 90 days/90 days
+      prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
+   constraints:
+     enum:
+        - Less than $12,500
+        - $12,500 - $20,000
+        - $20,001 - $30,000
+        - $30,001 - $40,000
+        - $40,001 - $50,000
+        - $50,001 - $100,000
+        - More than $100,000
+   custom:
+     jcoin:original_name: d7d
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o6
+ - section: Demographics
+   name: household_public_assist_any
+   title: Public assistance for household
+   type: boolean
+   description: '[During the past <if baseline: 90 days/90 days prior to entering
+      jail; if follow up: xx days (since last assessment/interview/contact/visit)>,
+      did your household receive any public assistance like unemployment, food stamps
+      / TANF, subsidized housing, or supplemental security income?] The next few questions
+      are about your HOUSEHOLD in the past <if baseline: 90 days/90 days prior to
+      entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d7d1
+     jcoin:notes: If No, then skip to d7e1. The demographics core measure section
+        was split between data models for demographic subsections collected only at
+        baseline (i.e., d1 - d6) and all time points (d7 - d11; o7
+ - section: Demographics
+   name: household_public_assist_dollars
+   title: Total household money from public assistance
+   type: number
+   description: '[During the past xx days (since last assessment), approximately
+      how much money has your household all together received from public assistance
+      sources like unemployment, food stamps (TANF), subsidized housing, supplemental
+      security income?] The next few questions are about your HOUSEHOLD in the past
+      <if baseline: 90 days/90 days prior to entering jail; if follow up: xx days
+      (since last assessment/interview/contact/visit)>.  Your household includes people
+      you live with, and with whom you share your income and expenses - husband, wife,
+      children, relatives, and others.'
+   custom:
+     jcoin:original_name: d7d2
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o8
+ - section: Demographics
+   name: household_nonemploy_any
+   title: Other non-employmnet income sources
+   type: string
+   description: '[During the past xx days (since last assessment), did your household
+      receive any other non-employment income sources like retirement, pension, alimony,
+      child support, or interest?] The next few questions are about your HOUSEHOLD
+      in the past <if baseline: 90 days/90 days prior to entering jail; if follow
+      up: xx days (since last assessment/interview/contact/visit)>.  Your household
+      includes people you live with, and with whom you share your income and expenses
+      - husband, wife, children, relatives, and others.'
+   custom:
+     jcoin:original_name: d7e1
+     jcoin:notes: If No, [GO TO D7f1] The demographics core measure section was split
+        between data models for demographic subsections collected only at baseline
+        (i.e., d1 - d6) and all time points (d7 - d11; o9
+ - section: Demographics
+   name: household_nonemploy_dollars
+   title: Total household money from other non-employment income sources
+   type: number
+   description: '[During the past xx days (since last assessment), approximately
+      how much money has your household all together received from other non-employment
+      sources like retirement, pension, alimony, child support, interest?] The next
+      few questions are about your HOUSEHOLD in the past <if baseline: 90 days/90
+      days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
+   custom:
+     jcoin:original_name: d7e2
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o10
+ - section: Demographics
+   name: household_income_illegal_any
+   title: Non-employment income with risk of legal or other trouble
+   type: boolean
+   description: '[During the past xx days (since last assessment), outside of employment
+      described above, did you receive any other income from activities that might
+      get you into trouble or be against the law, like dealing, gambling, or theft?]
+      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
+   trueValues:
+     - 'Yes'
+   falseValues:
+     - 'No'
+   custom:
+     jcoin:original_name: d7f1
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o11
+ - section: Demographics
+   name: household_income_illegal_dollars
+   title: Total household money with risk of causing  legal or other trouble activities
+   type: number
+   description: '[During the past xx days (since last assessment), outside of employment
+      described above, how much money did you earn from activities that might get
+      you into trouble or be against the law, like dealing, gambling, or theft? ]
+      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
+   custom:
+     jcoin:original_name: d7f2
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o12
+ - section: Demographics
+   name: current_work_school
+   title: Current school or work situation description
+   type: string
+   description: Which one of the following statements best describes your work or
+      school situation currently? (CLARIFY AND CODE) [For D8, include work under the
+      table but not any other illegal work or income]
+   constraints:
+     enum:
+        - Working full-time, 35 hours or more a week
+        - Working part-time, less than 35 hours a week
+        - Have a job where you are paid one day at a time (day labor)
+        - Have a job, but not at work because of treatment, extended illness, maternity
+          leave, furlough or strike
+        - Have a job, but not at work because it is seasonal work
+        - Unemployed or laid off and looking for work
+        - Unemployed or laid off and not looking for work
+        - Full-time homemaker (keeping house)
+        - In school or training
+        - In school or training, but not currently going to classes
+        - Retired
+        - In jail, prison or detention
+        - Too disabled for work
+        - In the military
+        - Doing volunteer work
+        - Some other work situation
+   custom:
+     jcoin:original_name: d8
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o13
+ - section: Demographics
+   name: work_days
+   title: Number of days worked
+   type: integer
+   description: During the past xx days (since last assessment), on how many days
+      have you worked?
+   custom:
+     jcoin:original_name: d8a
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o14
+ - section: Demographics
+   name: work_typical_days_week
+   title: Days per week worked
+   type: integer
+   description: During the past xx days (since last assessment), how many days per
+      week do you typically work?
+   custom:
+     jcoin:original_name: d8b
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o15
+ - section: Demographics
+   name: work_hours_week
+   title: Hours per week worked
+   type: integer
+   description: During the past xx days (since last assessment), How many hours per
+      week do you usually work?
+   custom:
+     jcoin:original_name: d8b1
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o16
+ - section: Demographics
+   name: work_hourly_wage
+   title: Hourly rate
+   type: number
+   description: During the past xx days (since last assessment), approximately how
+      much do you make per hour? [If someone is working multiple jobs, take the average
+      amount per hour across the job]
+   custom:
+     jcoin:original_name: d8c
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o17
+ - section: Demographics
+   name: work_health_insurance
+   title: Health insurance from work
+   type: boolean
+   description: '[Health Insurance] Do any of the places that you work offer you
+      the following benefits? (MARK ALL THAT APPLY)'
+   trueValues:
+     - 'Yes'
+   falseValues:
+     - 'No'
+   custom:
+     jcoin:original_name: d8d_health_insurance
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o18
+ - section: Demographics
+   name: work_paid_time_off
+   title: Paid time off from work
+   type: boolean
+   description: '[Paid time off] Do any of the places that you work offer you the
+      following benefits? (MARK ALL THAT APPLY)'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d8d_paid_time_off
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o19
+ - section: Demographics
+   name: work_pension
+   title: Benefit or pension plan from work
+   type: boolean
+   description: '[Defined benefit plan or pension] Do any of the places that you
+      work offer you the following benefits? (MARK ALL THAT APPLY)'
+   trueValues:
+     - 'Yes'
+   falseValues:
+     - 'No'
+   custom:
+     jcoin:original_name: d8d_benefit_plan
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o20
+ - section: Demographics
+   name: work_retirement_plan
+   title: Retirement plan from work
+   type: boolean
+   description: '[An arrangement such as a 401(k) or 403(b) plan, under which your
+      employer contributes money towards your retirement every pay period] Do any
+      of the places that you work offer you the following benefits? (MARK ALL THAT
+      APPLY)'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d8d_retirement_plan
+     jcoin:notes: The demographics core measure section was split between data models
+       for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o21
+ - section: Demographics
+   name: work_occupation
+   title: Occupation
+   type: string
+   description: What is your occupation?
+   custom:
+     jcoin:original_name: d8e
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o22
+ - section: Demographics
+   name: have_health_insurance
+   title: Currently covered by health insurance
+   type: boolean
+   description: Are you currently covered by health insurance or some other kind
+      of health care plan?
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o23
+ - section: Demographics
+   name: insured_private
+   title: Private health insurance plan coverage
+   type: boolean
+   description: '[Private health insurance] What kind of health insurance or health
+      care coverage do you have?  Include those that pay for only one type of service
+      (such as nursing home care, accidents, or dental care).  Exclude private plans
+      that only provide extra cash while hospitalized.  If you have more than one
+      kind of health insurance, tell me all plans that you have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_private
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o23
+ - section: Demographics
+   name: insured_medicare
+   title: Medicare plan coverage
+   type: boolean
+   description: '[Medicare] What kind of health insurance or health care coverage
+      do you have?  Include those that pay for only one type of service (such as nursing
+      home care, accidents, or dental care).  Exclude private plans that only provide
+      extra cash while hospitalized.  If you have more than one kind of health insurance,
+      tell me all plans that you have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_medicare
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o24
+ - section: Demographics
+   name: insured_medigap
+   title: Medigap plan coverage
+   type: boolean
+   description: '[Medigap] What kind of health insurance or health care coverage
+      do you have?  Include those that pay for only one type of service (such as nursing
+      home care, accidents, or dental care).  Exclude private plans that only provide
+      extra cash while hospitalized.  If you have more than one kind of health insurance,
+      tell me all plans that you have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_medigap
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o25
+ - section: Demographics
+   name: insured_medicaid
+   title: Medicaid plan coverage
+   type: boolean
+   description: '[Medicaid ({If Available, Display State Plan Name})] What kind of
+      health insurance or health care coverage do you have?  Include those that pay
+      for only one type of service (such as nursing home care, accidents, or dental
+      care).  Exclude private plans that only provide extra cash while hospitalized.  If
+      you have more than one kind of health insurance, tell me all plans that you
+      have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_medicaid
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o26
+ - section: Demographics
+   name: insured_chip
+   title: Children's Health Insurance coverage
+   type: boolean
+   description: '[SCHIP (CHIP/Children''s Health Insurance Program)] What kind of
+      health insurance or health care coverage do you have?  Include those that pay
+      for only one type of service (such as nursing home care, accidents, or dental
+      care).  Exclude private plans that only provide extra cash while hospitalized.  If
+      you have more than one kind of health insurance, tell me all plans that you
+      have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_schip
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o27
+ - section: Demographics
+   name: insured_military
+   title: Military plan coverage
+   type: boolean
+   description: '[Military Health Care (Tricare/VA/CHAMP-VA)] What kind of health
+      insurance or health care coverage do you have?  Include those that pay for only
+      one type of service (such as nursing home care, accidents, or dental care).  Exclude
+      private plans that only provide extra cash while hospitalized.  If you have
+      more than one kind of health insurance, tell me all plans that you have. [MARK
+      ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_military
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o28
+ - section: Demographics
+   name: insured_indian
+   title: Indian Health Service coverage
+   type: boolean
+   description: '[Indian Health Service] What kind of health insurance or health
+      care coverage do you have?  Include those that pay for only one type of service
+      (such as nursing home care, accidents, or dental care).  Exclude private plans
+      that only provide extra cash while hospitalized.  If you have more than one
+      kind of health insurance, tell me all plans that you have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_indian
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o29
+ - section: Demographics
+   name: insured_state
+   title: State health coverage
+   type: boolean
+   description: '[State-Sponsored Health Plan ({If Available, Display State Plan
+      Name})] What kind of health insurance or health care coverage do you have?  Include
+      those that pay for only one type of service (such as nursing home care, accidents,
+      or dental care).  Exclude private plans that only provide extra cash while hospitalized.  If
+      you have more than one kind of health insurance, tell me all plans that you
+      have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_state
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o30
+ - section: Demographics
+   name: insured_other_gov
+   title: Other government coverage
+   type: boolean
+   description: '[Other government program] What kind of health insurance or health
+      care coverage do you have?  Include those that pay for only one type of service
+      (such as nursing home care, accidents, or dental care).  Exclude private plans
+      that only provide extra cash while hospitalized.  If you have more than one
+      kind of health insurance, tell me all plans that you have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_other_government
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o31
+ - section: Demographics
+   name: insured_single_service
+   title: Single service coverage
+   type: boolean
+   description: '[Single service plan (e.g., dental, vision, prescriptions)] What
+      kind of health insurance or health care coverage do you have?  Include those
+      that pay for only one type of service (such as nursing home care, accidents,
+      or dental care).  Exclude private plans that only provide extra cash while hospitalized.  If
+      you have more than one kind of health insurance, tell me all plans that you
+      have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_single_service
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o32
+ - section: Demographics
+   name: insured_dont_know
+   title: Don't know about coverage
+   type: boolean
+   description: '[Don''t know] What kind of health insurance or health care coverage
+      do you have?  Include those that pay for only one type of service (such as nursing
+      home care, accidents, or dental care).  Exclude private plans that only provide
+      extra cash while hospitalized.  If you have more than one kind of health insurance,
+      tell me all plans that you have. [MARK ALL THAT APPLY]'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: d9a_dont_know
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o33
+ - section: Demographics
+   name: days_uninsured
+   title: Days uninsured
+   type: integer
+   description: During the past xx days (since last assessment), on how many days
+      were you uninsured?
+   custom:
+     jcoin:original_name: d10
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o34
+ - section: Demographics
+   name: days_self_help
+   title: Number of days at self help group
+   type: integer
+   description: '[Been to self-help group meetings (such as AA, NA, CA, or SMART
+      Recovery) for your alcohol or other drug use? ] During the past xx days (since
+      last assessment), on how many days have you . . .  [NOTE: MAX DAYS = 90]'
+   custom:
+     jcoin:original_name: d11a
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o35
+ - section: Demographics
+   name: days_drugfree_activity
+   title: Number of days at non-alcoholic, structured activities
+   type: integer
+   description: '[Been in other structured activities where no one was using alcohol
+      or drugs? ] During the past xx days (since last assessment), on how many days
+      have you . . .  [NOTE: MAX DAYS = 90]'
+   custom:
+     jcoin:original_name: d11b
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o36
+ - section: Demographics    
+   name: days_homeless
+   title: Number of days being homeless
+   type: integer
+   description: '[Been homeless or had to stay with someone else to avoid being homeless?
+      ] During the past xx days (since last assessment), on how many days have you
+      . . .  [NOTE: MAX DAYS = 90]'
+   custom:
+     jcoin:original_name: d11c
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o37
+ - section: Demographics
+   name: days_shelter
+   title: Number of days in homeless shelter
+   type: integer
+   description: '[Lived in a homeless shelter or emergency housing? ] During the
+      past xx days (since last assessment), on how many days have you . . .  [NOTE:
+      MAX DAYS = 90]'
+   custom:
+     jcoin:original_name: d11d
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o38
+ - section: Demographics
+   name: days_household_alcohol
+   title: Number of days in household with alcohol use
+   type: integer
+   description: '[Lived where other people were using alcohol? ] During the past
+      xx days (since last assessment), on how many days have you . . .  [NOTE: MAX
+      DAYS = 90]'
+   custom:
+     jcoin:original_name: d11e
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o39
+ - section: Demographics
+   name: days_household_drug
+   title: Number of days in household with drug use
+   type: integer
+   description: '[Lived where other people were using drugs? ] During the past xx
+      days (since last assessment), on how many days have you . . .  [NOTE: MAX DAYS
+      = 90]'
+   custom:
+     jcoin:original_name: d11f
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o40
+ - section: Demographics
+   name: days_activities_substance_use
+   title: Number of days of formal activities with alcohol
+   type: integer
+   description: '[Been to formal activities where people were using alcohol or drugs?]
+      During the past xx days (since last assessment), on how many days have you .
+      . .  [NOTE: MAX DAYS = 90]'
+   custom:
+     jcoin:original_name: d11g
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o41
+ - section: Demographics
+   name: days_family_trouble
+   title: Number of days of home or family trouble
+   type: integer
+   description: '[Gotten into trouble at home or with your family for any reason?
+      ] During the past xx days (since last assessment), on how many days have you
+      . . .  [NOTE: MAX DAYS = 90]'
+   custom:
+     jcoin:original_name: d11h
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o42
+ - section: Demographics
+   name: days_arguments
+   title: Number of days of  abusive behavior in arguments
+   type: integer
+   description: '[Had an argument in which you swore, cursed, threatened another
+      person, threw something, or pushed or hit another person in any way? ] During
+      the past xx days (since last assessment), on how many days have you . . .  [NOTE:
+      MAX DAYS = 90]'
+   custom:
+     jcoin:original_name: d11i
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o43
+ - section: Demographics
+   name: days_abused
+   title: Number of days being physically, emotionally, sexually abused
+   type: integer
+   description: '[Been attacked with a weapon, beaten, sexually abused or emotionally
+     abused?] During the past xx days (since last assessment), on how many days have
+      you . . .  [NOTE: MAX DAYS = 90]'
+   custom:
+     jcoin:original_name: d11j
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o44
+ - section: Demographics
+   name: narcan_received
+   title: Received Narcan kit
+   type: boolean
+   description: '[At your most recent release from [jail/prison], did you receive
+      a Naloxone rescue kit (Narcan kit) to save yourself or someone else in the event
+      of an opioid overdose? [Overdose definition = use enough of the drug to cause
+      a life-threatening reaction that requires medical attention]] If respondent
+      was in jail/prison during the past 3 months but not currently, ask:'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: o3
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o45
+ - section: Demographics
+   name: narcan_used
+   title: Used Narcan Kit
+   type: boolean
+   description: '[Have you had to use it?] If respondent was in jail/prison during
+      the past 3 months but not currently, ask:'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: o3a
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o46
+ - section: Demographics
+   name: narcan_refilled
+   title: Refilled Narcan Kit
+   type: boolean
+   description: '[Have you obtained a refill/replacement kit?] If respondent was
+     in jail/prison during the past 3 months but not currently, ask:'
+   trueValues:
+      - 'Yes'
+   falseValues:
+      - 'No'
+   custom:
+     jcoin:original_name: o3b
+     jcoin:notes: The demographics core measure section was split between data models
+        for demographic subsections collected only at baseline (i.e., d1 - d6) and
+        all time points (d7 - d11; o47
+
+
+        
+ - section: Substance Use
+   name: last_drug_use
+   title: Last time drug use
+   type: string
+   description: '[... you used alcohol or other drugs weekly or more often?  ] When
       was the last time you...'
-    constraints:
-      enum:
+   constraints:
+     enum:
         - Never
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-    custom:
-      jcoin:original_name: s1a
-      jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
+   custom:
+     jcoin:original_name: s1a
+     jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
         values that cant be accounted for by skip logic. In future, may want to make
         more precise
-  - section: Substance Use
-    name: last_getting_using_drugs
-    title: 'Last time drug use: getting, using, or recovering'
-    type: string
-    description: '[... You spent a lot of time either getting alcohol or other drugs,
+ - section: Substance Use
+   name: last_getting_using_drugs
+   title: 'Last time drug use: getting, using, or recovering'
+   type: string
+   description: '[... You spent a lot of time either getting alcohol or other drugs,
       using alcohol or other drugs, or recovering from the effects of alcohol or other
       drugs (feeling sick)? ] When was the last time you...'
-    constraints:
-      enum:
+   constraints:
+     enum:
         - Never
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
 
-    custom:
-      jcoin:original_name: s1b
-      jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
+   custom:
+     jcoin:original_name: s1b
+     jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
         values that cant be accounted for by skip logic. In future, may want to make
         more precise
-  - section: Substance Use
-    name: last_social_problems
-    title: 'Last time drug use: social dysfunction'
-    type: string
-    description: '[... You kept using alcohol or other drugs even though it was causing
+ - section: Substance Use
+   name: last_social_problems
+   title: 'Last time drug use: social dysfunction'
+   type: string
+   description: '[... You kept using alcohol or other drugs even though it was causing
       social   problems, leading to fights, or getting you into trouble with other
       people? ] When was the last time you...'
-    constraints:
-      enum:
+   constraints:
+     enum:
         - Never
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
 
-    custom:
-      jcoin:original_name: s1c
+   custom:
+     jcoin:original_name: s1c
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
         values that cant be accounted for by skip logic. In future, may want to make
         more precise
@@ -1486,727 +2210,7 @@ fields:
         - Don't know/No preference
     custom:
       jcoin:original_name: m5
-  - section: Demographics
-    name: household_people
-    title: People in household
-    type: integer
-    description: '[How many people, including yourself, are there in your household?]
-      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
-      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
-      household includes people you live with, and with whom you share your income
-      and expenses - husband, wife, children, relatives, and others.'
-    custom:
-      jcoin:original_name: d7a
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o3
-  - section: Demographics
-    name: household_under_18
-    title: People under 18 years old in household
-    type: integer
-    description: '[How many of the people in your household are under the age of 18?]
-      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
-      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
-      household includes people you live with, and with whom you share your income
-      and expenses - husband, wife, children, relatives, and others.'
-    custom:
-      jcoin:original_name: d7b
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o4
-  - section: Demographics
-    name: household_income
-    title: Total household income
-    type: number
-    description: '[During the past <if baseline: 90 days/90 days prior to entering
-      jail; if follow up: xx days (since last assessment/interview/contact/visit)>,
-      what was the total income of everyone in your household together that provided
-      you with support?] The next few questions are about your HOUSEHOLD in the past
-      <if baseline: 90 days/90 days prior to entering jail; if follow up: xx days
-      (since last assessment/interview/contact/visit)>.  Your household includes people
-      you live with, and with whom you share your income and expenses - husband, wife,
-      children, relatives, and others.'
-    custom:
-      jcoin:original_name: d7c
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o5
-  - section: Demographics
-    name: household_income_legal
-    title: Total household income from legal sources
-    type: string
-    description: '[During the past 12 months, which of the following is the category
-      that your total household income from legal sources would be in?] The next few
-      questions are about your HOUSEHOLD in the past <if baseline: 90 days/90 days
-      prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
-      household includes people you live with, and with whom you share your income
-      and expenses - husband, wife, children, relatives, and others.'
-    constraints:
-      enum:
-        - Less than $12,500
-        - $12,500 - $20,000
-        - $20,001 - $30,000
-        - $30,001 - $40,000
-        - $40,001 - $50,000
-        - $50,001 - $100,000
-        - More than $100,000
-    custom:
-      jcoin:original_name: d7d
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o6
-  - section: Demographics
-    name: household_public_assist_any
-    title: Public assistance for household
-    type: boolean
-    description: '[During the past <if baseline: 90 days/90 days prior to entering
-      jail; if follow up: xx days (since last assessment/interview/contact/visit)>,
-      did your household receive any public assistance like unemployment, food stamps
-      / TANF, subsidized housing, or supplemental security income?] The next few questions
-      are about your HOUSEHOLD in the past <if baseline: 90 days/90 days prior to
-      entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
-      household includes people you live with, and with whom you share your income
-      and expenses - husband, wife, children, relatives, and others.'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d7d1
-      jcoin:notes: If No, then skip to d7e1. The demographics core measure section
-        was split between data models for demographic subsections collected only at
-        baseline (i.e., d1 - d6) and all time points (d7 - d11; o7
-  - section: Demographics
-    name: household_public_assist_dollars
-    title: Total household money from public assistance
-    type: number
-    description: '[During the past xx days (since last assessment), approximately
-      how much money has your household all together received from public assistance
-      sources like unemployment, food stamps (TANF), subsidized housing, supplemental
-      security income?] The next few questions are about your HOUSEHOLD in the past
-      <if baseline: 90 days/90 days prior to entering jail; if follow up: xx days
-      (since last assessment/interview/contact/visit)>.  Your household includes people
-      you live with, and with whom you share your income and expenses - husband, wife,
-      children, relatives, and others.'
-    custom:
-      jcoin:original_name: d7d2
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o8
-  - section: Demographics
-    name: household_nonemploy_any
-    title: Other non-employmnet income sources
-    type: string
-    description: '[During the past xx days (since last assessment), did your household
-      receive any other non-employment income sources like retirement, pension, alimony,
-      child support, or interest?] The next few questions are about your HOUSEHOLD
-      in the past <if baseline: 90 days/90 days prior to entering jail; if follow
-      up: xx days (since last assessment/interview/contact/visit)>.  Your household
-      includes people you live with, and with whom you share your income and expenses
-      - husband, wife, children, relatives, and others.'
-    custom:
-      jcoin:original_name: d7e1
-      jcoin:notes: If No, [GO TO D7f1] The demographics core measure section was split
-        between data models for demographic subsections collected only at baseline
-        (i.e., d1 - d6) and all time points (d7 - d11; o9
-  - section: Demographics
-    name: household_nonemploy_dollars
-    title: Total household money from other non-employment income sources
-    type: number
-    description: '[During the past xx days (since last assessment), approximately
-      how much money has your household all together received from other non-employment
-      sources like retirement, pension, alimony, child support, interest?] The next
-      few questions are about your HOUSEHOLD in the past <if baseline: 90 days/90
-      days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
-      household includes people you live with, and with whom you share your income
-      and expenses - husband, wife, children, relatives, and others.'
-    custom:
-      jcoin:original_name: d7e2
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o10
-  - section: Demographics
-    name: household_income_illegal_any
-    title: Non-employment income with risk of legal or other trouble
-    type: boolean
-    description: '[During the past xx days (since last assessment), outside of employment
-      described above, did you receive any other income from activities that might
-      get you into trouble or be against the law, like dealing, gambling, or theft?]
-      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
-      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
-      household includes people you live with, and with whom you share your income
-      and expenses - husband, wife, children, relatives, and others.'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d7f1
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o11
-  - section: Demographics
-    name: household_income_illegal_dollars
-    title: Total household money with risk of causing  legal or other trouble activities
-    type: number
-    description: '[During the past xx days (since last assessment), outside of employment
-      described above, how much money did you earn from activities that might get
-      you into trouble or be against the law, like dealing, gambling, or theft? ]
-      The next few questions are about your HOUSEHOLD in the past <if baseline: 90
-      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
-      household includes people you live with, and with whom you share your income
-      and expenses - husband, wife, children, relatives, and others.'
-    custom:
-      jcoin:original_name: d7f2
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o12
-  - section: Demographics
-    name: current_work_school
-    title: Current school or work situation description
-    type: string
-    description: Which one of the following statements best describes your work or
-      school situation currently? (CLARIFY AND CODE) [For D8, include work under the
-      table but not any other illegal work or income]
-    constraints:
-      enum:
-        - Working full-time, 35 hours or more a week
-        - Working part-time, less than 35 hours a week
-        - Have a job where you are paid one day at a time (day labor)
-        - Have a job, but not at work because of treatment, extended illness, maternity
-          leave, furlough or strike
-        - Have a job, but not at work because it is seasonal work
-        - Unemployed or laid off and looking for work
-        - Unemployed or laid off and not looking for work
-        - Full-time homemaker (keeping house)
-        - In school or training
-        - In school or training, but not currently going to classes
-        - Retired
-        - In jail, prison or detention
-        - Too disabled for work
-        - In the military
-        - Doing volunteer work
-        - Some other work situation
-    custom:
-      jcoin:original_name: d8
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o13
-  - section: Demographics
-    name: work_days
-    title: Number of days worked
-    type: integer
-    description: During the past xx days (since last assessment), on how many days
-      have you worked?
-    custom:
-      jcoin:original_name: d8a
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o14
-  - section: Demographics
-    name: work_typical_days_week
-    title: Days per week worked
-    type: integer
-    description: During the past xx days (since last assessment), how many days per
-      week do you typically work?
-    custom:
-      jcoin:original_name: d8b
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o15
-  - section: Demographics
-    name: work_hours_week
-    title: Hours per week worked
-    type: integer
-    description: During the past xx days (since last assessment), How many hours per
-      week do you usually work?
-    custom:
-      jcoin:original_name: d8b1
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o16
-  - section: Demographics
-    name: work_hourly_wage
-    title: Hourly rate
-    type: number
-    description: During the past xx days (since last assessment), approximately how
-      much do you make per hour? [If someone is working multiple jobs, take the average
-      amount per hour across the job]
-    custom:
-      jcoin:original_name: d8c
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o17
-  - section: Demographics
-    name: work_health_insurance
-    title: Health insurance from work
-    type: boolean
-    description: '[Health Insurance] Do any of the places that you work offer you
-      the following benefits? (MARK ALL THAT APPLY)'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d8d_health_insurance
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o18
-  - section: Demographics
-    name: work_paid_time_off
-    title: Paid time off from work
-    type: boolean
-    description: '[Paid time off] Do any of the places that you work offer you the
-      following benefits? (MARK ALL THAT APPLY)'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d8d_paid_time_off
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o19
-  - section: Demographics
-    name: work_pension
-    title: Benefit or pension plan from work
-    type: boolean
-    description: '[Defined benefit plan or pension] Do any of the places that you
-      work offer you the following benefits? (MARK ALL THAT APPLY)'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d8d_benefit_plan
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o20
-  - section: Demographics
-    name: work_retirement_plan
-    title: Retirement plan from work
-    type: boolean
-    description: '[An arrangement such as a 401(k) or 403(b) plan, under which your
-      employer contributes money towards your retirement every pay period] Do any
-      of the places that you work offer you the following benefits? (MARK ALL THAT
-      APPLY)'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d8d_retirement_plan
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o21
-  - section: Demographics
-    name: work_occupation
-    title: Occupation
-    type: string
-    description: What is your occupation?
-    custom:
-      jcoin:original_name: d8e
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o22
-  - section: Demographics
-    name: have_health_insurance
-    title: Currently covered by health insurance
-    type: boolean
-    description: Are you currently covered by health insurance or some other kind
-      of health care plan?
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o23
-  - section: Demographics
-    name: insured_private
-    title: Private health insurance plan coverage
-    type: boolean
-    description: '[Private health insurance] What kind of health insurance or health
-      care coverage do you have?  Include those that pay for only one type of service
-      (such as nursing home care, accidents, or dental care).  Exclude private plans
-      that only provide extra cash while hospitalized.  If you have more than one
-      kind of health insurance, tell me all plans that you have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_private
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o23
-  - section: Demographics
-    name: insured_medicare
-    title: Medicare plan coverage
-    type: boolean
-    description: '[Medicare] What kind of health insurance or health care coverage
-      do you have?  Include those that pay for only one type of service (such as nursing
-      home care, accidents, or dental care).  Exclude private plans that only provide
-      extra cash while hospitalized.  If you have more than one kind of health insurance,
-      tell me all plans that you have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_medicare
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o24
-  - section: Demographics
-    name: insured_medigap
-    title: Medigap plan coverage
-    type: boolean
-    description: '[Medigap] What kind of health insurance or health care coverage
-      do you have?  Include those that pay for only one type of service (such as nursing
-      home care, accidents, or dental care).  Exclude private plans that only provide
-      extra cash while hospitalized.  If you have more than one kind of health insurance,
-      tell me all plans that you have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_medigap
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o25
-  - section: Demographics
-    name: insured_medicaid
-    title: Medicaid plan coverage
-    type: boolean
-    description: '[Medicaid ({If Available, Display State Plan Name})] What kind of
-      health insurance or health care coverage do you have?  Include those that pay
-      for only one type of service (such as nursing home care, accidents, or dental
-      care).  Exclude private plans that only provide extra cash while hospitalized.  If
-      you have more than one kind of health insurance, tell me all plans that you
-      have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_medicaid
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o26
-  - section: Demographics
-    name: insured_chip
-    title: Children's Health Insurance coverage
-    type: boolean
-    description: '[SCHIP (CHIP/Children''s Health Insurance Program)] What kind of
-      health insurance or health care coverage do you have?  Include those that pay
-      for only one type of service (such as nursing home care, accidents, or dental
-      care).  Exclude private plans that only provide extra cash while hospitalized.  If
-      you have more than one kind of health insurance, tell me all plans that you
-      have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_schip
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o27
-  - section: Demographics
-    name: insured_military
-    title: Military plan coverage
-    type: boolean
-    description: '[Military Health Care (Tricare/VA/CHAMP-VA)] What kind of health
-      insurance or health care coverage do you have?  Include those that pay for only
-      one type of service (such as nursing home care, accidents, or dental care).  Exclude
-      private plans that only provide extra cash while hospitalized.  If you have
-      more than one kind of health insurance, tell me all plans that you have. [MARK
-      ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_military
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o28
-  - section: Demographics
-    name: insured_indian
-    title: Indian Health Service coverage
-    type: boolean
-    description: '[Indian Health Service] What kind of health insurance or health
-      care coverage do you have?  Include those that pay for only one type of service
-      (such as nursing home care, accidents, or dental care).  Exclude private plans
-      that only provide extra cash while hospitalized.  If you have more than one
-      kind of health insurance, tell me all plans that you have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_indian
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o29
-  - section: Demographics
-    name: insured_state
-    title: State health coverage
-    type: boolean
-    description: '[State-Sponsored Health Plan ({If Available, Display State Plan
-      Name})] What kind of health insurance or health care coverage do you have?  Include
-      those that pay for only one type of service (such as nursing home care, accidents,
-      or dental care).  Exclude private plans that only provide extra cash while hospitalized.  If
-      you have more than one kind of health insurance, tell me all plans that you
-      have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_state
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o30
-  - section: Demographics
-    name: insured_other_gov
-    title: Other government coverage
-    type: boolean
-    description: '[Other government program] What kind of health insurance or health
-      care coverage do you have?  Include those that pay for only one type of service
-      (such as nursing home care, accidents, or dental care).  Exclude private plans
-      that only provide extra cash while hospitalized.  If you have more than one
-      kind of health insurance, tell me all plans that you have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_other_government
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o31
-  - section: Demographics
-    name: insured_single_service
-    title: Single service coverage
-    type: boolean
-    description: '[Single service plan (e.g., dental, vision, prescriptions)] What
-      kind of health insurance or health care coverage do you have?  Include those
-      that pay for only one type of service (such as nursing home care, accidents,
-      or dental care).  Exclude private plans that only provide extra cash while hospitalized.  If
-      you have more than one kind of health insurance, tell me all plans that you
-      have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_single_service
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o32
-  - section: Demographics
-    name: insured_dont_know
-    title: Don't know about coverage
-    type: boolean
-    description: '[Don''t know] What kind of health insurance or health care coverage
-      do you have?  Include those that pay for only one type of service (such as nursing
-      home care, accidents, or dental care).  Exclude private plans that only provide
-      extra cash while hospitalized.  If you have more than one kind of health insurance,
-      tell me all plans that you have. [MARK ALL THAT APPLY]'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: d9a_dont_know
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o33
-  - section: Demographics
-    name: days_uninsured
-    title: Days uninsured
-    type: integer
-    description: During the past xx days (since last assessment), on how many days
-      were you uninsured?
-    custom:
-      jcoin:original_name: d10
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o34
-  - section: Demographics
-    name: days_self_help
-    title: Number of days at self help group
-    type: integer
-    description: '[Been to self-help group meetings (such as AA, NA, CA, or SMART
-      Recovery) for your alcohol or other drug use? ] During the past xx days (since
-      last assessment), on how many days have you . . .  [NOTE: MAX DAYS = 90]'
-    custom:
-      jcoin:original_name: d11a
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o35
-  - section: Demographics
-    name: days_drugfree_activity
-    title: Number of days at non-alcoholic, structured activities
-    type: integer
-    description: '[Been in other structured activities where no one was using alcohol
-      or drugs? ] During the past xx days (since last assessment), on how many days
-      have you . . .  [NOTE: MAX DAYS = 90]'
-    custom:
-      jcoin:original_name: d11b
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o36
-  - section: Demographics
-    name: days_homeless
-    title: Number of days being homeless
-    type: integer
-    description: '[Been homeless or had to stay with someone else to avoid being homeless?
-      ] During the past xx days (since last assessment), on how many days have you
-      . . .  [NOTE: MAX DAYS = 90]'
-    custom:
-      jcoin:original_name: d11c
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o37
-  - section: Demographics
-    name: days_shelter
-    title: Number of days in homeless shelter
-    type: integer
-    description: '[Lived in a homeless shelter or emergency housing? ] During the
-      past xx days (since last assessment), on how many days have you . . .  [NOTE:
-      MAX DAYS = 90]'
-    custom:
-      jcoin:original_name: d11d
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o38
-  - section: Demographics
-    name: days_household_alcohol
-    title: Number of days in household with alcohol use
-    type: integer
-    description: '[Lived where other people were using alcohol? ] During the past
-      xx days (since last assessment), on how many days have you . . .  [NOTE: MAX
-      DAYS = 90]'
-    custom:
-      jcoin:original_name: d11e
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o39
-  - section: Demographics
-    name: days_household_drug
-    title: Number of days in household with drug use
-    type: integer
-    description: '[Lived where other people were using drugs? ] During the past xx
-      days (since last assessment), on how many days have you . . .  [NOTE: MAX DAYS
-      = 90]'
-    custom:
-      jcoin:original_name: d11f
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o40
-  - section: Demographics
-    name: days_activities_substance_use
-    title: Number of days of formal activities with alcohol
-    type: integer
-    description: '[Been to formal activities where people were using alcohol or drugs?]
-      During the past xx days (since last assessment), on how many days have you .
-      . .  [NOTE: MAX DAYS = 90]'
-    custom:
-      jcoin:original_name: d11g
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o41
-  - section: Demographics
-    name: days_family_trouble
-    title: Number of days of home or family trouble
-    type: integer
-    description: '[Gotten into trouble at home or with your family for any reason?
-      ] During the past xx days (since last assessment), on how many days have you
-      . . .  [NOTE: MAX DAYS = 90]'
-    custom:
-      jcoin:original_name: d11h
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o42
-  - section: Demographics
-    name: days_arguments
-    title: Number of days of  abusive behavior in arguments
-    type: integer
-    description: '[Had an argument in which you swore, cursed, threatened another
-      person, threw something, or pushed or hit another person in any way? ] During
-      the past xx days (since last assessment), on how many days have you . . .  [NOTE:
-      MAX DAYS = 90]'
-    custom:
-      jcoin:original_name: d11i
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o43
-  - section: Demographics
-    name: days_abused
-    title: Number of days being physically, emotionally, sexually abused
-    type: integer
-    description: '[Been attacked with a weapon, beaten, sexually abused or emotionally
-      abused?] During the past xx days (since last assessment), on how many days have
-      you . . .  [NOTE: MAX DAYS = 90]'
-    custom:
-      jcoin:original_name: d11j
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o44
-  - section: Demographics
-    name: narcan_received
-    title: Received Narcan kit
-    type: boolean
-    description: '[At your most recent release from [jail/prison], did you receive
-      a Naloxone rescue kit (Narcan kit) to save yourself or someone else in the event
-      of an opioid overdose? [Overdose definition = use enough of the drug to cause
-      a life-threatening reaction that requires medical attention]] If respondent
-      was in jail/prison during the past 3 months but not currently, ask:'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: o3
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o45
-  - section: Demographics
-    name: narcan_used
-    title: Used Narcan Kit
-    type: boolean
-    description: '[Have you had to use it?] If respondent was in jail/prison during
-      the past 3 months but not currently, ask:'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: o3a
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o46
-  - section: Demographics
-    name: narcan_refilled
-    title: Refilled Narcan Kit
-    type: boolean
-    description: '[Have you obtained a refill/replacement kit?] If respondent was
-      in jail/prison during the past 3 months but not currently, ask:'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
-    custom:
-      jcoin:original_name: o3b
-      jcoin:notes: The demographics core measure section was split between data models
-        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o47
+ 
   - section: PROMIS 29+2/ PROPr
     name: difficulty_chores
     title: Difficulty with chores and house keeping
