@@ -825,7 +825,7 @@ fields:
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
-        - Past month
+        - Within the last month
    custom:
      jcoin:original_name: s1a
      jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -844,8 +844,7 @@ fields:
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
-        - Past month
-
+        - Within the last month
    custom:
      jcoin:original_name: s1b
      jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -864,8 +863,7 @@ fields:
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
-        - Past month
-
+        - Within the last month
    custom:
      jcoin:original_name: s1c
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -884,8 +882,7 @@ fields:
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
-        - Past month
-
+        - Within the last month
     custom:
       jcoin:original_name: s1d
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -905,8 +902,7 @@ fields:
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
-        - Past month
-
+        - Within the last month
     custom:
       jcoin:original_name: s1e
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
@@ -926,10 +922,10 @@ fields:
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
-        - Past month
-
+        - Within the last month
     custom:
       jcoin:original_name: s2a
+      jcoin:optional: true
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
         values that cant be accounted for by skip logic. In future, may want to make
         more precise
@@ -946,10 +942,10 @@ fields:
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
-        - Past month
-
+        - Within the last month
     custom:
       jcoin:original_name: s2b
+      jcoin:optional: true
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
         values that cant be accounted for by skip logic. In future, may want to make
         more precise
@@ -965,10 +961,10 @@ fields:
         - More than a year ago
         - 4 to 12 months ago
         - 2 to 3 months ago
-        - Past month
-
+        - Within the last month
     custom:
       jcoin:original_name: s2c
+      jcoin:optional: true
       jcoin:notes: Not reported not a part of the core measures but id'ed a few missing
         values that cant be accounted for by skip logic. In future, may want to make
         more precise
@@ -982,7 +978,7 @@ fields:
       how many times did you (CAN CODE 0 IF NEVER ON S2b). . .'
     custom:
       jcoin:original_name: s3a
-      jcoin:notes: Overdose means that you took enough of the drug that it caused
+      jcoin:notes: If 0, go to S4. Overdose means that you took enough of the drug that it caused
         a life-threatening reaction that required medical attention
   - section: Substance Use
     name: times_naloxone
@@ -993,25 +989,256 @@ fields:
       CODE 0 IF NEVER ON S2b). . .'
     custom:
       jcoin:original_name: s3b
-      jcoin:notes: Overdose means that you took enough of the drug that it caused
+      jcoin:notes: If 0, go to S4. Overdose means that you took enough of the drug that it caused
         a life-threatening reaction that required medical attention
   - section: Substance Use
-    name: who_gave_naloxone
-    title: Person Who Administered Nalaxone for Overdose
-    type: any
-    description: Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    name: who_gave_naloxone_emt
+    title: [Paramedic/Ambulance]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Paramedic/Ambulance] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
     custom:
-      jcoin:original_name: s3c
-      jcoin:notes: 'TODO: expand fields to each of the possible selections'
+      jcoin:original_name: s3c_emt
+      jcoin:optional: true
   - section: Substance Use
-    name: drugs_before_overdose
-    title: Drugs 4 hrs Before Overdose
-    type: any
-    description: What drugs had you taken in the 4 hours before you overdosed? (SELECT
-      ALL THAT APPLY)
+    name: who_gave_naloxone_fire
+    title: [Firefighter]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Firefighter] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
     custom:
-      jcoin:original_name: s3d
-      jcoin:notes: 'TODO: expand fields to each of the possible selections'
+      jcoin:original_name: s3c_fire
+      jcoin:optional: true
+  - section: Substance Use
+    name: who_gave_naloxone_police
+    title: [Police]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Police] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_police
+      jcoin:optional: true
+  - section: Substance Use
+    name: who_gave_naloxone_erdoc
+    title: [Emergency room doctor]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Emergency room doctor] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_erdoc
+      jcoin:optional: true
+  - section: Substance Use
+    name: who_gave_naloxone_spouse
+    title: [Spouse/significant other]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Spouse/significant other] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_spouse
+      jcoin:optional: true
+   - section: Substance Use
+    name: who_gave_naloxone_running
+    title: [Running partner]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Running partner] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_running
+      jcoin:optional: true
+  - section: Substance Use
+    name: who_gave_naloxone_parent
+    title: [Parent]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Parent] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_parent
+      jcoin:optional: true
+  - section: Substance Use
+    name: who_gave_naloxone_friend
+    title: [friend]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Friend] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_friend
+      jcoin:optional: true
+  - section: Substance Use
+    name: who_gave_naloxone_stranger
+    title: [Stranger]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Stranger] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_stranger
+      jcoin:optional: true
+  - section: Substance Use
+    name: who_gave_naloxone_self
+    title: [Self]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Self] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_self
+      jcoin:optional: true
+  - section: Substance Use
+    name: who_gave_naloxone_other
+    title: [Other]  Person Who Administered Nalaxone for Overdose
+    type: boolean
+    description: [Other] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3c_other
+      jcoin:optional: true
+- section: Substance Use
+    name: who_gave_naloxone_oth_specify
+    title: [Other: Specify]  Person Who Administered Nalaxone for Overdose
+    type: string
+    description: [Other: Specify] Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)
+    custom:
+      jcoin:original_name: s3c_oth_specify
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_heroin
+    title: [Heroin] Drugs taken in the 4 hours before overdose
+    type: boolean
+    description: [Heroin] What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3d_heroin
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_fentanyl
+    title: [Fentanyl] Drugs taken in the 4 hours before overdose
+    type: boolean
+    description: [Fentanyl] What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3d_fentanyl
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_crack
+    title: [Crack or other forms of cocaine] Drugs taken in the 4 hours before overdose
+    type: boolean
+    description: [Crack or other forms of cocaine] What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3d_crack
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_meth
+    title: [Methamphetamines, amphetamines or other forms of speed] 
+    Drugs taken in the 4 hours before overdose
+    type: boolean
+    description: [Methamphetamines, amphetamines or other forms of speed] 
+    What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3d_meth
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_xanax
+    title: [Xanax, benzodiazepines, or other anti-anxiety drugs 
+    or tranquilizers] Drugs taken in the 4 hours before overdose
+    type: boolean
+    description: [Xanax, benzodiazepines, or other anti-anxiety drugs 
+    or tranquilizers] What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3d_xanax
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_marijuana
+    title: [Marijuana] Drugs taken in the 4 hours before overdose
+    type: boolean
+    description: [Marijuana] What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3d_marijuana
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_alcohol
+    title: [Alcohol] Drugs taken in the 4 hours before overdose
+    type: boolean
+    description: [Alcohol] What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3d_alcohol
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_other
+    title: [Other] Drugs taken in the 4 hours before overdose
+    type: boolean
+    description: [Other (please describe)] What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    trueValues:
+      - 'Yes'
+    falseValues:
+      - 'No'
+    custom:
+      jcoin:original_name: s3d_other
+      jcoin:optional: true
+-section: Substance Use
+    name: drugs_taken_od_oth_specify
+    title: [Other: Specify] Drugs taken in the 4 hours before overdose
+    type: string
+    description: [Other: Specify] What drugs had you taken in the 4 hours before you overdosed?  (SELECT ALL THAT APPLY)
+    custom:
+      jcoin:original_name: s3d_other_specify
+      jcoin:optional: true
   - section: Substance Use
     name: times_ems_after_overdose
     title: Emergency Medical Service Following Overdose
@@ -1021,6 +1248,7 @@ fields:
       IF NEVER ON S2b). . .'
     custom:
       jcoin:original_name: s3e
+      jcoin:optional: true
   - section: Substance Use
     name: times_er_after_overdose
     title: Emergency Department Visit Count Following Overdose
@@ -1030,6 +1258,7 @@ fields:
       IF NEVER ON S2b). . .'
     custom:
       jcoin:original_name: s3f
+      jcoin:optional: true
   - section: Substance Use
     name: times_hospital_after_overdose
     title: Hospital Admissions Count Following Overdose
@@ -1039,6 +1268,7 @@ fields:
       IF NEVER ON S2b). . .'
     custom:
       jcoin:original_name: s3g
+      jcoin:optional: true
   - section: Substance Use
     name: tx_refer_after_overdose
     title: Substance Use Treatment Referral Count Following Overdose
@@ -1048,6 +1278,7 @@ fields:
       how many times did you (CAN CODE 0 IF NEVER ON S2b). . .'
     custom:
       jcoin:original_name: s3h
+      jcoin:optional: true
   - section: Substance Use
     name: days_drug_use
     title: Drug Use Count
@@ -1086,6 +1317,7 @@ fields:
       0 days if no use]'
     custom:
       jcoin:original_name: s4d
+      jcoin:optional: true
   - section: Substance Use
     name: days_other_marijuana
     title: 'Marijuana use count: Not own'
@@ -1097,6 +1329,7 @@ fields:
       . [Write 0 days if no use]'
     custom:
       jcoin:original_name: s4e
+      jcoin:optional: true
   - section: Substance Use
     name: days_heroin
     title: 'Opioid use count: Heroin'
@@ -1124,6 +1357,7 @@ fields:
       . [Write 0 days if no use]'
     custom:
       jcoin:original_name: s4h
+      jcoin:optional: true
   - section: Substance Use
     name: days_non_rx_suboxone
     title: 'Opioid use count: Suboxone'
@@ -1133,6 +1367,7 @@ fields:
       . [Write 0 days if no use]'
     custom:
       jcoin:original_name: s4j
+      jcoin:optional: true
   - section: Substance Use
     name: days_other_opioids
     title: 'Opioid use count: other'
@@ -1182,6 +1417,7 @@ fields:
       last assessment), on how many days did you. . . [Write 0 days if no use]'
     custom:
       jcoin:original_name: s4z
+      jcoin:optional: true
   - section: Substance Use
     name: other_drug_describe
     title: 'Drug use: description of other drugs'
@@ -1192,6 +1428,7 @@ fields:
       if no use]'
     custom:
       jcoin:original_name: s4z_describe
+      jcoin:optional: true
   - section: Substance Use
     name: days_confined_no_use
     title: Place of No Opioid Use (Jail, Hospital, etc)
@@ -2703,9 +2940,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1a
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2724,9 +2961,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1b
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2744,9 +2981,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1c
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2764,9 +3001,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1d
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2784,9 +3021,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1g
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2804,9 +3041,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1h
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2825,9 +3062,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1j
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2846,9 +3083,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1k
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2866,9 +3103,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1m
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2886,9 +3123,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r1n
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2906,9 +3143,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r2a
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -2926,9 +3163,9 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r2b
+      jcoin:optional: true
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
@@ -3042,7 +3279,6 @@ fields:
         - 4 to 12 months ago
         - 2 to 3 months ago
         - Past month
-
     custom:
       jcoin:original_name: r3a_first_dx
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
