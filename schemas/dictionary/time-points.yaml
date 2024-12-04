@@ -1458,6 +1458,7 @@ fields:
       charge names associated with behavior for reference only)'
     custom:
       jcoin:original_name: j1a1
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_public_drunk
@@ -1468,6 +1469,7 @@ fields:
       have you...(common charge names associated with behavior for reference only)'
     custom:
       jcoin:original_name: j1a2
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_dui
@@ -1479,6 +1481,7 @@ fields:
       with behavior for reference only)'
     custom:
       jcoin:original_name: j1a3
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_drug_dealing
@@ -1490,6 +1493,7 @@ fields:
       behavior for reference only)'
     custom:
       jcoin:original_name: j1a4
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_vandalism
@@ -1533,6 +1537,7 @@ fields:
       charge names associated with behavior for reference only)'
     custom:
       jcoin:original_name: j1a8
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_theft
@@ -1566,6 +1571,7 @@ fields:
       only)'
     custom:
       jcoin:original_name: j1a11
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_carjacking
@@ -1586,6 +1592,7 @@ fields:
       have you...(common charge names associated with behavior for reference only)'
     custom:
       jcoin:original_name: j1a13
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_robbery
@@ -1597,6 +1604,7 @@ fields:
       reference only)'
     custom:
       jcoin:original_name: j1a14
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_aggravated_assault
@@ -1608,6 +1616,7 @@ fields:
       reference only)'
     custom:
       jcoin:original_name: j1a15
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_rape
@@ -1619,6 +1628,7 @@ fields:
       reference only)'
     custom:
       jcoin:original_name: j1a16
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_homicide
@@ -1630,6 +1640,7 @@ fields:
       associated with behavior for reference only)'
     custom:
       jcoin:original_name: j1a17
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_arson
@@ -1651,6 +1662,7 @@ fields:
       only)'
     custom:
       jcoin:original_name: j1a19
+      join:optional: true
       jcoin:notes: (common charge names associated with behavior for reference only)
   - section: Justice Involvement
     name: times_other_unlawful
@@ -1665,6 +1677,18 @@ fields:
     custom:
       jcoin:original_name: j1a99
       jcoin:notes: (common charge names associated with behavior for reference only)
+  -section: Justice Involvement
+    name: times_other_unlawful_specify
+    title: Other unlawful activities (specify)
+    type: string
+    description:  '[... done something else that would have gotten you into trouble
+      with the police if they had known about it? (carrying a weapon, gang involvement,
+      domestic violence, trespass, gambling, distributing the peace, disorderly conduct,
+      paraphernalia, runaway, curfew, truancy,  ) (PLEASE DESCRIBE)] During the past
+      xx days (since last assessment), how many times have you...(common charge names
+      associated with behavior for reference only)'
+    custom:
+      jcoin:original_name: j1a99_specify
   - section: Justice Involvement
     name: number_charged_arrests
     title: Overall charged arrests
@@ -1681,6 +1705,7 @@ fields:
       the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2a
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_drunk
     title: Law violations arrests
@@ -1689,6 +1714,7 @@ fields:
       During the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2b
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_dui
     title: Driving under the influence/intoxicated arrests
@@ -1697,6 +1723,7 @@ fields:
       During the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2c
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_drug_dealing
     title: Drug activity arrests
@@ -1705,6 +1732,7 @@ fields:
       of drugs] During the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2d
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_vandalism
     title: Vandalism or property destruction arrests
@@ -1713,6 +1741,7 @@ fields:
       the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2e
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_stolen_goods
     title: Stolen goods arrests
@@ -1721,6 +1750,7 @@ fields:
       During the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2f
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_forgery
     title: Forgery, fraud or embezzlement arrests
@@ -1729,6 +1759,7 @@ fields:
       past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2g
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_shoplifting
     title: Shoplifting arrests
@@ -1737,6 +1768,7 @@ fields:
       last assessment)'
     custom:
       jcoin:original_name: j2h
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_theft
     title: Theft/larceny arrests
@@ -1745,6 +1777,7 @@ fields:
       (since last assessment)'
     custom:
       jcoin:original_name: j2i
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_burglary
     title: Burglary or breaking and entering arrests
@@ -1753,6 +1786,7 @@ fields:
       the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2j
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_auto_theft
     title: Vehicle theft arrests
@@ -1761,6 +1795,7 @@ fields:
       (since last assessment)'
     custom:
       jcoin:original_name: j2k
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_carjacking
     title: Car jacking arrests
@@ -1769,6 +1804,7 @@ fields:
       last assessment)'
     custom:
       jcoin:original_name: j2l
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_assault
     title: Simple assault or battery arrests
@@ -1777,6 +1813,7 @@ fields:
       90 days (since last assessment)'
     custom:
       jcoin:original_name: j2m
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_robbery
     title: Robbery arrests
@@ -1785,6 +1822,7 @@ fields:
       assessment)'
     custom:
       jcoin:original_name: j2n
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_aggravated
     title: Aggravated assault or battery arrests
@@ -1793,6 +1831,7 @@ fields:
       past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2o
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_rape
     title: Forcible rape arrests
@@ -1801,6 +1840,7 @@ fields:
       last assessment)'
     custom:
       jcoin:original_name: j2p
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_homicide
     title: Negligent manslaughter arrests
@@ -1809,6 +1849,7 @@ fields:
       During the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2q
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_arson
     title: Arson arrests
@@ -1817,6 +1858,7 @@ fields:
       assessment)'
     custom:
       jcoin:original_name: j2r
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_prostitution
     title: Commercialized sex arrests
@@ -1825,6 +1867,7 @@ fields:
       During the past 90 days (since last assessment)'
     custom:
       jcoin:original_name: j2s
+      jcoin:optional: true
   - section: Justice Involvement
     name: number_arrest_other
     title: Other charges arrests
@@ -1835,6 +1878,7 @@ fields:
       assessment)'
     custom:
       jcoin:original_name: j2t
+      jcoin:optional: true
   - section: Justice Involvement
     name: days_electronic_monitoring
     title: Electronic monitoring
@@ -2062,6 +2106,7 @@ fields:
       - 'No'
     custom:
       jcoin:original_name: u6a
+      jcoin:optional: true
   - section: Utilization of Services
     name: pc_reason_mh
     title: 'Primary care visit reason: Mental health'
@@ -2074,6 +2119,7 @@ fields:
       - 'No'
     custom:
       jcoin:original_name: u6b
+      jcoin:optional: true
   - section: Utilization of Services
     name: pc_reason_physical
     title: 'Primary care visit reason:  Physical health'
@@ -2086,6 +2132,7 @@ fields:
       - 'No'
     custom:
       jcoin:original_name: u6c
+      jcoin:optional: true
   - section: Utilization of Services
     name: pc_reason_other
     title: 'Primary care visit reason:  Some other reason (specify)'
@@ -2098,6 +2145,7 @@ fields:
       - 'No'
     custom:
       jcoin:original_name: u6d
+      jcoin:optional: true
   - section: Utilization of Services
     name: pc_reason_other_specify
     title: 'Primary care visit reason: Specify other reason'
@@ -2106,6 +2154,7 @@ fields:
       you visit a primary care provider? (ADD SKIP LOGIC)'
     custom:
       jcoin:original_name: u6d_specify
+      jcoin:optional: true
   - section: Utilization of Services
     name: op_tx_days
     title: 'Outpatient treament program for alcohol/substance use: Number of days'
@@ -2124,6 +2173,7 @@ fields:
       program?
     custom:
       jcoin:original_name: u7a
+      jcoin:optional: true
   - section: Utilization of Services
     name: op_tx_days_online
     title: 'Outpatient treatment program: Number of days participating online'
@@ -2132,6 +2182,7 @@ fields:
       program) online (e.g., smart phone, computer, or tablet)?
     custom:
       jcoin:original_name: u7b
+      jcoin:optional: true
   - section: Utilization of Services
     name: op_tx_days_doctor
     title: 'Outpatient treatment program: Number of days seeing doctor'
@@ -2140,6 +2191,7 @@ fields:
       program)?
     custom:
       jcoin:original_name: u7c
+      jcoin:optional: true
   - section: Utilization of Services
     name: op_tx_days_therapy
     title: 'Outpatient treatment program: Number of days participating in therapy'
@@ -2148,6 +2200,7 @@ fields:
       group therapy?
     custom:
       jcoin:original_name: u7d
+      jcoin:optional: true
   - section: Utilization of Services
     name: op_tx_days_moud_only
     title: 'Outpatient treatment program: Number of days for medication management'
@@ -2155,6 +2208,7 @@ fields:
     description: How many of these days were for medication management only?
     custom:
       jcoin:original_name: u7e
+      jcoin:optional: true
   - section: Utilization of Services
     name: psych_visits
     title: 'Psychiatrist/psychologist:  Number of total visits'
@@ -2164,6 +2218,7 @@ fields:
       psychologist (Ph.D., Psy.D)?
     custom:
       jcoin:original_name: u8
+      jcoin:optional: true
   - section: Utilization of Services
     name: psych_visits_in_person
     title: 'Psychiatrist/psychologist: Number of in-person visits'
@@ -2171,6 +2226,7 @@ fields:
     description: How many of these times did you physically visit the program (psychiatrist/psychologist)?
     custom:
       jcoin:original_name: u8a
+      jcoin:optional: true
   - section: Utilization of Services
     name: psych_visits_online
     title: 'Psychiatrist/psychologist: Number of online visits'
@@ -2179,6 +2235,7 @@ fields:
       or tablet; with a psychiatrist/psychologist)?
     custom:
       jcoin:original_name: u8b
+      jcoin:optional: true
   - section: Utilization of Services
     name: counselor_visits
     title: 'Counselor/social worker: Number of total visits'
@@ -2188,6 +2245,7 @@ fields:
       or social worker?
     custom:
       jcoin:original_name: u9
+      jcoin:optional: true
   - section: Utilization of Services
     name: counselor_visits_in_person
     title: 'Counselor/social worker: Number of in-person visits'
@@ -2196,6 +2254,7 @@ fields:
       How many of these times did you...'
     custom:
       jcoin:original_name: u9a
+      jcoin:optional: true
   - section: Utilization of Services
     name: counselor_visits_online
     title: 'Counselor/social worker: Number of online visits'
@@ -2204,6 +2263,7 @@ fields:
       a counselor/social worker)?'
     custom:
       jcoin:original_name: u9b
+      jcoin:optional: true
   - section: Utilization of Services
     name: healthcare_expense
     title: Healthcare cost
@@ -2212,6 +2272,7 @@ fields:
       you spent on all healthcare (e.g., copayments or prescriptions)?
     custom:
       jcoin:original_name: u13
+      jcoin:optional: true
   - section: Utilization of Services
     name: received_sud_tx
     title: Substance use treatment
@@ -2224,6 +2285,7 @@ fields:
       - 'No'
     custom:
       jcoin:original_name: u14
+      jcoin:optional: true
   - section: Utilization of Services
     name: sud_tx_organized
     title: 'Substance use tx provider:  Well-organized'
@@ -2241,6 +2303,7 @@ fields:
         - Strongly disagree
     custom:
       jcoin:original_name: u14a
+      jcoin:optional: true
   - section: Utilization of Services
     name: sud_tx_satisfied
     title: 'Substance use tx provider:  Satisfaction'
@@ -2258,6 +2321,7 @@ fields:
         - Strongly disagree
     custom:
       jcoin:original_name: u14b
+      jcoin:optional: true
   - section: Utilization of Services
     name: sud_tx_efficient
     title: 'Substance use tx provider:  Efficient staff'
@@ -2275,6 +2339,7 @@ fields:
         - Strongly disagree
     custom:
       jcoin:original_name: u14c
+      jcoin:optional: true
   - section: Utilization of Services
     name: sud_tx_personal
     title: 'Substance use tx provider:  Personal counseling'
@@ -2292,6 +2357,7 @@ fields:
         - Strongly disagree
     custom:
       jcoin:original_name: u14d
+      jcoin:optional: true
   - section: Utilization of Services
     name: sud_tx_moud
     title: 'Substance use tx provider:  Medication assistance for opioid use'
@@ -2309,6 +2375,7 @@ fields:
         - Strongly disagree
     custom:
       jcoin:original_name: u14e
+      jcoin:optional: true
   - section: Treatment Preferences
     name: oud_tx_not_appropriate
     title: Not candidate for OUD treatment
@@ -2402,14 +2469,10 @@ fields:
   - section: Treatment Preferences
     name: prefer_oud_other_specify
     title: 'Preferred type of OUD treatment:  Other treatment specified'
-    type: boolean
+    type: string
     description: '[Other (specify)] Which type of opioid use disorder (OUD) treatment
       would you most prefer to receive if it were available to you now? (CHECK ALL
       THAT APPLY)'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
     custom:
       jcoin:original_name: m2_other_specify
   - section: Treatment Preferences
@@ -2429,7 +2492,7 @@ fields:
     name: prefer_oud_dk
     title: 'Preferred type of OUD treatment:  Don''t know or no preference'
     type: boolean
-    description: '[Don''t know / No preference] Which type of opioid use disorder
+    description: '[Don't know / No preference] Which type of opioid use disorder
       (OUD) treatment would you most prefer to receive if it were available to you
       now? (CHECK ALL THAT APPLY)'
     trueValues:
@@ -2480,8 +2543,7 @@ fields:
         - Don't know/No preference
     custom:
       jcoin:original_name: m5
- 
-  - section: PROMIS 29+2/ PROPr
+   - section: PROMIS 29+2/ PROPr
     name: difficulty_chores
     title: Difficulty with chores and house keeping
     type: string
