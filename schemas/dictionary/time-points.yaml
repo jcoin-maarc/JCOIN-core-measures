@@ -67,6 +67,7 @@ fields:
       and expenses - husband, wife, children, relatives, and others.'
    custom:
      jcoin:original_name: d7a
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o3
@@ -81,6 +82,7 @@ fields:
       and expenses - husband, wife, children, relatives, and others.'
    custom:
      jcoin:original_name: d7b
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o4
@@ -88,14 +90,12 @@ fields:
    name: household_income
    title: Total household income
    type: number
-   description: '[During the past <if baseline: 90 days/90 days prior to entering
-      jail; if follow up: xx days (since last assessment/interview/contact/visit)>,
+   description: '[During the past xx days (since last assessment/interview/contact/visit),
       what was the total income of everyone in your household together that provided
-      you with support?] The next few questions are about your HOUSEHOLD in the past
-      <if baseline: 90 days/90 days prior to entering jail; if follow up: xx days
-      (since last assessment/interview/contact/visit)>.  Your household includes people
-      you live with, and with whom you share your income and expenses - husband, wife,
-      children, relatives, and others.'
+      you with support?] The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
    custom:
      jcoin:original_name: d7c
      jcoin:notes: The demographics core measure section was split between data models
@@ -106,9 +106,8 @@ fields:
    title: Total household income from legal sources
    type: string
    description: '[During the past 12 months, which of the following is the category
-      that your total household income from legal sources would be in?] The next few
-      questions are about your HOUSEHOLD in the past <if baseline: 90 days/90 days
-      prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      that your total household income from legal sources would be in?] The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
       household includes people you live with, and with whom you share your income
       and expenses - husband, wife, children, relatives, and others.'
    constraints:
@@ -122,6 +121,7 @@ fields:
         - More than $100,000
    custom:
      jcoin:original_name: d7d
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o6
@@ -129,12 +129,10 @@ fields:
    name: household_public_assist_any
    title: Public assistance for household
    type: boolean
-   description: '[During the past <if baseline: 90 days/90 days prior to entering
-      jail; if follow up: xx days (since last assessment/interview/contact/visit)>,
+   description: '[During the past xx days (since last assessment/interview/contact/visit),
       did your household receive any public assistance like unemployment, food stamps
-      / TANF, subsidized housing, or supplemental security income?] The next few questions
-      are about your HOUSEHOLD in the past <if baseline: 90 days/90 days prior to
-      entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      / TANF, subsidized housing, or supplemental security income?] The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
       household includes people you live with, and with whom you share your income
       and expenses - husband, wife, children, relatives, and others.'
    trueValues:
@@ -143,6 +141,7 @@ fields:
       - 'No'
    custom:
      jcoin:original_name: d7d1
+     jcoin:optional: true
      jcoin:notes: If No, then skip to d7e1. The demographics core measure section
         was split between data models for demographic subsections collected only at
         baseline (i.e., d1 - d6) and all time points (d7 - d11; o7
@@ -153,13 +152,13 @@ fields:
    description: '[During the past xx days (since last assessment), approximately
       how much money has your household all together received from public assistance
       sources like unemployment, food stamps (TANF), subsidized housing, supplemental
-      security income?] The next few questions are about your HOUSEHOLD in the past
-      <if baseline: 90 days/90 days prior to entering jail; if follow up: xx days
-      (since last assessment/interview/contact/visit)>.  Your household includes people
-      you live with, and with whom you share your income and expenses - husband, wife,
-      children, relatives, and others.'
+      security income?] The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
    custom:
      jcoin:original_name: d7d2
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o8
@@ -169,13 +168,13 @@ fields:
    type: string
    description: '[During the past xx days (since last assessment), did your household
       receive any other non-employment income sources like retirement, pension, alimony,
-      child support, or interest?] The next few questions are about your HOUSEHOLD
-      in the past <if baseline: 90 days/90 days prior to entering jail; if follow
-      up: xx days (since last assessment/interview/contact/visit)>.  Your household
-      includes people you live with, and with whom you share your income and expenses
-      - husband, wife, children, relatives, and others.'
+      child support, or interest?] The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      household includes people you live with, and with whom you share your income
+      and expenses - husband, wife, children, relatives, and others.'
    custom:
      jcoin:original_name: d7e1
+     jcoin:optional: true
      jcoin:notes: If No, [GO TO D7f1] The demographics core measure section was split
         between data models for demographic subsections collected only at baseline
         (i.e., d1 - d6) and all time points (d7 - d11; o9
@@ -185,13 +184,13 @@ fields:
    type: number
    description: '[During the past xx days (since last assessment), approximately
       how much money has your household all together received from other non-employment
-      sources like retirement, pension, alimony, child support, interest?] The next
-      few questions are about your HOUSEHOLD in the past <if baseline: 90 days/90
-      days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
+      sources like retirement, pension, alimony, child support, interest?] The next few questions are about your HOUSEHOLD in the past <if baseline: 90
+      days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your
       household includes people you live with, and with whom you share your income
       and expenses - husband, wife, children, relatives, and others.'
    custom:
      jcoin:original_name: d7e2
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o10
@@ -212,6 +211,7 @@ fields:
      - 'No'
    custom:
      jcoin:original_name: d7f1
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o11
@@ -228,6 +228,7 @@ fields:
       and expenses - husband, wife, children, relatives, and others.'
    custom:
      jcoin:original_name: d7f2
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o12
@@ -253,15 +254,31 @@ fields:
         - In school or training, but not currently going to classes
         - Retired
         - In jail, prison or detention
-        - Too disabled for work
+        - Too disabled for work (Please describe disability)
         - In the military
         - Doing volunteer work
-        - Some other work situation
+        - Some other work situation (Please describe)
    custom:
      jcoin:original_name: d8
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o13
+ - section: Demographics
+   name: current_work_school_disab_specify
+   title: Current school or work situation: Disabled (describe disability)
+   type: string
+   description: Which one of the following statements best describes your work or
+      school situation currently:  Too disabled to work (specify)
+   custom:
+     jcoin:original_name: d8_disabled_specify
+ - section: Demographics
+   name: current_work_school_other
+   title: Current school or work situation: other (describe)
+   type: string
+   description:  Which one of the following statements best describes your work or 
+      school situation currently: Some other work situation (describe)
+   custom:
+     jcoin:original_name: d8_other
  - section: Demographics
    name: work_days
    title: Number of days worked
@@ -270,7 +287,7 @@ fields:
       have you worked?
    custom:
      jcoin:original_name: d8a
-     jcoin:notes: The demographics core measure section was split between data models
+     jcoin:notes: If 0, go to D9. The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o14
  - section: Demographics
@@ -319,6 +336,7 @@ fields:
      - 'No'
    custom:
      jcoin:original_name: d8d_health_insurance
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o18
@@ -334,6 +352,7 @@ fields:
       - 'No'
    custom:
      jcoin:original_name: d8d_paid_time_off
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o19
@@ -349,6 +368,7 @@ fields:
      - 'No'
    custom:
      jcoin:original_name: d8d_benefit_plan
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o20
@@ -366,6 +386,7 @@ fields:
       - 'No'
    custom:
      jcoin:original_name: d8d_retirement_plan
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
        for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o21
@@ -376,6 +397,7 @@ fields:
    description: What is your occupation?
    custom:
      jcoin:original_name: d8e
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o22
@@ -391,7 +413,7 @@ fields:
       - 'No'
    custom:
      jcoin:original_name: d9
-     jcoin:notes: The demographics core measure section was split between data models
+     jcoin:notes: If NO, skip to D10. The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o23
  - section: Demographics
@@ -617,6 +639,7 @@ fields:
       last assessment), on how many days have you . . .  [NOTE: MAX DAYS = 90]'
    custom:
      jcoin:original_name: d11a
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o35
@@ -629,6 +652,7 @@ fields:
       have you . . .  [NOTE: MAX DAYS = 90]'
    custom:
      jcoin:original_name: d11b
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o36
@@ -641,6 +665,7 @@ fields:
       . . .  [NOTE: MAX DAYS = 90]'
    custom:
      jcoin:original_name: d11c
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o37
@@ -652,7 +677,8 @@ fields:
       past xx days (since last assessment), on how many days have you . . .  [NOTE:
       MAX DAYS = 90]'
    custom:
-     jcoin:original_name: d11d
+     jcoin:original_name: d11d     
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o38
@@ -665,6 +691,7 @@ fields:
       DAYS = 90]'
    custom:
      jcoin:original_name: d11e
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o39
@@ -677,6 +704,7 @@ fields:
       = 90]'
    custom:
      jcoin:original_name: d11f
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o40
@@ -689,6 +717,7 @@ fields:
       . .  [NOTE: MAX DAYS = 90]'
    custom:
      jcoin:original_name: d11g
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o41
@@ -701,6 +730,7 @@ fields:
       . . .  [NOTE: MAX DAYS = 90]'
    custom:
      jcoin:original_name: d11h
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o42
@@ -714,6 +744,7 @@ fields:
       MAX DAYS = 90]'
    custom:
      jcoin:original_name: d11i
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o43
@@ -726,6 +757,7 @@ fields:
       you . . .  [NOTE: MAX DAYS = 90]'
    custom:
      jcoin:original_name: d11j
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o44
@@ -744,7 +776,8 @@ fields:
       - 'No'
    custom:
      jcoin:original_name: o3
-     jcoin:notes: The demographics core measure section was split between data models
+     jcoin:optional: true
+     jcoin:notes: If NO, go to P1a. The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o45
  - section: Demographics
@@ -759,7 +792,8 @@ fields:
       - 'No'
    custom:
      jcoin:original_name: o3a
-     jcoin:notes: The demographics core measure section was split between data models
+     jcoin:optional: true
+     jcoin:notes: If No, skip O3b. The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o46
  - section: Demographics
@@ -774,12 +808,11 @@ fields:
       - 'No'
    custom:
      jcoin:original_name: o3b
+     jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
         all time points (d7 - d11; o47
 
-
-        
  - section: Substance Use
    name: last_drug_use
    title: Last time drug use
@@ -2183,7 +2216,7 @@ fields:
         - Don't know/No preference
     custom:
       jcoin:original_name: m3
-  - section: Treatment Preferences
+- section: Treatment Preferences
     name: prefer_which_bup
     title: Type of buprenorphine preferred
     type: string
