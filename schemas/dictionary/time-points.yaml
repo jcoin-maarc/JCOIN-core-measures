@@ -124,7 +124,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o6
+        all time points (d7 - d11; o6).
  - section: Demographics
    name: household_public_assist_any
    title: Public assistance for household
@@ -144,7 +144,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: If No, then skip to d7e1. The demographics core measure section
         was split between data models for demographic subsections collected only at
-        baseline (i.e., d1 - d6) and all time points (d7 - d11; o7
+        baseline (i.e., d1 - d6) and all time points (d7 - d11; o7).
  - section: Demographics
    name: household_public_assist_dollars
    title: Total household money from public assistance
@@ -161,7 +161,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o8
+        all time points (d7 - d11; o8).
  - section: Demographics
    name: household_nonemploy_any
    title: Other non-employmnet income sources
@@ -177,7 +177,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: If No, [GO TO D7f1] The demographics core measure section was split
         between data models for demographic subsections collected only at baseline
-        (i.e., d1 - d6) and all time points (d7 - d11; o9
+        (i.e., d1 - d6) and all time points (d7 - d11; o9).
  - section: Demographics
    name: household_nonemploy_dollars
    title: Total household money from other non-employment income sources
@@ -193,7 +193,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o10
+        all time points (d7 - d11; o10).
  - section: Demographics
    name: household_income_illegal_any
    title: Non-employment income with risk of legal or other trouble
@@ -214,7 +214,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o11
+        all time points (d7 - d11; o11).
  - section: Demographics
    name: household_income_illegal_dollars
    title: Total household money with risk of causing  legal or other trouble activities
@@ -231,14 +231,14 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o12
+        all time points (d7 - d11; o12).
  - section: Demographics
    name: current_work_school
    title: Current school or work situation description
    type: string
    description: Which one of the following statements best describes your work or
       school situation currently? (CLARIFY AND CODE) [For D8, include work under the
-      table but not any other illegal work or income]
+      table but not any other illegal work or income.]
    constraints:
      enum:
         - Working full-time, 35 hours or more a week
@@ -262,7 +262,7 @@ fields:
      jcoin:original_name: d8
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o13
+        all time points (d7 - d11; o13).
  - section: Demographics
    name: current_work_school_disab_specify
    title: Current school or work situation: Disabled (describe disability)
@@ -289,7 +289,7 @@ fields:
      jcoin:original_name: d8a
      jcoin:notes: If 0, go to D9. The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o14
+        all time points (d7 - d11; o14).
  - section: Demographics
    name: work_typical_days_week
    title: Days per week worked
@@ -300,7 +300,7 @@ fields:
      jcoin:original_name: d8b
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o15
+        all time points (d7 - d11; o15).
  - section: Demographics
    name: work_hours_week
    title: Hours per week worked
@@ -311,7 +311,7 @@ fields:
      jcoin:original_name: d8b1
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o16
+        all time points (d7 - d11; o16).
  - section: Demographics
    name: work_hourly_wage
    title: Hourly rate
@@ -323,7 +323,7 @@ fields:
      jcoin:original_name: d8c
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o17
+        all time points (d7 - d11; o17).
  - section: Demographics
    name: work_health_insurance
    title: Health insurance from work
@@ -339,7 +339,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o18
+        all time points (d7 - d11; o18).
  - section: Demographics
    name: work_paid_time_off
    title: Paid time off from work
@@ -355,7 +355,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o19
+        all time points (d7 - d11; o19).
  - section: Demographics
    name: work_pension
    title: Benefit or pension plan from work
@@ -371,7 +371,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o20
+        all time points (d7 - d11; o20).
  - section: Demographics
    name: work_retirement_plan
    title: Retirement plan from work
@@ -389,7 +389,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
        for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o21
+        all time points (d7 - d11; o21).
  - section: Demographics
    name: work_occupation
    title: Occupation
@@ -400,7 +400,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o22
+        all time points (d7 - d11; o22).
  - section: Demographics
    name: have_health_insurance
    title: Currently covered by health insurance
@@ -415,7 +415,7 @@ fields:
      jcoin:original_name: d9
      jcoin:notes: If NO, skip to D10. The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o23
+        all time points (d7 - d11; o23).
  - section: Demographics
    name: insured_private
    title: Private health insurance plan coverage
@@ -433,7 +433,7 @@ fields:
      jcoin:original_name: d9a_private
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o23
+        all time points (d7 - d11; o23).
  - section: Demographics
    name: insured_medicare
    title: Medicare plan coverage
@@ -451,7 +451,7 @@ fields:
      jcoin:original_name: d9a_medicare
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o24
+        all time points (d7 - d11; o24).
  - section: Demographics
    name: insured_medigap
    title: Medigap plan coverage
@@ -469,7 +469,7 @@ fields:
      jcoin:original_name: d9a_medigap
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o25
+        all time points (d7 - d11; o25).
  - section: Demographics
    name: insured_medicaid
    title: Medicaid plan coverage
@@ -488,7 +488,7 @@ fields:
      jcoin:original_name: d9a_medicaid
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o26
+        all time points (d7 - d11; o26).
  - section: Demographics
    name: insured_chip
    title: Children's Health Insurance coverage
@@ -507,7 +507,7 @@ fields:
      jcoin:original_name: d9a_schip
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o27
+        all time points (d7 - d11; o27).
  - section: Demographics
    name: insured_military
    title: Military plan coverage
@@ -526,7 +526,7 @@ fields:
      jcoin:original_name: d9a_military
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o28
+        all time points (d7 - d11; o28).
  - section: Demographics
    name: insured_indian
    title: Indian Health Service coverage
@@ -544,7 +544,7 @@ fields:
      jcoin:original_name: d9a_indian
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o29
+        all time points (d7 - d11; o29).
  - section: Demographics
    name: insured_state
    title: State health coverage
@@ -563,7 +563,7 @@ fields:
      jcoin:original_name: d9a_state
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o30
+        all time points (d7 - d11; o30).
  - section: Demographics
    name: insured_other_gov
    title: Other government coverage
@@ -581,7 +581,7 @@ fields:
      jcoin:original_name: d9a_other_government
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o31
+        all time points (d7 - d11; o31).
  - section: Demographics
    name: insured_single_service
    title: Single service coverage
@@ -600,12 +600,12 @@ fields:
      jcoin:original_name: d9a_single_service
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o32
+        all time points (d7 - d11; o32).
  - section: Demographics
    name: insured_dont_know
    title: Don't know about coverage
    type: boolean
-   description: '[Don''t know] What kind of health insurance or health care coverage
+   description: '[Don't know] What kind of health insurance or health care coverage
       do you have?  Include those that pay for only one type of service (such as nursing
       home care, accidents, or dental care).  Exclude private plans that only provide
       extra cash while hospitalized.  If you have more than one kind of health insurance,
@@ -618,7 +618,7 @@ fields:
      jcoin:original_name: d9a_dont_know
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o33
+        all time points (d7 - d11; o33).
  - section: Demographics
    name: days_uninsured
    title: Days uninsured
@@ -629,7 +629,7 @@ fields:
      jcoin:original_name: d10
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o34
+        all time points (d7 - d11; o34).
  - section: Demographics
    name: days_self_help
    title: Number of days at self help group
@@ -642,7 +642,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o35
+        all time points (d7 - d11; o35).
  - section: Demographics
    name: days_drugfree_activity
    title: Number of days at non-alcoholic, structured activities
@@ -655,7 +655,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o36
+        all time points (d7 - d11; o36).
  - section: Demographics    
    name: days_homeless
    title: Number of days being homeless
@@ -668,7 +668,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o37
+        all time points (d7 - d11; o37).
  - section: Demographics
    name: days_shelter
    title: Number of days in homeless shelter
@@ -681,7 +681,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o38
+        all time points (d7 - d11; o38).
  - section: Demographics
    name: days_household_alcohol
    title: Number of days in household with alcohol use
@@ -694,7 +694,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o39
+        all time points (d7 - d11; o39).
  - section: Demographics
    name: days_household_drug
    title: Number of days in household with drug use
@@ -707,7 +707,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o40
+        all time points (d7 - d11; o40).
  - section: Demographics
    name: days_activities_substance_use
    title: Number of days of formal activities with alcohol
@@ -720,7 +720,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o41
+        all time points (d7 - d11; o41).
  - section: Demographics
    name: days_family_trouble
    title: Number of days of home or family trouble
@@ -733,7 +733,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o42
+        all time points (d7 - d11; o42).
  - section: Demographics
    name: days_arguments
    title: Number of days of  abusive behavior in arguments
@@ -747,7 +747,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o43
+        all time points (d7 - d11; o43).
  - section: Demographics
    name: days_abused
    title: Number of days being physically, emotionally, sexually abused
@@ -760,7 +760,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o44
+        all time points (d7 - d11; o44).
  - section: Demographics
    name: narcan_received
    title: Received Narcan kit
@@ -779,7 +779,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: If NO, go to P1a. The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o45
+        all time points (d7 - d11; o45).
  - section: Demographics
    name: narcan_used
    title: Used Narcan Kit
@@ -795,7 +795,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: If No, skip O3b. The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o46
+        all time points (d7 - d11; o46).
  - section: Demographics
    name: narcan_refilled
    title: Refilled Narcan Kit
@@ -811,8 +811,7 @@ fields:
      jcoin:optional: true
      jcoin:notes: The demographics core measure section was split between data models
         for demographic subsections collected only at baseline (i.e., d1 - d6) and
-        all time points (d7 - d11; o47
-
+        all time points (d7 - d11; o47).
  - section: Substance Use
    name: last_drug_use
    title: Last time drug use
@@ -2296,11 +2295,11 @@ fields:
       each of the following statements'
     constraints:
       enum:
-        - Strongly agree
-        - Somewhat agree
-        - Neutral
-        - Somewhat disagree
-        - Strongly disagree
+        - [1] Strongly agree
+        - [2] 
+        - [3] 
+        - [4]
+        - [5] Do not agree at all
     custom:
       jcoin:original_name: u14a
       jcoin:optional: true
@@ -2314,11 +2313,11 @@ fields:
       each of the following statements'
     constraints:
       enum:
-        - Strongly agree
-        - Somewhat agree
-        - Neutral
-        - Somewhat disagree
-        - Strongly disagree
+        - [1] Strongly agree
+        - [2] 
+        - [3] 
+        - [4]
+        - [5] Do not agree at all
     custom:
       jcoin:original_name: u14b
       jcoin:optional: true
@@ -2332,11 +2331,11 @@ fields:
       each of the following statements'
     constraints:
       enum:
-        - Strongly agree
-        - Somewhat agree
-        - Neutral
-        - Somewhat disagree
-        - Strongly disagree
+        - [1] Strongly agree
+        - [2] 
+        - [3] 
+        - [4]
+        - [5] Do not agree at all
     custom:
       jcoin:original_name: u14c
       jcoin:optional: true
@@ -2350,11 +2349,11 @@ fields:
       you agree with each of the following statements'
     constraints:
       enum:
-        - Strongly agree
-        - Somewhat agree
-        - Neutral
-        - Somewhat disagree
-        - Strongly disagree
+        - [1] Strongly agree
+        - [2] 
+        - [3] 
+        - [4]
+        - [5] Do not agree at all
     custom:
       jcoin:original_name: u14d
       jcoin:optional: true
@@ -2368,11 +2367,11 @@ fields:
       indicate how much you agree with each of the following statements'
     constraints:
       enum:
-        - Strongly agree
-        - Somewhat agree
-        - Neutral
-        - Somewhat disagree
-        - Strongly disagree
+        - [1] Strongly agree
+        - [2] 
+        - [3] 
+        - [4]
+        - [5] Do not agree at all
     custom:
       jcoin:original_name: u14e
       jcoin:optional: true
@@ -3235,13 +3234,14 @@ fields:
   - section: Risk of Harms and Consequences
     name: ever_dx_hiv
     title: HIV/AIDS
-    type: boolean
+    type: string
     description: '[Human Immunodeficiency Virus, HIV or AIDS?] Were you ever told
       by a doctor or nurse that you had...'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
+    constraints:
+      - enum:
+          - Yes
+          - No
+          - Don't recall
     custom:
       jcoin:original_name: r3a
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3249,15 +3249,34 @@ fields:
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
         (CONSISTENT WITH HUB CONSENT FORMS)'
   - section: Risk of Harms and Consequences
+    name: ever_dx_hiv_when
+    title:  HIV/AIDS -- When first diagnosed?
+    type: string
+    description:  '[HIV or AIDS?] If YES, when were you first diagnosed?'
+    constraints:
+      - enum:
+          - More than a year ago
+          - Four to 12 months ago
+          - Two to 3 months ago
+          - Past month
+          - Don't know
+    custom:
+      jcoin:original_name: r3a
+      jcoin:notes: jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
+        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
+        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
+        (CONSISTENT WITH HUB CONSENT FORMS)'
+  - section: Risk of Harms and Consequences
     name: ever_dx_hcv
     title: Hepatitis C
-    type: boolean
-    description: '[Hepatitis C? ] Were you ever told by a doctor or nurse that you
+    type: string
+    description: '[Hepatitis C?] Were you ever told by a doctor or nurse that you
       had...'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
+    constraints:
+      - enum:
+          - Yes
+          - No
+          - Don't recall
     custom:
       jcoin:original_name: r3b
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3265,15 +3284,34 @@ fields:
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
         (CONSISTENT WITH HUB CONSENT FORMS)'
   - section: Risk of Harms and Consequences
-    name: ever_dx_hepb
+    name: ever_dx_hcv_when
+    title:  Hepatitis C -- When first diagnosed?
+    type: string
+    description:  '[Hepatitis C?] If YES, when were you first diagnosed?'
+    constraints:
+      - enum:
+          - More than a year ago
+          - Four to 12 months ago
+          - Two to 3 months ago
+          - Past month
+          - Don't know
+    custom:
+      jcoin:original_name: r3b
+      jcoin:notes: jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
+        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
+        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
+        (CONSISTENT WITH HUB CONSENT FORMS)'
+  - section: Risk of Harms and Consequences
+    name: ever_dx_hbv
     title: Hepatitis B
-    type: boolean
-    description: '[Hepatitis B? ] Were you ever told by a doctor or nurse that you
+    type: string
+    description: '[Hepatitis B?] Were you ever told by a doctor or nurse that you
       had...'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
+    constraints:
+      - enum:
+          - Yes
+          - No
+          - Don't recall
     custom:
       jcoin:original_name: r3c
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
@@ -3281,168 +3319,129 @@ fields:
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
         (CONSISTENT WITH HUB CONSENT FORMS)'
   - section: Risk of Harms and Consequences
+    name: ever_dx_hbv_when
+    title:  Hepatitis B -- When first diagnosed?
+    type: string
+    description:  '[Hepatitis B?] If YES, when were you first diagnosed?'
+    constraints:
+      - enum:
+          - More than a year ago
+          - Four to 12 months ago
+          - Two to 3 months ago
+          - Past month
+          - Don't know
+    custom:
+      jcoin:original_name: r3c
+      jcoin:notes: jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
+        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
+        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
+        (CONSISTENT WITH HUB CONSENT FORMS)'
+  - section: Risk of Harms and Consequences
     name: ever_dx_std
     title: Other sexually transmitted diseases
-    type: boolean
+    type: string
     description: '[Other sexually transmitted diseases or infections, such as syphilis.]
       Were you ever told by a doctor or nurse that you had...'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
+    constraints:
+      - enum:
+          - Yes
+          - No
+          - Don't recall
     custom:
       jcoin:original_name: r3d
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
         (CONSISTENT WITH HUB CONSENT FORMS)'
-  - section: Risk of Harms and Consequences
+- section: Risk of Harms and Consequences
+    name: ever_dx_std_when
+    title:  Other STD -- When first diagnosed?
+    type: string
+    description:  '[STD?] If YES, when were you first diagnosed?'
+    constraints:
+      - enum:
+          - More than a year ago
+          - Four to 12 months ago
+          - Two to 3 months ago
+          - Past month
+          - Don't know
+    custom:
+      jcoin:original_name: r3d
+      jcoin:notes: jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
+        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
+        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
+        (CONSISTENT WITH HUB CONSENT FORMS)'
+- section: Risk of Harms and Consequences
     name: ever_dx_tb
     title: Tuberculosis
-    type: boolean
+    type: string
     description: '[Tuberculosis or TB?] Were you ever told by a doctor or nurse that
       you had...'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
+    constraints:
+      - enum:
+          - Yes
+          - No
+          - Don't recall
     custom:
       jcoin:original_name: r3e
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
         (CONSISTENT WITH HUB CONSENT FORMS)'
+- section: Risk of Harms and Consequences
+    name: ever_dx_tb_when
+    title:  Tuberculosis or TB -- When first diagnosed?
+    type: string
+    description:  '[Tuberculosis or TB?] If YES, when were you first diagnosed?'
+    constraints:
+      - enum:
+          - More than a year ago
+          - Four to 12 months ago
+          - Two to 3 months ago
+          - Past month
+          - Don't know
+    custom:
+      jcoin:original_name: r3e
+      jcoin:notes: jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
+        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
+        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
+        (CONSISTENT WITH HUB CONSENT FORMS)'
   - section: Risk of Harms and Consequences
     name: ever_dx_covid
     title: COVID
-    type: boolean
+    type: string
     description: '[Coronavirus 19 or COVID19?] Were you ever told by a doctor or nurse
       that you had...'
-    trueValues:
-      - 'Yes'
-    falseValues:
-      - 'No'
+    constraints:
+      - enum:
+          - Yes
+          - No
+          - Don't recall
     custom:
       jcoin:original_name: r3f
       jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
         (CONSISTENT WITH HUB CONSENT FORMS)'
-  - section: Risk of Harms and Consequences
-    name: first_dx_hiv
-    title: First diagnosis of HIV/AIDS
+- section: Risk of Harms and Consequences
+    name: ever_dx_covid_when
+    title:  COVID -- When first diagnosed?
     type: string
-    description: '[Human Immunodeficiency Virus, HIV or AIDS?] If yes, when were you
-      FIRST diagnosed?'
+    description:  '[COVID?] If YES, when were you first diagnosed?'
     constraints:
-      enum:
-        - Never
-        - More than a year ago
-        - 4 to 12 months ago
-        - 2 to 3 months ago
-        - Past month
+      - enum:
+          - More than a year ago
+          - Four to 12 months ago
+          - Two to 3 months ago
+          - Past month
+          - Don't know
     custom:
-      jcoin:original_name: r3a_first_dx
-      jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
+      jcoin:original_name: r3f
+      jcoin:notes: jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
         ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
         AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
         (CONSISTENT WITH HUB CONSENT FORMS)'
-  - section: Risk of Harms and Consequences
-    name: first_dx_hcv
-    title: First diagnosis of Hepatitis C
-    type: string
-    description: '[Hepatitis C? ] If yes, when were you FIRST diagnosed?'
-    constraints:
-      enum:
-        - Never
-        - More than a year ago
-        - 4 to 12 months ago
-        - 2 to 3 months ago
-        - Past month
 
-    custom:
-      jcoin:original_name: r3b_first_dx
-      jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
-        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
-        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
-        (CONSISTENT WITH HUB CONSENT FORMS)'
-  - section: Risk of Harms and Consequences
-    name: first_dx_hepb
-    title: First diagnosis of Hepatitis B
-    type: string
-    description: '[Hepatitis B? ] If yes, when were you FIRST diagnosed?'
-    constraints:
-      enum:
-        - Never
-        - More than a year ago
-        - 4 to 12 months ago
-        - 2 to 3 months ago
-        - Past month
-
-    custom:
-      jcoin:original_name: r3c_first_dx
-      jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
-        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
-        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
-        (CONSISTENT WITH HUB CONSENT FORMS)'
-  - section: Risk of Harms and Consequences
-    name: first_dx_std
-    title: First diagnosis of other STDs
-    type: string
-    description: '[Other sexually transmitted diseases or infections, such as syphilis.]
-      If yes, when were you FIRST diagnosed?'
-    constraints:
-      enum:
-        - Never
-        - More than a year ago
-        - 4 to 12 months ago
-        - 2 to 3 months ago
-        - Past month
-
-    custom:
-      jcoin:original_name: r3d_first_dx
-      jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
-        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
-        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
-        (CONSISTENT WITH HUB CONSENT FORMS)'
-  - section: Risk of Harms and Consequences
-    name: first_dx_tb
-    title: First diagnosis of Tuberculosis
-    type: string
-    description: '[Tuberculosis or TB?] If yes, when were you FIRST diagnosed?'
-    constraints:
-      enum:
-        - Never
-        - More than a year ago
-        - 4 to 12 months ago
-        - 2 to 3 months ago
-        - Past month
-
-    custom:
-      jcoin:original_name: r3e_first_dx
-      jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
-        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
-        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
-        (CONSISTENT WITH HUB CONSENT FORMS)'
-  - section: Risk of Harms and Consequences
-    name: first_dx_covid
-    title: First diagnosis of COVID
-    type: string
-    description: '[Coronavirus 19 or COVID19?] If yes, when were you FIRST diagnosed?'
-    constraints:
-      enum:
-        - Never
-        - More than a year ago
-        - 4 to 12 months ago
-        - 2 to 3 months ago
-        - Past month
-
-    custom:
-      jcoin:original_name: r3f_first_dx
-      jcoin:notes: 'RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT
-        ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA
-        AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW
-        (CONSISTENT WITH HUB CONSENT FORMS)'
 primaryKey:
   - jdc_person_id
   - visit_number
