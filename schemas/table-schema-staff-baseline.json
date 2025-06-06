@@ -23,16 +23,6 @@
             }
         },
         {
-            "section": "Record and linkage",
-            "name": "hub_id",
-            "title": "Hub identifier",
-            "type": "integer",
-            "description": "Randomly generated integer for each unique hub.",
-            "constraints": {
-                "required": true
-            }
-        },
-        {
             "section": "Enrollment",
             "name": "quarter_enrolled",
             "title": "Quarter Enrolled",

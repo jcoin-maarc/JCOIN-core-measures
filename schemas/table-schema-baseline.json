@@ -9,16 +9,6 @@
     "fields": [
         {
             "section": "Record and linkage",
-            "name": "hub_id",
-            "title": "Hub identifier",
-            "type": "integer",
-            "description": "Randomly generated integer for each unique hub.",
-            "constraints": {
-                "required": true
-            }
-        },
-        {
-            "section": "Record and linkage",
             "name": "jdc_person_id",
             "title": "JCOIN data commons person identifier",
             "type": "string",
