@@ -23,68 +23,6 @@
             }
         },
         {
-            "section": "Enrollment",
-            "name": "quarter_enrolled",
-            "title": "Quarter Enrolled",
-            "type": "string",
-            "description": "The financial quarter and year of enrollment",
-            "constraints": {
-                "required": true,
-                "maxLength": 6,
-                "pattern": "[0-9][0-9][0-9][0-9]Q[0-9]"
-            },
-            "custom": {
-                "jcoin:original_name": "quarter_enrolled"
-            }
-        },
-        {
-            "section": "Enrollment",
-            "name": "state_of_site_enrollment",
-            "title": "State of Site For Enrollment",
-            "type": "string",
-            "description": "The U.S. State abbreviation of the site where client (participant) was initially enrolled",
-            "constraints": {
-                "required": true,
-                "maxLength": 2,
-                "pattern": "[A-Z][A-Z]"
-            },
-            "custom": {
-                "jcoin:original_name": "state_of_site_enrollment"
-            }
-        },
-        {
-            "section": "Enrollment",
-            "name": "current_study_status",
-            "title": "Current Study Status",
-            "type": "string",
-            "description": "A summary of the current status where client (participant) is in\nstudy. \n",
-            "constraints": {
-                "enum": [
-                    "On study",
-                    "Dropped out/lost to follow up",
-                    "Withdrawn by investigator",
-                    "Re-incarcerated",
-                    "Deceased",
-                    "Completed study"
-                ],
-                "required": true
-            },
-            "custom": {
-                "jcoin:original_name": "current_study_status",
-                "jcoin:note": "Re-incarcerated\" = re-incarceration leading to dropout or withdrawal and \"Withdrawn by investigator\" = withdrawal by investigator for other reasons not listed"
-            }
-        },
-        {
-            "section": "Enrollment",
-            "name": "days_on_study",
-            "title": "Days on study",
-            "type": "integer",
-            "description": "The number of total days (anchor date is baseline visit date) on study as calculated by:\n\n1. the date data was last updated minus the baseline visit date, if on study\n2. the date of attrition minus the baseline visit date, if attrited\n3. the date of study completion minus the baseline visit date, if complete study\n\nNOTE: again, the baseline date is the anchor date.\n",
-            "constraints": {
-                "required": true
-            }
-        },
-        {
             "section": "Demographics",
             "name": "age",
             "title": "Age",

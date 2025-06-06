@@ -1,0 +1,91 @@
+{
+    "version": "2.4.0",
+    "title": "Client participants: Admin measures",
+    "description": "Measures collected before the start of the study for client participants. These measures are gathered for administrative description of the study and some are dynamically updated, such as current_study_status.",
+    "custom": {
+        "jcoin:schemaType": "Client",
+        "jcoin:missingValuesDescription": "\n**Below are extended descriptions of each `missingValues` (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.\n  - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.\n  - Missing in error: This code signifies that the data for the question is missing without any clear reason or explanation.\n"
+    },
+    "fields": [
+        {
+            "section": "Record and linkage",
+            "name": "hub_id",
+            "title": "Hub identifier",
+            "type": "integer",
+            "description": "Randomly generated integer for each unique hub.",
+            "constraints": {
+                "required": true
+            }
+        },
+        {
+            "section": "Enrollment",
+            "name": "quarter_enrolled",
+            "title": "Quarter Enrolled",
+            "type": "string",
+            "description": "The financial quarter and year of enrollment",
+            "constraints": {
+                "required": true,
+                "maxLength": 6,
+                "pattern": "[0-9][0-9][0-9][0-9]Q[0-9]"
+            },
+            "custom": {
+                "jcoin:original_name": "quarter_enrolled"
+            }
+        },
+        {
+            "section": "Enrollment",
+            "name": "state_of_site_enrollment",
+            "title": "State of Site For Enrollment",
+            "type": "string",
+            "description": "The U.S. State abbreviation of the site where client (participant) was initially enrolled",
+            "constraints": {
+                "required": true,
+                "maxLength": 2,
+                "pattern": "[A-Z][A-Z]"
+            },
+            "custom": {
+                "jcoin:original_name": "state_of_site_enrollment"
+            }
+        },
+        {
+            "section": "Enrollment",
+            "name": "current_study_status",
+            "title": "Current Study Status",
+            "type": "string",
+            "description": "A summary of the current status where client (participant) is in\nstudy. \n",
+            "constraints": {
+                "enum": [
+                    "On study",
+                    "Dropped out/lost to follow up",
+                    "Withdrawn by investigator",
+                    "Re-incarcerated",
+                    "Deceased",
+                    "Completed study"
+                ],
+                "required": true
+            },
+            "custom": {
+                "jcoin:original_name": "current_study_status",
+                "jcoin:note": "Re-incarcerated\" = re-incarceration leading to dropout or withdrawal and \"Withdrawn by investigator\" = withdrawal by investigator for other reasons not listed"
+            }
+        },
+        {
+            "section": "Enrollment",
+            "name": "days_on_study",
+            "title": "Days on study",
+            "type": "integer",
+            "description": "The number of total days (anchor date is baseline visit date) on study as calculated by:\n\n1. the date data was last updated minus the baseline visit date, if on study\n2. the date of attrition minus the baseline visit date, if attrited\n3. the date of study completion minus the baseline visit date, if complete study\n\nNOTE: again, the baseline date is the anchor date.\n",
+            "constraints": {
+                "required": true
+            }
+        }
+    ],
+    "primaryKey": [
+      "hub_id"
+    ],
+    "missingValues": [
+        "Don't know",
+        "Not collected",
+        "Missing in error"
+    ]
+}
