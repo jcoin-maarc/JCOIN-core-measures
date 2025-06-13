@@ -103,9 +103,6 @@
             "falseValues": [
                 "No"
             ],
-            "constraints": {
-                "required": true
-            },
             "custom": {
                 "jcoin:original_name": "d3_white"
             }
@@ -122,9 +119,6 @@
             "falseValues": [
                 "No"
             ],
-            "constraints": {
-                "required": true
-            },
             "custom": {
                 "jcoin:original_name": "d3_black"
             }
@@ -141,9 +135,6 @@
             "falseValues": [
                 "No"
             ],
-            "constraints": {
-                "required": true
-            },
             "custom": {
                 "jcoin:original_name": "d3_american_indian"
             }
@@ -160,9 +151,6 @@
             "falseValues": [
                 "No"
             ],
-            "constraints": {
-                "required": true
-            },
             "custom": {
                 "jcoin:original_name": "d3_hawaiian"
             }
@@ -179,9 +167,6 @@
             "falseValues": [
                 "No"
             ],
-            "constraints": {
-                "required": true
-            },
             "custom": {
                 "jcoin:original_name": "d3_asian"
             }
@@ -198,9 +183,6 @@
             "falseValues": [
                 "No"
             ],
-            "constraints": {
-                "required": true
-            },
             "custom": {
                 "jcoin:original_name": "d3_other"
             }
@@ -243,9 +225,6 @@
             "falseValues": [
                 "No"
             ],
-            "constraints": {
-                "required": true
-            },
             "custom": {
                 "jcoin:original_name": "d2"
             }
@@ -257,7 +236,6 @@
             "type": "string",
             "description": "Racial category derived from the individual racial category fields.\n  - Exactly one racial category field selected = title of racial category\n  - Two or more selected = Multiracial \n",
             "constraints": {
-                "required": true,
                 "enum": [
                     "White",
                     "Black or African American",
