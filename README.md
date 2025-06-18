@@ -4,9 +4,10 @@ This repository contains [tabular data schemas](https://datapackage.org/standard
 
 The authoratitive schemas are maintained in [JSON](https://en.wikipedia.org/wiki/JSON) format, but may be translated into other formats as well (e.g., CSV).
 
+
 ## JCOIN Core Measures
 
-The *JCOIN core measures* are a set of common data elements collected by all of the JCOIN research hubs. Their schemas are located in the [schemas folder](/schemas/core_measures/). It can be convenient to view them using a service such as [JSOIN Hero](https://github.com/triggerdotdev/jsonhero-web) which you may do with the links below:
+The *JCOIN core measures* are a set of common data elements collected by all of the JCOIN research hubs. Their schemas are located in the [schemas folder](https://github.com/jcoin-maarc/JCOIN-core-measures/tree/main/schemas/core_measures). It can be convenient to view them using a service such as [JSOIN Hero](https://github.com/triggerdotdev/jsonhero-web) which you may do with the links below:
 
 - [Data collected at baseline from research participants](https://jsonhero.io/new?url=https://raw.githubusercontent.com/jcoin-maarc/JCOIN-core-measures/refs/heads/main/schemas/core_measures/table-schema-baseline.json)
 - [Data collected longitudinally from research participants](https://jsonhero.io/new?url=https://raw.githubusercontent.com/jcoin-maarc/JCOIN-core-measures/refs/heads/main/schemas/core_measures/table-schema-longitudinal.json)
@@ -16,3 +17,8 @@ The *JCOIN core measures* are a set of common data elements collected by all of 
 In addition to the datasets above, a small administrative dataset is used to record information about each participant's flow throughout the study:
 
 - [Administrative data on participants](https://jsonhero.io/new?url=https://raw.githubusercontent.com/jcoin-maarc/JCOIN-core-measures/refs/heads/main/schemas/core_measures/table-schema-admin.json)
+
+
+## Validating Your Data
+
+Instructions for using these schemas to validate your data may be found [here](https://github.com/jcoin-maarc/JCOIN-core-measures/blob/main/docs/validation.md).
