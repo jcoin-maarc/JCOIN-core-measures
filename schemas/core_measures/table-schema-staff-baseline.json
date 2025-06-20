@@ -30,7 +30,7 @@
             "description": "The financial quarter and year of enrollment",
             "constraints": {
                 "required": true,
-                "pattern": "[0-9][0-9][0-9][0-9]Q[0-9]",
+                "pattern": "20[0-9][0-9]Q[1-4]",
                 "maxLength": 6
             },
             "custom": {

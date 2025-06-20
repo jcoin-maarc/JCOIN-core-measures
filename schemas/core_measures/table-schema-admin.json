@@ -26,7 +26,7 @@
             "constraints": {
                 "required": true,
                 "maxLength": 6,
-                "pattern": "[0-9][0-9][0-9][0-9]Q[0-9]"
+                "pattern": "20[0-9][0-9]Q[1-4]"
             },
             "custom": {
                 "jcoin:original_name": "quarter_enrolled"
