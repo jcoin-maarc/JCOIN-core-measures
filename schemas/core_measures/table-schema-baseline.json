@@ -1,41 +1,177 @@
 {
-    "version": "2.4.0",
-    "title": "Client participants: Baseline measures",
-    "description": "Measures collected before the start of the study for client participants. As many of these measures are collected at 'baseline' it is currently called 'baseline.' However, this is a slight misnomer as, for example, current_study_status is dynamically updated.",
-    "custom": {
-        "jcoin:schemaType": "Client",
-        "jcoin:missingValuesDescription": "\n**Below are extended descriptions of each `missingValues` (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.\n  - Refused: This code signifies that the respondent actively chose not to answer the question, despite being capable of providing a response.\n  - Left blank: This code indicates that the question was intentionally left unanswered by the respondent.\n  - Legitimately skipped: This code is used when the question was intentionally skipped due to its inapplicability or irrelevance to the respondent's situation.\n  - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.\n  - Missing in error: This code signifies that the data for the question is missing without any clear reason or explanation.\n"
-    },
+    "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+    "title": "JCOIN common measures collected at baseline",
+    "version": "1.0.0",
+    "description": "Contains all common measures items that are collected only at baseline (i.e., not longitudinally or at the end of the study).",
+    "jcoin:schemaType": "Client",
+    "primaryKey": [
+        "jdc_person_id"
+    ],
+    "missingValues": [
+        "Don't know",
+        "Refused",
+        "Left blank",
+        "Legitimately skipped",
+        "Not collected",
+        "Missing in error"
+    ],
+    "fieldsMatch": "superset",
     "fields": [
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "jdc_person_id",
             "title": "JCOIN data commons person identifier",
             "type": "string",
-            "description": "The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).",
+            "description": "Anonymized participant identifier, unique across hubs",
             "constraints": {
                 "required": true,
                 "maxLength": 9,
                 "pattern": "[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"
             },
-            "custom": {
-                "jcoin:original_name": "jdc_person_id"
-            }
+            "jcoin:originalName": "XPID"
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
+            "name": "dob",
+            "title": "Date of birth",
+            "type": "date",
+            "description": "What is your birth date?",
+            "jcoin:originalName": "D1",
+            "jcoin:notes": "Shifted for de-identification"
+        },
+        {
+            "jcoin:section": "Demographics",
             "name": "age",
-            "title": "Age",
+            "title": "Age in years",
             "type": "integer",
-            "description": "About how old are you? (top coded at 90)",
-            "custom": {
-                "jcoin:original_name": "d1a"
-            }
+            "description": "About how old are you?",
+            "jcoin:originalName": "D1a",
+            "jcoin:notes": "Top-coded at 90 for de-identification"
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
+            "name": "hispanic_latino",
+            "title": "Hispanic, Latino, or Spanish Origin",
+            "type": "boolean",
+            "description": "Are you of Hispanic, Latino, or Spanish origin?",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "jcoin:originalName": "D2"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "race_white",
+            "title": "Race: White",
+            "type": "boolean",
+            "description": "[White] What is your race? SELECT ALL THAT APPLY",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "jcoin:originalName": "D3"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "race_black",
+            "title": "Race: Black or African American",
+            "type": "boolean",
+            "description": "[Black or African American] What is your race? SELECT ALL THAT APPLY",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "jcoin:originalName": "D3"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "race_AIAN",
+            "title": "Race: American Indian or Alaska Native",
+            "type": "boolean",
+            "description": "[American Indian or Alaska Native] What is your race? SELECT ALL THAT APPLY",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "jcoin:originalName": "D3"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "race_AI_tribe",
+            "title": "Race: American Indian principal tribe or community specified",
+            "type": "string",
+            "description": "[American Indian principal tribe or community specified] What is your race? SELECT ALL THAT APPLY",
+            "constraints": {
+                "maxLength": 80
+            },
+            "jcoin:originalName": "D3"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "race_asian",
+            "title": "Race: Asian",
+            "type": "boolean",
+            "description": "[Asian] What is your race? SELECT ALL THAT APPLY",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "jcoin:originalName": "D3"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "race_hawaiian_OPI",
+            "title": "Race: Native Hawaiian or Other Pacific Islander",
+            "type": "boolean",
+            "description": "[Native Hawaiian or Other Pacific Islander] What is your race? SELECT ALL THAT APPLY",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "jcoin:originalName": "D3"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "race_other",
+            "title": "Race: Other",
+            "type": "boolean",
+            "description": "[Other] What is your race? SELECT ALL THAT APPLY",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "jcoin:originalName": "D3"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "race_other_specified",
+            "title": "Race: Other specified",
+            "type": "string",
+            "description": "[Other specified] What is your race? SELECT ALL THAT APPLY",
+            "constraints": {
+                "maxLength": 80
+            },
+            "jcoin:originalName": "D3"
+        },
+        {
+            "jcoin:section": "Demographics",
             "name": "sex_at_birth",
-            "title": "Sex at birth",
+            "title": "Sex on birth certificate",
             "type": "string",
             "description": "What sex was originally listed on your birth certificate?",
             "constraints": {
@@ -46,16 +182,25 @@
                     "Something else"
                 ]
             },
-            "custom": {
-                "jcoin:original_name": "o1"
-            }
+            "jcoin:originalName": "O1"
         },
         {
-            "section": "Demographics",
-            "name": "gender_id",
-            "title": "Gender Identity",
+            "jcoin:section": "Demographics",
+            "name": "sex_at_birth_specified",
+            "title": "Sex on birth certificate (something else specified)",
             "type": "string",
-            "description": "What is your gender identity?",
+            "description": "What sex was originally listed on your birth certificate",
+            "constraints": {
+                "maxLength": 80
+            },
+            "jcoin:originalName": "O1"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "gender_id",
+            "title": "Gender identity",
+            "type": "string",
+            "description": "Gender identity: Do you think of yourself as ...",
             "constraints": {
                 "enum": [
                     "Male",
@@ -63,18 +208,55 @@
                     "Transgender man/trans man/female-to-male (FTM)",
                     "Transgender woman/trans woman/male-to-female (MTF)",
                     "Genderqueer/gender nonconforming/neither exclusively male nor female",
+                    "Non-binary",
                     "Additional gender category (or other)"
                 ]
             },
-            "custom": {
-                "jcoin:original_name": "o2",
-                "jcoin:notes": "For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]\n False if not 'Male' and not 'Transfgender' else True"
-            }
+            "jcoin:originalName": "O2"
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
+            "name": "gender_id_specified",
+            "title": "Gender identity (other specified)",
+            "type": "string",
+            "description": "Gender identity: Do you think of yourself as ...",
+            "constraints": {
+                "maxLength": 80
+            },
+            "jcoin:originalName": "O2"
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "sex_at_birth2",
+            "title": "Sex at birth",
+            "type": "string",
+            "description": "What was your sex at birth?",
+            "constraints": {
+                "enum": [
+                    "Male",
+                    "Female",
+                    "Something else"
+                ]
+            },
+            "jcoin:originalName": "D4a",
+            "jcoin:optional": true
+        },
+        {
+            "jcoin:section": "Demographics",
+            "name": "sex_at_birth2_specified",
+            "title": "Sex at birth (something else specified)",
+            "type": "string",
+            "description": "What was your sex at birth?",
+            "constraints": {
+                "maxLength": 80
+            },
+            "jcoin:originalName": "D4a"
+            "jcoin:optional": true
+        },
+        {
+            "jcoin:section": "Demographics",
             "name": "gender_id_condensed",
-            "title": "Gender Identity (condensed)",
+            "title": "Gender identity (condensed)",
             "type": "string",
             "description": "What is your gender identity?",
             "constraints": {
@@ -86,176 +268,27 @@
                     "Something else"
                 ]
             },
-            "custom": {
-                "jcoin:original_name": "d4b",
-                "jcoin:notes": "For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]"
-            }
+            "jcoin:originalName": "D4b"
+            "jcoin:optional": true
         },
         {
-            "section": "Demographics",
-            "name": "race_white",
-            "title": "Race: White",
-            "type": "boolean",
-            "description": "[White] What is your race? SELECT ALL THAT APPLY",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "d3_white"
-            }
-        },
-        {
-            "section": "Demographics",
-            "name": "race_black",
-            "title": "Race: Black or African American",
-            "type": "boolean",
-            "description": "[Black or African American] What is your race? SELECT ALL THAT APPLY",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "d3_black"
-            }
-        },
-        {
-            "section": "Demographics",
-            "name": "race_AIAN",
-            "title": "Race: American Indian or Alaska Native",
-            "type": "boolean",
-            "description": "[American Indian or Alaska Native] What is your race? SELECT ALL THAT APPLY",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "d3_american_indian"
-            }
-        },
-        {
-            "section": "Demographics",
-            "name": "race_hawaiian_OPI",
-            "title": "Race: Native Hawaiian or Other Pacific Islander",
-            "type": "boolean",
-            "description": "[Native Hawaiian or Other Pacific Islander] What is your race? SELECT ALL THAT APPLY",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "d3_hawaiian"
-            }
-        },
-        {
-            "section": "Demographics",
-            "name": "race_asian",
-            "title": "Race: Asian",
-            "type": "boolean",
-            "description": "[Asian] What is your race? SELECT ALL THAT APPLY",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "d3_asian"
-            }
-        },
-        {
-            "section": "Demographics",
-            "name": "race_other",
-            "title": "Race: Other",
-            "type": "boolean",
-            "description": "[Other] What is your race? SELECT ALL THAT APPLY",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "d3_other"
-            }
-        },
-        {
-            "section": "Demographics",
-            "name": "race_AI_tribe",
-            "title": "Race: American indian principal tribe or community specified",
+            "jcoin:section": "Demographics",
+            "name": "gender_id_condensed_specified",
+            "title": "Gender identity condensed (something else specified)",
             "type": "string",
-            "description": "[American indian principal tribe or community specified] What is your race? SELECT ALL THAT APPLY",
+            "description": "What is your gender identity?",
             "constraints": {
                 "maxLength": 80
             },
-            "custom": {
-                "jcoin:original_name": "d3_specify_tribe"
-            }
+            "jcoin:originalName": "D4b"
+            "jcoin:optional": true
         },
         {
-            "section": "Demographics",
-            "name": "race_other_specified",
-            "title": "Race: Other specified",
-            "type": "string",
-            "description": "[Other specified] What is your race? SELECT ALL THAT APPLY",
-            "constraints": {
-                "maxLength": 80
-            },
-            "custom": {
-                "jcoin:original_name": "d3_specify_other"
-            }
-        },
-        {
-            "section": "Demographics",
-            "name": "hispanic_latino",
-            "title": "Hispanic, Latino, or Spanish Origin",
-            "type": "boolean",
-            "description": "Are you of Hispanic, Latino, or Spanish origin?",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "d2"
-            }
-        },
-        {
-            "section": "Demographics",
-            "name": "race",
-            "title": "Race",
-            "type": "string",
-            "description": "Racial category derived from the individual racial category fields.\n  - Exactly one racial category field selected = title of racial category\n  - Two or more selected = Multiracial \n",
-            "constraints": {
-                "enum": [
-                    "White",
-                    "Black or African American",
-                    "American Indian or Alaska Native",
-                    "Asian",
-                    "Native Hawaiian or Other Pacific Islander",
-                    "Some other race",
-                    "Multiracial"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "d3"
-            }
-        },
-        {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "sex_orient_category",
             "title": "Sexual orientation",
             "type": "string",
-            "description": "Sexual orientation:  Do you think of yourself as...",
+            "description": "Sexual orientation: Do you think of yourself as ...",
             "constraints": {
                 "enum": [
                     "Straight or heterosexual",
@@ -265,22 +298,20 @@
                     "Something else"
                 ]
             },
-            "custom": {
-                "jcoin:original_name": "d4c"
-            }
+            "jcoin:originalName": "D4c"
+            "jcoin:optional": true
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "sex_orient_other",
-            "title": "Sexual orientation:  Other specified",
+            "title": "Sexual orientation (other specified)",
             "type": "string",
-            "description": "Sexual orientation:  Do you think of yourself as...",
-            "custom": {
-                "jcoin:original_name": "d4c_specify_other"
-            }
+            "description": "Sexual orientation: Do you think of yourself as ...",
+            "jcoin:originalName": "D4c"
+            "jcoin:optional": true
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "ever_pregnant",
             "title": "Ever pregnant",
             "type": "string",
@@ -295,13 +326,10 @@
                     "Don't know"
                 ]
             },
-            "custom": {
-                "jcoin:original_name": "d4d",
-                "jcoin:notes": "Does this just apply to that past 90 days?  If not, then the participant should be able to check more than one response."
-            }
+            "jcoin:originalName": "d4d"
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "marital_status",
             "title": "Marital status",
             "type": "string",
@@ -315,12 +343,10 @@
                     "Never married"
                 ]
             },
-            "custom": {
-                "jcoin:original_name": "d5"
-            }
+            "jcoin:originalName": "d5"
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "living_as_married",
             "title": "Married with partner",
             "type": "string",
@@ -331,12 +357,10 @@
                     "No, I am not living as married with partner"
                 ]
             },
-            "custom": {
-                "jcoin:original_name": "d5a"
-            }
+            "jcoin:originalName": "d5a"
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "educ_category",
             "title": "Education",
             "type": "string",
@@ -354,32 +378,26 @@
                     "Other (specify)"
                 ]
             },
-            "custom": {
-                "jcoin:original_name": "d6"
-            }
+            "jcoin:originalName": "d6"
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "educ_highest_grade",
-            "title": "Education:  Highest grade level (if less than GED or h.s. diploma)",
+            "title": "Education: Highest grade level (if less than GED or h.s. diploma)",
             "type": "integer",
             "description": "What is the highest grade completed?",
-            "custom": {
-                "jcoin:original_name": "d6_grade"
-            }
+            "jcoin:originalName": "d6_grade"
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "educ_other_specified",
             "title": "Education: Other specified",
             "type": "string",
             "description": "What is the highest grade or level of school you have completed or the highest degree you have received?",
-            "custom": {
-                "jcoin:original_name": "d6_specify_other"
-            }
+            "jcoin:originalName": "d6_specify_other"
         },
         {
-            "section": "MOUD",
+            "jcoin:section": "MOUD",
             "name": "intv_while_incarc",
             "title": "Interviewed during incarceration",
             "type": "boolean",
@@ -390,9 +408,7 @@
             "falseValues": [
                 "No"
             ],
-            "custom": {
-                "jcoin:original_name": "u14f"
-            }
+            "jcoin:originalName": "u14f"
         },
         {
             "section": "MOUD",
@@ -400,9 +416,7 @@
             "title": "Days incarcerated (in past 30/xx days)",
             "type": "integer",
             "description": "During the past xx/30 days, how many days have you been incarcerated?",
-            "custom": {
-                "jcoin:original_name": "u14g"
-            }
+            "jcoin:originalName": "u14g"
         },
         {
             "section": "MOUD",
@@ -416,9 +430,7 @@
             "falseValues": [
                 "No"
             ],
-            "custom": {
-                "jcoin:original_name": "u15"
-            }
+            "jcoin:originalName": "u15"
         },
         {
             "section": "MOUD",
@@ -426,139 +438,111 @@
             "title": "Buprenorphine-naloxone or buprenorphine daily sublingual: Lifetime months",
             "type": "integer",
             "description": "Lifetime months (buprenorphine-naloxone or buprenorphine daily sublingual [e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets])",
-            "custom": {
-                "jcoin:original_name": "u15a1"
-            }
+            "jcoin:originalName": "u15a1"
         },
         {
             "section": "MOUD",
             "name": "months_sublocade",
-            "title": "Buprenorphine injection (Sublocade):  Lifetime months",
+            "title": "Buprenorphine injection (Sublocade): Lifetime months",
             "type": "integer",
             "description": "Lifetime months (buprenorphine injection [Sublocade])",
-            "custom": {
-                "jcoin:original_name": "u15b1"
-            }
+            "jcoin:originalName": "u15b1"
         },
         {
             "section": "MOUD",
             "name": "months_weekly_brixadi",
-            "title": "Buprenorphine  weekly injection (Brixadi):  Lifetime months",
+            "title": "Buprenorphine  weekly injection (Brixadi): Lifetime months",
             "type": "integer",
             "description": "Lifetime months (buprenorphine weekly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15c1"
-            }
+            "jcoin:originalName": "u15c1"
         },
         {
             "section": "MOUD",
             "name": "months_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi):  Lifetime months",
+            "title": "Buprenorphine  monthly injection (Brixadi): Lifetime months",
             "type": "integer",
             "description": "Lifetime months (buprenorphine monthly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15d1"
-            }
+            "jcoin:originalName": "u15d1"
         },
         {
             "section": "MOUD",
             "name": "months_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine):  Lifetime months",
+            "title": "Buprenorphine 6-month implant (Probuphine): Lifetime months",
             "type": "integer",
             "description": "Lifetime months (buprenorphine 6-month implant [Probuphine])",
-            "custom": {
-                "jcoin:original_name": "u15e1"
-            }
+            "jcoin:originalName": "u15e1"
         },
         {
             "section": "MOUD",
             "name": "months_daily_ntx",
-            "title": "Naltrexone daily (oral):  Lifetime months",
+            "title": "Naltrexone daily (oral): Lifetime months",
             "type": "integer",
             "description": "Lifetime months (Naltrexone daily (oral))",
-            "custom": {
-                "jcoin:original_name": "u15f1"
-            }
+            "jcoin:originalName": "u15f1"
         },
         {
             "section": "MOUD",
             "name": "months_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol):  Lifetime months",
+            "title": "Naltrexone monthly injection (Vivitrol): Lifetime months",
             "type": "integer",
             "description": "Lifetime months (Naltrexone monthly injection [Vivitrol])",
-            "custom": {
-                "jcoin:original_name": "u15g1"
-            }
+            "jcoin:originalName": "u15g1"
         },
         {
             "section": "MOUD",
             "name": "months_methadone",
-            "title": "Methadone daily:  Lifetime months",
+            "title": "Methadone daily: Lifetime months",
             "type": "integer",
             "description": "Lifetime months (methadone daily)",
-            "custom": {
-                "jcoin:original_name": "u15h1"
-            }
+            "jcoin:originalName": "u15h1"
         },
         {
             "section": "MOUD",
             "name": "days_pti_weekly_brixadi",
-            "title": "Buprenorphine  weekly injection (Brixadi):  PTI days",
+            "title": "Buprenorphine  weekly injection (Brixadi): PTI days",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine weekly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15c2"
-            }
+            "jcoin:originalName": "u15c2"
         },
         {
             "section": "MOUD",
             "name": "days_pti_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi):  PTI days",
+            "title": "Buprenorphine  monthly injection (Brixadi): PTI days",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine monthly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15d2"
-            }
+            "jcoin:originalName": "u15d2"
         },
         {
             "section": "MOUD",
             "name": "days_pti_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine):  PTI days",
+            "title": "Buprenorphine 6-month implant (Probuphine): PTI days",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine 6-month implant [Probuphine])",
-            "custom": {
-                "jcoin:original_name": "u15e2"
-            }
+            "jcoin:originalName": "u15e2"
         },
         {
             "section": "MOUD",
             "name": "days_pti_daily_ntx",
-            "title": "Naltrexone daily (oral):  PTI days",
+            "title": "Naltrexone daily (oral): PTI days",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) days (Naltrexone daily (oral))",
-            "custom": {
-                "jcoin:original_name": "u15f2"
-            }
+            "jcoin:originalName": "u15f2"
         },
         {
             "section": "MOUD",
             "name": "days_pti_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol):  PTI days",
+            "title": "Naltrexone monthly injection (Vivitrol): PTI days",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) days (Naltrexone monthly injection [Vivitrol])",
-            "custom": {
-                "jcoin:original_name": "u15g2"
-            }
+            "jcoin:originalName": "u15g2"
         },
         {
             "section": "MOUD",
             "name": "days_pti_methadone",
-            "title": "Methadone daily:  PTI days",
+            "title": "Methadone daily: PTI days",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) days (methadone daily)",
-            "custom": {
-                "jcoin:original_name": "u15h2"
-            }
+            "jcoin:originalName": "u15h2"
         },
         {
             "section": "MOUD",
@@ -566,19 +550,15 @@
             "title": "Buprenorphine  weekly injection (Brixadi): PTI Dose per day",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine weekly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15c3"
-            }
+            "jcoin:originalName": "u15c3"
         },
         {
             "section": "MOUD",
             "name": "dose_pti_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi):  PTI Dose per day",
+            "title": "Buprenorphine  monthly injection (Brixadi): PTI Dose per day",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine monthly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15d3"
-            }
+            "jcoin:originalName": "u15d3"
         },
         {
             "section": "MOUD",
@@ -586,9 +566,7 @@
             "title": "Buprenorphine 6-month implant (Probuphine): PTI Dose per day",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine 6-month implant [Probuphine])",
-            "custom": {
-                "jcoin:original_name": "u15e3"
-            }
+            "jcoin:originalName": "u15e3"
         },
         {
             "section": "MOUD",
@@ -596,9 +574,7 @@
             "title": "Naltrexone daily (oral): PTI Dose per day",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) dose per day (Naltrexone daily (oral))",
-            "custom": {
-                "jcoin:original_name": "u15f3"
-            }
+            "jcoin:originalName": "u15f3"
         },
         {
             "section": "MOUD",
@@ -606,9 +582,7 @@
             "title": "Naltrexone monthly injection (Vivitrol): PTI Dose per day",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) dose per day (Naltrexone monthly injection [Vivitrol])",
-            "custom": {
-                "jcoin:original_name": "u15g3"
-            }
+            "jcoin:originalName": "u15g3"
         },
         {
             "section": "MOUD",
@@ -616,9 +590,7 @@
             "title": "Methadone daily: PTI Dose per day",
             "type": "integer",
             "description": "Past 30 days prior to incarceration (PTI) dose per day (methadone daily)",
-            "custom": {
-                "jcoin:original_name": "u15h3"
-            }
+            "jcoin:originalName": "u15h3"
         },
         {
             "section": "MOUD",
@@ -626,60 +598,47 @@
             "title": "Buprenorphine  weekly injection (Brixadi): Past 30/xx days",
             "type": "integer",
             "description": "Past 30 days (or other number of days specified such as days since incarceration) (buprenorphine weekly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15c4",
-                "jcoin:note": "INTERVIEWER INSTRUCTIONS: if [number of days] in `days_incarcerated_interval` is less than 30/xx days, replace 30/xx\ndays with actual number of days participant has been incarcerated.\n"
-            }
+            "jcoin:originalname": "u15c4"
         },
         {
             "section": "MOUD",
             "name": "days_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi):  Past 30/xx days",
+            "title": "Buprenorphine  monthly injection (Brixadi): Past 30/xx days",
             "type": "integer",
             "description": "Past 30 days (or other number of days specified such as days since incarceration)  (buprenorphine monthly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15d4"
-            }
+            "jcoin:originalName": "u15d4"
         },
         {
             "section": "MOUD",
             "name": "days_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine):  Past 30/xx days",
+            "title": "Buprenorphine 6-month implant (Probuphine): Past 30/xx days",
             "type": "integer",
             "description": "Past 30 days (or other number of days specified such as days since incarceration) (buprenorphine 6-month implant [Probuphine])",
-            "custom": {
-                "jcoin:original_name": "u15e4"
-            }
+            "jcoin:originalName": "u15e4"
         },
         {
             "section": "MOUD",
             "name": "days_daily_ntx",
-            "title": "Naltrexone daily (oral):  Past 30/xx days",
+            "title": "Naltrexone daily (oral): Past 30/xx days",
             "type": "integer",
             "description": "Past 30 days (or other number of days specified such as days since incarceration) (Naltrexone daily (oral))",
-            "custom": {
-                "jcoin:original_name": "u15f4"
-            }
+            "jcoin:originalName": "u15f4"
         },
         {
             "section": "MOUD",
             "name": "days_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol):  Past 30/xx days",
+            "title": "Naltrexone monthly injection (Vivitrol): Past 30/xx days",
             "type": "integer",
             "description": "Past 30 days (or other number of days specified such as days since incarceration) (Naltrexone monthly injection [Vivitrol])",
-            "custom": {
-                "jcoin:original_name": "u15g4"
-            }
+            "jcoin:originalName": "u15g4"
         },
         {
             "section": "MOUD",
             "name": "days_methadone",
-            "title": "Methadone daily:  Past 30/xx days",
+            "title": "Methadone daily: Past 30/xx days",
             "type": "integer",
             "description": "Past 30 days (or other number of days specified such as days since incarceration) (methadone daily)",
-            "custom": {
-                "jcoin:original_name": "u15h4"
-            }
+            "jcoin:originalName": "u15h4"
         },
         {
             "section": "MOUD",
@@ -687,70 +646,47 @@
             "title": "Buprenorphine  weekly injection (Brixadi): Dose per day",
             "type": "integer",
             "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine weekly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15c5"
-            }
+            "jcoin:originalName": "u15c5"
         },
         {
             "section": "MOUD",
             "name": "dose_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi):  Dose per day",
+            "title": "Buprenorphine  monthly injection (Brixadi): Dose per day",
             "type": "integer",
             "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine monthly injection [Brixadi])",
-            "custom": {
-                "jcoin:original_name": "u15d5"
-            }
+            "jcoin:originalName": "u15d5"
         },
         {
             "section": "MOUD",
             "name": "dose_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine):  Dose per day",
+            "title": "Buprenorphine 6-month implant (Probuphine): Dose per day",
             "type": "integer",
             "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine 6-month implant [Probuphine])",
-            "custom": {
-                "jcoin:original_name": "u15e5"
-            }
+            "jcoin:originalName": "u15e5"
         },
         {
             "section": "MOUD",
             "name": "dose_daily_ntx",
-            "title": "Naltrexone daily (oral):  Dose per day",
+            "title": "Naltrexone daily (oral): Dose per day",
             "type": "integer",
             "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (Naltrexone daily (oral))",
-            "custom": {
-                "jcoin:original_name": "u15f5"
-            }
+            "jcoin:originalName": "u15f5"
         },
         {
             "section": "MOUD",
             "name": "dose_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol):  Dose per day",
+            "title": "Naltrexone monthly injection (Vivitrol): Dose per day",
             "type": "integer",
             "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (Naltrexone monthly injection [Vivitrol])",
-            "custom": {
-                "jcoin:original_name": "u15g5"
-            }
+            "jcoin:originalName": "u15g5"
         },
         {
             "section": "MOUD",
             "name": "dose_methadone",
-            "title": "Methadone daily:  Dose per day",
+            "title": "Methadone daily: Dose per day",
             "type": "integer",
             "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (methadone daily)",
-            "custom": {
-                "jcoin:original_name": "u15h5"
-            }
+            "jcoin:originalName": "u15h5"
         }
-    ],
-    "primaryKey": [
-        "jdc_person_id"
-    ],
-    "missingValues": [
-        "Don't know",
-        "Refused",
-        "Left blank",
-        "Legitimately skipped",
-        "Not collected",
-        "Missing in error"
     ]
 }

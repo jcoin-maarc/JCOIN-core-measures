@@ -12,7 +12,7 @@
             "name": "hub_id",
             "title": "Hub identifier",
             "type": "integer",
-            "description": "Randomly generated integer for each unique hub.",
+            "description": "Randomly-generated integer for each unique hub.",
             "constraints": {
                 "required": true
             }
