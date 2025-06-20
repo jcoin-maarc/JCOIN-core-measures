@@ -765,7 +765,7 @@
         },
         {
             "section": "Implementation Outcome Measures",
-            "name": "outcome_good match",
+            "name": "outcome_good_match",
             "title": "Implementation Outcome Measures: Good match.",
             "type": "string",
             "description": "Staff members are under too much pressure to do their jobs effectively",
@@ -841,7 +841,7 @@
         },
         {
             "section": "Implementation Outcome Measures",
-            "name": "outcome_easy to use",
+            "name": "outcome_easy_to_use",
             "title": "Implementation Outcome Measures: Easy to use",
             "type": "string",
             "description": "Staff members are under too much pressure to do their jobs effectively",
