@@ -2,7 +2,7 @@
     "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
     "title": "JCOIN study administrative variables",
     "version": "1.0.0",
-    "description": "Variables pertaining to administration of study",
+    "description": "Variables pertaining to administration of study. File should include one row for every participant enrolled in the study.",
     "jcoin:schemaType": "Client",
     "primaryKey": [
         "jdc_person_id"

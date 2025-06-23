@@ -2,7 +2,7 @@
     "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
     "title": "JCOIN common measures collected at baseline",
     "version": "1.0.0",
-    "description": "Contains all common measures that are collected only at baseline (i.e., not longitudinally or at the end of the study).",
+    "description": "Contains all common measures that are collected only at baseline (i.e., not longitudinally or at the end of the study). File should include one row for every participant enrolled in the study.",
     "jcoin:schemaType": "Client",
     "primaryKey": [
         "jdc_person_id"
