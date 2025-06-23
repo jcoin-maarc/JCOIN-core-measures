@@ -54,7 +54,7 @@
             "name": "month_enrolled",
             "title": "Month enrolled",
             "type": "string",
-            "description": "Month in which participant was enrolled (for DSMB reports only).",
+            "description": "Month in which participant was enrolled.",
             "constraints": {
                 "enum": [
                     "January",
@@ -70,7 +70,8 @@
                     "November",
                     "December"
                 ]
-            }
+            },
+            "jcoin:notes": "For use in preparing DSMB reports only."
         },
         {
             "name": "state_of_site_enrollment",
@@ -107,6 +108,15 @@
             "description": "Number of days participant spent on study following enrollment (for those still on study, number of days from enrollment to current date).",
             "constraints": {
                 "required": true
+            }
+        },
+        {
+            "name": "tx_arm",
+            "title": "Treatment arm",
+            "type": "string",
+            "description": "Treatment arm to which participant was randomized (hub specific)",
+            "constraints": {
+                "maxLength": 24
             }
         }
     ]
