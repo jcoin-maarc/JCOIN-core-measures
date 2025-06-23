@@ -2,7 +2,7 @@
     "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
     "title": "JCOIN common measures collected at baseline",
     "version": "1.0.0",
-    "description": "Contains all common measures items that are collected only at baseline (i.e., not longitudinally or at the end of the study).",
+    "description": "Contains all common measures that are collected only at baseline (i.e., not longitudinally or at the end of the study).",
     "jcoin:schemaType": "Client",
     "primaryKey": [
         "jdc_person_id"
@@ -69,10 +69,12 @@
             "type": "boolean",
             "description": "[White] What is your race? SELECT ALL THAT APPLY",
             "trueValues": [
-                "Yes"
+                "Yes",
+                "Checked"
             ],
             "falseValues": [
-                "No"
+                "No",
+                "Unchecked"
             ],
             "jcoin:originalName": "D3"
         },
@@ -83,10 +85,12 @@
             "type": "boolean",
             "description": "[Black or African American] What is your race? SELECT ALL THAT APPLY",
             "trueValues": [
-                "Yes"
+                "Yes",
+                "Checked"
             ],
             "falseValues": [
-                "No"
+                "No",
+                "Unchecked"
             ],
             "jcoin:originalName": "D3"
         },
@@ -97,10 +101,12 @@
             "type": "boolean",
             "description": "[American Indian or Alaska Native] What is your race? SELECT ALL THAT APPLY",
             "trueValues": [
-                "Yes"
+                "Yes",
+                "Checked"
             ],
             "falseValues": [
-                "No"
+                "No",
+                "Unchecked"
             ],
             "jcoin:originalName": "D3"
         },
@@ -122,10 +128,12 @@
             "type": "boolean",
             "description": "[Asian] What is your race? SELECT ALL THAT APPLY",
             "trueValues": [
-                "Yes"
+                "Yes",
+                "Checked"
             ],
             "falseValues": [
-                "No"
+                "No",
+                "Unchecked"
             ],
             "jcoin:originalName": "D3"
         },
@@ -136,31 +144,35 @@
             "type": "boolean",
             "description": "[Native Hawaiian or Other Pacific Islander] What is your race? SELECT ALL THAT APPLY",
             "trueValues": [
-                "Yes"
+                "Yes",
+                "Checked"
             ],
             "falseValues": [
-                "No"
+                "No",
+                "Unchecked"
             ],
             "jcoin:originalName": "D3"
         },
         {
             "jcoin:section": "Demographics",
             "name": "race_other",
-            "title": "Race: Other",
+            "title": "Race: Some other race",
             "type": "boolean",
             "description": "[Other] What is your race? SELECT ALL THAT APPLY",
             "trueValues": [
-                "Yes"
+                "Yes",
+                "Checked"
             ],
             "falseValues": [
-                "No"
+                "No",
+                "Unchecked"
             ],
             "jcoin:originalName": "D3"
         },
         {
             "jcoin:section": "Demographics",
             "name": "race_other_specified",
-            "title": "Race: Other specified",
+            "title": "Race: Some other race",
             "type": "string",
             "description": "[Other specified] What is your race? SELECT ALL THAT APPLY",
             "constraints": {
@@ -250,7 +262,7 @@
             "constraints": {
                 "maxLength": 80
             },
-            "jcoin:originalName": "D4a"
+            "jcoin:originalName": "D4a",
             "jcoin:optional": true
         },
         {
@@ -268,7 +280,7 @@
                     "Something else"
                 ]
             },
-            "jcoin:originalName": "D4b"
+            "jcoin:originalName": "D4b",
             "jcoin:optional": true
         },
         {
@@ -280,7 +292,7 @@
             "constraints": {
                 "maxLength": 80
             },
-            "jcoin:originalName": "D4b"
+            "jcoin:originalName": "D4b",
             "jcoin:optional": true
         },
         {
@@ -298,16 +310,16 @@
                     "Something else"
                 ]
             },
-            "jcoin:originalName": "D4c"
+            "jcoin:originalName": "D4c",
             "jcoin:optional": true
         },
         {
             "jcoin:section": "Demographics",
             "name": "sex_orient_other",
-            "title": "Sexual orientation (other specified)",
+            "title": "Sexual orientation (something else specified)",
             "type": "string",
             "description": "Sexual orientation: Do you think of yourself as ...",
-            "jcoin:originalName": "D4c"
+            "jcoin:originalName": "D4c",
             "jcoin:optional": true
         },
         {
@@ -326,7 +338,7 @@
                     "Don't know"
                 ]
             },
-            "jcoin:originalName": "d4d"
+            "jcoin:originalName": "D4d"
         },
         {
             "jcoin:section": "Demographics",
@@ -343,7 +355,7 @@
                     "Never married"
                 ]
             },
-            "jcoin:originalName": "d5"
+            "jcoin:originalName": "D5"
         },
         {
             "jcoin:section": "Demographics",
@@ -357,7 +369,7 @@
                     "No, I am not living as married with partner"
                 ]
             },
-            "jcoin:originalName": "d5a"
+            "jcoin:originalName": "D5a"
         },
         {
             "jcoin:section": "Demographics",
@@ -378,15 +390,15 @@
                     "Other (specify)"
                 ]
             },
-            "jcoin:originalName": "d6"
+            "jcoin:originalName": "D6"
         },
         {
             "jcoin:section": "Demographics",
             "name": "educ_highest_grade",
-            "title": "Education: Highest grade level (if less than GED or h.s. diploma)",
+            "title": "Education: Highest grade (if less than HS)",
             "type": "integer",
-            "description": "What is the highest grade completed?",
-            "jcoin:originalName": "d6_grade"
+            "description": "What is the highest grade you have completed?",
+            "jcoin:originalName": "D6"
         },
         {
             "jcoin:section": "Demographics",
@@ -394,299 +406,398 @@
             "title": "Education: Other specified",
             "type": "string",
             "description": "What is the highest grade or level of school you have completed or the highest degree you have received?",
-            "jcoin:originalName": "d6_specify_other"
+            "jcoin:originalName": "D6"
         },
         {
             "jcoin:section": "MOUD",
             "name": "intv_while_incarc",
             "title": "Interviewed during incarceration",
             "type": "boolean",
-            "description": "Interview conducted with participant during incarceration? \nIf `No`, all fields in MOUD section involving prior to incarceration (PTI) should be `Legitimately skipped`\n",
+            "description": "Interview conducted with participant during incarceration?",
             "trueValues": [
                 "Yes"
             ],
             "falseValues": [
                 "No"
             ],
-            "jcoin:originalName": "u14f"
+            "jcoin:originalName": "U14f"
         },
         {
             "section": "MOUD",
             "name": "days_incarcerated_interval",
-            "title": "Days incarcerated (in past 30/xx days)",
+            "title": "Days incarcerated in past 30/XX days)",
             "type": "integer",
-            "description": "During the past xx/30 days, how many days have you been incarcerated?",
-            "jcoin:originalName": "u14g"
+            "description": "During the past 30/XX days how many days have you been incarcerated?",
+            "jcoin:originalName": "U14g"
         },
         {
             "section": "MOUD",
             "name": "ever_rx_moud",
-            "title": "Medication ever prescribed for opioid use disorder?",
+            "title": "Ever prescribed medication for opioid use disorder?",
             "type": "boolean",
-            "description": "Have you ever been prescribed and taken medication to treat opioid\nuse disorder?  (Illicit use should be excluded.) \nIf `No`, then all drug-related MOUD section questions should be `Legitimately skipped`\n",
+            "description": "Have you ever been prescribed and taken medication to treat opioid use disorder? [Illicit use should be excluded]",
             "trueValues": [
                 "Yes"
             ],
             "falseValues": [
                 "No"
             ],
-            "jcoin:originalName": "u15"
+            "jcoin:originalName": "U15"
         },
         {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "months_daily_bup",
-            "title": "Buprenorphine-naloxone or buprenorphine daily sublingual: Lifetime months",
+            "title": "Lifetime months: Buprenorphine-naloxone or buprenorphine daily sublingual",
             "type": "integer",
-            "description": "Lifetime months (buprenorphine-naloxone or buprenorphine daily sublingual [e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets])",
-            "jcoin:originalName": "u15a1"
+            "description": "Lifetime months: Buprenorphine-naloxone or buprenorphine daily sublingual (e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets)",
+            "jcoin:originalName": "U15a1"
         },
         {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_pti_daily_bup",
+            "title": "Days PTI: Buprenorphine-naloxone or buprenorphine daily sublingual",
+            "type": "integer",
+            "description": "Days in past 30/XX days prior to incarceration: Buprenorphine-naloxone or buprenorphine daily sublingual (e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets)",
+            "jcoin:originalName": "U15a2",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_pti_daily_bup",
+            "title": "PTI Dose: Buprenorphine-naloxone or buprenorphine daily sublingual",
+            "type": "string",
+            "description": "Dose per day prior to incarceration: Buprenorphine-naloxone or buprenorphine daily sublingual (e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets)",
+            "jcoin:originalName": "U15a3",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_daily_bup",
+            "title": "Days in past 30: Buprenorphine-naloxone or buprenorphine daily sublingual",
+            "type": "integer",
+            "description": "Days in past 30/XX days: Buprenorphine-naloxone or buprenorphine daily sublingual (e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets)",
+            "jcoin:originalname": "U15a4",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_daily_bup",
+            "title": "Dose: Buprenorphine-naloxone or buprenorphine daily sublingual",
+            "type": "string",
+            "description": "Dose per day: Buprenorphine-naloxone or buprenorphine daily sublingual (e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets)",
+            "jcoin:originalName": "u15a5",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "months_sublocade",
-            "title": "Buprenorphine injection (Sublocade): Lifetime months",
+            "title": "Lifetime months: SUBLOCADE",
             "type": "integer",
-            "description": "Lifetime months (buprenorphine injection [Sublocade])",
-            "jcoin:originalName": "u15b1"
+            "description": "Lifetime months: Buprenorphine injection (SUBLOCADE)",
+            "jcoin:originalName": "U15b1"
         },
         {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_pti_sublocade",
+            "title": "Days PTI: SUBLOCADE",
+            "type": "integer",
+            "description": "Days in past 30/XX days prior to incarceration: Buprenorphine injection (SUBLOCADE)",
+            "jcoin:originalName": "U15b2",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_pti_sublocade",
+            "title": "PTI Dose: SUBLOCADE",
+            "type": "string",
+            "description": "Dose per day prior to incarceration: Buprenorphine injection (SUBLOCADE)",
+            "jcoin:originalName": "U15b3",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_sublocade",
+            "title": "Days in past 30: SUBLOCADE",
+            "type": "integer",
+            "description": "Days in past 30/xx days: Buprenorphine injection (SUBLOCADE)",
+            "jcoin:originalname": "U15b4",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_sublocade",
+            "title": "dose: SUBLOCADE",
+            "type": "string",
+            "description": "Dose per day: Buprenorphine injection (SUBLOCADE)",
+            "jcoin:originalName": "U15b5",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "months_weekly_brixadi",
-            "title": "Buprenorphine  weekly injection (Brixadi): Lifetime months",
+            "title": "Lifetime months: Weekly BRIXADI",
             "type": "integer",
-            "description": "Lifetime months (buprenorphine weekly injection [Brixadi])",
-            "jcoin:originalName": "u15c1"
+            "description": "Lifetime months: Buprenorphine weekly injection (BRIXADI)",
+            "jcoin:originalName": "U15c1",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
-            "name": "months_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi): Lifetime months",
-            "type": "integer",
-            "description": "Lifetime months (buprenorphine monthly injection [Brixadi])",
-            "jcoin:originalName": "u15d1"
-        },
-        {
-            "section": "MOUD",
-            "name": "months_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine): Lifetime months",
-            "type": "integer",
-            "description": "Lifetime months (buprenorphine 6-month implant [Probuphine])",
-            "jcoin:originalName": "u15e1"
-        },
-        {
-            "section": "MOUD",
-            "name": "months_daily_ntx",
-            "title": "Naltrexone daily (oral): Lifetime months",
-            "type": "integer",
-            "description": "Lifetime months (Naltrexone daily (oral))",
-            "jcoin:originalName": "u15f1"
-        },
-        {
-            "section": "MOUD",
-            "name": "months_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol): Lifetime months",
-            "type": "integer",
-            "description": "Lifetime months (Naltrexone monthly injection [Vivitrol])",
-            "jcoin:originalName": "u15g1"
-        },
-        {
-            "section": "MOUD",
-            "name": "months_methadone",
-            "title": "Methadone daily: Lifetime months",
-            "type": "integer",
-            "description": "Lifetime months (methadone daily)",
-            "jcoin:originalName": "u15h1"
-        },
-        {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "days_pti_weekly_brixadi",
-            "title": "Buprenorphine  weekly injection (Brixadi): PTI days",
+            "title": "Days PTI: Weekly BRIXADI",
             "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine weekly injection [Brixadi])",
-            "jcoin:originalName": "u15c2"
+            "description": "Days in past 30/XX days prior to incarceration: Buprenorphine weekly injection (BRIXADI)",
+            "jcoin:originalName": "U15c2",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
-            "name": "days_pti_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi): PTI days",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine monthly injection [Brixadi])",
-            "jcoin:originalName": "u15d2"
-        },
-        {
-            "section": "MOUD",
-            "name": "days_pti_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine): PTI days",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) days (buprenorphine 6-month implant [Probuphine])",
-            "jcoin:originalName": "u15e2"
-        },
-        {
-            "section": "MOUD",
-            "name": "days_pti_daily_ntx",
-            "title": "Naltrexone daily (oral): PTI days",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) days (Naltrexone daily (oral))",
-            "jcoin:originalName": "u15f2"
-        },
-        {
-            "section": "MOUD",
-            "name": "days_pti_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol): PTI days",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) days (Naltrexone monthly injection [Vivitrol])",
-            "jcoin:originalName": "u15g2"
-        },
-        {
-            "section": "MOUD",
-            "name": "days_pti_methadone",
-            "title": "Methadone daily: PTI days",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) days (methadone daily)",
-            "jcoin:originalName": "u15h2"
-        },
-        {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "dose_pti_weekly_brixadi",
-            "title": "Buprenorphine  weekly injection (Brixadi): PTI Dose per day",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine weekly injection [Brixadi])",
-            "jcoin:originalName": "u15c3"
+            "title": "PTI Dose: Weekly BRIXADI",
+            "type": "string",
+            "description": "Dose per day prior to incarceration: Buprenorphine weekly injection (BRIXADI)",
+            "jcoin:originalName": "U15c3",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
-            "name": "dose_pti_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi): PTI Dose per day",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine monthly injection [Brixadi])",
-            "jcoin:originalName": "u15d3"
-        },
-        {
-            "section": "MOUD",
-            "name": "dose_pti_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine): PTI Dose per day",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) dose per day (buprenorphine 6-month implant [Probuphine])",
-            "jcoin:originalName": "u15e3"
-        },
-        {
-            "section": "MOUD",
-            "name": "dose_pti_daily_ntx",
-            "title": "Naltrexone daily (oral): PTI Dose per day",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) dose per day (Naltrexone daily (oral))",
-            "jcoin:originalName": "u15f3"
-        },
-        {
-            "section": "MOUD",
-            "name": "dose_pti_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol): PTI Dose per day",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) dose per day (Naltrexone monthly injection [Vivitrol])",
-            "jcoin:originalName": "u15g3"
-        },
-        {
-            "section": "MOUD",
-            "name": "dose_pti_methadone",
-            "title": "Methadone daily: PTI Dose per day",
-            "type": "integer",
-            "description": "Past 30 days prior to incarceration (PTI) dose per day (methadone daily)",
-            "jcoin:originalName": "u15h3"
-        },
-        {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "days_weekly_brixadi",
-            "title": "Buprenorphine  weekly injection (Brixadi): Past 30/xx days",
+            "title": "Days in past 30: Weekly BRIXADI",
             "type": "integer",
-            "description": "Past 30 days (or other number of days specified such as days since incarceration) (buprenorphine weekly injection [Brixadi])",
-            "jcoin:originalname": "u15c4"
+            "description": "Days in past 30/xx days: Buprenorphine weekly injection (BRIXADI)",
+            "jcoin:originalname": "U15c4",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
-            "name": "days_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi): Past 30/xx days",
-            "type": "integer",
-            "description": "Past 30 days (or other number of days specified such as days since incarceration)  (buprenorphine monthly injection [Brixadi])",
-            "jcoin:originalName": "u15d4"
-        },
-        {
-            "section": "MOUD",
-            "name": "days_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine): Past 30/xx days",
-            "type": "integer",
-            "description": "Past 30 days (or other number of days specified such as days since incarceration) (buprenorphine 6-month implant [Probuphine])",
-            "jcoin:originalName": "u15e4"
-        },
-        {
-            "section": "MOUD",
-            "name": "days_daily_ntx",
-            "title": "Naltrexone daily (oral): Past 30/xx days",
-            "type": "integer",
-            "description": "Past 30 days (or other number of days specified such as days since incarceration) (Naltrexone daily (oral))",
-            "jcoin:originalName": "u15f4"
-        },
-        {
-            "section": "MOUD",
-            "name": "days_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol): Past 30/xx days",
-            "type": "integer",
-            "description": "Past 30 days (or other number of days specified such as days since incarceration) (Naltrexone monthly injection [Vivitrol])",
-            "jcoin:originalName": "u15g4"
-        },
-        {
-            "section": "MOUD",
-            "name": "days_methadone",
-            "title": "Methadone daily: Past 30/xx days",
-            "type": "integer",
-            "description": "Past 30 days (or other number of days specified such as days since incarceration) (methadone daily)",
-            "jcoin:originalName": "u15h4"
-        },
-        {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "dose_weekly_brixadi",
-            "title": "Buprenorphine  weekly injection (Brixadi): Dose per day",
-            "type": "integer",
-            "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine weekly injection [Brixadi])",
-            "jcoin:originalName": "u15c5"
+            "title": "dose: Weekly BRIXADI",
+            "type": "string",
+            "description": "Dose per day: Buprenorphine weekly injection (BRIXADI)",
+            "jcoin:originalName": "U15c5",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "months_monthly_brixadi",
+            "title": "Lifetime months: Monthly BRIXADI",
+            "type": "integer",
+            "description": "Lifetime months: Buprenorphine monthly injection (BRIXADI)",
+            "jcoin:originalName": "U15d1",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_pti_monthly_brixadi",
+            "title": "Days PTI: Monthly BRIXADI",
+            "type": "integer",
+            "description": "Days in past 30/XX days prior to incarceration: Buprenorphine monthly injection (BRIXADI)",
+            "jcoin:originalName": "U15d2",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_pti_monthly_brixadi",
+            "title": "PTI Dose: Monthly BRIXADI",
+            "type": "string",
+            "description": "Dose per day prior to incarceration: Buprenorphine monthly injection (BRIXADI)",
+            "jcoin:originalName": "U15d3",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_monthly_brixadi",
+            "title": "Days in past 30: Monthly BRIXADI",
+            "type": "integer",
+            "description": "Days in past 30/xx days: Buprenorphine monthly injection (BRIXADI)",
+            "jcoin:originalname": "U15d4",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "dose_monthly_brixadi",
-            "title": "Buprenorphine  monthly injection (Brixadi): Dose per day",
-            "type": "integer",
-            "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine monthly injection [Brixadi])",
-            "jcoin:originalName": "u15d5"
+            "title": "dose: Monthly BRIXADI",
+            "type": "string",
+            "description": "Dose per day: Buprenorphine monthly injection (BRIXADI)",
+            "jcoin:originalName": "U15d5",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "months_probuphine_implant",
+            "title": "Lifetime months: Probuphine",
+            "type": "integer",
+            "description": "Lifetime months: Buprenorphine 6-month implant (Probuphine)",
+            "jcoin:originalName": "U15e1",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_pti_probuphine_implant",
+            "title": "Days PTI: Probuphine",
+            "type": "integer",
+            "description": "Days in past 30/XX days prior to incarceration: Buprenorphine 6-month implant (Probuphine)",
+            "jcoin:originalName": "U15e2",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_pti_probuphine_implant",
+            "title": "PTI Dose: Probuphine",
+            "type": "string",
+            "description": "Dose per day prior to incarceration: Buprenorphine 6-month implant (Probuphine)",
+            "jcoin:originalName": "U15e3",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_probuphine_implant",
+            "title": "Days in past 30: Probuphine",
+            "type": "integer",
+            "description": "Days in past 30/xx days: Buprenorphine 6-month implant (Probuphine)",
+            "jcoin:originalname": "U15e4",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "dose_probuphine_implant",
-            "title": "Buprenorphine 6-month implant (Probuphine): Dose per day",
-            "type": "integer",
-            "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (buprenorphine 6-month implant [Probuphine])",
-            "jcoin:originalName": "u15e5"
+            "title": "dose: Probuphine",
+            "type": "string",
+            "description": "Dose per day: Buprenorphine 6-month implant (Probuphine)",
+            "jcoin:originalName": "U15e5",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "months_daily_ntx",
+            "title": "Lifetime months: Naltrexone daily (oral)",
+            "type": "integer",
+            "description": "Lifetime months: Naltrexone daily (oral)",
+            "jcoin:originalName": "U15f1"
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_pti_daily_ntx",
+            "title": "Days PTI: Naltrexone daily (oral)",
+            "type": "integer",
+            "description": "Days in past 30/XX days prior to incarceration: Naltrexone daily (oral)",
+            "jcoin:originalName": "U15f2",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_pti_daily_ntx",
+            "title": "PTI Dose: Naltrexone daily (oral)",
+            "type": "string",
+            "description": "Dose per day prior to incarceration: Naltrexone daily (oral)",
+            "jcoin:originalName": "U15f3",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_daily_ntx",
+            "title": "Days in past 30: Naltrexone daily (oral)",
+            "type": "integer",
+            "description": "Days in past 30/xx days: Naltrexone daily (oral)",
+            "jcoin:originalname": "U15f4",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "dose_daily_ntx",
-            "title": "Naltrexone daily (oral): Dose per day",
-            "type": "integer",
-            "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (Naltrexone daily (oral))",
-            "jcoin:originalName": "u15f5"
+            "title": "dose: Naltrexone daily (oral)",
+            "type": "string",
+            "description": "Dose per day: Naltrexone daily (oral)",
+            "jcoin:originalName": "U15f5",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "months_monthly_vivitrol",
+            "title": "Lifetime months: Vivitrol",
+            "type": "integer",
+            "description": "Lifetime months: Naltrexone monthly injection (Vivitrol)",
+            "jcoin:originalName": "U15g1"
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_pti_monthly_vivitrol",
+            "title": "Days PTI: Vivitrol",
+            "type": "integer",
+            "description": "Days in past 30/XX days prior to incarceration: Naltrexone monthly injection (Vivitrol)",
+            "jcoin:originalName": "U15g2",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_pti_monthly_vivitrol",
+            "title": "PTI Dose: Vivitrol",
+            "type": "string",
+            "description": "Dose per day prior to incarceration: Naltrexone monthly injection (Vivitrol)",
+            "jcoin:originalName": "U15g3",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_monthly_vivitrol",
+            "title": "Days in past 30: Vivitrol",
+            "type": "integer",
+            "description": "Days in past 30/xx days: Naltrexone monthly injection (Vivitrol)",
+            "jcoin:originalname": "U15g4",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
             "name": "dose_monthly_vivitrol",
-            "title": "Naltrexone monthly injection (Vivitrol): Dose per day",
-            "type": "integer",
-            "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (Naltrexone monthly injection [Vivitrol])",
-            "jcoin:originalName": "u15g5"
+            "title": "dose: Vivitrol",
+            "type": "string",
+            "description": "Dose per day: Naltrexone monthly injection (Vivitrol)",
+            "jcoin:originalName": "U15g5",
+            "jcoin:optional": true
         },
         {
-            "section": "MOUD",
-            "name": "dose_methadone",
-            "title": "Methadone daily: Dose per day",
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "months_methadone",
+            "title": "Lifetime months: Methadone",
             "type": "integer",
-            "description": "Past dose per day for past 30 days (or other number of days specified such as days since incarceration) (methadone daily)",
-            "jcoin:originalName": "u15h5"
+            "description": "Lifetime months: Methadone daily",
+            "jcoin:originalName": "U15h1"
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_pti_methadone",
+            "title": "Days PTI: Methadone",
+            "type": "integer",
+            "description": "Days in past 30/XX days prior to incarceration: Methadone daily",
+            "jcoin:originalName": "U15h2",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_pti_methadone",
+            "title": "PTI Dose: Methadone",
+            "type": "string",
+            "description": "Dose per day prior to incarceration: Methadone daily",
+            "jcoin:originalName": "U15h3",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "days_methadone",
+            "title": "Days in past 30: Methadone",
+            "type": "integer",
+            "description": "Days in past 30/xx days: Methadone daily",
+            "jcoin:originalname": "U15h4",
+            "jcoin:optional": true
+        },
+        {
+            "section": "MOUD Lifetime/Past Month Use",
+            "name": "dose_methadone",
+            "title": "dose: Methadone",
+            "type": "string",
+            "description": "Dose per day: Methadone daily",
+            "jcoin:originalName": "U15h5",
+            "jcoin:optional": true
         }
     ]
 }

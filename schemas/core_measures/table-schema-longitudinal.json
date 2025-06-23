@@ -1,14 +1,25 @@
 {
-    "version": "2.4.0",
-    "title": "Client participants: Timepoint measures",
-    "description": "Measures collected at all time points (baseline and follow ups).",
-    "custom": {
-        "jcoin:schemaType": "Client",
-        "jcoin:missingValuesDescription": "\n**Below are extended descriptions of each `missingValues` (ie reserve code):**\n\n  - Don't know: This code indicates that the respondent did not have the knowledge or information required to answer the question.\n  - Refused: This code signifies that the respondent actively chose not to answer the question, despite being capable of providing a response.\n  - Left blank: This code indicates that the question was intentionally left unanswered by the respondent.\n  - Legitimately skipped: This code is used when the question was intentionally skipped due to its inapplicability or irrelevance to the respondent's situation.\n  - Not collected: This code indicates that the data for the question was not collected or recorded by the survey administrator or interviewer.\n  - Missing in error: This code signifies that the data for the question is missing without any clear reason or explanation.\n"
-    },
+    "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+    "title": "JCOIN common measures collected longitudinally",
+    "version": "1.0.0",
+    "description": "Contains all common measures that are collected longitudinally.",
+    "jcoin:schemaType": "Client",
+    "primaryKey": [
+        "jdc_person_id",
+        "visit_number"
+    ],
+    "missingValues": [
+        "Don't know",
+        "Refused",
+        "Left blank",
+        "Legitimately skipped",
+        "Not collected",
+        "Missing in error"
+    ],
+    "fieldsMatch": "superset",
     "fields": [
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "jdc_person_id",
             "title": "JCOIN data commons person identifier",
             "type": "string",
@@ -23,77 +34,34 @@
             }
         },
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "visit_number",
-            "title": "Visit Number",
+            "title": "Visit number",
             "type": "integer",
-            "description": "A number that identifies the visit or timepoint of data collection\n(baseline=1 and each subsequent follow up is 2 or greater). \n\nThe main purpose of this field is to provide the sequential number of visits. For example, if a study has \na Baseline and 6 and 12 month follow up, `visit_number` would be mapped to `visit_month` as \n1=Baseline,2=6 month follow up, 3=12 month follow up.\n",
+            "description": "Sequential number corresponding to each planned visit (e.g., 'Baseline' = 0, 'Three months' = 1, 'Six months' = 2, etc.",
             "constraints": {
                 "required": true,
                 "minimum": 1
-            },
-            "custom": {
-                "jcoin:original_name": "visit_number"
             }
         },
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "visit_month",
-            "title": "Visit Month",
+            "title": "Timepoint",
             "type": "string",
-            "description": "Marks the intended visit time point. For example, if the baseline visit, this should be populated as Baseline.\\n If a follow up, this should be populated as the Month and month number (eg., for a study with a Baseline and 3,6, and 12 month follow ups the values should be Baseline, Month 3, Month 6, Month 12, respectively.\\nIMPORTANT: this field represents the intended month in the study design.\\nSo, for example, if a participant comes back 2 months after Baseline for the Month 1 follow up, this field should still be populated with Month 1.",
+            "description": "Intended visit timepoint (e.g., 'Baseline', '3 month', '6 month', etc.)",
             "constraints": {
                 "required": true,
                 "pattern": "^Baseline$|^\\d+ month$"
-            },
-            "custom": {
-                "jcoin:original_name": "visit_month"
             }
         },
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "shifted_visit_dt",
-            "title": "Visit Date (shifted)",
+            "title": "Visit date",
             "type": "date",
-            "description": "This is the date of the visit (ie time point of survey administration)\nafter shifting by a random number 182 days before or 182 days after the actual\nvisit date. The shifting is done on the individual level which retains the time\ninterval between visits (and allows calculations of days between time points\nor other date fields which are shifted by the same number of days). To avoid\nissues with type conversion errors, the date is of type integer\n\nNOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.\n",
-            "examples": [
-                20220101,
-                20240531
-            ],
             "format": "%Y%m%d",
-            "custom": {
-                "jcoin:original_name": "shifted_visit_date"
-            },
-            "constraints": {
-                "minimum": 1
-            }
-        },
-        {
-            "section": "Enrollment",
-            "name": "days_on_study",
-            "title": "Days on study",
-            "type": "integer",
-            "description": "The number of days (anchor date is baseline visit date) on study as calculated by:\n\n1. visit_date (date of interview) minus the baseline visit date (date of baseline interview)\n\nNOTE: again, the baseline date is the anchor date.\n",
-            "constraints": {
-                "required": true
-            }
-        },
-        {
-            "section": "Record and linkage",
-            "name": "visit_type",
-            "title": "Visit Type",
-            "type": "string",
-            "description": "The visit type/category (either baseline or follow up)",
-            "constraints": {
-                "enum": [
-                    "Baseline",
-                    "Follow-up"
-                ],
-                "required": true
-            },
-            "custom": {
-                "jcoin:original_name": "visit_type"
-            }
+            "description": "Date of visit/interview (shifted for de-identification)"
         },
         {
             "section": "Substance Use",
@@ -3435,17 +3403,5 @@
                 "jcoin:notes": "RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW (CONSISTENT WITH HUB CONSENT FORMS)"
             }
         }
-    ],
-    "primaryKey": [
-        "jdc_person_id",
-        "visit_number"
-    ],
-    "missingValues": [
-        "Don't know",
-        "Refused",
-        "Left blank",
-        "Legitimately skipped",
-        "Not collected",
-        "Missing in error"
     ]
 }
