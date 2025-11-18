@@ -118,6 +118,39 @@
             "constraints": {
                 "maxLength": 24
             }
+        },
+        {
+            "name": "tx_compliance_measurement",
+            "title": "Indicator of treatment compliance",
+            "type": "integer",
+            "description": "An indicator of the quantity of treatment received as a measurement of tx_compliance_unit.",
+            "constraints": {
+              "required": true
+            }
+        },
+        {
+            "name": "tx_compliance_unit",
+            "title": "Unit of treatment compliance",
+            "type": "string",
+            "description": "A unit of measurement for the quantity of treatment received.",
+            "constraints": {
+                "required": true,
+                "enum": [
+                    "weeks",
+                    "days",
+                    "sessions/meetings",
+                    "doses"
+                ]
+            }
+        },
+        {
+            "name": "tx_compliance_maximum",
+            "title": "Maximum treatment compliance",
+            "type": "integer",
+            "description": "The theoretical maximum value of treatment compliance within the study.",
+            "constraints": {
+              "required": true
+            }
         }
     ]
 }
