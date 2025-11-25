@@ -23,22 +23,20 @@
             "name": "jdc_person_id",
             "title": "JCOIN data commons person identifier",
             "type": "string",
-            "description": "The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).",
+            "description": "Anonymized participant identifier, unique across hubs",
             "constraints": {
                 "required": true,
                 "maxLength": 9,
                 "pattern": "[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"
             },
-            "custom": {
-                "jcoin:original_name": "jdc_person_id"
-            }
+            "jcoin:originalName": "XPID"
         },
         {
             "jcoin:section": "Record and linkage",
             "name": "visit_number",
             "title": "Visit number",
             "type": "integer",
-            "description": "Sequential number corresponding to each planned visit (e.g., 'Baseline' = 0, 'Three months' = 1, 'Six months' = 2, etc.",
+            "description": "Sequential number corresponding to each planned visit (e.g., 'Baseline' = 1, 'Three months' = 2, 'Six months' = 3, etc.",
             "constraints": {
                 "required": true,
                 "minimum": 1
@@ -64,1650 +62,16 @@
             "description": "Date of visit/interview (shifted for de-identification)"
         },
         {
-            "section": "Substance Use",
-            "name": "last_drug_use",
-            "title": "Last time drug use",
-            "type": "string",
-            "description": "[... you used alcohol or other drugs weekly or more often?  ] When was the last time you...",
-            "constraints": {
-                "enum": [
-                    "Never",
-                    "More than a year ago",
-                    "4 to 12 months ago",
-                    "2 to 3 months ago",
-                    "Past month"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "s1a",
-                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "last_getting_using_drugs",
-            "title": "Last time drug use: getting, using, or recovering",
-            "type": "string",
-            "description": "[... You spent a lot of time either getting alcohol or other drugs, using alcohol or other drugs, or recovering from the effects of alcohol or other drugs (feeling sick)? ] When was the last time you...",
-            "constraints": {
-                "enum": [
-                    "Never",
-                    "More than a year ago",
-                    "4 to 12 months ago",
-                    "2 to 3 months ago",
-                    "Past month"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "s1b",
-                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "last_social_problems",
-            "title": "Last time drug use: social dysfunction",
-            "type": "string",
-            "description": "[... You kept using alcohol or other drugs even though it was causing social   problems, leading to fights, or getting you into trouble with other people? ] When was the last time you...",
-            "constraints": {
-                "enum": [
-                    "Never",
-                    "More than a year ago",
-                    "4 to 12 months ago",
-                    "2 to 3 months ago",
-                    "Past month"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "s1c",
-                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "last_work_life_disruption",
-            "title": "Last time drug use: work or life dysfunction",
-            "type": "string",
-            "description": "[ your use of alcohol or other drugs caused you to give up or reduce your involvement in activities at work, school, home or social events? ] When was the last time you...",
-            "constraints": {
-                "enum": [
-                    "Never",
-                    "More than a year ago",
-                    "4 to 12 months ago",
-                    "2 to 3 months ago",
-                    "Past month"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "s1d",
-                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "last_withdrawal",
-            "title": "Last time drug use: withdrawal",
-            "type": "string",
-            "description": "[... You had withdrawal problems from alcohol or other drugs like shaky hands, throwing up, having trouble sitting still or sleeping, or you used any  alcohol or other drugs to stop being sick or avoid withdrawal problems? ] When was the last time you...",
-            "constraints": {
-                "enum": [
-                    "Never",
-                    "More than a year ago",
-                    "4 to 12 months ago",
-                    "2 to 3 months ago",
-                    "Past month"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "s1e",
-                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "last_used_opioids",
-            "title": "Last time drug use: any opioids",
-            "type": "string",
-            "description": "[... used any kind of heroin, fentanyl or other opioid?(such as codeine, Darvocet, Darvon, Demerol, Dilaudid, Karachi, OxyContin, Oxys, Percocet, Propoxyphene, morphine, opium, Talwin or Tylenol with codeine, Vicodin, Zohydro)?] When was the last time...",
-            "constraints": {
-                "enum": [
-                    "Never",
-                    "More than a year ago",
-                    "4 to 12 months ago",
-                    "2 to 3 months ago",
-                    "Past month"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "s2a",
-                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "last_opioid_overdose",
-            "title": "Last time drug use: opioid overdose",
-            "type": "string",
-            "description": "[... had an opioid overdose? [used enough of the drug that it produced a life-threatening reaction that required medical attention]] When was the last time...",
-            "constraints": {
-                "enum": [
-                    "Never",
-                    "More than a year ago",
-                    "4 to 12 months ago",
-                    "2 to 3 months ago",
-                    "Past month"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "s2b",
-                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "last_went_moud",
-            "title": "Last time drug use: OUD medication-assisted treatment",
-            "type": "string",
-            "description": "[... went to any kind of medication assisted treatment for opioid use disorder?] When was the last time...",
-            "constraints": {
-                "enum": [
-                    "Never",
-                    "More than a year ago",
-                    "4 to 12 months ago",
-                    "2 to 3 months ago",
-                    "Past month"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "s2c",
-                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "times_opioid_overdose",
-            "title": "Opioid Overdose Count",
-            "type": "integer",
-            "description": "[...overdose on heroin, fentanyl or other opioids?  [Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention] ] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
-            "custom": {
-                "jcoin:original_name": "s3a",
-                "jcoin:notes": "Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "times_naloxone",
-            "title": "Opioid Overdose Count: Receiving Naloxone",
-            "type": "integer",
-            "description": "[...did you receive naloxone (Evzio or Narcan) to reverse your overdose?  ] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
-            "custom": {
-                "jcoin:original_name": "s3b",
-                "jcoin:notes": "Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "who_gave_naloxone",
-            "title": "Person Who Administered Nalaxone for Overdose",
-            "type": "any",
-            "description": "Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)",
-            "custom": {
-                "jcoin:original_name": "s3c",
-                "jcoin:notes": "TODO: expand fields to each of the possible selections"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "drugs_before_overdose",
-            "title": "Drugs 4 hrs Before Overdose",
-            "type": "any",
-            "description": "What drugs had you taken in the 4 hours before you overdosed? (SELECT ALL THAT APPLY)",
-            "custom": {
-                "jcoin:original_name": "s3d",
-                "jcoin:notes": "TODO: expand fields to each of the possible selections"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "times_ems_after_overdose",
-            "title": "Emergency Medical Service Following Overdose",
-            "type": "integer",
-            "description": "[...receive emergency medical service following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
-            "custom": {
-                "jcoin:original_name": "s3e"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "times_er_after_overdose",
-            "title": "Emergency Department Visit Count Following Overdose",
-            "type": "integer",
-            "description": "[...go to the emergency department following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
-            "custom": {
-                "jcoin:original_name": "s3f"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "times_hospital_after_overdose",
-            "title": "Hospital Admissions Count Following Overdose",
-            "type": "integer",
-            "description": "[...get admitted to the hospital following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
-            "custom": {
-                "jcoin:original_name": "s3g"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "tx_refer_after_overdose",
-            "title": "Substance Use Treatment Referral Count Following Overdose",
-            "type": "integer",
-            "description": "[...receive a referral to substance use treatment from the police, EMS, ED or hospital staff?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
-            "custom": {
-                "jcoin:original_name": "s3h"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_drug_use",
-            "title": "Drug Use Count",
-            "type": "integer",
-            "description": "[...on how many days did you use any heroin, fentanyl, opioids, alcohol, marijuana or other illicit drugs?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4a"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_alcohol_use",
-            "title": "Alcohol Use Count",
-            "type": "integer",
-            "description": "[...how many times did you drink any kind of alcohol (beer, gin, rum, scotch, tequila, whiskey, wine or mixed drinks)?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4b"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_alcohol_binge",
-            "title": "Alcohol Use Count: Binge Drinking",
-            "type": "integer",
-            "description": "[...how many times did you have 5 or more drinks?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4c"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_medical_marijuana",
-            "title": "Marijuana use count: medical",
-            "type": "integer",
-            "description": "[...how many times did you use medical marijuana that was obtained from a dispensary with your own recommendation card or prescription?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4d"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_other_marijuana",
-            "title": "Marijuana use count: Not own",
-            "type": "integer",
-            "description": "[... how many times did you use other marijuana, including hashish, edibles, tinctures or concentrated drops, blunts or other forms of THC (cannabis, herb, pot, reefer, weed), or medical marijuana that was not your own?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4e"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_heroin",
-            "title": "Opioid use count: Heroin",
-            "type": "integer",
-            "description": "[... how many times did you use heroin (alone or mixed with other drugs)?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4f"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_fentanyl",
-            "title": "Opioid use count: Fentanyl",
-            "type": "integer",
-            "description": "[... how many times did you use fentanyl (alone or mixed with other drugs)?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4g"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_non_rx_methadone",
-            "title": "Opioid use count: Street Methadone",
-            "type": "integer",
-            "description": "[... how many times did you use nonprescription or street methadone?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4h"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_non_rx_suboxone",
-            "title": "Opioid use count: Suboxone",
-            "type": "integer",
-            "description": "[... how many times did you use use nonprescription or street Suboxone?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4j"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_other_opioids",
-            "title": "Opioid use count: other",
-            "type": "integer",
-            "description": "[... how many times did you use other opioids, opiates, painkillers, or other analgesics (such as codeine, Darvocet, Darvon, Demerol, Dilaudid, Karachi, OxyContin, Oxys, Percocet, Propoxyphene, morphine, opium, Talwin or Tylenol with codeine, Vicodin, Zohydro)?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4k"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_cocaine",
-            "title": "Cocaine use count",
-            "type": "integer",
-            "description": "[... how many times did you use crack, smoked rock, freebase, or other forms of cocaine?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4m"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_amphetamines",
-            "title": "Speed use count",
-            "type": "integer",
-            "description": "[... how many times did you use any methamphetamines, amphetamines, or other forms of speed?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4n"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_benzo",
-            "title": "Benzodiazapine, anti-anxiety, and tranquilizer use count",
-            "type": "integer",
-            "description": "[... how many times did you use any benzodiazepines, anti-anxiety drugs or tranquilizers (such as Ativan, Equanil, Dalmane, Deprol, Diazepam, Klonopin, Librium, Lortab, Meprobamate, Miltown, Prosom, Serax, Traxene, Valium, Verseed, Xanax)?      ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4p"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_other_drugs",
-            "title": "Drug use count: other",
-            "type": "integer",
-            "description": "[...on how many days did you use any other drug that has not been mentioned (such as hallucinogens, downers)? ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4z"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "other_drug_describe",
-            "title": "Drug use: description of other drugs",
-            "type": "string",
-            "description": "[...on how many days did you use any other drug that has not been mentioned (such as hallucinogens, downers)? (Please describe )] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
-            "custom": {
-                "jcoin:original_name": "s4z_describe"
-            }
-        },
-        {
-            "section": "Substance Use",
-            "name": "days_confined_no_use",
-            "title": "Place of No Opioid Use (Jail, Hospital, etc)",
-            "type": "integer",
-            "description": "During the past 90 days (prior to entering jail or prison/ since your last assessment), on how many days have you been in a jail, hospital or other place where you could not use heroin, fentanyl, other opioids, alcohol, marijuana or other drugs? (USE 0 FOR NONE)",
-            "custom": {
-                "jcoin:original_name": "s5"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_illegal_activity",
-            "title": "Activities against law besides drugs",
-            "type": "integer",
-            "description": "During the past 90 days (since last assessment), on how many days were you involved in any activities that might get you into trouble or be against the law besides drug use? [IF 0, GO TO J2]",
-            "custom": {
-                "jcoin:original_name": "j1",
-                "jcoin:notes": "[IF 0, GO TO J2]"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_drug_possession",
-            "title": "Drug possession",
-            "type": "integer",
-            "description": "[... been in possession of small amounts of drugs? (drug possession)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a1",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_public_drunk",
-            "title": "Drunkenness or other liquor law violations",
-            "type": "integer",
-            "description": "[... been drunk or high in public? (drunkenness or other liquor law violations)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a2",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_dui",
-            "title": "Driving under the influence or while intoxicated",
-            "type": "integer",
-            "description": "[... driven a vehicle while under the influence of alcohol or drugs? (driving under the influence or while intoxicated)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a3",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_drug_dealing",
-            "title": "Possession, dealing, distribution or sale of drugs",
-            "type": "integer",
-            "description": "[...sold, distributed or helped to make illegal drugs?  (possession, dealing, distribution or sale of drugs)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a4",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_vandalism",
-            "title": "Vandalism or property destruction",
-            "type": "integer",
-            "description": "[... purposely damaged or destroyed property that did not belong to you? (vandalism or property destruction)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a5",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_stolen_goods",
-            "title": "Receiving, possessing or selling stolen goods",
-            "type": "integer",
-            "description": "[... bought, received, possessed or sold any stolen goods? (receiving, possessing or selling stolen goods)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a6",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_forgery",
-            "title": "Forgery, fraud or embezzlement",
-            "type": "integer",
-            "description": "[... passed bad checks, forged or altered a prescription, or took money illegally from an employer?  (forgery, fraud or embezzlement)     ] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a7",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_shoplift",
-            "title": "Shoplifting",
-            "type": "integer",
-            "description": "[... taken something from a store without paying for it? (shoplifting)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a8",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_theft",
-            "title": "Larceny or theft",
-            "type": "integer",
-            "description": "[... other than from a store, taken money or property that didn't belong to you? (larceny or theft)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a9",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_burglary",
-            "title": "Burglary or breaking and entering",
-            "type": "integer",
-            "description": "[... broken into a house or building to steal something or just to look around? (burglary or breaking and entering)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a10",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_auto_theft",
-            "title": "Motor vehicle theft",
-            "type": "integer",
-            "description": "[... taken a car without people in it that didn't belong to you? (motor vehicle theft)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a11",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_carjacking",
-            "title": "Carjacking",
-            "type": "integer",
-            "description": "[... taken a car from someone who was in it? (carjacking)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a12",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_assault",
-            "title": "Simple assault or battery",
-            "type": "integer",
-            "description": "[... hit someone or gotten into a physical fight? (simple assault or battery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a13",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_robbery",
-            "title": "Robbery",
-            "type": "integer",
-            "description": "[... used a weapon, force, or strong-arm methods to get money or things from a person? (robbery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a14",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_aggravated_assault",
-            "title": "Aggravated assault or battery",
-            "type": "integer",
-            "description": "[... hurt someone badly enough they needed bandages or a doctor? (aggravated assault or battery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a15",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_rape",
-            "title": "Forcible rape",
-            "type": "integer",
-            "description": "[... made someone have sex with you by force when they did not want to have sex? (forcible rape)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a16",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_homicide",
-            "title": "Murder, homicide or no-negligent manslaughter",
-            "type": "integer",
-            "description": "[... been involved in the death or murder of another person, including accidents? (murder, homicide or no-negligent manslaughter)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a17",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_arson",
-            "title": "Arson",
-            "type": "integer",
-            "description": "[... intentionally set a building, car or other property on fire? (arson)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a18",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_prostitution",
-            "title": "Prostitution, pimping or commercialized sex",
-            "type": "integer",
-            "description": "[... traded sex for food, drugs or money? (prostitution, pimping or commercialized sex)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a19",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_other_unlawful",
-            "title": "Other unlawful activities",
-            "type": "integer",
-            "description": "[... done something else that would have gotten you into trouble with the police if they had known about it? (carrying a weapon, gang involvement, domestic violence, trespass, gambling, distributing the peace, disorderly conduct, paraphernalia, runaway, curfew, truancy,  ) (PLEASE DESCRIBE)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
-            "custom": {
-                "jcoin:original_name": "j1a99",
-                "jcoin:notes": "(common charge names associated with behavior for reference only)"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_charged_arrests",
-            "title": "Overall charged arrests",
-            "type": "integer",
-            "description": "During the past 90 days (since last assessment), how many times were you arrested and charged?",
-            "custom": {
-                "jcoin:original_name": "j2"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_possession",
-            "title": "Drug possession arrests",
-            "type": "integer",
-            "description": "[Number of arrests for drug possession (for small amounts)] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2a"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_drunk",
-            "title": "Law violations arrests",
-            "type": "integer",
-            "description": "[Number of arrests for drunkenness or other liquor law violations] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2b"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_dui",
-            "title": "Driving under the influence/intoxicated arrests",
-            "type": "integer",
-            "description": "[Number of arrests for driving under the influence or while intoxicated] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2c"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_drug_dealing",
-            "title": "Drug activity arrests",
-            "type": "integer",
-            "description": "[Number of arrests for possession, dealing, distribution or sale of drugs] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2d"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_vandalism",
-            "title": "Vandalism or property destruction arrests",
-            "type": "integer",
-            "description": "[Number of arrests for vandalism or property destruction] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2e"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_stolen_goods",
-            "title": "Stolen goods arrests",
-            "type": "integer",
-            "description": "[Number of arrests for receiving, possessing or selling stolen goods] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2f"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_forgery",
-            "title": "Forgery, fraud or embezzlement arrests",
-            "type": "integer",
-            "description": "[Number of arrests for forgery, fraud or embezzlement] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2g"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_shoplifting",
-            "title": "Shoplifting arrests",
-            "type": "integer",
-            "description": "[Number of arrests for shoplifting] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2h"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_theft",
-            "title": "Theft/larceny arrests",
-            "type": "integer",
-            "description": "[Number of arrests for larceny or theft] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2i"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_burglary",
-            "title": "Burglary or breaking and entering arrests",
-            "type": "integer",
-            "description": "[Number of arrests for burglary or breaking and entering] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2j"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_auto_theft",
-            "title": "Vehicle theft arrests",
-            "type": "integer",
-            "description": "[Number of arrests for motor vehicle theft] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2k"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_carjacking",
-            "title": "Car jacking arrests",
-            "type": "integer",
-            "description": "[Number of arrests for car jacking] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2l"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_assault",
-            "title": "Simple assault or battery arrests",
-            "type": "integer",
-            "description": "[Number of arrests for simple assault or battery] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2m"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_robbery",
-            "title": "Robbery arrests",
-            "type": "integer",
-            "description": "[Number of arrests for robbery] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2n"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_aggravated",
-            "title": "Aggravated assault or battery arrests",
-            "type": "integer",
-            "description": "[Number of arrests for aggravated assault or battery] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2o"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_rape",
-            "title": "Forcible rape arrests",
-            "type": "integer",
-            "description": "[Number of arrests for forcible rape] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2p"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_homicide",
-            "title": "Negligent manslaughter arrests",
-            "type": "integer",
-            "description": "[Number of arrests for murder, homicide or non-negligent manslaughter] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2q"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_arson",
-            "title": "Arson arrests",
-            "type": "integer",
-            "description": "[Number of arrests for arson] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2r"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_prostitution",
-            "title": "Commercialized sex arrests",
-            "type": "integer",
-            "description": "[Number of arrests for prostitution, pimping or commercialized sex] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2s"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_arrest_other",
-            "title": "Other charges arrests",
-            "type": "integer",
-            "description": "[Number of arrests for other charges (carrying a weapon, gang involvement, domestic violence, trespass, gambling, disturbing the peace, disorderly conduct, paraphernalia, runaway, curfew, truancy) ] During the past 90 days (since last assessment)",
-            "custom": {
-                "jcoin:original_name": "j2t"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_electronic_monitoring",
-            "title": "Electronic monitoring",
-            "type": "integer",
-            "description": "[...on electronic monitoring?] During the past xx days (since last assessment), how many days have you been ...",
-            "custom": {
-                "jcoin:original_name": "j3a"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_house_arrest",
-            "title": "House arrest",
-            "type": "integer",
-            "description": "[...on house arrest?] During the past xx days (since last assessment), how many days have you been ...",
-            "custom": {
-                "jcoin:original_name": "j3b"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_jail",
-            "title": "Jail time",
-            "type": "integer",
-            "description": "[...in jail?] During the past xx days (since last assessment), how many days have you been ...",
-            "custom": {
-                "jcoin:original_name": "j3c"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_prison",
-            "title": "Prison time",
-            "type": "integer",
-            "description": "[...in prison?] During the past xx days (since last assessment), how many days have you been ...",
-            "custom": {
-                "jcoin:original_name": "j3d"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "currently_incarcerated",
-            "title": "Current jail or prison",
-            "type": "boolean",
-            "description": "Are you currently in jail or prison? (CAN MARK IF OBVIOUS)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "j3e",
-                "jcoin:notes": "MBK: added Unknown to satisfy a small amount of respondents for one hub."
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "length_current_incarceration",
-            "title": "Length of jail or prison time",
-            "type": "integer",
-            "description": "How long have you been in jail or prison? (just this episode)",
-            "custom": {
-                "jcoin:original_name": "j3f"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_parole",
-            "title": "Parole",
-            "type": "integer",
-            "description": "[...been on parole?] During the past xx days (since last assessment), how many days have you...",
-            "custom": {
-                "jcoin:original_name": "j4a"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_probation",
-            "title": "Probation",
-            "type": "integer",
-            "description": "[...been on probation?] During the past xx days (since last assessment), how many days have you...",
-            "custom": {
-                "jcoin:original_name": "j4b"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_other_supervision",
-            "title": "Other kind of community supervision",
-            "type": "integer",
-            "description": "[...been on any other kind of community supervision?] During the past xx days (since last assessment), how many days have you...",
-            "custom": {
-                "jcoin:original_name": "j4c"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_met_probation_officer",
-            "title": "Meeting with probation or parole officer",
-            "type": "integer",
-            "description": "[...met with your probation or parole officer?] During the past xx days (since last assessment), how many days have you...",
-            "custom": {
-                "jcoin:original_name": "j4d"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "days_trouble_probation_officer",
-            "title": "Trouble with probation or parole officer",
-            "type": "integer",
-            "description": "[...been in trouble with your probation or parole officer?] During the past xx days (since last assessment), how many days have you...",
-            "custom": {
-                "jcoin:original_name": "j4e"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "number_lifetime_arrests",
-            "title": "Life time arrests",
-            "type": "integer",
-            "description": "[...how many times in your life have you been arrested including as a juvenile?] During your lifetime...",
-            "custom": {
-                "jcoin:original_name": "j5a"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "age_first_arrest",
-            "title": "First time arrest",
-            "type": "integer",
-            "description": "[...how old were you the first time you were arrested? ] During your lifetime...",
-            "custom": {
-                "jcoin:original_name": "j5b"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "years_lifetime_incarceration",
-            "title": "Lifetime years in detention, jail, or prison time",
-            "type": "number",
-            "description": "[...how much total time have you spent in detention, jail or prison during your lifetime?] During your lifetime...",
-            "custom": {
-                "jcoin:original_name": "j5c_years",
-                "jcoin:notes": "MBK: changed from integer to number to allow partial years/months"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "months_lifetime_incarceration",
-            "title": "Lifetime months in detention, jail, or prison time",
-            "type": "number",
-            "description": "[...how much total time have you spent in detention, jail or prison during your lifetime?] During your lifetime...",
-            "custom": {
-                "jcoin:original_name": "j5c_months",
-                "jcoin:notes": "MBK: changed from integer to number to allow partial years/months"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "times_guilty_sentenced",
-            "title": "Lifetime guity and sentenced",
-            "type": "integer",
-            "description": "[...how many times have you been found guilty and sentenced (including adjudications as a youth or convictions as an adult)?] During your lifetime...",
-            "custom": {
-                "jcoin:original_name": "j5d"
-            }
-        },
-        {
-            "section": "Justice Involvement",
-            "name": "age_first_convicted",
-            "title": "First time adjudication conviction",
-            "type": "integer",
-            "description": "[...how old were you the first time you were adjudicated or convicted?] During your lifetime...",
-            "custom": {
-                "jcoin:original_name": "j5e"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "times_er_visits",
-            "title": "Emergency room:  Number of visits",
-            "type": "integer",
-            "description": "[...times have you had to go to an emergency room without being admitted to the hospital?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
-            "custom": {
-                "jcoin:original_name": "u1"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "nights_hospital_detox",
-            "title": "Hospital detox program: Number of nights",
-            "type": "integer",
-            "description": "[...nights were you in a hospital detoxification program for your alcohol and other drug use (across all episodes)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
-            "custom": {
-                "jcoin:original_name": "u2"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "nights_hospitalized",
-            "title": "Hospitalization:  Number of nights",
-            "type": "integer",
-            "description": "[...nights were you in a hospital for any other reason than detoxification?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
-            "custom": {
-                "jcoin:original_name": "u3"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "nights_residential_detox",
-            "title": "Residential detox: Number of nights",
-            "type": "integer",
-            "description": "[...nights were you in a non-hospital or social detoxification program from alcohol or other drugs (also called residential detox)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
-            "custom": {
-                "jcoin:original_name": "u4"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "nights_residential_sud_tx",
-            "title": "Residential treatment program for alcohol/drugs: Number of nights",
-            "type": "integer",
-            "description": "[...nights were you in a residential treatment program for alcohol or drug use?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
-            "custom": {
-                "jcoin:original_name": "u5a"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "nights_residential_mh",
-            "title": "Residential treatment program for mental health: Number of nights",
-            "type": "integer",
-            "description": "[...nights were you in a residential treatment program for mental health?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
-            "custom": {
-                "jcoin:original_name": "u5b"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "nights_physical_rehab",
-            "title": "Rehab facility for physical health: Number of nights",
-            "type": "integer",
-            "description": "[...nights were you in a residential, nursing home, or other rehabilitation facility for your physical health?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
-            "custom": {
-                "jcoin:original_name": "u5c"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "visits_primary_care",
-            "title": "Primary care provider:  Number of visits",
-            "type": "integer",
-            "description": "[...times have you visited a primary care provier (physician, nurse, nurse practitioner, or physician's assistant)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
-            "custom": {
-                "jcoin:original_name": "u6"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "pc_reason_alc_drugs",
-            "title": "Primary care visit reason: Alcohol/drug use",
-            "type": "boolean",
-            "description": "[Alcohol or other drug use?] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "u6a"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "pc_reason_mh",
-            "title": "Primary care visit reason: Mental health",
-            "type": "boolean",
-            "description": "[Mental health?] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "u6b"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "pc_reason_physical",
-            "title": "Primary care visit reason:  Physical health",
-            "type": "boolean",
-            "description": "[Physical health?] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "u6c"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "pc_reason_other",
-            "title": "Primary care visit reason:  Some other reason (specify)",
-            "type": "boolean",
-            "description": "[Some other reason?] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "u6d"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "pc_reason_other_specify",
-            "title": "Primary care visit reason: Specify other reason",
-            "type": "string",
-            "description": "[Specify other reason you visited primary care provider] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
-            "custom": {
-                "jcoin:original_name": "u6d_specify"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "op_tx_days",
-            "title": "Outpatient treament program for alcohol/substance use: Number of days",
-            "type": "integer",
-            "description": "[...days did you participate in any other outpatient treatment program specializing in alcohol or substance use? (OTHER THAN U1-6)                 ] Other than times you already mentioned in <reference to u6>, during the past 3 months (since last assessment), how many...",
-            "custom": {
-                "jcoin:original_name": "u7"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "op_tx_days_visited",
-            "title": "Outpatient treatment program: Number of days physically visiting program",
-            "type": "integer",
-            "description": "How many of these days did you physically visit the (outpatient treatment) program?",
-            "custom": {
-                "jcoin:original_name": "u7a"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "op_tx_days_online",
-            "title": "Outpatient treatment program: Number of days participating online",
-            "type": "integer",
-            "description": "How many of these days did you participate (in the outpatient tx program) online (e.g., smart phone, computer, or tablet)?",
-            "custom": {
-                "jcoin:original_name": "u7b"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "op_tx_days_doctor",
-            "title": "Outpatient treatment program: Number of days seeing doctor",
-            "type": "integer",
-            "description": "How many of these days did you see a doctor (at the outpatient treatment program)?",
-            "custom": {
-                "jcoin:original_name": "u7c"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "op_tx_days_therapy",
-            "title": "Outpatient treatment program: Number of days participating in therapy",
-            "type": "integer",
-            "description": "How many of these days did you only participate in individual or group therapy?",
-            "custom": {
-                "jcoin:original_name": "u7d"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "op_tx_days_moud_only",
-            "title": "Outpatient treatment program: Number of days for medication management",
-            "type": "integer",
-            "description": "How many of these days were for medication management only?",
-            "custom": {
-                "jcoin:original_name": "u7e"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "psych_visits",
-            "title": "Psychiatrist/psychologist:  Number of total visits",
-            "type": "integer",
-            "description": "Other than times you already mentioned above, during the past 3 months (since last assessment), how many times have you seen a psychiatrist (MD) or psychologist (Ph.D., Psy.D)?",
-            "custom": {
-                "jcoin:original_name": "u8"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "psych_visits_in_person",
-            "title": "Psychiatrist/psychologist: Number of in-person visits",
-            "type": "integer",
-            "description": "How many of these times did you physically visit the program (psychiatrist/psychologist)?",
-            "custom": {
-                "jcoin:original_name": "u8a"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "psych_visits_online",
-            "title": "Psychiatrist/psychologist: Number of online visits",
-            "type": "integer",
-            "description": "How many of these times did you participate online (phone, computer, or tablet; with a psychiatrist/psychologist)?",
-            "custom": {
-                "jcoin:original_name": "u8b"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "counselor_visits",
-            "title": "Counselor/social worker: Number of total visits",
-            "type": "integer",
-            "description": "Other than times you already mentioned above, during the past 3 months (since last assessment), how many times have you seen any other kind or counselor or social worker?",
-            "custom": {
-                "jcoin:original_name": "u9"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "counselor_visits_in_person",
-            "title": "Counselor/social worker: Number of in-person visits",
-            "type": "integer",
-            "description": "[...did you physically visit the program (counselor/social worker)?] How many of these times did you...",
-            "custom": {
-                "jcoin:original_name": "u9a"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "counselor_visits_online",
-            "title": "Counselor/social worker: Number of online visits",
-            "type": "integer",
-            "description": "...did you participate online (phone, computer, or tablet; with a counselor/social worker)?",
-            "custom": {
-                "jcoin:original_name": "u9b"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "healthcare_expense",
-            "title": "Healthcare cost",
-            "type": "number",
-            "description": "In the past xx days (since last assessment), how much money have you spent on all healthcare (e.g., copayments or prescriptions)?",
-            "custom": {
-                "jcoin:original_name": "u13"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "received_sud_tx",
-            "title": "Substance use treatment",
-            "type": "boolean",
-            "description": "Have you received any substance use treatment in the past xx days (since last assessment)?",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "u14"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "sud_tx_organized",
-            "title": "Substance use tx provider:  Well-organized",
-            "type": "string",
-            "description": "[The provider is organized and well-run.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
-            "constraints": {
-                "enum": [
-                    "Strongly agree",
-                    "Somewhat agree",
-                    "Neutral",
-                    "Somewhat disagree",
-                    "Strongly disagree"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "u14a"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "sud_tx_satisfied",
-            "title": "Substance use tx provider:  Satisfaction",
-            "type": "string",
-            "description": "[You are satisfied with this provider.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
-            "constraints": {
-                "enum": [
-                    "Strongly agree",
-                    "Somewhat agree",
-                    "Neutral",
-                    "Somewhat disagree",
-                    "Strongly disagree"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "u14b"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "sud_tx_efficient",
-            "title": "Substance use tx provider:  Efficient staff",
-            "type": "string",
-            "description": "[The staff are efficient at doing their job.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
-            "constraints": {
-                "enum": [
-                    "Strongly agree",
-                    "Somewhat agree",
-                    "Neutral",
-                    "Somewhat disagree",
-                    "Strongly disagree"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "u14c"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "sud_tx_personal",
-            "title": "Substance use tx provider:  Personal counseling",
-            "type": "string",
-            "description": "[You can get plenty of personal counseling at this provider.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
-            "constraints": {
-                "enum": [
-                    "Strongly agree",
-                    "Somewhat agree",
-                    "Neutral",
-                    "Somewhat disagree",
-                    "Strongly disagree"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "u14d"
-            }
-        },
-        {
-            "section": "Utilization of Services",
-            "name": "sud_tx_moud",
-            "title": "Substance use tx provider:  Medication assistance for opioid use",
-            "type": "string",
-            "description": "[You can get plenty of medication assistance for opioid use at this provider.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
-            "constraints": {
-                "enum": [
-                    "Strongly agree",
-                    "Somewhat agree",
-                    "Neutral",
-                    "Somewhat disagree",
-                    "Strongly disagree"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "u14e"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "oud_tx_not_appropriate",
-            "title": "Not candidate for OUD treatment",
-            "type": "boolean",
-            "description": "If respondent is not a candidate for OUD treatment, mark here and skip rest. NOTE: If `No` the rest of the Treatment Preferences fields should be `Legitimately skipped`",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m1"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_meds",
-            "title": "Preferred type of OUD treatment:  OUD medication",
-            "type": "boolean",
-            "description": "[OUD medication (e.g. methadone, buprenorphine/Suboxone, naltrexone/Vivitrol) [Ask M3]] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_meds"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_detox",
-            "title": "Preferred type of OUD treatment:  Detox",
-            "type": "boolean",
-            "description": "[Detox] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_detox"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_op",
-            "title": "Preferred type of OUD treatment:  Outpatient counseling",
-            "type": "boolean",
-            "description": "[Outpatient counseling] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_outpt_counsel"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_iop",
-            "title": "Preferred type of OUD treatment:  Intensive outpatient",
-            "type": "boolean",
-            "description": "[Intensive outpatient] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_outpt_intensive"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_residential",
-            "title": "Preferred type of OUD treatment:  Residential treatment",
-            "type": "boolean",
-            "description": "[Residential treatment] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_residential"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_other_tx",
-            "title": "Preferred type of OUD treatment:  Other treatment",
-            "type": "boolean",
-            "description": "[Other ] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_other"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_other_specify",
-            "title": "Preferred type of OUD treatment:  Other treatment specified",
-            "type": "boolean",
-            "description": "[Other (specify)] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_other_specify"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_no_treatment",
-            "title": "Preferred type of OUD treatment:  No treatment",
-            "type": "boolean",
-            "description": "[No treatment] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_none"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_oud_dk",
-            "title": "Preferred type of OUD treatment:  Don't know or no preference",
-            "type": "boolean",
-            "description": "[Don't know / No preference] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
-            "trueValues": [
-                "Yes"
-            ],
-            "falseValues": [
-                "No"
-            ],
-            "custom": {
-                "jcoin:original_name": "m2_dont_know"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_moud_type",
-            "title": "Preferred OUD medication",
-            "type": "string",
-            "description": "Which OUD medication treatment type would you most prefer to receive if it were available to you now? (SELECT ONLY ONE) [SKIP LOGIC:  If M3=2, ask M4. If M3=3, ask M5. Otherwise go to next set of questions.]",
-            "constraints": {
-                "enum": [
-                    "Methadone",
-                    "Buprenorphine/Suboxone",
-                    "Naltrexone/Vivitrol",
-                    "Don't know/No preference"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "m3"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_which_bup",
-            "title": "Type of buprenorphine preferred",
-            "type": "string",
-            "description": "Which type of buprenorphine? (SELECT ONLY ONE)",
-            "constraints": {
-                "enum": [
-                    "I would prefer to receive daily buprenorphine-naloxone sublingual tablets or films (Suboxone)",
-                    "I would prefer to receive monthly or weekly buprenorphine injections (e.g., Sublocade, Brixadi)",
-                    "I would prefer to receive the 6-month buprenorphine implant",
-                    "Don't know/No preference"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "m4"
-            }
-        },
-        {
-            "section": "Treatment Preferences",
-            "name": "prefer_which_naloxone",
-            "title": "Type of naltrexone preferred",
-            "type": "string",
-            "description": "Which type of naltrexone? (SELECT ONLY ONE)",
-            "constraints": {
-                "enum": [
-                    "I would prefer to receive daily naltrexone oral (Revia)",
-                    "I would prefer to receive monthly naltrexone injections (Vivitrol)",
-                    "Don't know/No preference"
-                ]
-            },
-            "custom": {
-                "jcoin:original_name": "m5"
-            }
-        },
-        {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "household_people",
-            "title": "People in household",
+            "title": "Household size",
             "type": "integer",
-            "description": "[How many people, including yourself, are there in your household?] The next few questions are about your HOUSEHOLD in the past <if baseline: 90 days/90 days prior to entering jail; if follow up: xx days (since last assessment/interview/contact/visit)>.  Your household includes people you live with, and with whom you share your income and expenses - husband, wife, children, relatives, and others.",
-            "custom": {
-                "jcoin:original_name": "d7a",
-                "jcoin:notes": "The demographics core measure section was split between data models for demographic subsections collected only at baseline (i.e., d1 - d6) and all time points (d7 - d11; o3"
-            }
+            "description": "How many people, including yourself, are there in your household?",
+            "jcoin:original_name": "D7a",
+            "jcoin:optional": true
         },
         {
-            "section": "Demographics",
+            "jcoin:section": "Demographics",
             "name": "household_under_18",
             "title": "People under 18 years old in household",
             "type": "integer",
@@ -3401,6 +1765,1638 @@
             "custom": {
                 "jcoin:original_name": "r3f_first_dx",
                 "jcoin:notes": "RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW (CONSISTENT WITH HUB CONSENT FORMS)"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "last_drug_use",
+            "title": "Last time drug use",
+            "type": "string",
+            "description": "[... you used alcohol or other drugs weekly or more often?  ] When was the last time you...",
+            "constraints": {
+                "enum": [
+                    "Never",
+                    "More than a year ago",
+                    "4 to 12 months ago",
+                    "2 to 3 months ago",
+                    "Past month"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "s1a",
+                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "last_getting_using_drugs",
+            "title": "Last time drug use: getting, using, or recovering",
+            "type": "string",
+            "description": "[... You spent a lot of time either getting alcohol or other drugs, using alcohol or other drugs, or recovering from the effects of alcohol or other drugs (feeling sick)? ] When was the last time you...",
+            "constraints": {
+                "enum": [
+                    "Never",
+                    "More than a year ago",
+                    "4 to 12 months ago",
+                    "2 to 3 months ago",
+                    "Past month"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "s1b",
+                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "last_social_problems",
+            "title": "Last time drug use: social dysfunction",
+            "type": "string",
+            "description": "[... You kept using alcohol or other drugs even though it was causing social   problems, leading to fights, or getting you into trouble with other people? ] When was the last time you...",
+            "constraints": {
+                "enum": [
+                    "Never",
+                    "More than a year ago",
+                    "4 to 12 months ago",
+                    "2 to 3 months ago",
+                    "Past month"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "s1c",
+                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "last_work_life_disruption",
+            "title": "Last time drug use: work or life dysfunction",
+            "type": "string",
+            "description": "[ your use of alcohol or other drugs caused you to give up or reduce your involvement in activities at work, school, home or social events? ] When was the last time you...",
+            "constraints": {
+                "enum": [
+                    "Never",
+                    "More than a year ago",
+                    "4 to 12 months ago",
+                    "2 to 3 months ago",
+                    "Past month"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "s1d",
+                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "last_withdrawal",
+            "title": "Last time drug use: withdrawal",
+            "type": "string",
+            "description": "[... You had withdrawal problems from alcohol or other drugs like shaky hands, throwing up, having trouble sitting still or sleeping, or you used any  alcohol or other drugs to stop being sick or avoid withdrawal problems? ] When was the last time you...",
+            "constraints": {
+                "enum": [
+                    "Never",
+                    "More than a year ago",
+                    "4 to 12 months ago",
+                    "2 to 3 months ago",
+                    "Past month"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "s1e",
+                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "last_used_opioids",
+            "title": "Last time drug use: any opioids",
+            "type": "string",
+            "description": "[... used any kind of heroin, fentanyl or other opioid?(such as codeine, Darvocet, Darvon, Demerol, Dilaudid, Karachi, OxyContin, Oxys, Percocet, Propoxyphene, morphine, opium, Talwin or Tylenol with codeine, Vicodin, Zohydro)?] When was the last time...",
+            "constraints": {
+                "enum": [
+                    "Never",
+                    "More than a year ago",
+                    "4 to 12 months ago",
+                    "2 to 3 months ago",
+                    "Past month"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "s2a",
+                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "last_opioid_overdose",
+            "title": "Last time drug use: opioid overdose",
+            "type": "string",
+            "description": "[... had an opioid overdose? [used enough of the drug that it produced a life-threatening reaction that required medical attention]] When was the last time...",
+            "constraints": {
+                "enum": [
+                    "Never",
+                    "More than a year ago",
+                    "4 to 12 months ago",
+                    "2 to 3 months ago",
+                    "Past month"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "s2b",
+                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "last_went_moud",
+            "title": "Last time drug use: OUD medication-assisted treatment",
+            "type": "string",
+            "description": "[... went to any kind of medication assisted treatment for opioid use disorder?] When was the last time...",
+            "constraints": {
+                "enum": [
+                    "Never",
+                    "More than a year ago",
+                    "4 to 12 months ago",
+                    "2 to 3 months ago",
+                    "Past month"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "s2c",
+                "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "times_opioid_overdose",
+            "title": "Opioid Overdose Count",
+            "type": "integer",
+            "description": "[...overdose on heroin, fentanyl or other opioids?  [Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention] ] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
+            "custom": {
+                "jcoin:original_name": "s3a",
+                "jcoin:notes": "Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "times_naloxone",
+            "title": "Opioid Overdose Count: Receiving Naloxone",
+            "type": "integer",
+            "description": "[...did you receive naloxone (Evzio or Narcan) to reverse your overdose?  ] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
+            "custom": {
+                "jcoin:original_name": "s3b",
+                "jcoin:notes": "Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "who_gave_naloxone",
+            "title": "Person Who Administered Nalaxone for Overdose",
+            "type": "any",
+            "description": "Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)",
+            "custom": {
+                "jcoin:original_name": "s3c",
+                "jcoin:notes": "TODO: expand fields to each of the possible selections"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "drugs_before_overdose",
+            "title": "Drugs 4 hrs Before Overdose",
+            "type": "any",
+            "description": "What drugs had you taken in the 4 hours before you overdosed? (SELECT ALL THAT APPLY)",
+            "custom": {
+                "jcoin:original_name": "s3d",
+                "jcoin:notes": "TODO: expand fields to each of the possible selections"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "times_ems_after_overdose",
+            "title": "Emergency Medical Service Following Overdose",
+            "type": "integer",
+            "description": "[...receive emergency medical service following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
+            "custom": {
+                "jcoin:original_name": "s3e"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "times_er_after_overdose",
+            "title": "Emergency Department Visit Count Following Overdose",
+            "type": "integer",
+            "description": "[...go to the emergency department following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
+            "custom": {
+                "jcoin:original_name": "s3f"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "times_hospital_after_overdose",
+            "title": "Hospital Admissions Count Following Overdose",
+            "type": "integer",
+            "description": "[...get admitted to the hospital following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
+            "custom": {
+                "jcoin:original_name": "s3g"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "tx_refer_after_overdose",
+            "title": "Substance Use Treatment Referral Count Following Overdose",
+            "type": "integer",
+            "description": "[...receive a referral to substance use treatment from the police, EMS, ED or hospital staff?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
+            "custom": {
+                "jcoin:original_name": "s3h"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_drug_use",
+            "title": "Drug Use Count",
+            "type": "integer",
+            "description": "[...on how many days did you use any heroin, fentanyl, opioids, alcohol, marijuana or other illicit drugs?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4a"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_alcohol_use",
+            "title": "Alcohol Use Count",
+            "type": "integer",
+            "description": "[...how many times did you drink any kind of alcohol (beer, gin, rum, scotch, tequila, whiskey, wine or mixed drinks)?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4b"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_alcohol_binge",
+            "title": "Alcohol Use Count: Binge Drinking",
+            "type": "integer",
+            "description": "[...how many times did you have 5 or more drinks?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4c"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_medical_marijuana",
+            "title": "Marijuana use count: medical",
+            "type": "integer",
+            "description": "[...how many times did you use medical marijuana that was obtained from a dispensary with your own recommendation card or prescription?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4d"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_other_marijuana",
+            "title": "Marijuana use count: Not own",
+            "type": "integer",
+            "description": "[... how many times did you use other marijuana, including hashish, edibles, tinctures or concentrated drops, blunts or other forms of THC (cannabis, herb, pot, reefer, weed), or medical marijuana that was not your own?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4e"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_heroin",
+            "title": "Opioid use count: Heroin",
+            "type": "integer",
+            "description": "[... how many times did you use heroin (alone or mixed with other drugs)?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4f"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_fentanyl",
+            "title": "Opioid use count: Fentanyl",
+            "type": "integer",
+            "description": "[... how many times did you use fentanyl (alone or mixed with other drugs)?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4g"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_non_rx_methadone",
+            "title": "Opioid use count: Street Methadone",
+            "type": "integer",
+            "description": "[... how many times did you use nonprescription or street methadone?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4h"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_non_rx_suboxone",
+            "title": "Opioid use count: Suboxone",
+            "type": "integer",
+            "description": "[... how many times did you use use nonprescription or street Suboxone?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4j"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_other_opioids",
+            "title": "Opioid use count: other",
+            "type": "integer",
+            "description": "[... how many times did you use other opioids, opiates, painkillers, or other analgesics (such as codeine, Darvocet, Darvon, Demerol, Dilaudid, Karachi, OxyContin, Oxys, Percocet, Propoxyphene, morphine, opium, Talwin or Tylenol with codeine, Vicodin, Zohydro)?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4k"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_cocaine",
+            "title": "Cocaine use count",
+            "type": "integer",
+            "description": "[... how many times did you use crack, smoked rock, freebase, or other forms of cocaine?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4m"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_amphetamines",
+            "title": "Speed use count",
+            "type": "integer",
+            "description": "[... how many times did you use any methamphetamines, amphetamines, or other forms of speed?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4n"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_benzo",
+            "title": "Benzodiazapine, anti-anxiety, and tranquilizer use count",
+            "type": "integer",
+            "description": "[... how many times did you use any benzodiazepines, anti-anxiety drugs or tranquilizers (such as Ativan, Equanil, Dalmane, Deprol, Diazepam, Klonopin, Librium, Lortab, Meprobamate, Miltown, Prosom, Serax, Traxene, Valium, Verseed, Xanax)?      ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4p"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_other_drugs",
+            "title": "Drug use count: other",
+            "type": "integer",
+            "description": "[...on how many days did you use any other drug that has not been mentioned (such as hallucinogens, downers)? ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4z"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "other_drug_describe",
+            "title": "Drug use: description of other drugs",
+            "type": "string",
+            "description": "[...on how many days did you use any other drug that has not been mentioned (such as hallucinogens, downers)? (Please describe )] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
+            "custom": {
+                "jcoin:original_name": "s4z_describe"
+            }
+        },
+        {
+            "section": "Substance Use",
+            "name": "days_confined_no_use",
+            "title": "Place of No Opioid Use (Jail, Hospital, etc)",
+            "type": "integer",
+            "description": "During the past 90 days (prior to entering jail or prison/ since your last assessment), on how many days have you been in a jail, hospital or other place where you could not use heroin, fentanyl, other opioids, alcohol, marijuana or other drugs? (USE 0 FOR NONE)",
+            "custom": {
+                "jcoin:original_name": "s5"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_illegal_activity",
+            "title": "Activities against law besides drugs",
+            "type": "integer",
+            "description": "During the past 90 days (since last assessment), on how many days were you involved in any activities that might get you into trouble or be against the law besides drug use? [IF 0, GO TO J2]",
+            "custom": {
+                "jcoin:original_name": "j1",
+                "jcoin:notes": "[IF 0, GO TO J2]"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_drug_possession",
+            "title": "Drug possession",
+            "type": "integer",
+            "description": "[... been in possession of small amounts of drugs? (drug possession)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a1",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_public_drunk",
+            "title": "Drunkenness or other liquor law violations",
+            "type": "integer",
+            "description": "[... been drunk or high in public? (drunkenness or other liquor law violations)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a2",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_dui",
+            "title": "Driving under the influence or while intoxicated",
+            "type": "integer",
+            "description": "[... driven a vehicle while under the influence of alcohol or drugs? (driving under the influence or while intoxicated)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a3",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_drug_dealing",
+            "title": "Possession, dealing, distribution or sale of drugs",
+            "type": "integer",
+            "description": "[...sold, distributed or helped to make illegal drugs?  (possession, dealing, distribution or sale of drugs)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a4",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_vandalism",
+            "title": "Vandalism or property destruction",
+            "type": "integer",
+            "description": "[... purposely damaged or destroyed property that did not belong to you? (vandalism or property destruction)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a5",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_stolen_goods",
+            "title": "Receiving, possessing or selling stolen goods",
+            "type": "integer",
+            "description": "[... bought, received, possessed or sold any stolen goods? (receiving, possessing or selling stolen goods)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a6",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_forgery",
+            "title": "Forgery, fraud or embezzlement",
+            "type": "integer",
+            "description": "[... passed bad checks, forged or altered a prescription, or took money illegally from an employer?  (forgery, fraud or embezzlement)     ] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a7",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_shoplift",
+            "title": "Shoplifting",
+            "type": "integer",
+            "description": "[... taken something from a store without paying for it? (shoplifting)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a8",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_theft",
+            "title": "Larceny or theft",
+            "type": "integer",
+            "description": "[... other than from a store, taken money or property that didn't belong to you? (larceny or theft)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a9",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_burglary",
+            "title": "Burglary or breaking and entering",
+            "type": "integer",
+            "description": "[... broken into a house or building to steal something or just to look around? (burglary or breaking and entering)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a10",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_auto_theft",
+            "title": "Motor vehicle theft",
+            "type": "integer",
+            "description": "[... taken a car without people in it that didn't belong to you? (motor vehicle theft)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a11",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_carjacking",
+            "title": "Carjacking",
+            "type": "integer",
+            "description": "[... taken a car from someone who was in it? (carjacking)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a12",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_assault",
+            "title": "Simple assault or battery",
+            "type": "integer",
+            "description": "[... hit someone or gotten into a physical fight? (simple assault or battery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a13",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_robbery",
+            "title": "Robbery",
+            "type": "integer",
+            "description": "[... used a weapon, force, or strong-arm methods to get money or things from a person? (robbery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a14",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_aggravated_assault",
+            "title": "Aggravated assault or battery",
+            "type": "integer",
+            "description": "[... hurt someone badly enough they needed bandages or a doctor? (aggravated assault or battery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a15",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_rape",
+            "title": "Forcible rape",
+            "type": "integer",
+            "description": "[... made someone have sex with you by force when they did not want to have sex? (forcible rape)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a16",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_homicide",
+            "title": "Murder, homicide or no-negligent manslaughter",
+            "type": "integer",
+            "description": "[... been involved in the death or murder of another person, including accidents? (murder, homicide or no-negligent manslaughter)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a17",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_arson",
+            "title": "Arson",
+            "type": "integer",
+            "description": "[... intentionally set a building, car or other property on fire? (arson)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a18",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_prostitution",
+            "title": "Prostitution, pimping or commercialized sex",
+            "type": "integer",
+            "description": "[... traded sex for food, drugs or money? (prostitution, pimping or commercialized sex)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a19",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_other_unlawful",
+            "title": "Other unlawful activities",
+            "type": "integer",
+            "description": "[... done something else that would have gotten you into trouble with the police if they had known about it? (carrying a weapon, gang involvement, domestic violence, trespass, gambling, distributing the peace, disorderly conduct, paraphernalia, runaway, curfew, truancy,  ) (PLEASE DESCRIBE)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
+            "custom": {
+                "jcoin:original_name": "j1a99",
+                "jcoin:notes": "(common charge names associated with behavior for reference only)"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_charged_arrests",
+            "title": "Overall charged arrests",
+            "type": "integer",
+            "description": "During the past 90 days (since last assessment), how many times were you arrested and charged?",
+            "custom": {
+                "jcoin:original_name": "j2"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_possession",
+            "title": "Drug possession arrests",
+            "type": "integer",
+            "description": "[Number of arrests for drug possession (for small amounts)] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2a"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_drunk",
+            "title": "Law violations arrests",
+            "type": "integer",
+            "description": "[Number of arrests for drunkenness or other liquor law violations] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2b"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_dui",
+            "title": "Driving under the influence/intoxicated arrests",
+            "type": "integer",
+            "description": "[Number of arrests for driving under the influence or while intoxicated] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2c"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_drug_dealing",
+            "title": "Drug activity arrests",
+            "type": "integer",
+            "description": "[Number of arrests for possession, dealing, distribution or sale of drugs] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2d"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_vandalism",
+            "title": "Vandalism or property destruction arrests",
+            "type": "integer",
+            "description": "[Number of arrests for vandalism or property destruction] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2e"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_stolen_goods",
+            "title": "Stolen goods arrests",
+            "type": "integer",
+            "description": "[Number of arrests for receiving, possessing or selling stolen goods] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2f"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_forgery",
+            "title": "Forgery, fraud or embezzlement arrests",
+            "type": "integer",
+            "description": "[Number of arrests for forgery, fraud or embezzlement] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2g"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_shoplifting",
+            "title": "Shoplifting arrests",
+            "type": "integer",
+            "description": "[Number of arrests for shoplifting] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2h"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_theft",
+            "title": "Theft/larceny arrests",
+            "type": "integer",
+            "description": "[Number of arrests for larceny or theft] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2i"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_burglary",
+            "title": "Burglary or breaking and entering arrests",
+            "type": "integer",
+            "description": "[Number of arrests for burglary or breaking and entering] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2j"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_auto_theft",
+            "title": "Vehicle theft arrests",
+            "type": "integer",
+            "description": "[Number of arrests for motor vehicle theft] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2k"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_carjacking",
+            "title": "Car jacking arrests",
+            "type": "integer",
+            "description": "[Number of arrests for car jacking] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2l"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_assault",
+            "title": "Simple assault or battery arrests",
+            "type": "integer",
+            "description": "[Number of arrests for simple assault or battery] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2m"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_robbery",
+            "title": "Robbery arrests",
+            "type": "integer",
+            "description": "[Number of arrests for robbery] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2n"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_aggravated",
+            "title": "Aggravated assault or battery arrests",
+            "type": "integer",
+            "description": "[Number of arrests for aggravated assault or battery] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2o"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_rape",
+            "title": "Forcible rape arrests",
+            "type": "integer",
+            "description": "[Number of arrests for forcible rape] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2p"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_homicide",
+            "title": "Negligent manslaughter arrests",
+            "type": "integer",
+            "description": "[Number of arrests for murder, homicide or non-negligent manslaughter] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2q"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_arson",
+            "title": "Arson arrests",
+            "type": "integer",
+            "description": "[Number of arrests for arson] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2r"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_prostitution",
+            "title": "Commercialized sex arrests",
+            "type": "integer",
+            "description": "[Number of arrests for prostitution, pimping or commercialized sex] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2s"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_arrest_other",
+            "title": "Other charges arrests",
+            "type": "integer",
+            "description": "[Number of arrests for other charges (carrying a weapon, gang involvement, domestic violence, trespass, gambling, disturbing the peace, disorderly conduct, paraphernalia, runaway, curfew, truancy) ] During the past 90 days (since last assessment)",
+            "custom": {
+                "jcoin:original_name": "j2t"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_electronic_monitoring",
+            "title": "Electronic monitoring",
+            "type": "integer",
+            "description": "[...on electronic monitoring?] During the past xx days (since last assessment), how many days have you been ...",
+            "custom": {
+                "jcoin:original_name": "j3a"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_house_arrest",
+            "title": "House arrest",
+            "type": "integer",
+            "description": "[...on house arrest?] During the past xx days (since last assessment), how many days have you been ...",
+            "custom": {
+                "jcoin:original_name": "j3b"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_jail",
+            "title": "Jail time",
+            "type": "integer",
+            "description": "[...in jail?] During the past xx days (since last assessment), how many days have you been ...",
+            "custom": {
+                "jcoin:original_name": "j3c"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_prison",
+            "title": "Prison time",
+            "type": "integer",
+            "description": "[...in prison?] During the past xx days (since last assessment), how many days have you been ...",
+            "custom": {
+                "jcoin:original_name": "j3d"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "currently_incarcerated",
+            "title": "Current jail or prison",
+            "type": "boolean",
+            "description": "Are you currently in jail or prison? (CAN MARK IF OBVIOUS)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "j3e",
+                "jcoin:notes": "MBK: added Unknown to satisfy a small amount of respondents for one hub."
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "length_current_incarceration",
+            "title": "Length of jail or prison time",
+            "type": "integer",
+            "description": "How long have you been in jail or prison? (just this episode)",
+            "custom": {
+                "jcoin:original_name": "j3f"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_parole",
+            "title": "Parole",
+            "type": "integer",
+            "description": "[...been on parole?] During the past xx days (since last assessment), how many days have you...",
+            "custom": {
+                "jcoin:original_name": "j4a"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_probation",
+            "title": "Probation",
+            "type": "integer",
+            "description": "[...been on probation?] During the past xx days (since last assessment), how many days have you...",
+            "custom": {
+                "jcoin:original_name": "j4b"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_other_supervision",
+            "title": "Other kind of community supervision",
+            "type": "integer",
+            "description": "[...been on any other kind of community supervision?] During the past xx days (since last assessment), how many days have you...",
+            "custom": {
+                "jcoin:original_name": "j4c"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_met_probation_officer",
+            "title": "Meeting with probation or parole officer",
+            "type": "integer",
+            "description": "[...met with your probation or parole officer?] During the past xx days (since last assessment), how many days have you...",
+            "custom": {
+                "jcoin:original_name": "j4d"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "days_trouble_probation_officer",
+            "title": "Trouble with probation or parole officer",
+            "type": "integer",
+            "description": "[...been in trouble with your probation or parole officer?] During the past xx days (since last assessment), how many days have you...",
+            "custom": {
+                "jcoin:original_name": "j4e"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "number_lifetime_arrests",
+            "title": "Life time arrests",
+            "type": "integer",
+            "description": "[...how many times in your life have you been arrested including as a juvenile?] During your lifetime...",
+            "custom": {
+                "jcoin:original_name": "j5a"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "age_first_arrest",
+            "title": "First time arrest",
+            "type": "integer",
+            "description": "[...how old were you the first time you were arrested? ] During your lifetime...",
+            "custom": {
+                "jcoin:original_name": "j5b"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "years_lifetime_incarceration",
+            "title": "Lifetime years in detention, jail, or prison time",
+            "type": "number",
+            "description": "[...how much total time have you spent in detention, jail or prison during your lifetime?] During your lifetime...",
+            "custom": {
+                "jcoin:original_name": "j5c_years",
+                "jcoin:notes": "MBK: changed from integer to number to allow partial years/months"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "months_lifetime_incarceration",
+            "title": "Lifetime months in detention, jail, or prison time",
+            "type": "number",
+            "description": "[...how much total time have you spent in detention, jail or prison during your lifetime?] During your lifetime...",
+            "custom": {
+                "jcoin:original_name": "j5c_months",
+                "jcoin:notes": "MBK: changed from integer to number to allow partial years/months"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "times_guilty_sentenced",
+            "title": "Lifetime guity and sentenced",
+            "type": "integer",
+            "description": "[...how many times have you been found guilty and sentenced (including adjudications as a youth or convictions as an adult)?] During your lifetime...",
+            "custom": {
+                "jcoin:original_name": "j5d"
+            }
+        },
+        {
+            "section": "Justice Involvement",
+            "name": "age_first_convicted",
+            "title": "First time adjudication conviction",
+            "type": "integer",
+            "description": "[...how old were you the first time you were adjudicated or convicted?] During your lifetime...",
+            "custom": {
+                "jcoin:original_name": "j5e"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "times_er_visits",
+            "title": "Emergency room:  Number of visits",
+            "type": "integer",
+            "description": "[...times have you had to go to an emergency room without being admitted to the hospital?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
+            "custom": {
+                "jcoin:original_name": "u1"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "nights_hospital_detox",
+            "title": "Hospital detox program: Number of nights",
+            "type": "integer",
+            "description": "[...nights were you in a hospital detoxification program for your alcohol and other drug use (across all episodes)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
+            "custom": {
+                "jcoin:original_name": "u2"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "nights_hospitalized",
+            "title": "Hospitalization:  Number of nights",
+            "type": "integer",
+            "description": "[...nights were you in a hospital for any other reason than detoxification?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
+            "custom": {
+                "jcoin:original_name": "u3"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "nights_residential_detox",
+            "title": "Residential detox: Number of nights",
+            "type": "integer",
+            "description": "[...nights were you in a non-hospital or social detoxification program from alcohol or other drugs (also called residential detox)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
+            "custom": {
+                "jcoin:original_name": "u4"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "nights_residential_sud_tx",
+            "title": "Residential treatment program for alcohol/drugs: Number of nights",
+            "type": "integer",
+            "description": "[...nights were you in a residential treatment program for alcohol or drug use?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
+            "custom": {
+                "jcoin:original_name": "u5a"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "nights_residential_mh",
+            "title": "Residential treatment program for mental health: Number of nights",
+            "type": "integer",
+            "description": "[...nights were you in a residential treatment program for mental health?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
+            "custom": {
+                "jcoin:original_name": "u5b"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "nights_physical_rehab",
+            "title": "Rehab facility for physical health: Number of nights",
+            "type": "integer",
+            "description": "[...nights were you in a residential, nursing home, or other rehabilitation facility for your physical health?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
+            "custom": {
+                "jcoin:original_name": "u5c"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "visits_primary_care",
+            "title": "Primary care provider:  Number of visits",
+            "type": "integer",
+            "description": "[...times have you visited a primary care provier (physician, nurse, nurse practitioner, or physician's assistant)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
+            "custom": {
+                "jcoin:original_name": "u6"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "pc_reason_alc_drugs",
+            "title": "Primary care visit reason: Alcohol/drug use",
+            "type": "boolean",
+            "description": "[Alcohol or other drug use?] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "u6a"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "pc_reason_mh",
+            "title": "Primary care visit reason: Mental health",
+            "type": "boolean",
+            "description": "[Mental health?] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "u6b"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "pc_reason_physical",
+            "title": "Primary care visit reason:  Physical health",
+            "type": "boolean",
+            "description": "[Physical health?] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "u6c"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "pc_reason_other",
+            "title": "Primary care visit reason:  Some other reason (specify)",
+            "type": "boolean",
+            "description": "[Some other reason?] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "u6d"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "pc_reason_other_specify",
+            "title": "Primary care visit reason: Specify other reason",
+            "type": "string",
+            "description": "[Specify other reason you visited primary care provider] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
+            "custom": {
+                "jcoin:original_name": "u6d_specify"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "op_tx_days",
+            "title": "Outpatient treament program for alcohol/substance use: Number of days",
+            "type": "integer",
+            "description": "[...days did you participate in any other outpatient treatment program specializing in alcohol or substance use? (OTHER THAN U1-6)                 ] Other than times you already mentioned in <reference to u6>, during the past 3 months (since last assessment), how many...",
+            "custom": {
+                "jcoin:original_name": "u7"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "op_tx_days_visited",
+            "title": "Outpatient treatment program: Number of days physically visiting program",
+            "type": "integer",
+            "description": "How many of these days did you physically visit the (outpatient treatment) program?",
+            "custom": {
+                "jcoin:original_name": "u7a"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "op_tx_days_online",
+            "title": "Outpatient treatment program: Number of days participating online",
+            "type": "integer",
+            "description": "How many of these days did you participate (in the outpatient tx program) online (e.g., smart phone, computer, or tablet)?",
+            "custom": {
+                "jcoin:original_name": "u7b"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "op_tx_days_doctor",
+            "title": "Outpatient treatment program: Number of days seeing doctor",
+            "type": "integer",
+            "description": "How many of these days did you see a doctor (at the outpatient treatment program)?",
+            "custom": {
+                "jcoin:original_name": "u7c"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "op_tx_days_therapy",
+            "title": "Outpatient treatment program: Number of days participating in therapy",
+            "type": "integer",
+            "description": "How many of these days did you only participate in individual or group therapy?",
+            "custom": {
+                "jcoin:original_name": "u7d"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "op_tx_days_moud_only",
+            "title": "Outpatient treatment program: Number of days for medication management",
+            "type": "integer",
+            "description": "How many of these days were for medication management only?",
+            "custom": {
+                "jcoin:original_name": "u7e"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "psych_visits",
+            "title": "Psychiatrist/psychologist:  Number of total visits",
+            "type": "integer",
+            "description": "Other than times you already mentioned above, during the past 3 months (since last assessment), how many times have you seen a psychiatrist (MD) or psychologist (Ph.D., Psy.D)?",
+            "custom": {
+                "jcoin:original_name": "u8"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "psych_visits_in_person",
+            "title": "Psychiatrist/psychologist: Number of in-person visits",
+            "type": "integer",
+            "description": "How many of these times did you physically visit the program (psychiatrist/psychologist)?",
+            "custom": {
+                "jcoin:original_name": "u8a"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "psych_visits_online",
+            "title": "Psychiatrist/psychologist: Number of online visits",
+            "type": "integer",
+            "description": "How many of these times did you participate online (phone, computer, or tablet; with a psychiatrist/psychologist)?",
+            "custom": {
+                "jcoin:original_name": "u8b"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "counselor_visits",
+            "title": "Counselor/social worker: Number of total visits",
+            "type": "integer",
+            "description": "Other than times you already mentioned above, during the past 3 months (since last assessment), how many times have you seen any other kind or counselor or social worker?",
+            "custom": {
+                "jcoin:original_name": "u9"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "counselor_visits_in_person",
+            "title": "Counselor/social worker: Number of in-person visits",
+            "type": "integer",
+            "description": "[...did you physically visit the program (counselor/social worker)?] How many of these times did you...",
+            "custom": {
+                "jcoin:original_name": "u9a"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "counselor_visits_online",
+            "title": "Counselor/social worker: Number of online visits",
+            "type": "integer",
+            "description": "...did you participate online (phone, computer, or tablet; with a counselor/social worker)?",
+            "custom": {
+                "jcoin:original_name": "u9b"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "healthcare_expense",
+            "title": "Healthcare cost",
+            "type": "number",
+            "description": "In the past xx days (since last assessment), how much money have you spent on all healthcare (e.g., copayments or prescriptions)?",
+            "custom": {
+                "jcoin:original_name": "u13"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "received_sud_tx",
+            "title": "Substance use treatment",
+            "type": "boolean",
+            "description": "Have you received any substance use treatment in the past xx days (since last assessment)?",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "u14"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "sud_tx_organized",
+            "title": "Substance use tx provider:  Well-organized",
+            "type": "string",
+            "description": "[The provider is organized and well-run.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
+            "constraints": {
+                "enum": [
+                    "Strongly agree",
+                    "Somewhat agree",
+                    "Neutral",
+                    "Somewhat disagree",
+                    "Strongly disagree"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "u14a"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "sud_tx_satisfied",
+            "title": "Substance use tx provider:  Satisfaction",
+            "type": "string",
+            "description": "[You are satisfied with this provider.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
+            "constraints": {
+                "enum": [
+                    "Strongly agree",
+                    "Somewhat agree",
+                    "Neutral",
+                    "Somewhat disagree",
+                    "Strongly disagree"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "u14b"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "sud_tx_efficient",
+            "title": "Substance use tx provider:  Efficient staff",
+            "type": "string",
+            "description": "[The staff are efficient at doing their job.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
+            "constraints": {
+                "enum": [
+                    "Strongly agree",
+                    "Somewhat agree",
+                    "Neutral",
+                    "Somewhat disagree",
+                    "Strongly disagree"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "u14c"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "sud_tx_personal",
+            "title": "Substance use tx provider:  Personal counseling",
+            "type": "string",
+            "description": "[You can get plenty of personal counseling at this provider.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
+            "constraints": {
+                "enum": [
+                    "Strongly agree",
+                    "Somewhat agree",
+                    "Neutral",
+                    "Somewhat disagree",
+                    "Strongly disagree"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "u14d"
+            }
+        },
+        {
+            "section": "Utilization of Services",
+            "name": "sud_tx_moud",
+            "title": "Substance use tx provider:  Medication assistance for opioid use",
+            "type": "string",
+            "description": "[You can get plenty of medication assistance for opioid use at this provider.] Considering the substance use treatment from your most recent substance abuse treatment provider in the past xx days (since last assessment), please indicate how much you agree with each of the following statements",
+            "constraints": {
+                "enum": [
+                    "Strongly agree",
+                    "Somewhat agree",
+                    "Neutral",
+                    "Somewhat disagree",
+                    "Strongly disagree"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "u14e"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "oud_tx_not_appropriate",
+            "title": "Not candidate for OUD treatment",
+            "type": "boolean",
+            "description": "If respondent is not a candidate for OUD treatment, mark here and skip rest. NOTE: If `No` the rest of the Treatment Preferences fields should be `Legitimately skipped`",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m1"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_meds",
+            "title": "Preferred type of OUD treatment:  OUD medication",
+            "type": "boolean",
+            "description": "[OUD medication (e.g. methadone, buprenorphine/Suboxone, naltrexone/Vivitrol) [Ask M3]] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_meds"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_detox",
+            "title": "Preferred type of OUD treatment:  Detox",
+            "type": "boolean",
+            "description": "[Detox] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_detox"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_op",
+            "title": "Preferred type of OUD treatment:  Outpatient counseling",
+            "type": "boolean",
+            "description": "[Outpatient counseling] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_outpt_counsel"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_iop",
+            "title": "Preferred type of OUD treatment:  Intensive outpatient",
+            "type": "boolean",
+            "description": "[Intensive outpatient] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_outpt_intensive"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_residential",
+            "title": "Preferred type of OUD treatment:  Residential treatment",
+            "type": "boolean",
+            "description": "[Residential treatment] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_residential"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_other_tx",
+            "title": "Preferred type of OUD treatment:  Other treatment",
+            "type": "boolean",
+            "description": "[Other ] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_other"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_other_specify",
+            "title": "Preferred type of OUD treatment:  Other treatment specified",
+            "type": "boolean",
+            "description": "[Other (specify)] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_other_specify"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_no_treatment",
+            "title": "Preferred type of OUD treatment:  No treatment",
+            "type": "boolean",
+            "description": "[No treatment] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_none"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_oud_dk",
+            "title": "Preferred type of OUD treatment:  Don't know or no preference",
+            "type": "boolean",
+            "description": "[Don't know / No preference] Which type of opioid use disorder (OUD) treatment would you most prefer to receive if it were available to you now? (CHECK ALL THAT APPLY)",
+            "trueValues": [
+                "Yes"
+            ],
+            "falseValues": [
+                "No"
+            ],
+            "custom": {
+                "jcoin:original_name": "m2_dont_know"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_moud_type",
+            "title": "Preferred OUD medication",
+            "type": "string",
+            "description": "Which OUD medication treatment type would you most prefer to receive if it were available to you now? (SELECT ONLY ONE) [SKIP LOGIC:  If M3=2, ask M4. If M3=3, ask M5. Otherwise go to next set of questions.]",
+            "constraints": {
+                "enum": [
+                    "Methadone",
+                    "Buprenorphine/Suboxone",
+                    "Naltrexone/Vivitrol",
+                    "Don't know/No preference"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "m3"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_which_bup",
+            "title": "Type of buprenorphine preferred",
+            "type": "string",
+            "description": "Which type of buprenorphine? (SELECT ONLY ONE)",
+            "constraints": {
+                "enum": [
+                    "I would prefer to receive daily buprenorphine-naloxone sublingual tablets or films (Suboxone)",
+                    "I would prefer to receive monthly or weekly buprenorphine injections (e.g., Sublocade, Brixadi)",
+                    "I would prefer to receive the 6-month buprenorphine implant",
+                    "Don't know/No preference"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "m4"
+            }
+        },
+        {
+            "section": "Treatment Preferences",
+            "name": "prefer_which_naloxone",
+            "title": "Type of naltrexone preferred",
+            "type": "string",
+            "description": "Which type of naltrexone? (SELECT ONLY ONE)",
+            "constraints": {
+                "enum": [
+                    "I would prefer to receive daily naltrexone oral (Revia)",
+                    "I would prefer to receive monthly naltrexone injections (Vivitrol)",
+                    "Don't know/No preference"
+                ]
+            },
+            "custom": {
+                "jcoin:original_name": "m5"
             }
         }
     ]
