@@ -5,6 +5,7 @@ notebooks/staff-data-dictionary-hacky-generation.ipynb
 site/
 venv/
 .venv/
+/tmp
 
 *egg-info
 *__pycache__*
