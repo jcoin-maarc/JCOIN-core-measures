@@ -142,7 +142,7 @@
             "name": "compliance_max",
             "title": "Maximum compliance value",
             "type": "integer",
-            "description": "Maximum possible value of compliance according to study protocol.",
+            "description": "Maximum possible value of compliance according to study protocol."
         }
     ]
 }
