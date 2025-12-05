@@ -8,7 +8,7 @@
     },
     "fields": [
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "jdc_person_id",
             "title": "JCOIN data commons person identifier",
             "type": "string",
@@ -19,11 +19,11 @@
                 "pattern": "[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"
             },
             "custom": {
-                "jcoin:original_name": "jdc_person_id"
+                "jcoin:originalName": "jdc_person_id"
             }
         },
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "visit_number",
             "title": "Visit Number",
             "type": "integer",
@@ -33,11 +33,11 @@
                 "minimum": 1
             },
             "custom": {
-                "jcoin:original_name": "visit_number"
+                "jcoin:originalName": "visit_number"
             }
         },
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "shifted_visit_dt",
             "title": "Visit Date (shifted)",
             "type": "date",
@@ -48,14 +48,14 @@
             ],
             "format": "%Y%m%d",
             "custom": {
-                "jcoin:original_name": "shifted_visit_date"
+                "jcoin:originalName": "shifted_visit_date"
             },
             "constraints": {
                 "minimum": 1
             }
         },
         {
-            "section": "Record and linkage",
+            "jcoin:section": "Record and linkage",
             "name": "visit_type",
             "title": "Visit Type",
             "type": "string",
@@ -68,11 +68,11 @@
                 "required": true
             },
             "custom": {
-                "jcoin:original_name": "visit_type"
+                "jcoin:originalName": "visit_type"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_confidence",
             "title": "Confidence to implement",
             "type": "string",
@@ -87,12 +87,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or1",
+                "jcoin:originalName": "or1",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-7"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_commitment",
             "title": "Commitment to implement",
             "type": "string",
@@ -107,12 +107,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or2",
+                "jcoin:originalName": "or2",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-8"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_tracking",
             "title": "Confidence in tracking",
             "type": "string",
@@ -127,12 +127,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or3",
+                "jcoin:originalName": "or3",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-9"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_attitude",
             "title": "Whatever it takes attitude to implement",
             "type": "string",
@@ -147,12 +147,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or4",
+                "jcoin:originalName": "or4",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-10"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_org_support",
             "title": "Confidence in organizational support",
             "type": "string",
@@ -167,12 +167,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or5",
+                "jcoin:originalName": "or5",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-11"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_want",
             "title": "Want to implement",
             "type": "string",
@@ -187,12 +187,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or6",
+                "jcoin:originalName": "or6",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-12"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_momentum",
             "title": "Confidence in maintaining momentum",
             "type": "string",
@@ -207,12 +207,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or7",
+                "jcoin:originalName": "or7",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-13"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_challenges",
             "title": "Confidence in handling challenges",
             "type": "string",
@@ -227,12 +227,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or8",
+                "jcoin:originalName": "or8",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-14"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_determin",
             "title": "Determination in implementating",
             "type": "string",
@@ -247,12 +247,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or9",
+                "jcoin:originalName": "or9",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-15"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_coordinate",
             "title": "Confidence in coordinating tasks",
             "type": "string",
@@ -267,12 +267,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or10",
+                "jcoin:originalName": "or10",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-16"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_motivation",
             "title": "Motivation to implement",
             "type": "string",
@@ -287,12 +287,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or11",
+                "jcoin:originalName": "or11",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-17"
             }
         },
         {
-            "section": "Organizational readiness for implementing change (ORIC)",
+            "jcoin:section": "Organizational readiness for implementing change (ORIC)",
             "name": "org_readiness_politics",
             "title": "Confidence in managing politics",
             "type": "string",
@@ -307,12 +307,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "or12",
+                "jcoin:originalName": "or12",
                 "jcoin:source": "Shea et al., 2014  - Organizational Readiness for Implementing Change: A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7. https://doi.org/10.1186/1748-5908-9-18"
             }
         },
         {
-            "section": "Organizational Climate: Stress",
+            "jcoin:section": "Organizational Climate: Stress",
             "name": "org_climate_pressure",
             "title": "Pressure",
             "type": "string",
@@ -327,12 +327,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "oc1",
+                "jcoin:originalName": "oc1",
                 "jcoin:source": "TCU Survey of Organizational Functioning (Stress Measure)  - source document available at: http://ibr.tcu.edu/wp-content/uploads/2013/06/SOF-sg.pdf"
             }
         },
         {
-            "section": "Organizational Climate: Stress",
+            "jcoin:section": "Organizational Climate: Stress",
             "name": "org_climate_stress",
             "title": "Stress and strain signs",
             "type": "string",
@@ -347,12 +347,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "oc2",
+                "jcoin:originalName": "oc2",
                 "jcoin:source": "TCU Survey of Organizational Functioning (Stress Measure)  - source document available at: http://ibr.tcu.edu/wp-content/uploads/2013/06/SOF-sg.pdf"
             }
         },
         {
-            "section": "Organizational Climate: Stress",
+            "jcoin:section": "Organizational Climate: Stress",
             "name": "org_climate_workload",
             "title": "Heavy workload",
             "type": "string",
@@ -367,12 +367,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "oc3",
+                "jcoin:originalName": "oc3",
                 "jcoin:source": "TCU Survey of Organizational Functioning (Stress Measure)  - source document available at: http://ibr.tcu.edu/wp-content/uploads/2013/06/SOF-sg.pdf"
             }
         },
         {
-            "section": "Organizational Climate: Stress",
+            "jcoin:section": "Organizational Climate: Stress",
             "name": "org_climate_frustration",
             "title": "Frustration",
             "type": "string",
@@ -387,12 +387,12 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "oc4",
+                "jcoin:originalName": "oc4",
                 "jcoin:source": "TCU Survey of Organizational Functioning (Stress Measure)  - source document available at: http://ibr.tcu.edu/wp-content/uploads/2013/06/SOF-sg.pdf"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "attitude_methadone",
             "title": "MOUD Attitudes: Methadone",
             "type": "string",
@@ -409,11 +409,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm1"
+                "jcoin:originalName": "sm1"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "attitude_suboxone_oral",
             "title": "MOUD Attitudes: Buprenorphine (Suboxone) - oral",
             "type": "string",
@@ -430,11 +430,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm2"
+                "jcoin:originalName": "sm2"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "attitude_sublocade_inject",
             "title": "MOUD Attitudes: Buprenorphine (Sublocade) - monthly injection",
             "type": "string",
@@ -451,11 +451,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm3"
+                "jcoin:originalName": "sm3"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "attitude_naltrexone_oral",
             "title": "MOUD Attitudes: Naltrexone - oral",
             "type": "string",
@@ -472,11 +472,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm4"
+                "jcoin:originalName": "sm4"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "attitude_naltrexone_inject",
             "title": "MOUD Attitudes: Naltrexone (Vivitrol) - monthly injection",
             "type": "string",
@@ -493,11 +493,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm5"
+                "jcoin:originalName": "sm5"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "acceptance_methadone",
             "title": "MOUD Acceptance: Methadone",
             "type": "string",
@@ -514,11 +514,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm6"
+                "jcoin:originalName": "sm6"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "acceptance_suboxone_oral",
             "title": "MOUD Acceptance: Buprenorphine (Suboxone) - oral",
             "type": "string",
@@ -535,11 +535,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm7"
+                "jcoin:originalName": "sm7"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "acceptance_sublocade_inject",
             "title": "MOUD Acceptance: Buprenorphine (Sublocade) - monthly injection",
             "type": "string",
@@ -556,11 +556,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm8"
+                "jcoin:originalName": "sm8"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "acceptance_naltrexone_oral",
             "title": "MOUD Acceptance: Naltrexone - oral",
             "type": "string",
@@ -577,11 +577,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm9"
+                "jcoin:originalName": "sm9"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "acceptance_naltrexone_inject",
             "title": "MOUD Acceptance: Naltrexone (Vivitrol) - monthly injection",
             "type": "string",
@@ -598,11 +598,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm10"
+                "jcoin:originalName": "sm10"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "training_methadone",
             "title": "MOUD Training: Methadone",
             "type": "string",
@@ -619,11 +619,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm11"
+                "jcoin:originalName": "sm11"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "training_suboxone_oral",
             "title": "MOUD Training: Buprenorphine (Suboxone) - oral",
             "type": "string",
@@ -640,11 +640,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm12"
+                "jcoin:originalName": "sm12"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "training_sublocade_inject",
             "title": "MOUD Training: Buprenorphine (Sublocade) - monthly injection",
             "type": "string",
@@ -661,11 +661,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm13"
+                "jcoin:originalName": "sm13"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "training_naltrexone_oral",
             "title": "MOUD Training: Naltrexone - oral",
             "type": "string",
@@ -682,11 +682,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm14"
+                "jcoin:originalName": "sm14"
             }
         },
         {
-            "section": "Staff Attitudes Toward MOUD",
+            "jcoin:section": "Staff Attitudes Toward MOUD",
             "name": "training_naltrexone_inject",
             "title": "MOUD Training: Naltrexone (Vivitrol) - monthly injection",
             "type": "string",
@@ -703,11 +703,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "sm15"
+                "jcoin:originalName": "sm15"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_fitting",
             "title": "Implementation Outcome Measures: Fitting",
             "type": "string",
@@ -722,11 +722,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im1"
+                "jcoin:originalName": "im1"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_suitable",
             "title": "Implementation Outcome Measures: Suitable",
             "type": "string",
@@ -741,11 +741,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im2"
+                "jcoin:originalName": "im2"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_applicable",
             "title": "Implementation Outcome Measures: Applicable",
             "type": "string",
@@ -760,11 +760,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im3"
+                "jcoin:originalName": "im3"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_good_match",
             "title": "Implementation Outcome Measures: Good match.",
             "type": "string",
@@ -779,11 +779,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im4"
+                "jcoin:originalName": "im4"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_implementable",
             "title": "Implementation Outcome Measures: Implementable.",
             "type": "string",
@@ -798,11 +798,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im5"
+                "jcoin:originalName": "im5"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_possible",
             "title": "Implementation Outcome Measures: Possible",
             "type": "string",
@@ -817,11 +817,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im6"
+                "jcoin:originalName": "im6"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_doable",
             "title": "Implementation Outcome Measures: Doable",
             "type": "string",
@@ -836,11 +836,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im7"
+                "jcoin:originalName": "im7"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_easy_to_use",
             "title": "Implementation Outcome Measures: Easy to use",
             "type": "string",
@@ -855,11 +855,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im8"
+                "jcoin:originalName": "im8"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_approval",
             "title": "Implementation Outcome Measures: Approval",
             "type": "string",
@@ -874,11 +874,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im9"
+                "jcoin:originalName": "im9"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_appealing",
             "title": "Implementation Outcome Measures: Appealing",
             "type": "string",
@@ -893,11 +893,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im10"
+                "jcoin:originalName": "im10"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_like",
             "title": "Implementation Outcome Measures: Like",
             "type": "string",
@@ -912,11 +912,11 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im11"
+                "jcoin:originalName": "im11"
             }
         },
         {
-            "section": "Implementation Outcome Measures",
+            "jcoin:section": "Implementation Outcome Measures",
             "name": "outcome_welcome",
             "title": "Implementation Outcome Measures: Welcome",
             "type": "string",
@@ -931,7 +931,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "im12"
+                "jcoin:originalName": "im12"
             }
         }
     ],
