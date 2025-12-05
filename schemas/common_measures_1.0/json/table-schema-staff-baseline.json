@@ -4,6 +4,7 @@
     "title": "Staff participants: Baseline measures",
     "description": "Measures collected before the start of the study for staff participants (most of these measures overlap with Client pariticpants: Baseline schema). As many of these measures are collected at 'baseline' it is currently called 'baseline.' However, this is a slight misnomer as, for example, current_study_status is dynamically updated.",
     "jcoin:schemaType": "Staff",
+    "fieldsMatch": "superset",
     "fields": [
         {
             "jcoin:section": "Record and linkage",

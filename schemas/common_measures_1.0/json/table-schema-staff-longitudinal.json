@@ -4,6 +4,7 @@
     "title": "Staff participants: staff-specific timepoint measures",
     "description": "Staff specific measures that may be collected at baseline or follow up time points.",
     "jcoin:schemaType": "Staff",
+    "fieldsMatch": "superset",
     "fields": [
         {
             "jcoin:section": "Record and linkage",
