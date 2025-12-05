@@ -44,6 +44,6 @@ Frictionless has been installed in the JDC workspaces, and you may find it easie
 5. Launch a terminal, and change directory to the location of your uploaded file (using `cd`).
 6. Modify the command above as shown:
 
-       frictionless validate --schema https://raw.githubusercontent.com/jcoin-maarc/JCOIN-common-measures/refs/heads/main/schemas/common_measures_1.0/table-schema-baseline.json mydata.csv
+       frictionless validate --schema https://raw.githubusercontent.com/jcoin-maarc/JCOIN-common-measures/refs/heads/main/schemas/common_measures_1.0/json/table-schema-baseline.json mydata.csv
 
 This reads the schema file directly from GitHub. Alternatively, you may download the schema file from GitHub, upload it into the workspace, and use the same command in the section above.
