@@ -118,6 +118,31 @@
             "constraints": {
                 "maxLength": 24
             }
+        },
+        {
+            "name": "compliance",
+            "title": "Compliance with treatment or intervention",
+            "type": "integer",
+            "description": "Quantity of treatment received."
+        },
+        {
+            "name": "compliance_unit",
+            "title": "Units in which treatment compliance is recorded",
+            "type": "string",
+            "constraints": {
+                "enum": [
+                    "Doses",
+                    "Sessions/meetings",
+                    "Days",
+                    "Weeks"
+                ]
+            }
+        },
+        {
+            "name": "compliance_max",
+            "title": "Maximum compliance value",
+            "type": "integer",
+            "description": "Maximum possible value of compliance according to study protocol.",
         }
     ]
 }
