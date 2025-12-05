@@ -1,12 +1,2 @@
-NOTES.txt
-TODO.md
-notebooks/frictionless-testing.ipynb
-notebooks/staff-data-dictionary-hacky-generation.ipynb
-site/
-venv/
-.venv/
 /tmp
-
-*egg-info
-*__pycache__*
-build/*
+NOTES.md
