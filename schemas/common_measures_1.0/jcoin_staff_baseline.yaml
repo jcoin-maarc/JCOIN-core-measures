@@ -1,0 +1,364 @@
+$schema: https://datapackage.org/profiles/2.0/tableschema.json
+title: 'Staff participants: Baseline measures'
+version: 2.4.0
+description: 'Measures collected before the start of the study for staff participants
+  (most of these measures overlap with Client pariticpants: Baseline schema). As many
+  of these measures are collected at ''baseline'' it is currently called ''baseline.''
+  However, this is a slight misnomer as, for example, current_study_status is dynamically
+  updated.'
+primaryKey:
+- jdc_person_id
+missingValues:
+- Don't know
+- Refused
+- Left blank
+- Legitimately skipped
+- Not collected
+- Missing in error
+fieldsMatch: superset
+jcoin:schemaType: Staff
+fields:
+- name: jdc_person_id
+  type: string
+  title: JCOIN data commons person identifier
+  description: The generated unique identifier specific to the JCOIN Data Commons
+    for a given individual (client or staff).
+  constraints:
+    required: true
+    maxLength: 9
+    pattern: '[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
+  jcoin:section: Record and linkage
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: jdc_person_id
+- name: quarter_enrolled
+  type: string
+  title: Quarter Enrolled
+  description: The financial quarter and year of enrollment
+  constraints:
+    required: true
+    maxLength: 6
+    pattern: 20[0-9][0-9]Q[1-4]
+  jcoin:section: Enrollment
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: quarter_enrolled
+- name: staff_type
+  type: string
+  title: Staff Type
+  description: The type of staff (Court Coordinator, Judge, Law Enforcement, Lawyer,
+    Peer, Treatment)
+  constraints:
+    maxLength: 80
+  jcoin:section: Enrollment
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: staff_type
+- name: current_study_status
+  type: string
+  title: Current Study Status
+  description: A summary of the current status of staff member's involvement in study
+  constraints:
+    required: true
+    enum:
+    - On study
+    - Dropped out
+    - Withdrawn by investigator
+    - Completed study
+    - Unknown
+  jcoin:section: Enrollment
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: current_study_status
+- name: age
+  type: integer
+  title: Age
+  description: About how old are you? (top coded at 90)
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d1a
+- name: sex_at_birth
+  type: string
+  title: Sex at birth
+  description: What sex was originally listed on your birth certificate?
+  constraints:
+    enum:
+    - Male
+    - Female
+    - Decline to answer
+    - Something else
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: o1
+- name: gender_id
+  type: string
+  title: Gender Identity
+  description: What is your gender identity?
+  constraints:
+    enum:
+    - Male
+    - Female
+    - Transgender man/trans man/female-to-male (FTM)
+    - Transgender woman/trans woman/male-to-female (MTF)
+    - Genderqueer/gender nonconforming/neither exclusively male nor female
+    - Additional gender category (or other)
+    - Not reported
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: o2
+  jcoin:notes: "For gender/orientation/identity, use items O1-O2 if possible, otherwise\
+    \ use D4a-D4c.   [Must use one or the other.] \r\n False if not 'Male' and not\
+    \ 'Transgender' else True"
+- name: gender_id_condensed
+  type: string
+  title: Gender Identity (condensed)
+  description: What is your gender identity?
+  constraints:
+    enum:
+    - Male
+    - Female
+    - Transgender
+    - Gender nonconforming
+    - Something else
+    - Not reported
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d4b
+  jcoin:notes: For gender/orientation/identity, use items O1-O2 if possible, otherwise
+    use D4a-D4c.   [Must use one or the other.]
+- name: race_white
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: 'Race: White'
+  description: '[White] What is your race? SELECT ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3_white
+- name: race_black
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: 'Race: Black or African American'
+  description: '[Black or African American] What is your race? SELECT ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3_black
+- name: race_AIAN
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: 'Race: American Indian or Alaska Native'
+  description: '[American Indian or Alaska Native] What is your race? SELECT ALL THAT
+    APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3_american_indian
+- name: race_hawaiian_OPI
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: 'Race: Native Hawaiian or Other Pacific Islander'
+  description: '[Native Hawaiian or Other Pacific Islander] What is your race? SELECT
+    ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3_hawaiian
+- name: race_asian
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: 'Race: Asian'
+  description: '[Asian] What is your race? SELECT ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3_asian
+- name: race_other
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: 'Race: Other'
+  description: '[Other] What is your race? SELECT ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3_other
+- name: race_AI_tribe
+  type: string
+  title: 'Race: American indian principal tribe or community specified'
+  description: '[American indian principal tribe or community specified] What is your
+    race? SELECT ALL THAT APPLY'
+  constraints:
+    maxLength: 80
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3_specify_tribe
+- name: race_other_specified
+  type: string
+  title: 'Race: Other specified'
+  description: '[Other specified] What is your race? SELECT ALL THAT APPLY'
+  constraints:
+    maxLength: 80
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3_specify_other
+- name: race
+  type: string
+  title: Race
+  description: "Racial category derived from the individual racial category fields.\n\
+    \  - Exactly one racial category field selected = title of racial category\n \
+    \ - Two or more selected = Multiracial \n"
+  constraints:
+    required: true
+    enum:
+    - White
+    - Black or African American
+    - American Indian or Alaska Native
+    - Asian
+    - Native Hawaiian or Other Pacific Islander
+    - Some other race
+    - Multiracial
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d3
+- name: hispanic_latino
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: Hispanic, Latino, or Spanish Origin
+  description: Are you of Hispanic, Latino, or Spanish origin?
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d2
+- name: sex_orient_category
+  type: string
+  title: Sexual orientation
+  description: 'Sexual orientation:  Do you think of yourself as'
+  constraints:
+    enum:
+    - Straight or heterosexual
+    - Lesbian or gay
+    - Bisexual
+    - Queer,pansexual, and/or questioning
+    - Something else
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d4c
+- name: sex_orient_other
+  type: string
+  title: 'Sexual orientation:  Other specified'
+  description: 'Sexual orientation:  Do you think of yourself as'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d4c_specify_other
+- name: ever_pregnant
+  type: string
+  title: Ever pregnant
+  description: Have you ever been pregnant?
+  constraints:
+    enum:
+    - Never been pregnant
+    - Currently pregnant
+    - Previously pregnant, had a child
+    - Previously pregnant, did not have a child
+    - Not applicable
+    - Don't know
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d4d
+  jcoin:notes: Does this just apply to that past 90 days?  If not, then the participant
+    should be able to check more than one response.
+- name: marital_status
+  type: string
+  title: Marital status
+  description: What is your marital status?
+  constraints:
+    enum:
+    - Married
+    - Widowed
+    - Divorced
+    - Separated
+    - Never married
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d5
+- name: living_as_married
+  type: string
+  title: Married with partner
+  description: Are you currently living as married with a romantic partner?
+  constraints:
+    enum:
+    - Yes, I am living as married with partner
+    - No, I am not living as married with partner
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d5a
+- name: educ_category
+  type: string
+  title: Education
+  description: What is the highest grade or level of school you have completed or
+    the highest degree you have received?
+  constraints:
+    enum:
+    - Did not complete high school
+    - GED or equivalent
+    - Regular high school diploma
+    - Some college credit but less than 1 year of college credit
+    - 1 or more years of college credit but no degree
+    - Associate's degree (e.g., AA or AS)
+    - Bachelor's degree (e.g.,  BA or BS)
+    - Graduate degree (e.g., MSW, MA, MS, JD, MD, DSW, EdD, PhD)
+    - Other (specify)
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d6
+- name: educ_highest_grade
+  type: integer
+  title: 'Education:  Highest grade level (if less than GED or h.s. diploma)'
+  description: What is the highest grade completed?
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d6_grade
+- name: educ_other_specified
+  type: string
+  title: 'Education: Other specified'
+  description: What is the highest grade or level of school you have completed or
+    the highest degree you have received?
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: d6_specify_other

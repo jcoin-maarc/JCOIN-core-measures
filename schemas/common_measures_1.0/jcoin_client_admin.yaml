@@ -1,0 +1,134 @@
+$schema: https://datapackage.org/profiles/2.0/tableschema.json
+title: JCOIN study administrative variables
+version: 1.0.0
+description: Variables pertaining to administration of study. File should include
+  one row for every participant enrolled in the study.
+primaryKey:
+- jdc_person_id
+missingValues:
+- Don't know
+- Refused
+- Left blank
+- Legitimately skipped
+- Not collected
+- Missing in error
+fieldsMatch: superset
+jcoin:schemaType: Client
+fields:
+- name: jdc_person_id
+  type: string
+  title: JCOIN data commons person identifier
+  description: Anonymized participant identifier, unique across hubs
+  constraints:
+    required: true
+    maxLength: 9
+    pattern: '[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: XPID
+- name: date_enrolled
+  type: date
+  title: Date enrolled
+  description: Date of study enrollment (e.g., date of consent)
+  constraints:
+    required: true
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:notes: Shifted for de-identification
+- name: quarter_enrolled
+  type: string
+  title: Quarter enrolled
+  description: Financial quarter and year in which participant was enrolled.
+  constraints:
+    required: true
+    maxLength: 6
+    pattern: 20[0-9][0-9]Q[1-4]
+  jcoin:baseline: null
+  jcoin:followup: null
+- name: month_enrolled
+  type: string
+  title: Month enrolled
+  description: Month in which participant was enrolled.
+  constraints:
+    enum:
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:notes: For use in preparing DSMB reports only.
+- name: state_of_site_enrollment
+  type: string
+  title: State of enrollment site
+  description: U.S. state abbreviation of the site where participant was initially
+    enrolled.
+  constraints:
+    required: true
+    maxLength: 2
+    pattern: '[A-Z][A-Z]'
+  jcoin:baseline: null
+  jcoin:followup: null
+- name: current_study_status
+  type: string
+  title: Current study status
+  description: Current status of study participant
+  constraints:
+    required: true
+    enum:
+    - On study
+    - Dropped out/lost to follow up
+    - Withdrawn by investigator
+    - Re-incarcerated
+    - Deceased
+    - Completed study
+  jcoin:baseline: null
+  jcoin:followup: null
+- name: days_on_study
+  type: integer
+  title: Days on study
+  description: Number of days participant spent on study following enrollment (for
+    those still on study, number of days from enrollment to current date).
+  constraints:
+    required: true
+  jcoin:baseline: null
+  jcoin:followup: null
+- name: tx_arm
+  type: string
+  title: Treatment arm
+  description: Treatment arm to which participant was randomized (hub specific)
+  constraints:
+    maxLength: 24
+  jcoin:baseline: null
+  jcoin:followup: null
+- name: compliance
+  type: integer
+  title: Compliance with treatment or intervention
+  description: Quantity of treatment received.
+  jcoin:baseline: null
+  jcoin:followup: null
+- name: compliance_unit
+  type: string
+  title: Units in which treatment compliance is recorded
+  constraints:
+    enum:
+    - Doses
+    - Sessions/meetings
+    - Days
+    - Weeks
+  jcoin:baseline: null
+  jcoin:followup: null
+- name: compliance_max
+  type: integer
+  title: Maximum compliance value
+  description: Maximum possible value of compliance according to study protocol.
+  jcoin:baseline: null
+  jcoin:followup: null

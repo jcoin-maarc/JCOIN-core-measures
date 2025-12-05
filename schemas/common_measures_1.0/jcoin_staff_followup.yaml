@@ -1,0 +1,872 @@
+$schema: https://datapackage.org/profiles/2.0/tableschema.json
+title: 'Staff participants: staff-specific timepoint measures'
+version: 2.4.0
+description: Staff specific measures that may be collected at baseline or follow up
+  time points.
+primaryKey:
+- jdc_person_id
+- visit_number
+missingValues:
+- Don't know
+- Refused
+- Left blank
+- Legitimately skipped
+- Not collected
+- Missing in error
+fieldsMatch: superset
+jcoin:schemaType: Staff
+fields:
+- name: jdc_person_id
+  type: string
+  title: JCOIN data commons person identifier
+  description: The generated unique identifier specific to the JCOIN Data Commons
+    for a given individual (client or staff).
+  constraints:
+    required: true
+    maxLength: 9
+    pattern: '[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
+  jcoin:section: Record and linkage
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: jdc_person_id
+- name: visit_number
+  type: integer
+  title: Visit Number
+  description: A number that identifies the visit (survey administration event) or
+    timepoint of data collection (baseline=1 and each subsequent follow up is 2 or
+    greater).
+  constraints:
+    required: true
+    minimum: 1
+  jcoin:section: Record and linkage
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: visit_number
+- name: shifted_visit_dt
+  type: date
+  format: '%Y%m%d'
+  title: Visit Date (shifted)
+  description: 'This is the date of the visit (ie time point of survey administration)
+
+    after shifting by a random number 182 days before or 182 days after the actual
+
+    visit date. The shifting is done on the individual level which retains the time
+
+    interval between visits (and allows calculations of days between time points
+
+    or other date fields which are shifted by the same number of days). To avoid
+
+    issues with type conversion errors, the date is of type integer
+
+
+    NOTE: if `days_on_study` is filled out, `shifted_visit_date` is not required.
+
+    '
+  example: '20220101'
+  constraints:
+    minimum: 1
+  jcoin:section: Record and linkage
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: shifted_visit_date
+- name: visit_type
+  type: string
+  title: Visit Type
+  description: The visit type/category of the survey administration (either baseline
+    or follow up)
+  constraints:
+    required: true
+    enum:
+    - Baseline
+    - Follow-up
+  jcoin:section: Record and linkage
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: visit_type
+- name: org_readiness_confidence
+  type: string
+  title: Confidence to implement
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here feel confident that the organization can get
+    people invested in implementing [intervention].]]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or1
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-7"
+- name: org_readiness_commitment
+  type: string
+  title: Commitment to implement
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here feel committed to implementing [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or2
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-8"
+- name: org_readiness_tracking
+  type: string
+  title: Confidence in tracking
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here feel confident that they can keep track of progress
+    in implementing [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or3
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-9"
+- name: org_readiness_attitude
+  type: string
+  title: Whatever it takes attitude to implement
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here will do whatever it takes to implement [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or4
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-10"
+- name: org_readiness_org_support
+  type: string
+  title: Confidence in organizational support
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here feel feel confident that the organization can
+    support people as they adjust to [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or5
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-11"
+- name: org_readiness_want
+  type: string
+  title: Want to implement
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here want to implement [intervention]]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or6
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-12"
+- name: org_readiness_momentum
+  type: string
+  title: Confidence in maintaining momentum
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here feel confident that they can keep the momentum
+    going in implementing [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or7
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-13"
+- name: org_readiness_challenges
+  type: string
+  title: Confidence in handling challenges
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here feel confident that they can handle the challenges
+    that might arise in implementing [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or8
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-14"
+- name: org_readiness_determin
+  type: string
+  title: Determination in implementating
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here are determined to implement [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or9
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-15"
+- name: org_readiness_coordinate
+  type: string
+  title: Confidence in coordinating tasks
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here feel confident that they can coordinate tasks
+    so that implementation goes smoothly.]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or10
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-16"
+- name: org_readiness_motivation
+  type: string
+  title: Motivation to implement
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here are motivated to implement [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or11
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-17"
+- name: org_readiness_politics
+  type: string
+  title: Confidence in managing politics
+  description: Rate each of the following statements on a 5-point scale where 1=Disagree
+    and 5=Agree [People who work here feel confident that they can manage the politics
+    of implementing [intervention].]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: Organizational readiness for implementing change (ORIC)
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: or12
+  jcoin:source: "Shea et al., 2014  - Organizational Readiness for Implementing Change:\
+    \ A psychometric assessment of a \r\nnew measure.  Implementation Science 9:7.\
+    \ https://doi.org/10.1186/1748-5908-9-18"
+- name: org_climate_pressure
+  type: string
+  title: Pressure
+  description: Rate each of the following items on a scale of 1-5 where 1=Disagree
+    and 5=Agree [Staff members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: 'Organizational Climate: Stress'
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: oc1
+  jcoin:source: 'TCU Survey of Organizational Functioning (Stress Measure)  - source
+    document available at: http://ibr.tcu.edu/wp-content/uploads/2013/06/SOF-sg.pdf'
+- name: org_climate_stress
+  type: string
+  title: Stress and strain signs
+  description: Rate each of the following items on a scale of 1-5 where 1=Disagree
+    and 5=Agree [Staff members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: 'Organizational Climate: Stress'
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: oc2
+  jcoin:source: 'TCU Survey of Organizational Functioning (Stress Measure)  - source
+    document available at: http://ibr.tcu.edu/wp-content/uploads/2013/06/SOF-sg.pdf'
+- name: org_climate_workload
+  type: string
+  title: Heavy workload
+  description: Rate each of the following items on a scale of 1-5 where 1=Disagree
+    and 5=Agree [Staff members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: 'Organizational Climate: Stress'
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: oc3
+  jcoin:source: 'TCU Survey of Organizational Functioning (Stress Measure)  - source
+    document available at: http://ibr.tcu.edu/wp-content/uploads/2013/06/SOF-sg.pdf'
+- name: org_climate_frustration
+  type: string
+  title: Frustration
+  description: Rate each of the following items on a scale of 1-5 where 1=Disagree
+    and 5=Agree [Staff members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Disagree
+    - '2'
+    - '3'
+    - '4'
+    - 5 Agree
+  jcoin:section: 'Organizational Climate: Stress'
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: oc4
+  jcoin:source: 'TCU Survey of Organizational Functioning (Stress Measure)  - source
+    document available at: http://ibr.tcu.edu/wp-content/uploads/2013/06/SOF-sg.pdf'
+- name: attitude_methadone
+  type: string
+  title: 'MOUD Attitudes: Methadone'
+  description: Based on your knowledge and personal experience, to what extent do
+    you consider each of the following medications for opioid use disorder to be effective
+    with justice-involved populations? (1=Not at all Effective, 7=Very Effective;
+    provide   Don't know  option.) [Staff members are under too much pressure to do
+    their jobs effectively]
+  constraints:
+    enum:
+    - 1 Not at all Effective
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Effective
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm1
+- name: attitude_suboxone_oral
+  type: string
+  title: 'MOUD Attitudes: Buprenorphine (Suboxone) - oral'
+  description: Based on your knowledge and personal experience, to what extent do
+    you consider each of the following medications for opioid use disorder to be effective
+    with justice-involved populations? (1=Not at all Effective, 7=Very Effective;
+    provide   Don't know  option.) [Staff members are under too much pressure to do
+    their jobs effectively]
+  constraints:
+    enum:
+    - 1 Not at all Effective
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Effective
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm2
+- name: attitude_sublocade_inject
+  type: string
+  title: 'MOUD Attitudes: Buprenorphine (Sublocade) - monthly injection'
+  description: Based on your knowledge and personal experience, to what extent do
+    you consider each of the following medications for opioid use disorder to be effective
+    with justice-involved populations? (1=Not at all Effective, 7=Very Effective;
+    provide   Don't know  option.) [Staff members are under too much pressure to do
+    their jobs effectively]
+  constraints:
+    enum:
+    - 1 Not at all Effective
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Effective
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm3
+- name: attitude_naltrexone_oral
+  type: string
+  title: 'MOUD Attitudes: Naltrexone - oral'
+  description: Based on your knowledge and personal experience, to what extent do
+    you consider each of the following medications for opioid use disorder to be effective
+    with justice-involved populations? (1=Not at all Effective, 7=Very Effective;
+    provide   Don't know  option.) [Staff members are under too much pressure to do
+    their jobs effectively]
+  constraints:
+    enum:
+    - 1 Not at all Effective
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Effective
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm4
+- name: attitude_naltrexone_inject
+  type: string
+  title: 'MOUD Attitudes: Naltrexone (Vivitrol) - monthly injection'
+  description: Based on your knowledge and personal experience, to what extent do
+    you consider each of the following medications for opioid use disorder to be effective
+    with justice-involved populations? (1=Not at all Effective, 7=Very Effective;
+    provide   Don't know  option.) [Staff members are under too much pressure to do
+    their jobs effectively]
+  constraints:
+    enum:
+    - 1 Not at all Effective
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Effective
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm5
+- name: acceptance_methadone
+  type: string
+  title: 'MOUD Acceptance: Methadone'
+  description: In your opinion, how acceptable is each of the following medications
+    for the treatment of opioid use disorder with justice-involved populations? (1=Completely
+    Unacceptable, 7 = Very Acceptable)[Staff members are under too much pressure to
+    do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Completely unacceptable
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Acceptable
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm6
+- name: acceptance_suboxone_oral
+  type: string
+  title: 'MOUD Acceptance: Buprenorphine (Suboxone) - oral'
+  description: In your opinion, how acceptable is each of the following medications
+    for the treatment of opioid use disorder with justice-involved populations? (1=Completely
+    Unacceptable, 7 = Very Acceptable)[Staff members are under too much pressure to
+    do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Completely unacceptable
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Acceptable
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm7
+- name: acceptance_sublocade_inject
+  type: string
+  title: 'MOUD Acceptance: Buprenorphine (Sublocade) - monthly injection'
+  description: In your opinion, how acceptable is each of the following medications
+    for the treatment of opioid use disorder with justice-involved populations? (1=Completely
+    Unacceptable, 7 = Very Acceptable)[Staff members are under too much pressure to
+    do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Completely unacceptable
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Acceptable
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm8
+- name: acceptance_naltrexone_oral
+  type: string
+  title: 'MOUD Acceptance: Naltrexone - oral'
+  description: In your opinion, how acceptable is each of the following medications
+    for the treatment of opioid use disorder with justice-involved populations? (1=Completely
+    Unacceptable, 7 = Very Acceptable)[Staff members are under too much pressure to
+    do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Completely unacceptable
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Acceptable
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm9
+- name: acceptance_naltrexone_inject
+  type: string
+  title: 'MOUD Acceptance: Naltrexone (Vivitrol) - monthly injection'
+  description: In your opinion, how acceptable is each of the following medications
+    for the treatment of opioid use disorder with justice-involved populations? (1=Completely
+    Unacceptable, 7 = Very Acceptable)[Staff members are under too much pressure to
+    do their jobs effectively]
+  constraints:
+    enum:
+    - 1 Completely unacceptable
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Very Acceptable
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm10
+- name: training_methadone
+  type: string
+  title: 'MOUD Training: Methadone'
+  description: To what extent have you received specific training about the following
+    medications for opioid use disorder? (1=No Training, 7=Extensive Training)[Staff
+    members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 No training
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Extensive Training
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm11
+- name: training_suboxone_oral
+  type: string
+  title: 'MOUD Training: Buprenorphine (Suboxone) - oral'
+  description: To what extent have you received specific training about the following
+    medications for opioid use disorder? (1=No Training, 7=Extensive Training)[Staff
+    members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 No training
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Extensive Training
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm12
+- name: training_sublocade_inject
+  type: string
+  title: 'MOUD Training: Buprenorphine (Sublocade) - monthly injection'
+  description: To what extent have you received specific training about the following
+    medications for opioid use disorder? (1=No Training, 7=Extensive Training)[Staff
+    members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 No training
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Extensive Training
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm13
+- name: training_naltrexone_oral
+  type: string
+  title: 'MOUD Training: Naltrexone - oral'
+  description: To what extent have you received specific training about the following
+    medications for opioid use disorder? (1=No Training, 7=Extensive Training)[Staff
+    members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 No training
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Extensive Training
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm14
+- name: training_naltrexone_inject
+  type: string
+  title: 'MOUD Training: Naltrexone (Vivitrol) - monthly injection'
+  description: To what extent have you received specific training about the following
+    medications for opioid use disorder? (1=No Training, 7=Extensive Training)[Staff
+    members are under too much pressure to do their jobs effectively]
+  constraints:
+    enum:
+    - 1 No training
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - 7 Extensive Training
+  jcoin:section: Staff Attitudes Toward MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: sm15
+- name: outcome_fitting
+  type: string
+  title: 'Implementation Outcome Measures: Fitting'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im1
+- name: outcome_suitable
+  type: string
+  title: 'Implementation Outcome Measures: Suitable'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im2
+- name: outcome_applicable
+  type: string
+  title: 'Implementation Outcome Measures: Applicable'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im3
+- name: outcome_good_match
+  type: string
+  title: 'Implementation Outcome Measures: Good match.'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im4
+- name: outcome_implementable
+  type: string
+  title: 'Implementation Outcome Measures: Implementable.'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im5
+- name: outcome_possible
+  type: string
+  title: 'Implementation Outcome Measures: Possible'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im6
+- name: outcome_doable
+  type: string
+  title: 'Implementation Outcome Measures: Doable'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im7
+- name: outcome_easy_to_use
+  type: string
+  title: 'Implementation Outcome Measures: Easy to use'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im8
+- name: outcome_approval
+  type: string
+  title: 'Implementation Outcome Measures: Approval'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im9
+- name: outcome_appealing
+  type: string
+  title: 'Implementation Outcome Measures: Appealing'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im10
+- name: outcome_like
+  type: string
+  title: 'Implementation Outcome Measures: Like'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im11
+- name: outcome_welcome
+  type: string
+  title: 'Implementation Outcome Measures: Welcome'
+  description: Staff members are under too much pressure to do their jobs effectively
+  constraints:
+    enum:
+    - 1 Completely disagree
+    - 2 Disagree
+    - 3 Neither agree nor disagree
+    - 4 Agree
+    - 5 Completely agree
+  jcoin:section: Implementation Outcome Measures
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: im12

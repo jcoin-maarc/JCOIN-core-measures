@@ -1,0 +1,780 @@
+$schema: https://datapackage.org/profiles/2.0/tableschema.json
+title: JCOIN common measures collected at baseline
+version: 1.0.0
+description: Contains all common measures that are collected only at baseline (i.e.,
+  not longitudinally or at the end of the study). File should include one row for
+  every participant enrolled in the study.
+primaryKey:
+- jdc_person_id
+missingValues:
+- Don't know
+- Refused
+- Left blank
+- Legitimately skipped
+- Not collected
+- Missing in error
+fieldsMatch: superset
+jcoin:schemaType: Client
+fields:
+- name: jdc_person_id
+  type: string
+  title: JCOIN data commons person identifier
+  description: Anonymized participant identifier, unique across hubs
+  constraints:
+    required: true
+    maxLength: 9
+    pattern: '[A-Z][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
+  jcoin:section: Record and linkage
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: XPID
+- name: dob
+  type: date
+  title: Date of birth
+  description: What is your birth date?
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D1
+  jcoin:notes: Shifted for de-identification
+- name: age
+  type: integer
+  title: Age in years
+  description: About how old are you?
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D1a
+  jcoin:notes: Top-coded at 90 for de-identification
+- name: hispanic_latino
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: Hispanic, Latino, or Spanish Origin
+  description: Are you of Hispanic, Latino, or Spanish origin?
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D2
+- name: race_white
+  type: boolean
+  trueValues:
+  - 'Yes'
+  - Checked
+  falseValues:
+  - 'No'
+  - Unchecked
+  title: 'Race: White'
+  description: '[White] What is your race? SELECT ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D3
+- name: race_black
+  type: boolean
+  trueValues:
+  - 'Yes'
+  - Checked
+  falseValues:
+  - 'No'
+  - Unchecked
+  title: 'Race: Black or African American'
+  description: '[Black or African American] What is your race? SELECT ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D3
+- name: race_AIAN
+  type: boolean
+  trueValues:
+  - 'Yes'
+  - Checked
+  falseValues:
+  - 'No'
+  - Unchecked
+  title: 'Race: American Indian or Alaska Native'
+  description: '[American Indian or Alaska Native] What is your race? SELECT ALL THAT
+    APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D3
+- name: race_AI_tribe
+  type: string
+  title: 'Race: American Indian principal tribe or community specified'
+  description: '[American Indian principal tribe or community specified] What is your
+    race? SELECT ALL THAT APPLY'
+  constraints:
+    maxLength: 80
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D3
+- name: race_asian
+  type: boolean
+  trueValues:
+  - 'Yes'
+  - Checked
+  falseValues:
+  - 'No'
+  - Unchecked
+  title: 'Race: Asian'
+  description: '[Asian] What is your race? SELECT ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D3
+- name: race_hawaiian_OPI
+  type: boolean
+  trueValues:
+  - 'Yes'
+  - Checked
+  falseValues:
+  - 'No'
+  - Unchecked
+  title: 'Race: Native Hawaiian or Other Pacific Islander'
+  description: '[Native Hawaiian or Other Pacific Islander] What is your race? SELECT
+    ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D3
+- name: race_other
+  type: boolean
+  trueValues:
+  - 'Yes'
+  - Checked
+  falseValues:
+  - 'No'
+  - Unchecked
+  title: 'Race: Some other race'
+  description: '[Other] What is your race? SELECT ALL THAT APPLY'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D3
+- name: race_other_specified
+  type: string
+  title: 'Race: Some other race'
+  description: '[Other specified] What is your race? SELECT ALL THAT APPLY'
+  constraints:
+    maxLength: 80
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D3
+- name: sex_at_birth
+  type: string
+  title: Sex on birth certificate
+  description: What sex was originally listed on your birth certificate?
+  constraints:
+    enum:
+    - Male
+    - Female
+    - Decline to answer
+    - Something else
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: O1
+- name: sex_at_birth_specified
+  type: string
+  title: Sex on birth certificate (something else specified)
+  description: What sex was originally listed on your birth certificate
+  constraints:
+    maxLength: 80
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: O1
+- name: gender_id
+  type: string
+  title: Gender identity
+  description: 'Gender identity: Do you think of yourself as ...'
+  constraints:
+    enum:
+    - Male
+    - Female
+    - Transgender man/trans man/female-to-male (FTM)
+    - Transgender woman/trans woman/male-to-female (MTF)
+    - Genderqueer/gender nonconforming/neither exclusively male nor female
+    - Non-binary
+    - Additional gender category (or other)
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: O2
+- name: gender_id_specified
+  type: string
+  title: Gender identity (other specified)
+  description: 'Gender identity: Do you think of yourself as ...'
+  constraints:
+    maxLength: 80
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: O2
+- name: sex_at_birth2
+  type: string
+  title: Sex at birth
+  description: What was your sex at birth?
+  constraints:
+    enum:
+    - Male
+    - Female
+    - Something else
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D4a
+  jcoin:optional: true
+- name: sex_at_birth2_specified
+  type: string
+  title: Sex at birth (something else specified)
+  description: What was your sex at birth?
+  constraints:
+    maxLength: 80
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D4a
+  jcoin:optional: true
+- name: gender_id_condensed
+  type: string
+  title: Gender identity (condensed)
+  description: What is your gender identity?
+  constraints:
+    enum:
+    - Male
+    - Female
+    - Transgender
+    - Gender nonconforming
+    - Something else
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D4b
+  jcoin:optional: true
+- name: gender_id_condensed_specified
+  type: string
+  title: Gender identity condensed (something else specified)
+  description: What is your gender identity?
+  constraints:
+    maxLength: 80
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D4b
+  jcoin:optional: true
+- name: sex_orient_category
+  type: string
+  title: Sexual orientation
+  description: 'Sexual orientation: Do you think of yourself as ...'
+  constraints:
+    enum:
+    - Straight or heterosexual
+    - Lesbian or gay
+    - Bisexual
+    - Queer,pansexual, and/or questioning
+    - Something else
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D4c
+  jcoin:optional: true
+- name: sex_orient_other
+  type: string
+  title: Sexual orientation (something else specified)
+  description: 'Sexual orientation: Do you think of yourself as ...'
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D4c
+  jcoin:optional: true
+- name: ever_pregnant
+  type: string
+  title: Ever pregnant
+  description: Have you ever been pregnant?
+  constraints:
+    enum:
+    - Never been pregnant
+    - Currently pregnant
+    - Previously pregnant, had a child
+    - Previously pregnant, did not have a child
+    - Not applicable
+    - Don't know
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D4d
+- name: marital_status
+  type: string
+  title: Marital status
+  description: What is your marital status?
+  constraints:
+    enum:
+    - Married
+    - Widowed
+    - Divorced
+    - Separated
+    - Never married
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D5
+- name: living_as_married
+  type: string
+  title: Married with partner
+  description: Are you currently living as married with a romantic partner?
+  constraints:
+    enum:
+    - Yes, I am living as married with partner
+    - No, I am not living as married with partner
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D5a
+- name: educ_category
+  type: string
+  title: Education
+  description: What is the highest grade or level of school you have completed or
+    the highest degree you have received?
+  constraints:
+    enum:
+    - Did not complete high school
+    - GED or equivalent
+    - Regular high school diploma
+    - Some college credit but less than 1 year of college credit
+    - 1 or more years of college credit but no degree
+    - Associate's degree (e.g., AA or AS)
+    - Bachelor's degree (e.g.,  BA or BS)
+    - Graduate degree (e.g., MSW, MA, MS, JD, MD, DSW, EdD, PhD)
+    - Other (specify)
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D6
+- name: educ_highest_grade
+  type: integer
+  title: 'Education: Highest grade (if less than HS)'
+  description: What is the highest grade you have completed?
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D6
+- name: educ_other_specified
+  type: string
+  title: 'Education: Other specified'
+  description: What is the highest grade or level of school you have completed or
+    the highest degree you have received?
+  jcoin:section: Demographics
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: D6
+- name: intv_while_incarc
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: Interviewed during incarceration
+  description: Interview conducted with participant during incarceration?
+  jcoin:section: MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U14f
+- name: days_incarcerated_interval
+  type: integer
+  title: Days incarcerated in past 30/XX days)
+  description: During the past 30/XX days how many days have you been incarcerated?
+  jcoin:section: MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U14g
+- name: ever_rx_moud
+  type: boolean
+  trueValues:
+  - 'Yes'
+  falseValues:
+  - 'No'
+  title: Ever prescribed medication for opioid use disorder?
+  description: Have you ever been prescribed and taken medication to treat opioid
+    use disorder? [Illicit use should be excluded]
+  jcoin:section: MOUD
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15
+- name: months_daily_bup
+  type: integer
+  title: 'Lifetime months: Buprenorphine-naloxone or buprenorphine daily sublingual'
+  description: 'Lifetime months: Buprenorphine-naloxone or buprenorphine daily sublingual
+    (e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15a1
+- name: days_pti_daily_bup
+  type: integer
+  title: 'Days PTI: Buprenorphine-naloxone or buprenorphine daily sublingual'
+  description: 'Days in past 30/XX days prior to incarceration: Buprenorphine-naloxone
+    or buprenorphine daily sublingual (e.g., Suboxone film or tablet, generic films
+    or tablets, or Subutex tablets)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15a2
+  jcoin:optional: true
+- name: dose_pti_daily_bup
+  type: string
+  title: 'PTI Dose: Buprenorphine-naloxone or buprenorphine daily sublingual'
+  description: 'Dose per day prior to incarceration: Buprenorphine-naloxone or buprenorphine
+    daily sublingual (e.g., Suboxone film or tablet, generic films or tablets, or
+    Subutex tablets)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15a3
+  jcoin:optional: true
+- name: days_daily_bup
+  type: integer
+  title: 'Days in past 30: Buprenorphine-naloxone or buprenorphine daily sublingual'
+  description: 'Days in past 30/XX days: Buprenorphine-naloxone or buprenorphine daily
+    sublingual (e.g., Suboxone film or tablet, generic films or tablets, or Subutex
+    tablets)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15a4
+  jcoin:optional: true
+- name: dose_daily_bup
+  type: string
+  title: 'Dose: Buprenorphine-naloxone or buprenorphine daily sublingual'
+  description: 'Dose per day: Buprenorphine-naloxone or buprenorphine daily sublingual
+    (e.g., Suboxone film or tablet, generic films or tablets, or Subutex tablets)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: u15a5
+  jcoin:optional: true
+- name: months_sublocade
+  type: integer
+  title: 'Lifetime months: SUBLOCADE'
+  description: 'Lifetime months: Buprenorphine injection (SUBLOCADE)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15b1
+- name: days_pti_sublocade
+  type: integer
+  title: 'Days PTI: SUBLOCADE'
+  description: 'Days in past 30/XX days prior to incarceration: Buprenorphine injection
+    (SUBLOCADE)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15b2
+  jcoin:optional: true
+- name: dose_pti_sublocade
+  type: string
+  title: 'PTI Dose: SUBLOCADE'
+  description: 'Dose per day prior to incarceration: Buprenorphine injection (SUBLOCADE)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15b3
+  jcoin:optional: true
+- name: days_sublocade
+  type: integer
+  title: 'Days in past 30: SUBLOCADE'
+  description: 'Days in past 30/xx days: Buprenorphine injection (SUBLOCADE)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15b4
+  jcoin:optional: true
+- name: dose_sublocade
+  type: string
+  title: 'dose: SUBLOCADE'
+  description: 'Dose per day: Buprenorphine injection (SUBLOCADE)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15b5
+  jcoin:optional: true
+- name: months_weekly_brixadi
+  type: integer
+  title: 'Lifetime months: Weekly BRIXADI'
+  description: 'Lifetime months: Buprenorphine weekly injection (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15c1
+  jcoin:optional: true
+- name: days_pti_weekly_brixadi
+  type: integer
+  title: 'Days PTI: Weekly BRIXADI'
+  description: 'Days in past 30/XX days prior to incarceration: Buprenorphine weekly
+    injection (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15c2
+  jcoin:optional: true
+- name: dose_pti_weekly_brixadi
+  type: string
+  title: 'PTI Dose: Weekly BRIXADI'
+  description: 'Dose per day prior to incarceration: Buprenorphine weekly injection
+    (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15c3
+  jcoin:optional: true
+- name: days_weekly_brixadi
+  type: integer
+  title: 'Days in past 30: Weekly BRIXADI'
+  description: 'Days in past 30/xx days: Buprenorphine weekly injection (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15c4
+  jcoin:optional: true
+- name: dose_weekly_brixadi
+  type: string
+  title: 'dose: Weekly BRIXADI'
+  description: 'Dose per day: Buprenorphine weekly injection (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15c5
+  jcoin:optional: true
+- name: months_monthly_brixadi
+  type: integer
+  title: 'Lifetime months: Monthly BRIXADI'
+  description: 'Lifetime months: Buprenorphine monthly injection (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15d1
+  jcoin:optional: true
+- name: days_pti_monthly_brixadi
+  type: integer
+  title: 'Days PTI: Monthly BRIXADI'
+  description: 'Days in past 30/XX days prior to incarceration: Buprenorphine monthly
+    injection (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15d2
+  jcoin:optional: true
+- name: dose_pti_monthly_brixadi
+  type: string
+  title: 'PTI Dose: Monthly BRIXADI'
+  description: 'Dose per day prior to incarceration: Buprenorphine monthly injection
+    (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15d3
+  jcoin:optional: true
+- name: days_monthly_brixadi
+  type: integer
+  title: 'Days in past 30: Monthly BRIXADI'
+  description: 'Days in past 30/xx days: Buprenorphine monthly injection (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15d4
+  jcoin:optional: true
+- name: dose_monthly_brixadi
+  type: string
+  title: 'dose: Monthly BRIXADI'
+  description: 'Dose per day: Buprenorphine monthly injection (BRIXADI)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15d5
+  jcoin:optional: true
+- name: months_probuphine_implant
+  type: integer
+  title: 'Lifetime months: Probuphine'
+  description: 'Lifetime months: Buprenorphine 6-month implant (Probuphine)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15e1
+  jcoin:optional: true
+- name: days_pti_probuphine_implant
+  type: integer
+  title: 'Days PTI: Probuphine'
+  description: 'Days in past 30/XX days prior to incarceration: Buprenorphine 6-month
+    implant (Probuphine)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15e2
+  jcoin:optional: true
+- name: dose_pti_probuphine_implant
+  type: string
+  title: 'PTI Dose: Probuphine'
+  description: 'Dose per day prior to incarceration: Buprenorphine 6-month implant
+    (Probuphine)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15e3
+  jcoin:optional: true
+- name: days_probuphine_implant
+  type: integer
+  title: 'Days in past 30: Probuphine'
+  description: 'Days in past 30/xx days: Buprenorphine 6-month implant (Probuphine)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15e4
+  jcoin:optional: true
+- name: dose_probuphine_implant
+  type: string
+  title: 'dose: Probuphine'
+  description: 'Dose per day: Buprenorphine 6-month implant (Probuphine)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15e5
+  jcoin:optional: true
+- name: months_daily_ntx
+  type: integer
+  title: 'Lifetime months: Naltrexone daily (oral)'
+  description: 'Lifetime months: Naltrexone daily (oral)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15f1
+- name: days_pti_daily_ntx
+  type: integer
+  title: 'Days PTI: Naltrexone daily (oral)'
+  description: 'Days in past 30/XX days prior to incarceration: Naltrexone daily (oral)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15f2
+  jcoin:optional: true
+- name: dose_pti_daily_ntx
+  type: string
+  title: 'PTI Dose: Naltrexone daily (oral)'
+  description: 'Dose per day prior to incarceration: Naltrexone daily (oral)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15f3
+  jcoin:optional: true
+- name: days_daily_ntx
+  type: integer
+  title: 'Days in past 30: Naltrexone daily (oral)'
+  description: 'Days in past 30/xx days: Naltrexone daily (oral)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15f4
+  jcoin:optional: true
+- name: dose_daily_ntx
+  type: string
+  title: 'dose: Naltrexone daily (oral)'
+  description: 'Dose per day: Naltrexone daily (oral)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15f5
+  jcoin:optional: true
+- name: months_monthly_vivitrol
+  type: integer
+  title: 'Lifetime months: Vivitrol'
+  description: 'Lifetime months: Naltrexone monthly injection (Vivitrol)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15g1
+- name: days_pti_monthly_vivitrol
+  type: integer
+  title: 'Days PTI: Vivitrol'
+  description: 'Days in past 30/XX days prior to incarceration: Naltrexone monthly
+    injection (Vivitrol)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15g2
+  jcoin:optional: true
+- name: dose_pti_monthly_vivitrol
+  type: string
+  title: 'PTI Dose: Vivitrol'
+  description: 'Dose per day prior to incarceration: Naltrexone monthly injection
+    (Vivitrol)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15g3
+  jcoin:optional: true
+- name: days_monthly_vivitrol
+  type: integer
+  title: 'Days in past 30: Vivitrol'
+  description: 'Days in past 30/xx days: Naltrexone monthly injection (Vivitrol)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15g4
+  jcoin:optional: true
+- name: dose_monthly_vivitrol
+  type: string
+  title: 'dose: Vivitrol'
+  description: 'Dose per day: Naltrexone monthly injection (Vivitrol)'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15g5
+  jcoin:optional: true
+- name: months_methadone
+  type: integer
+  title: 'Lifetime months: Methadone'
+  description: 'Lifetime months: Methadone daily'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15h1
+- name: days_pti_methadone
+  type: integer
+  title: 'Days PTI: Methadone'
+  description: 'Days in past 30/XX days prior to incarceration: Methadone daily'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15h2
+  jcoin:optional: true
+- name: dose_pti_methadone
+  type: string
+  title: 'PTI Dose: Methadone'
+  description: 'Dose per day prior to incarceration: Methadone daily'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15h3
+  jcoin:optional: true
+- name: days_methadone
+  type: integer
+  title: 'Days in past 30: Methadone'
+  description: 'Days in past 30/xx days: Methadone daily'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15h4
+  jcoin:optional: true
+- name: dose_methadone
+  type: string
+  title: 'dose: Methadone'
+  description: 'Dose per day: Methadone daily'
+  jcoin:section: MOUD Lifetime/Past Month Use
+  jcoin:baseline: null
+  jcoin:followup: null
+  jcoin:originalName: U15h5
+  jcoin:optional: true
