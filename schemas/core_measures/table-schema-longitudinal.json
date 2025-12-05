@@ -1763,7 +1763,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "r3f_first_dx",
+                "jcoin:originalName": "r3f_first_dx",
                 "jcoin:notes": "RECOMMENDED:  BEFORE SENSITIVE ITEMS SUCH AS THIS REMIND RESPONDENT ABOUT CONFIDENTIALITY OF INTERVIEW AND SECURITY PROCEDURES TO PROTECT DATA AND THAT THERE ARE NO ADVERSE CONSEQUENCES FOR PARTICIPATION IN SURVEY/INTERVIEW (CONSISTENT WITH HUB CONSENT FORMS)"
             }
         },
@@ -1783,7 +1783,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "s1a",
+                "jcoin:originalName": "s1a",
                 "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
             }
         },
@@ -1803,7 +1803,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "s1b",
+                "jcoin:originalName": "s1b",
                 "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
             }
         },
@@ -1823,7 +1823,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "s1c",
+                "jcoin:originalName": "s1c",
                 "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
             }
         },
@@ -1843,7 +1843,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "s1d",
+                "jcoin:originalName": "s1d",
                 "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
             }
         },
@@ -1863,7 +1863,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "s1e",
+                "jcoin:originalName": "s1e",
                 "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
             }
         },
@@ -1883,7 +1883,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "s2a",
+                "jcoin:originalName": "s2a",
                 "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
             }
         },
@@ -1903,7 +1903,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "s2b",
+                "jcoin:originalName": "s2b",
                 "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
             }
         },
@@ -1923,7 +1923,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "s2c",
+                "jcoin:originalName": "s2c",
                 "jcoin:notes": "Not reported not a part of the core measures but id'ed a few missing values that cant be accounted for by skip logic. In future, may want to make more precise"
             }
         },
@@ -1934,7 +1934,7 @@
             "type": "integer",
             "description": "[...overdose on heroin, fentanyl or other opioids?  [Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention] ] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
             "custom": {
-                "jcoin:original_name": "s3a",
+                "jcoin:originalName": "s3a",
                 "jcoin:notes": "Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention"
             }
         },
@@ -1945,7 +1945,7 @@
             "type": "integer",
             "description": "[...did you receive naloxone (Evzio or Narcan) to reverse your overdose?  ] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
             "custom": {
-                "jcoin:original_name": "s3b",
+                "jcoin:originalName": "s3b",
                 "jcoin:notes": "Overdose means that you took enough of the drug that it caused a life-threatening reaction that required medical attention"
             }
         },
@@ -1956,7 +1956,7 @@
             "type": "any",
             "description": "Who administered the naloxone or Narcan? (SELECT ALL THAT APPLY)",
             "custom": {
-                "jcoin:original_name": "s3c",
+                "jcoin:originalName": "s3c",
                 "jcoin:notes": "TODO: expand fields to each of the possible selections"
             }
         },
@@ -1967,7 +1967,7 @@
             "type": "any",
             "description": "What drugs had you taken in the 4 hours before you overdosed? (SELECT ALL THAT APPLY)",
             "custom": {
-                "jcoin:original_name": "s3d",
+                "jcoin:originalName": "s3d",
                 "jcoin:notes": "TODO: expand fields to each of the possible selections"
             }
         },
@@ -1978,7 +1978,7 @@
             "type": "integer",
             "description": "[...receive emergency medical service following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
             "custom": {
-                "jcoin:original_name": "s3e"
+                "jcoin:originalName": "s3e"
             }
         },
         {
@@ -1988,7 +1988,7 @@
             "type": "integer",
             "description": "[...go to the emergency department following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
             "custom": {
-                "jcoin:original_name": "s3f"
+                "jcoin:originalName": "s3f"
             }
         },
         {
@@ -1998,7 +1998,7 @@
             "type": "integer",
             "description": "[...get admitted to the hospital following an overdose?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
             "custom": {
-                "jcoin:original_name": "s3g"
+                "jcoin:originalName": "s3g"
             }
         },
         {
@@ -2008,7 +2008,7 @@
             "type": "integer",
             "description": "[...receive a referral to substance use treatment from the police, EMS, ED or hospital staff?] During the past xx days (since last assessment), how many times did you (CAN CODE 0 IF NEVER ON S2b). . .",
             "custom": {
-                "jcoin:original_name": "s3h"
+                "jcoin:originalName": "s3h"
             }
         },
         {
@@ -2018,7 +2018,7 @@
             "type": "integer",
             "description": "[...on how many days did you use any heroin, fentanyl, opioids, alcohol, marijuana or other illicit drugs?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4a"
+                "jcoin:originalName": "s4a"
             }
         },
         {
@@ -2028,7 +2028,7 @@
             "type": "integer",
             "description": "[...how many times did you drink any kind of alcohol (beer, gin, rum, scotch, tequila, whiskey, wine or mixed drinks)?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4b"
+                "jcoin:originalName": "s4b"
             }
         },
         {
@@ -2038,7 +2038,7 @@
             "type": "integer",
             "description": "[...how many times did you have 5 or more drinks?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4c"
+                "jcoin:originalName": "s4c"
             }
         },
         {
@@ -2048,7 +2048,7 @@
             "type": "integer",
             "description": "[...how many times did you use medical marijuana that was obtained from a dispensary with your own recommendation card or prescription?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4d"
+                "jcoin:originalName": "s4d"
             }
         },
         {
@@ -2058,7 +2058,7 @@
             "type": "integer",
             "description": "[... how many times did you use other marijuana, including hashish, edibles, tinctures or concentrated drops, blunts or other forms of THC (cannabis, herb, pot, reefer, weed), or medical marijuana that was not your own?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4e"
+                "jcoin:originalName": "s4e"
             }
         },
         {
@@ -2068,7 +2068,7 @@
             "type": "integer",
             "description": "[... how many times did you use heroin (alone or mixed with other drugs)?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4f"
+                "jcoin:originalName": "s4f"
             }
         },
         {
@@ -2078,7 +2078,7 @@
             "type": "integer",
             "description": "[... how many times did you use fentanyl (alone or mixed with other drugs)?    ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4g"
+                "jcoin:originalName": "s4g"
             }
         },
         {
@@ -2088,7 +2088,7 @@
             "type": "integer",
             "description": "[... how many times did you use nonprescription or street methadone?     ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4h"
+                "jcoin:originalName": "s4h"
             }
         },
         {
@@ -2098,7 +2098,7 @@
             "type": "integer",
             "description": "[... how many times did you use use nonprescription or street Suboxone?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4j"
+                "jcoin:originalName": "s4j"
             }
         },
         {
@@ -2108,7 +2108,7 @@
             "type": "integer",
             "description": "[... how many times did you use other opioids, opiates, painkillers, or other analgesics (such as codeine, Darvocet, Darvon, Demerol, Dilaudid, Karachi, OxyContin, Oxys, Percocet, Propoxyphene, morphine, opium, Talwin or Tylenol with codeine, Vicodin, Zohydro)?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4k"
+                "jcoin:originalName": "s4k"
             }
         },
         {
@@ -2118,7 +2118,7 @@
             "type": "integer",
             "description": "[... how many times did you use crack, smoked rock, freebase, or other forms of cocaine?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4m"
+                "jcoin:originalName": "s4m"
             }
         },
         {
@@ -2128,7 +2128,7 @@
             "type": "integer",
             "description": "[... how many times did you use any methamphetamines, amphetamines, or other forms of speed?       ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4n"
+                "jcoin:originalName": "s4n"
             }
         },
         {
@@ -2138,7 +2138,7 @@
             "type": "integer",
             "description": "[... how many times did you use any benzodiazepines, anti-anxiety drugs or tranquilizers (such as Ativan, Equanil, Dalmane, Deprol, Diazepam, Klonopin, Librium, Lortab, Meprobamate, Miltown, Prosom, Serax, Traxene, Valium, Verseed, Xanax)?      ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4p"
+                "jcoin:originalName": "s4p"
             }
         },
         {
@@ -2148,7 +2148,7 @@
             "type": "integer",
             "description": "[...on how many days did you use any other drug that has not been mentioned (such as hallucinogens, downers)? ] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4z"
+                "jcoin:originalName": "s4z"
             }
         },
         {
@@ -2158,7 +2158,7 @@
             "type": "string",
             "description": "[...on how many days did you use any other drug that has not been mentioned (such as hallucinogens, downers)? (Please describe )] During the past xx days (since last assessment), on how many days did you. . . [Write 0 days if no use]",
             "custom": {
-                "jcoin:original_name": "s4z_describe"
+                "jcoin:originalName": "s4z_describe"
             }
         },
         {
@@ -2168,7 +2168,7 @@
             "type": "integer",
             "description": "During the past 90 days (prior to entering jail or prison/ since your last assessment), on how many days have you been in a jail, hospital or other place where you could not use heroin, fentanyl, other opioids, alcohol, marijuana or other drugs? (USE 0 FOR NONE)",
             "custom": {
-                "jcoin:original_name": "s5"
+                "jcoin:originalName": "s5"
             }
         },
         {
@@ -2178,7 +2178,7 @@
             "type": "integer",
             "description": "During the past 90 days (since last assessment), on how many days were you involved in any activities that might get you into trouble or be against the law besides drug use? [IF 0, GO TO J2]",
             "custom": {
-                "jcoin:original_name": "j1",
+                "jcoin:originalName": "j1",
                 "jcoin:notes": "[IF 0, GO TO J2]"
             }
         },
@@ -2189,7 +2189,7 @@
             "type": "integer",
             "description": "[... been in possession of small amounts of drugs? (drug possession)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a1",
+                "jcoin:originalName": "j1a1",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2200,7 +2200,7 @@
             "type": "integer",
             "description": "[... been drunk or high in public? (drunkenness or other liquor law violations)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a2",
+                "jcoin:originalName": "j1a2",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2211,7 +2211,7 @@
             "type": "integer",
             "description": "[... driven a vehicle while under the influence of alcohol or drugs? (driving under the influence or while intoxicated)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a3",
+                "jcoin:originalName": "j1a3",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2222,7 +2222,7 @@
             "type": "integer",
             "description": "[...sold, distributed or helped to make illegal drugs?  (possession, dealing, distribution or sale of drugs)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a4",
+                "jcoin:originalName": "j1a4",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2233,7 +2233,7 @@
             "type": "integer",
             "description": "[... purposely damaged or destroyed property that did not belong to you? (vandalism or property destruction)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a5",
+                "jcoin:originalName": "j1a5",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2244,7 +2244,7 @@
             "type": "integer",
             "description": "[... bought, received, possessed or sold any stolen goods? (receiving, possessing or selling stolen goods)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a6",
+                "jcoin:originalName": "j1a6",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2255,7 +2255,7 @@
             "type": "integer",
             "description": "[... passed bad checks, forged or altered a prescription, or took money illegally from an employer?  (forgery, fraud or embezzlement)     ] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a7",
+                "jcoin:originalName": "j1a7",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2266,7 +2266,7 @@
             "type": "integer",
             "description": "[... taken something from a store without paying for it? (shoplifting)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a8",
+                "jcoin:originalName": "j1a8",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2277,7 +2277,7 @@
             "type": "integer",
             "description": "[... other than from a store, taken money or property that didn't belong to you? (larceny or theft)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a9",
+                "jcoin:originalName": "j1a9",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2288,7 +2288,7 @@
             "type": "integer",
             "description": "[... broken into a house or building to steal something or just to look around? (burglary or breaking and entering)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a10",
+                "jcoin:originalName": "j1a10",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2299,7 +2299,7 @@
             "type": "integer",
             "description": "[... taken a car without people in it that didn't belong to you? (motor vehicle theft)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a11",
+                "jcoin:originalName": "j1a11",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2310,7 +2310,7 @@
             "type": "integer",
             "description": "[... taken a car from someone who was in it? (carjacking)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a12",
+                "jcoin:originalName": "j1a12",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2321,7 +2321,7 @@
             "type": "integer",
             "description": "[... hit someone or gotten into a physical fight? (simple assault or battery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a13",
+                "jcoin:originalName": "j1a13",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2332,7 +2332,7 @@
             "type": "integer",
             "description": "[... used a weapon, force, or strong-arm methods to get money or things from a person? (robbery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a14",
+                "jcoin:originalName": "j1a14",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2343,7 +2343,7 @@
             "type": "integer",
             "description": "[... hurt someone badly enough they needed bandages or a doctor? (aggravated assault or battery)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a15",
+                "jcoin:originalName": "j1a15",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2354,7 +2354,7 @@
             "type": "integer",
             "description": "[... made someone have sex with you by force when they did not want to have sex? (forcible rape)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a16",
+                "jcoin:originalName": "j1a16",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2365,7 +2365,7 @@
             "type": "integer",
             "description": "[... been involved in the death or murder of another person, including accidents? (murder, homicide or no-negligent manslaughter)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a17",
+                "jcoin:originalName": "j1a17",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2376,7 +2376,7 @@
             "type": "integer",
             "description": "[... intentionally set a building, car or other property on fire? (arson)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a18",
+                "jcoin:originalName": "j1a18",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2387,7 +2387,7 @@
             "type": "integer",
             "description": "[... traded sex for food, drugs or money? (prostitution, pimping or commercialized sex)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a19",
+                "jcoin:originalName": "j1a19",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2398,7 +2398,7 @@
             "type": "integer",
             "description": "[... done something else that would have gotten you into trouble with the police if they had known about it? (carrying a weapon, gang involvement, domestic violence, trespass, gambling, distributing the peace, disorderly conduct, paraphernalia, runaway, curfew, truancy,  ) (PLEASE DESCRIBE)] During the past xx days (since last assessment), how many times have you...(common charge names associated with behavior for reference only)",
             "custom": {
-                "jcoin:original_name": "j1a99",
+                "jcoin:originalName": "j1a99",
                 "jcoin:notes": "(common charge names associated with behavior for reference only)"
             }
         },
@@ -2409,7 +2409,7 @@
             "type": "integer",
             "description": "During the past 90 days (since last assessment), how many times were you arrested and charged?",
             "custom": {
-                "jcoin:original_name": "j2"
+                "jcoin:originalName": "j2"
             }
         },
         {
@@ -2419,7 +2419,7 @@
             "type": "integer",
             "description": "[Number of arrests for drug possession (for small amounts)] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2a"
+                "jcoin:originalName": "j2a"
             }
         },
         {
@@ -2429,7 +2429,7 @@
             "type": "integer",
             "description": "[Number of arrests for drunkenness or other liquor law violations] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2b"
+                "jcoin:originalName": "j2b"
             }
         },
         {
@@ -2439,7 +2439,7 @@
             "type": "integer",
             "description": "[Number of arrests for driving under the influence or while intoxicated] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2c"
+                "jcoin:originalName": "j2c"
             }
         },
         {
@@ -2449,7 +2449,7 @@
             "type": "integer",
             "description": "[Number of arrests for possession, dealing, distribution or sale of drugs] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2d"
+                "jcoin:originalName": "j2d"
             }
         },
         {
@@ -2459,7 +2459,7 @@
             "type": "integer",
             "description": "[Number of arrests for vandalism or property destruction] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2e"
+                "jcoin:originalName": "j2e"
             }
         },
         {
@@ -2469,7 +2469,7 @@
             "type": "integer",
             "description": "[Number of arrests for receiving, possessing or selling stolen goods] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2f"
+                "jcoin:originalName": "j2f"
             }
         },
         {
@@ -2479,7 +2479,7 @@
             "type": "integer",
             "description": "[Number of arrests for forgery, fraud or embezzlement] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2g"
+                "jcoin:originalName": "j2g"
             }
         },
         {
@@ -2489,7 +2489,7 @@
             "type": "integer",
             "description": "[Number of arrests for shoplifting] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2h"
+                "jcoin:originalName": "j2h"
             }
         },
         {
@@ -2499,7 +2499,7 @@
             "type": "integer",
             "description": "[Number of arrests for larceny or theft] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2i"
+                "jcoin:originalName": "j2i"
             }
         },
         {
@@ -2509,7 +2509,7 @@
             "type": "integer",
             "description": "[Number of arrests for burglary or breaking and entering] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2j"
+                "jcoin:originalName": "j2j"
             }
         },
         {
@@ -2519,7 +2519,7 @@
             "type": "integer",
             "description": "[Number of arrests for motor vehicle theft] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2k"
+                "jcoin:originalName": "j2k"
             }
         },
         {
@@ -2529,7 +2529,7 @@
             "type": "integer",
             "description": "[Number of arrests for car jacking] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2l"
+                "jcoin:originalName": "j2l"
             }
         },
         {
@@ -2539,7 +2539,7 @@
             "type": "integer",
             "description": "[Number of arrests for simple assault or battery] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2m"
+                "jcoin:originalName": "j2m"
             }
         },
         {
@@ -2549,7 +2549,7 @@
             "type": "integer",
             "description": "[Number of arrests for robbery] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2n"
+                "jcoin:originalName": "j2n"
             }
         },
         {
@@ -2559,7 +2559,7 @@
             "type": "integer",
             "description": "[Number of arrests for aggravated assault or battery] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2o"
+                "jcoin:originalName": "j2o"
             }
         },
         {
@@ -2569,7 +2569,7 @@
             "type": "integer",
             "description": "[Number of arrests for forcible rape] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2p"
+                "jcoin:originalName": "j2p"
             }
         },
         {
@@ -2579,7 +2579,7 @@
             "type": "integer",
             "description": "[Number of arrests for murder, homicide or non-negligent manslaughter] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2q"
+                "jcoin:originalName": "j2q"
             }
         },
         {
@@ -2589,7 +2589,7 @@
             "type": "integer",
             "description": "[Number of arrests for arson] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2r"
+                "jcoin:originalName": "j2r"
             }
         },
         {
@@ -2599,7 +2599,7 @@
             "type": "integer",
             "description": "[Number of arrests for prostitution, pimping or commercialized sex] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2s"
+                "jcoin:originalName": "j2s"
             }
         },
         {
@@ -2609,7 +2609,7 @@
             "type": "integer",
             "description": "[Number of arrests for other charges (carrying a weapon, gang involvement, domestic violence, trespass, gambling, disturbing the peace, disorderly conduct, paraphernalia, runaway, curfew, truancy) ] During the past 90 days (since last assessment)",
             "custom": {
-                "jcoin:original_name": "j2t"
+                "jcoin:originalName": "j2t"
             }
         },
         {
@@ -2619,7 +2619,7 @@
             "type": "integer",
             "description": "[...on electronic monitoring?] During the past xx days (since last assessment), how many days have you been ...",
             "custom": {
-                "jcoin:original_name": "j3a"
+                "jcoin:originalName": "j3a"
             }
         },
         {
@@ -2629,7 +2629,7 @@
             "type": "integer",
             "description": "[...on house arrest?] During the past xx days (since last assessment), how many days have you been ...",
             "custom": {
-                "jcoin:original_name": "j3b"
+                "jcoin:originalName": "j3b"
             }
         },
         {
@@ -2639,7 +2639,7 @@
             "type": "integer",
             "description": "[...in jail?] During the past xx days (since last assessment), how many days have you been ...",
             "custom": {
-                "jcoin:original_name": "j3c"
+                "jcoin:originalName": "j3c"
             }
         },
         {
@@ -2649,7 +2649,7 @@
             "type": "integer",
             "description": "[...in prison?] During the past xx days (since last assessment), how many days have you been ...",
             "custom": {
-                "jcoin:original_name": "j3d"
+                "jcoin:originalName": "j3d"
             }
         },
         {
@@ -2665,7 +2665,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "j3e",
+                "jcoin:originalName": "j3e",
                 "jcoin:notes": "MBK: added Unknown to satisfy a small amount of respondents for one hub."
             }
         },
@@ -2676,7 +2676,7 @@
             "type": "integer",
             "description": "How long have you been in jail or prison? (just this episode)",
             "custom": {
-                "jcoin:original_name": "j3f"
+                "jcoin:originalName": "j3f"
             }
         },
         {
@@ -2686,7 +2686,7 @@
             "type": "integer",
             "description": "[...been on parole?] During the past xx days (since last assessment), how many days have you...",
             "custom": {
-                "jcoin:original_name": "j4a"
+                "jcoin:originalName": "j4a"
             }
         },
         {
@@ -2696,7 +2696,7 @@
             "type": "integer",
             "description": "[...been on probation?] During the past xx days (since last assessment), how many days have you...",
             "custom": {
-                "jcoin:original_name": "j4b"
+                "jcoin:originalName": "j4b"
             }
         },
         {
@@ -2706,7 +2706,7 @@
             "type": "integer",
             "description": "[...been on any other kind of community supervision?] During the past xx days (since last assessment), how many days have you...",
             "custom": {
-                "jcoin:original_name": "j4c"
+                "jcoin:originalName": "j4c"
             }
         },
         {
@@ -2716,7 +2716,7 @@
             "type": "integer",
             "description": "[...met with your probation or parole officer?] During the past xx days (since last assessment), how many days have you...",
             "custom": {
-                "jcoin:original_name": "j4d"
+                "jcoin:originalName": "j4d"
             }
         },
         {
@@ -2726,7 +2726,7 @@
             "type": "integer",
             "description": "[...been in trouble with your probation or parole officer?] During the past xx days (since last assessment), how many days have you...",
             "custom": {
-                "jcoin:original_name": "j4e"
+                "jcoin:originalName": "j4e"
             }
         },
         {
@@ -2736,7 +2736,7 @@
             "type": "integer",
             "description": "[...how many times in your life have you been arrested including as a juvenile?] During your lifetime...",
             "custom": {
-                "jcoin:original_name": "j5a"
+                "jcoin:originalName": "j5a"
             }
         },
         {
@@ -2746,7 +2746,7 @@
             "type": "integer",
             "description": "[...how old were you the first time you were arrested? ] During your lifetime...",
             "custom": {
-                "jcoin:original_name": "j5b"
+                "jcoin:originalName": "j5b"
             }
         },
         {
@@ -2756,7 +2756,7 @@
             "type": "number",
             "description": "[...how much total time have you spent in detention, jail or prison during your lifetime?] During your lifetime...",
             "custom": {
-                "jcoin:original_name": "j5c_years",
+                "jcoin:originalName": "j5c_years",
                 "jcoin:notes": "MBK: changed from integer to number to allow partial years/months"
             }
         },
@@ -2767,7 +2767,7 @@
             "type": "number",
             "description": "[...how much total time have you spent in detention, jail or prison during your lifetime?] During your lifetime...",
             "custom": {
-                "jcoin:original_name": "j5c_months",
+                "jcoin:originalName": "j5c_months",
                 "jcoin:notes": "MBK: changed from integer to number to allow partial years/months"
             }
         },
@@ -2778,7 +2778,7 @@
             "type": "integer",
             "description": "[...how many times have you been found guilty and sentenced (including adjudications as a youth or convictions as an adult)?] During your lifetime...",
             "custom": {
-                "jcoin:original_name": "j5d"
+                "jcoin:originalName": "j5d"
             }
         },
         {
@@ -2788,7 +2788,7 @@
             "type": "integer",
             "description": "[...how old were you the first time you were adjudicated or convicted?] During your lifetime...",
             "custom": {
-                "jcoin:original_name": "j5e"
+                "jcoin:originalName": "j5e"
             }
         },
         {
@@ -2798,7 +2798,7 @@
             "type": "integer",
             "description": "[...times have you had to go to an emergency room without being admitted to the hospital?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
             "custom": {
-                "jcoin:original_name": "u1"
+                "jcoin:originalName": "u1"
             }
         },
         {
@@ -2808,7 +2808,7 @@
             "type": "integer",
             "description": "[...nights were you in a hospital detoxification program for your alcohol and other drug use (across all episodes)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
             "custom": {
-                "jcoin:original_name": "u2"
+                "jcoin:originalName": "u2"
             }
         },
         {
@@ -2818,7 +2818,7 @@
             "type": "integer",
             "description": "[...nights were you in a hospital for any other reason than detoxification?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
             "custom": {
-                "jcoin:original_name": "u3"
+                "jcoin:originalName": "u3"
             }
         },
         {
@@ -2828,7 +2828,7 @@
             "type": "integer",
             "description": "[...nights were you in a non-hospital or social detoxification program from alcohol or other drugs (also called residential detox)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
             "custom": {
-                "jcoin:original_name": "u4"
+                "jcoin:originalName": "u4"
             }
         },
         {
@@ -2838,7 +2838,7 @@
             "type": "integer",
             "description": "[...nights were you in a residential treatment program for alcohol or drug use?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
             "custom": {
-                "jcoin:original_name": "u5a"
+                "jcoin:originalName": "u5a"
             }
         },
         {
@@ -2848,7 +2848,7 @@
             "type": "integer",
             "description": "[...nights were you in a residential treatment program for mental health?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
             "custom": {
-                "jcoin:original_name": "u5b"
+                "jcoin:originalName": "u5b"
             }
         },
         {
@@ -2858,7 +2858,7 @@
             "type": "integer",
             "description": "[...nights were you in a residential, nursing home, or other rehabilitation facility for your physical health?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
             "custom": {
-                "jcoin:original_name": "u5c"
+                "jcoin:originalName": "u5c"
             }
         },
         {
@@ -2868,7 +2868,7 @@
             "type": "integer",
             "description": "[...times have you visited a primary care provier (physician, nurse, nurse practitioner, or physician's assistant)?] During the past xx days (since last assessment), how many . . . [Write 0 days if you have not had this experience]",
             "custom": {
-                "jcoin:original_name": "u6"
+                "jcoin:originalName": "u6"
             }
         },
         {
@@ -2884,7 +2884,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "u6a"
+                "jcoin:originalName": "u6a"
             }
         },
         {
@@ -2900,7 +2900,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "u6b"
+                "jcoin:originalName": "u6b"
             }
         },
         {
@@ -2916,7 +2916,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "u6c"
+                "jcoin:originalName": "u6c"
             }
         },
         {
@@ -2932,7 +2932,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "u6d"
+                "jcoin:originalName": "u6d"
             }
         },
         {
@@ -2942,7 +2942,7 @@
             "type": "string",
             "description": "[Specify other reason you visited primary care provider] Why did you visit a primary care provider? (ADD SKIP LOGIC)",
             "custom": {
-                "jcoin:original_name": "u6d_specify"
+                "jcoin:originalName": "u6d_specify"
             }
         },
         {
@@ -2952,7 +2952,7 @@
             "type": "integer",
             "description": "[...days did you participate in any other outpatient treatment program specializing in alcohol or substance use? (OTHER THAN U1-6)                 ] Other than times you already mentioned in <reference to u6>, during the past 3 months (since last assessment), how many...",
             "custom": {
-                "jcoin:original_name": "u7"
+                "jcoin:originalName": "u7"
             }
         },
         {
@@ -2962,7 +2962,7 @@
             "type": "integer",
             "description": "How many of these days did you physically visit the (outpatient treatment) program?",
             "custom": {
-                "jcoin:original_name": "u7a"
+                "jcoin:originalName": "u7a"
             }
         },
         {
@@ -2972,7 +2972,7 @@
             "type": "integer",
             "description": "How many of these days did you participate (in the outpatient tx program) online (e.g., smart phone, computer, or tablet)?",
             "custom": {
-                "jcoin:original_name": "u7b"
+                "jcoin:originalName": "u7b"
             }
         },
         {
@@ -2982,7 +2982,7 @@
             "type": "integer",
             "description": "How many of these days did you see a doctor (at the outpatient treatment program)?",
             "custom": {
-                "jcoin:original_name": "u7c"
+                "jcoin:originalName": "u7c"
             }
         },
         {
@@ -2992,7 +2992,7 @@
             "type": "integer",
             "description": "How many of these days did you only participate in individual or group therapy?",
             "custom": {
-                "jcoin:original_name": "u7d"
+                "jcoin:originalName": "u7d"
             }
         },
         {
@@ -3002,7 +3002,7 @@
             "type": "integer",
             "description": "How many of these days were for medication management only?",
             "custom": {
-                "jcoin:original_name": "u7e"
+                "jcoin:originalName": "u7e"
             }
         },
         {
@@ -3012,7 +3012,7 @@
             "type": "integer",
             "description": "Other than times you already mentioned above, during the past 3 months (since last assessment), how many times have you seen a psychiatrist (MD) or psychologist (Ph.D., Psy.D)?",
             "custom": {
-                "jcoin:original_name": "u8"
+                "jcoin:originalName": "u8"
             }
         },
         {
@@ -3022,7 +3022,7 @@
             "type": "integer",
             "description": "How many of these times did you physically visit the program (psychiatrist/psychologist)?",
             "custom": {
-                "jcoin:original_name": "u8a"
+                "jcoin:originalName": "u8a"
             }
         },
         {
@@ -3032,7 +3032,7 @@
             "type": "integer",
             "description": "How many of these times did you participate online (phone, computer, or tablet; with a psychiatrist/psychologist)?",
             "custom": {
-                "jcoin:original_name": "u8b"
+                "jcoin:originalName": "u8b"
             }
         },
         {
@@ -3042,7 +3042,7 @@
             "type": "integer",
             "description": "Other than times you already mentioned above, during the past 3 months (since last assessment), how many times have you seen any other kind or counselor or social worker?",
             "custom": {
-                "jcoin:original_name": "u9"
+                "jcoin:originalName": "u9"
             }
         },
         {
@@ -3052,7 +3052,7 @@
             "type": "integer",
             "description": "[...did you physically visit the program (counselor/social worker)?] How many of these times did you...",
             "custom": {
-                "jcoin:original_name": "u9a"
+                "jcoin:originalName": "u9a"
             }
         },
         {
@@ -3062,7 +3062,7 @@
             "type": "integer",
             "description": "...did you participate online (phone, computer, or tablet; with a counselor/social worker)?",
             "custom": {
-                "jcoin:original_name": "u9b"
+                "jcoin:originalName": "u9b"
             }
         },
         {
@@ -3072,7 +3072,7 @@
             "type": "number",
             "description": "In the past xx days (since last assessment), how much money have you spent on all healthcare (e.g., copayments or prescriptions)?",
             "custom": {
-                "jcoin:original_name": "u13"
+                "jcoin:originalName": "u13"
             }
         },
         {
@@ -3088,7 +3088,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "u14"
+                "jcoin:originalName": "u14"
             }
         },
         {
@@ -3107,7 +3107,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "u14a"
+                "jcoin:originalName": "u14a"
             }
         },
         {
@@ -3126,7 +3126,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "u14b"
+                "jcoin:originalName": "u14b"
             }
         },
         {
@@ -3145,7 +3145,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "u14c"
+                "jcoin:originalName": "u14c"
             }
         },
         {
@@ -3164,7 +3164,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "u14d"
+                "jcoin:originalName": "u14d"
             }
         },
         {
@@ -3183,7 +3183,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "u14e"
+                "jcoin:originalName": "u14e"
             }
         },
         {
@@ -3199,7 +3199,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m1"
+                "jcoin:originalName": "m1"
             }
         },
         {
@@ -3215,7 +3215,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_meds"
+                "jcoin:originalName": "m2_meds"
             }
         },
         {
@@ -3231,7 +3231,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_detox"
+                "jcoin:originalName": "m2_detox"
             }
         },
         {
@@ -3247,7 +3247,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_outpt_counsel"
+                "jcoin:originalName": "m2_outpt_counsel"
             }
         },
         {
@@ -3263,7 +3263,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_outpt_intensive"
+                "jcoin:originalName": "m2_outpt_intensive"
             }
         },
         {
@@ -3279,7 +3279,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_residential"
+                "jcoin:originalName": "m2_residential"
             }
         },
         {
@@ -3295,7 +3295,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_other"
+                "jcoin:originalName": "m2_other"
             }
         },
         {
@@ -3311,7 +3311,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_other_specify"
+                "jcoin:originalName": "m2_other_specify"
             }
         },
         {
@@ -3327,7 +3327,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_none"
+                "jcoin:originalName": "m2_none"
             }
         },
         {
@@ -3343,7 +3343,7 @@
                 "No"
             ],
             "custom": {
-                "jcoin:original_name": "m2_dont_know"
+                "jcoin:originalName": "m2_dont_know"
             }
         },
         {
@@ -3361,7 +3361,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "m3"
+                "jcoin:originalName": "m3"
             }
         },
         {
@@ -3379,7 +3379,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "m4"
+                "jcoin:originalName": "m4"
             }
         },
         {
@@ -3396,7 +3396,7 @@
                 ]
             },
             "custom": {
-                "jcoin:original_name": "m5"
+                "jcoin:originalName": "m5"
             }
         }
     ]
